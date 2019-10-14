@@ -1,0 +1,178 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[left=27mm,top=27mm,right=27mm,bottom=27mm] {geometry}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{relsize}
+\usepackage{etoolbox}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{marvosym}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{mdframed}
+\usepackage{framed}
+\usepackage{mathtools}
+\usepackage{tablefootnote} 
+\usepackage{listings}
+\usepackage{amsthm}
+\usepackage{xcolor}
+\usepackage{etoolbox}
+\usepackage[all]{xy}
+\usepackage{tikz}
+\usetikzlibrary{cd}
+\usetikzlibrary{calc}
+\theoremstyle{definition}
+\newtheorem*{example}{Beispiel}
+\newtheorem*{korollar}{Korollar}
+\newtheorem*{satz}{Satz}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{definition}{Definition}
+\newtheorem{aufgabe}{Aufgabe}
+\theoremstyle{remark}
+\newtheorem*{remark}{Bemerkung}
+\newtheorem*{remark'}{Nebenbemerkung}
+\AfterEndEnvironment{lemma}{\noindent\ignorespaces}
+\AfterEndEnvironment{definition}{\noindent\ignorespaces}
+\AfterEndEnvironment{example}{\noindent\ignorespaces}
+\AfterEndEnvironment{theorem}{\noindent\ignorespaces}
+\AfterEndEnvironment{satz}{\noindent\ignorespaces}
+\AfterEndEnvironment{korollar}{\noindent\ignorespaces}
+\AfterEndEnvironment{remark}{\noindent\ignorespaces}
+\AfterEndEnvironment{remark'}{\noindent\ignorespaces}
+\AfterEndEnvironment{proposition}{\noindent\ignorespaces}
+\AfterEndEnvironment{proof}{\noindent\ignorespaces}
+\usepackage{thmtools}
+ \usepackage[
+   pdfpagelabels=true,
+   pdftitle={Analysis III: Maßtheorie und Integralrechnung mehrerer Variablen},
+   %pdfauthor={},
+ ]{hyperref}
+\usepackage{bookmark}
+\let\existstemp\exists
+\let\foralltemp\forall
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+\newcommand{\vsubset}{\rotatebox[origin=c]{90}{$\subset$}}
+\newcommand{\ol}{\overline}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\D}{\, \mathrm{d}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\del}{\partial}
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\Var}{\operatorname{Var}} 
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\Bild}{\begin{tiny}(Bild hier)\end{tiny}}
+\newcommand{\vldate}{\flushright\scriptsize}
+\renewcommand*{\exists}{\existstemp\mkern2mu}
+\renewcommand*{\forall}{\foralltemp\mkern2mu}
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\makeatletter 
+\AfterEndEnvironment{mdframed}{%
+ \tfn@tablefootnoteprintout% 
+ \gdef\tfn@fnt{0}% 
+}
+%\setcounter{tocdepth}{3}
+
+\title{Analysis III: Maßtheorie und Integralrechnung mehrerer Variablen}
+%\date{}
+\begin{document}
+\maketitle
+\tableofcontents
+\addtocontents{toc}{\protect\setcounter{tocdepth}{3}}
+\newpage
+%\section*{Vorwort}
+\section{Maßtheorie}
+\subsection{Maßproblem und Paradoxien}
+\vspace{-1.5pc}	
+\begin{scriptsize}
+\begin{flushright}
+14.10.2019
+\end{flushright}
+\end{scriptsize}
+Maßtheorie ist die Theorie des Volumens. Motivierende Beispiele sind:
+\begin{enumerate}[label=\roman*),topsep=3pt, itemsep=0pt]
+\item Volumina von Teilmengen des euklidischen Raums
+\item Wahrscheinlichkeiten (= ``Volumina von Ereignissen'')
+\end{enumerate}
+Wir konzentrieren uns im Rest des Abschnitts auf $\R^d$. Wir wollen leistungsfähigen Volumenbegriff haben, die Volumina von möglich vielen Teilmengen flexibel messen. Unser erster ``naiver'' Ansatz wäre, dass wir Volumenmessung für \emph{alle} Teilmengen verlangen, also eine Funktion
+\begin{equation}
+ \vol: \mathcal{P}(\R^d) \longrightarrow [0.\infty]
+\end{equation}
+Unsere grundlegende Forderung ist die Additivität von Volumina bei Zerlegungen, also
+\begin{enumerate}
+\item[(i)] \textbf{(endliche) Additivität}: Sind $M_1,...,M_n\subset \R^d$ paarweise disjunkt, so gilt
+\begin{equation}
+\vol (M_1\cup ... \cup M_n) = \vol(M_1)+...+\vol (M_n)
+\end{equation}
+\end{enumerate}
+Volumina als geometrische Größen sollten durch die metrische Struktur (Längenmessung) bestimmt sein, also invariant unter Symmetrien der metrischen Struktur:
+\begin{enumerate}
+\item[(ii)] \textbf{Bewegungsinvarianz}: Für jede Bewegung $\phi: \R^d \longrightarrow \R^d$ und jede Teilmenge $A\subset \R^d$ gilt
+\begin{equation}
+\vol(\phi(A)) = \vol (A)
+\end{equation}
+\item[(iii)] \textbf{Normierung}: $\vol([0,1]^d)=1$.
+\end{enumerate}
+Verstärke Forderung (i): (Borel, Lebesgue)
+\begin{enumerate}
+\item[(i')]\textbf{$\sigma$-Additivität}:\footnote{$\sigma$: abzählbar, unendlich oft.} Für Folgen $(M_n)_{n\in \N}$ paarweise disjunkt Teilmengen $M_n \subset \R^d$ gilt:
+\begin{equation}
+\vol\bigg( \bigcup_{n\in \N} M_n \bigg) = \sum_{n\in \N} \underbrace{\vol (M_n)}_{\in [0,\infty]} \quad \footnote{Wegen des Umordnungssatzes spielt die Reihenfolge der Summanden keine Rolle.}
+\end{equation}
+$\leadsto$ flexibilisiert Volumenmessung entscheidend (können komplizierte Figuren durch einfach Figuren approximieren)
+\end{enumerate}
+Cantons Mengenlehre $\leadsto$ Existenz von ``naiver'' Volumenfunktion wurde hinterfragt: \vspace{-10pt}
+\paragraph{Maßproblem (naiv)} Existiert eine Volumenfunktion $\vol: \mathcal{P}(\R^d) \longrightarrow [0,\infty]$ mit (i') + (ii) + (iii)?
+\begin{satz}[Vitali, 1905] Nein, das Maßproblem ist unlösbar.
+\begin{proof}
+Auswahlaxiom $\leadsto$ Existenz ``verrückter'' (d.h. geometrisch unvorstellbarer) Teilmengen des $\R^d$. Hier existiert $M \subset \R^d$ \emph{Vertretersystem} für Nebenklassen von $\mathbb{Q}^d$ (Untergruppe) in $\R^d$\footnote{$\R^d/\mathbb{Q}^d$ Menge von Nebenklassen (Quotient abelscher Gruppen)}. Die Nebenklassen $a+\mathbb{Q}^d$ für $a\in \R^d$ partitionieren\footnote{D.h. zerlegen disjunkt} $\R^d$ (überabzählbar viele). Für alle $a,b \in \R^d$ besteht Dichotomie:
+\begin{enumerate}[label=\roman*),topsep=3pt, itemsep=0pt]
+\item entweder $a+\mathbb{Q}^d = b + \mathbb{Q}^d$ (nämlich wenn $a-b \in \mathbb{Q}^d$),
+\item oder $(a+\mathbb{Q}^d)\cap (b+\mathbb{Q}^d) = \emptyset$ (nämlich wenn $a-b \notin \mathbb{Q}^d$).
+\end{enumerate}
+D.h. für alle $a\in \R^d$ besteht $M \cap (a+\mathbb{Q}^d)$ aus genau einem Element. Daraus folgt, die Translate $q+M$ (abzählbar viele) für $q \in \mathbb{Q}^d$ partitionieren $\R^d$. Aus der $\sigma$-Additivität von Volumen folgt
+\begin{equation}
+\underbrace{\vol (\R^d)}_{>0}= \sum_{q \in \mathbb{Q}^d} \underbrace{\vol (q+M)}_{\overset{\text{Bew Inv}}{=} \vol(M)}
+\end{equation} 
+und somit also $\vol (M)>0$.\\
+Jetzt wähle $M$ spezieller, nämlich beschränkt, z.B. für $O\subset \R^d$ offen können wir $M$ so wählen, dass $M\subset O$, weil $a+\mathbb{Q}^d$ dicht in $\R^d$, also $(a+\mathbb{Q}^d)\cap O \neq \emptyset$. Z.B. wähle $M \subset (0,\frac{1}{2})^d$, so enthält $[0,1]^d$ abzählbar unendlich viele paarweise disjunkte Translate $q+M$, nämlich für alle $q\in \mathbb{Q}^d \cap (0,\frac{1}{2})^d$ gilt
+\begin{equation}
+V:= \bigcup_{q\in(0,\frac{1}{2})^d \cap \mathbb{Q}^d} (q+M) \subset [0,1]^d
+\end{equation}
+weil $\vol (V) + \underbrace{\vol ([0,1]^d-V)}_{\geq 0} = \underbrace{\vol ([0,1]^d)}_{=1}$. Daraus folgt $\vol (V) \leq 1 < \infty$ und 
+\begin{equation}
+\vol(V) = \sum_{q\in(0,\frac{1}{2})^d \cap \mathbb{Q}^d} \underbrace{\vol (q+M)}_{=\vol(M)}
+\end{equation}
+Somit muss gelten $\vol(M)=0$. \Lightning
+\end{proof}
+\end{satz}
+Noch dramatischer: In $\dim \geq 3$ kann man je zwei Teilmengen (unter sehr allgemeinen Annahmen) aus demselben (abzählbaren, oft sogar endlichen) ``Bausatz'' zusammensetzen.
+\begin{satz}[Banach-Tarski, 1924] Seien $A,B\subset \R^d$ Teilmengen mit nichtleerem Inneren.
+\begin{enumerate}[(\roman*)]
+\item Sei $d \geq 3$ und seien $A,B$ beschränkt. Dann existieren endlich viele Teilmengen $M_k \subset \R^d$ und Bewegungen $\phi_k$ des $\R^d$, so dass \emph{disjunkte Zerlegungen} $A=\bigsqcup_k M_k$ und $B = \bigsqcup_k \phi(M_k)$ bestehen.
+\item Jetzt $d\geq 1$ beliebig und $A,B$ nicht notwendig beschränkt. Dann existieren abzählbar viele Teilmengen $M_k \subset \R^d$ und Bewegungen $\phi_k$, sodass  \emph{disjunkte Zerlegungen} $A=\bigsqcup_k M_k$ und $B = \bigsqcup_k \phi(M_k)$ bestehen.
+\end{enumerate}
+Der Beweis verwendet Gruppentheorie, Struktur von orthogonalen Gruppen $\mathrm{O}(d)$\footnote{nicht mehr auflösbar für $d\geq 3$}.
+\end{satz}
+Das naive Inhaltsproblem\footnote{eine Volumenfunktion mit Eigenschaften (i), (ii) und (iii)} ist lösbar in $d\leq 2$, aber nicht eindeutig, nicht lösbar in $d\geq 3$.\footnote{Banach 1923, Hausdorff 1914} Dies führt zu:
+\vspace{-10pt}
+\paragraph{Maßproblem (post-paradox)}: Man definiere eine Volumenfunktion $\vol: \mathcal{F} \longrightarrow [0,\infty]$ mit Eigenschaften (i')+(ii)+(iii) auf einer möglich großen und flexiblen Familie $\mathcal{F} \subset \mathcal{P}(\R^d)$, die die geometrisch wichtigen Teilmengen umfasst und abgeschlossen ist unter grundlegenden mengentheoretischen Operationen (Vereinigung, Schnitt, Differenz und Komplement). 
+\begin{scriptsize}
+\begin{flushright}
+17.10.2019
+\end{flushright}
+\end{scriptsize}
+\end{document}
