@@ -96,7 +96,7 @@
 %\section*{Vorwort}
 \section{Maßtheorie}
 \subsection{Maßproblem und Paradoxien}
-\vspace{-1.5pc}	
+%\vspace{-1.5pc}	
 \begin{scriptsize}
 \begin{flushright}
 14.10.2019
@@ -107,7 +107,7 @@ Maßtheorie ist die Theorie des Volumens. Motivierende Beispiele sind:
 \item Volumina von Teilmengen des euklidischen Raums
 \item Wahrscheinlichkeiten (= ``Volumina von Ereignissen'')
 \end{enumerate}
-Wir konzentrieren uns im Rest des Abschnitts auf $\R^d$. Wir wollen leistungsfähigen Volumenbegriff haben, die Volumina von möglich vielen Teilmengen flexibel messen. Unser erster ``naiver'' Ansatz wäre, dass wir Volumenmessung für \emph{alle} Teilmengen verlangen, also eine Funktion
+Wir konzentrieren uns im Rest des Abschnitts auf $\R^d$. Wir wollen leistungsfähigen Volumenbegriff haben, sodass die Volumina von möglich vielen Teilmengen flexibel gemessen werden können. Unser erster ``naiver'' Ansatz wäre, dass wir Volumenmessung für \emph{alle} Teilmengen verlangen, also eine Funktion
 \begin{equation}
  \vol: \mathcal{P}(\R^d) \longrightarrow [0.\infty]
 \end{equation}
@@ -128,17 +128,20 @@ Volumina als geometrische Größen sollten durch die metrische Struktur (Längen
 \end{enumerate}
 Verstärke Forderung (i): (Borel, Lebesgue)
 \begin{enumerate}
-\item[(i')]\textbf{$\sigma$-Additivität}:\footnote{$\sigma$: abzählbar, unendlich oft.} Für Folgen $(M_n)_{n\in \N}$ paarweise disjunkt Teilmengen $M_n \subset \R^d$ gilt:
+\item[(i')]\textbf{$\sigma$-Additivität\footnote{$\sigma$: abzählbar, unendlich oft.}}: Für Folgen $(M_n)_{n\in \N}$ paarweise disjunkter Teilmengen $M_n \subset \R^d$ gilt:
 \begin{equation}
-\vol\bigg( \bigcup_{n\in \N} M_n \bigg) = \sum_{n\in \N} \underbrace{\vol (M_n)}_{\in [0,\infty]} \quad \footnote{Wegen des Umordnungssatzes spielt die Reihenfolge der Summanden keine Rolle.}
+\vol\bigg( \bigcup_{n\in \N} M_n \bigg) = \sum_{n\in \N} \underbrace{\vol (M_n)}_{\in [0,\infty]} 
 \end{equation}
-$\leadsto$ flexibilisiert Volumenmessung entscheidend (können komplizierte Figuren durch einfach Figuren approximieren)
+\begin{remark}
+Wegen des Umordnungssatzes spielt die Reihenfolge der Summanden keine Rolle.
+\end{remark}
+$\leadsto$ flexibilisiert Volumenmessung entscheidend, wir können also komplizierte Figuren durch einfach Figuren approximieren.
 \end{enumerate}
-Cantons Mengenlehre $\leadsto$ Existenz von ``naiver'' Volumenfunktion wurde hinterfragt: \vspace{-10pt}
+Cantons Mengenlehre $\leadsto$ Existenz von ``naiver'' Volumenfunktion wurde hinterfragt: %\vspace{-10pt}
 \paragraph{Maßproblem (naiv)} Existiert eine Volumenfunktion $\vol: \mathcal{P}(\R^d) \longrightarrow [0,\infty]$ mit (i') + (ii) + (iii)?
-\begin{satz}[Vitali, 1905] Nein, das Maßproblem ist unlösbar.
+\begin{satz}[Vitali, 1905] Nein, das naive Maßproblem ist unlösbar.
 \begin{proof}
-Auswahlaxiom $\leadsto$ Existenz ``verrückter'' (d.h. geometrisch unvorstellbarer) Teilmengen des $\R^d$. Hier existiert $M \subset \R^d$ \emph{Vertretersystem} für Nebenklassen von $\mathbb{Q}^d$ (Untergruppe) in $\R^d$\footnote{$\R^d/\mathbb{Q}^d$ Menge von Nebenklassen (Quotient abelscher Gruppen)}. Die Nebenklassen $a+\mathbb{Q}^d$ für $a\in \R^d$ partitionieren\footnote{D.h. zerlegen disjunkt} $\R^d$ (überabzählbar viele). Für alle $a,b \in \R^d$ besteht Dichotomie:
+Aus dem Auswahlaxiom folgt die Existenz ``verrückter'' (d.h. geometrisch unvorstellbarer) Teilmengen des $\R^d$. Hier existiert $M \subset \R^d$, ein \emph{Vertretersystem} für Nebenklassen von $\mathbb{Q}^d$ (Untergruppe von $\R^d$) in $\R^d$. Der Quotient abelscher Gruppen $\R^d/\mathbb{Q}^d$ ist also die Menge der Nebenklassen. Die Nebenklassen $a+\mathbb{Q}^d$ für $a\in \R^d$ partitionieren (d.h. zerlegen disjunkt) $\R^d$ (überabzählbar viele). Für alle $a,b \in \R^d$ besteht Dichotomie:
 \begin{enumerate}[label=\roman*),topsep=3pt, itemsep=0pt]
 \item entweder $a+\mathbb{Q}^d = b + \mathbb{Q}^d$ (nämlich wenn $a-b \in \mathbb{Q}^d$),
 \item oder $(a+\mathbb{Q}^d)\cap (b+\mathbb{Q}^d) = \emptyset$ (nämlich wenn $a-b \notin \mathbb{Q}^d$).
@@ -165,14 +168,15 @@ Noch dramatischer: In $\dim \geq 3$ kann man je zwei Teilmengen (unter sehr allg
 \item Sei $d \geq 3$ und seien $A,B$ beschränkt. Dann existieren endlich viele Teilmengen $M_k \subset \R^d$ und Bewegungen $\phi_k$ des $\R^d$, so dass \emph{disjunkte Zerlegungen} $A=\bigsqcup_k M_k$ und $B = \bigsqcup_k \phi(M_k)$ bestehen.
 \item Jetzt $d\geq 1$ beliebig und $A,B$ nicht notwendig beschränkt. Dann existieren abzählbar viele Teilmengen $M_k \subset \R^d$ und Bewegungen $\phi_k$, sodass  \emph{disjunkte Zerlegungen} $A=\bigsqcup_k M_k$ und $B = \bigsqcup_k \phi(M_k)$ bestehen.
 \end{enumerate}
-Der Beweis verwendet Gruppentheorie, Struktur von orthogonalen Gruppen $\mathrm{O}(d)$\footnote{nicht mehr auflösbar für $d\geq 3$}.
+Der Beweis verwendet Gruppentheorie, Struktur von orthogonalen Gruppen $\mathrm{O}(d)$. (nicht mehr auflösbar für $d\geq 3$.)
 \end{satz}
-Das naive Inhaltsproblem\footnote{eine Volumenfunktion mit Eigenschaften (i), (ii) und (iii)} ist lösbar in $d\leq 2$, aber nicht eindeutig, nicht lösbar in $d\geq 3$.\footnote{Banach 1923, Hausdorff 1914} Dies führt zu:
+Das naive \emph{Inhaltsproblem}, also eine Volumenfunktion mit Eigenschaften (i), (ii) und (iii), ist lösbar in $d\leq 2$, aber nicht eindeutig, nicht lösbar in $d\geq 3$. (Banach 1923, Hausdorff 1914) Dies führt zu:
 \vspace{-10pt}
-\paragraph{Maßproblem (post-paradox)}: Man definiere eine Volumenfunktion $\vol: \mathcal{F} \longrightarrow [0,\infty]$ mit Eigenschaften (i')+(ii)+(iii) auf einer möglich großen und flexiblen Familie $\mathcal{F} \subset \mathcal{P}(\R^d)$, die die geometrisch wichtigen Teilmengen umfasst und abgeschlossen ist unter grundlegenden mengentheoretischen Operationen (Vereinigung, Schnitt, Differenz und Komplement). 
+\paragraph{Maßproblem (post-paradox)}: Man definiere eine Volumenfunktion $\vol: \mathcal{F} \longrightarrow [0,\infty]$ mit Eigenschaften (i'), (ii) und (iii) auf einer möglich großen und flexiblen Familie $\mathcal{F} \subset \mathcal{P}(\R^d)$, die die geometrisch wichtigen Teilmengen umfasst und abgeschlossen ist unter grundlegenden mengentheoretischen Operationen (Vereinigung, Schnitt, Differenz und Komplement). 
 \begin{scriptsize}
 \begin{flushright}
 17.10.2019
 \end{flushright}
 \end{scriptsize}
+
 \end{document}
