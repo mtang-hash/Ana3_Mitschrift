@@ -1,0 +1,95 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[left=28mm,top=28mm,right=28mm,bottom=28mm] {geometry}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{stmaryrd}
+\usepackage{relsize}
+\usepackage{etoolbox}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{marvosym}
+\usepackage[shortlabels]{enumitem}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{mdframed}
+\usepackage{framed}
+\usepackage{mathtools}
+\usepackage{tablefootnote} 
+\usepackage{listings}
+\usepackage{amsthm}
+\usepackage{xcolor}
+\usepackage{etoolbox}
+\usepackage[all]{xy}
+\usepackage{tikz}
+\usetikzlibrary{cd}
+\usetikzlibrary{calc}
+\theoremstyle{definition}
+\newtheorem*{example}{Beispiel}
+\newtheorem*{korollar}{Korollar}
+\newtheorem*{satz}{Satz}
+\newtheorem*{proposition}{Proposition}
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{definition}{Definition}
+\newtheorem{aufgabe}{Aufgabe}
+\theoremstyle{remark}
+\newtheorem*{remark}{Bemerkung}
+\newtheorem*{remark'}{Nebenbemerkung}
+\AfterEndEnvironment{lemma}{\noindent\ignorespaces}
+\AfterEndEnvironment{definition}{\noindent\ignorespaces}
+\AfterEndEnvironment{example}{\noindent\ignorespaces}
+\AfterEndEnvironment{theorem}{\noindent\ignorespaces}
+\AfterEndEnvironment{satz}{\noindent\ignorespaces}
+\AfterEndEnvironment{korollar}{\noindent\ignorespaces}
+\AfterEndEnvironment{remark}{\noindent\ignorespaces}
+\AfterEndEnvironment{remark'}{\noindent\ignorespaces}
+\AfterEndEnvironment{proposition}{\noindent\ignorespaces}
+\AfterEndEnvironment{proof}{\noindent\ignorespaces}
+\usepackage{thmtools}
+ \usepackage[
+   pdfpagelabels=true,
+   pdftitle={Analysis III: Maßtheorie und Integralrechnung mehrerer Variablen},
+   %pdfauthor={},
+ ]{hyperref}
+\usepackage{bookmark}
+\let\existstemp\exists
+\let\foralltemp\forall
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+\newcommand{\vsubset}{\rotatebox[origin=c]{90}{$\subset$}}
+\newcommand{\ol}{\overline}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\T}{\mathcal{T}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\D}{\, \mathrm{d}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\del}{\partial}
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\Var}{\operatorname{Var}} 
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\Bild}{\begin{tiny}(Bild hier)\end{tiny}}
+\newcommand{\vldate}{\flushright\scriptsize}
+\renewcommand*{\exists}{\existstemp\mkern2mu}
+\renewcommand*{\forall}{\foralltemp\mkern2mu}
+\renewcommand{\emptyset}{\varnothing}
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+%\renewcommand{\triangle}{\ \triangle\ }
+%\renewcommand{\int}{\int\limits}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\makeatletter 
+\AfterEndEnvironment{mdframed}{%
+ \tfn@tablefootnoteprintout% 
+ \gdef\tfn@fnt{0}% 
+}
+\numberwithin{equation}{section}
+%\setcounter{tocdepth}{3}
+

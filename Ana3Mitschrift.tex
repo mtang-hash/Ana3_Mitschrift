@@ -1,96 +1,9 @@
-\documentclass[12pt,a4paper]{article}
-\usepackage[left=28mm,top=28mm,right=28mm,bottom=28mm] {geometry}
-\usepackage{amsfonts}
-\usepackage{mathrsfs}
-\usepackage{mathtools}
-\usepackage{relsize}
-\usepackage{etoolbox}
-\usepackage[ngerman]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{marvosym}
-\usepackage[shortlabels]{enumitem}
-\usepackage{mathtools}
-\usepackage{amssymb}
-\usepackage{cancel}
-\usepackage{mdframed}
-\usepackage{framed}
-\usepackage{mathtools}
-\usepackage{tablefootnote} 
-\usepackage{listings}
-\usepackage{amsthm}
-\usepackage{xcolor}
-\usepackage{etoolbox}
-\usepackage[all]{xy}
-\usepackage{tikz}
-\usetikzlibrary{cd}
-\usetikzlibrary{calc}
-\theoremstyle{definition}
-\newtheorem*{example}{Beispiel}
-\newtheorem*{korollar}{Korollar}
-\newtheorem*{satz}{Satz}
-\newtheorem*{proposition}{Proposition}
-\newtheorem*{theorem}{Theorem}
-\newtheorem*{lemma}{Lemma}
-\newtheorem*{definition}{Definition}
-\newtheorem{aufgabe}{Aufgabe}
-\theoremstyle{remark}
-\newtheorem*{remark}{Bemerkung}
-\newtheorem*{remark'}{Nebenbemerkung}
-\AfterEndEnvironment{lemma}{\noindent\ignorespaces}
-\AfterEndEnvironment{definition}{\noindent\ignorespaces}
-\AfterEndEnvironment{example}{\noindent\ignorespaces}
-\AfterEndEnvironment{theorem}{\noindent\ignorespaces}
-\AfterEndEnvironment{satz}{\noindent\ignorespaces}
-\AfterEndEnvironment{korollar}{\noindent\ignorespaces}
-\AfterEndEnvironment{remark}{\noindent\ignorespaces}
-\AfterEndEnvironment{remark'}{\noindent\ignorespaces}
-\AfterEndEnvironment{proposition}{\noindent\ignorespaces}
-\AfterEndEnvironment{proof}{\noindent\ignorespaces}
-\usepackage{thmtools}
- \usepackage[
-   pdfpagelabels=true,
-   pdftitle={Analysis III: Maßtheorie und Integralrechnung mehrerer Variablen},
-   %pdfauthor={},
- ]{hyperref}
-\usepackage{bookmark}
-\let\existstemp\exists
-\let\foralltemp\forall
-\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
-\newcommand{\vsubset}{\rotatebox[origin=c]{90}{$\subset$}}
-\newcommand{\ol}{\overline}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\T}{\mathcal{T}}
-\newcommand{\F}{\mathcal{F}}
-\newcommand{\D}{\, \mathrm{d}}
-\newcommand{\E}{\mathbb{E}}
-\newcommand{\Hom}{\operatorname{Hom}}
-\newcommand{\del}{\partial}
-\newcommand{\vol}{\operatorname{vol}}
-\newcommand{\Var}{\operatorname{Var}} 
-\newcommand{\Cov}{\operatorname{Cov}}
-\newcommand{\End}{\operatorname{End}}
-\newcommand{\SL}{\operatorname{SL}}
-\newcommand{\Bild}{\begin{tiny}(Bild hier)\end{tiny}}
-\newcommand{\vldate}{\flushright\scriptsize}
-\renewcommand*{\exists}{\existstemp\mkern2mu}
-\renewcommand*{\forall}{\foralltemp\mkern2mu}
-\renewcommand{\emptyset}{\varnothing}
-\renewcommand{\qedsymbol}{$\blacksquare$}
-\makeatletter 
-\AfterEndEnvironment{mdframed}{%
- \tfn@tablefootnoteprintout% 
- \gdef\tfn@fnt{0}% 
-}
-%\setcounter{tocdepth}{3}
-
+\input{settings.tex}
 \title{Analysis III: Maßtheorie und Integralrechnung mehrerer Variablen}
 %\date{}
 \begin{document}
-\maketitle
-\tableofcontents
+%\maketitle
+%\tableofcontents
 \addtocontents{toc}{\protect\setcounter{tocdepth}{3}}
 \newpage
 \section{Maßtheorie}
@@ -106,6 +19,7 @@ Wir konzentrieren uns im Rest des Abschnitts auf $\R^d$. Wir wollen leistungsfä
  \vol: \mathcal{P}(\R^d) \longrightarrow [0.\infty]
 \end{equation}
 Unsere grundlegende Forderung ist die Additivität von Volumina bei Zerlegungen, also
+\begin{subequations}
 \begin{enumerate}
 \item[(i)] \textbf{(endliche) Additivität}: Sind $M_1,...,M_n\subset \R^d$ paarweise disjunkt, so gilt
 \begin{equation}
@@ -131,6 +45,7 @@ Wegen des Umordnungssatzes spielt die Reihenfolge der Summanden keine Rolle, da 
 \end{remark}
 $\leadsto$ flexibilisiert Volumenmessung entscheidend, wir können also komplizierte Figuren durch einfach Figuren approximieren.
 \end{enumerate}
+\end{subequations}
 Cantons Mengenlehre $\leadsto$ Existenz von ``naiver'' Volumenfunktion wurde hinterfragt: %\vspace{-10pt}
 \paragraph{Maßproblem (naiv)} Existiert eine Volumenfunktion $\vol: \mathcal{P}(\R^d) \longrightarrow [0,\infty]$ mit (i') + (ii) + (iii)?
 \begin{satz}[Vitali, 1905] Nein, das naive Maßproblem ist unlösbar.
@@ -167,5 +82,139 @@ Der Beweis verwendet Gruppentheorie, Struktur von orthogonalen Gruppen $\mathrm{
 Das naive \emph{Inhaltsproblem}, also eine Volumenfunktion mit Eigenschaften (i), (ii) und (iii), ist lösbar in $d\leq 2$, aber nicht eindeutig, nicht lösbar in $d\geq 3$. (Banach 1923, Hausdorff 1914) Dies führt zu:
 \vspace{-10pt}
 \paragraph{Maßproblem (post-paradox)}: Man definiere eine Volumenfunktion $\vol: \mathcal{F} \longrightarrow [0,\infty]$ mit Eigenschaften (i'), (ii) und (iii) auf einer möglich großen und flexiblen Familie $\mathcal{F} \subset \mathcal{P}(\R^d)$, die die geometrisch wichtigen Teilmengen umfasst und abgeschlossen ist unter grundlegenden mengentheoretischen Operationen (Vereinigung, Schnitt, Differenz und Komplement). 
+\subsection{Ringe und Algebren}
 \marginpar{\tiny{17.10.2019}}
+Wir untersuchen Familien von Teilmengen (einer festen Menge), die unter grundlegenden (endlichen) Mengenoperationen abgeschlossen/ stabil sind. ($\cup,\cap,\setminus,\complement$) \\
+Sie werden Definitionsbereiche der allgemeinsten von uns betrachteten Volumenfunktion sein. (``Inhalte'')
+
+\subsubsection{Die Ringstruktur auf Potenzmengen}
+Sei $X$ eine Menge. Die Potenzmenge ist definiert als die Familie aller Teilmengen $\mathcal{P}(X)$. Wir können die Potenzmenge ebenfalls auffassen als
+\begin{equation}
+\mathcal{P}(X) \xleftrightarrow[\text{bij}]{\cong} \{0,1\}^X = \{f:X \longrightarrow \{0,1\}\}
+\end{equation}
+da
+\begin{subequations} 
+\begin{align}
+A &\longmapsto \chi_A(x) = \begin{cases}
+1, \quad & \text{falls } x\in A\\
+0, \quad & \text{sonst}
+\end{cases}\\
+f^{-1}(1) & \longmapsfrom f
+\end{align}
+\end{subequations}
+wobei $\chi_A$ de charakteristische Funktion von $A$ ist. \newline \newline
+Wir fassen nun $\{0,1\}$ auf als den Körper mit 2 Elementen (Restklassen modulo 2). So ist $\{0,1\}^X$ ein kommutativer Ring mit Eins (multiplikatives Einselement) (im Sinne der Algebra), sogar eine $\mathbb{F}_2$-Algebra.
+\begin{remark} Die Addition und Multiplikation von Funktionen erfolgt punktweise:
+\begin{enumerate} [-, itemsep=0pt,topsep=3pt]
+\item  $(f+g)(x) := f(x)+g(x)$ 
+\item $(fg)(x)= f(x) \cdot g(x)$
+\end{enumerate}
+und $\{0,1\} = \mathbb{F}_2$ ist ein Körper mit zwei Elementen.
+\end{remark}
+Die Nullelement ist $f \equiv 0$, also $\chi_\emptyset$ und das Einselement ist $\chi_X (\equiv 1)$. Die Addition von charakteristischen Funktionen entspricht der symmetrischen Differenz $A \triangle B$ und die Multiplikation entspricht dem Duchrschnitt von Mengen. Also
+\begin{subequations}
+\begin{align}
+\chi_A + \chi_B = A \triangle B \\
+\chi_A \cdot \chi_B = A \cap B
+\end{align}
+\end{subequations}
+Somit ist $(\mathcal{P}(X), \triangle, \cap) \cong (\mathbb{F}_2^X, +, \cdot)$ ein kommutativer Ring mit dem Nullelement $\emptyset$ bzw. $\chi_\emptyset$ und dem Einselement $X$ bzw. $\chi_X$. 
+\subsubsection{Ringe und Algebren}
+\begin{definition}
+\begin{mdframed}
+Eine Familie $\mathcal{R}\subset \mathcal{P}(X)$ heißt
+\begin{enumerate}[itemsep=0pt,topsep=3pt]
+\item[($\rho$)] ein \textbf{Ring} auf $X$, falls sie ein Unterring von $(\mathcal{P}(X), \triangle, \cap)$ ist.
+\item[($\alpha$)] eine \textbf{Algebra} auf $X$, falls sie außerdem das Einselement enthält, also $X \in \mathcal{R}$.
+\end{enumerate}
+\end{mdframed}
+\end{definition}
+\begin{remark}
+\begin{small}
+``Algebra'' wird in verschiedenen Bedingungen verwendet, nämlich die Algebra als ein mathematisches Gebiet, eine Algebra als algebraische Struktur im Sinne der Algebra und eine Algebra im Sinne der obigen Definition.
+\end{small}
+\end{remark}
+$(\rho)$ bedeutet $\emptyset \in \mathcal{R}$, abgeschlossen unter Addition ($\triangle$) (dasselbe wie Subtraktion, da $\mod 2$) und Multiplikation ($\cap$), d.h.
+\begin{equation}
+A,B \in \mathcal{R} \implies A\triangle B, A\cap B \in \mathcal{R}
+\end{equation} 
+d.h. $\triangle$- stabil und $\cap$- stabil. Wir können $\triangle, \cap$ ausdrücken durch $\setminus$ und $\cup$:
+\begin{subequations}
+\begin{align}
+A \triangle B & = (A \setminus B) \cup (B \setminus A) \\
+A \cap B & = A \setminus (A \setminus B)
+\end{align}
+und umgekehrt
+\begin{align}
+A \setminus B = (A \triangle B) \cap A \\
+A \cup B = (A \triangle B) \triangle (A \cap B)
+\end{align}
+\end{subequations}
+\textit{Bemerkung.} Die letzte Gleichung gilt, da $(A\triangle B)$ und $(A\cap B)$ disjunkt sind. \newline \newline
+Daraus folgt die Charakterisierung von Ringen:
+\begin{lemma}
+\begin{mdframed}
+Eine Familie $\mathcal{R}\subset \mathcal{P}(X)$ ist genau dann ein Ring auf $X$, wenn
+\begin{enumerate}[(\roman*), topsep=3pt, itemsep=0pt]
+\item $\emptyset \in \mathcal{R}$,
+\item $\setminus$- stabil, d.h. $A,B \in \mathcal{R} \implies A \setminus B \in \mathcal{R}$,
+\item $\cup$- stabil, d.h. $A, B \in \mathcal{R} \implies A \cup B \in \mathcal{R}$.
+\end{enumerate}
+\end{mdframed}
+\end{lemma}
+entspricht für Algebren:
+\begin{lemma}
+\begin{mdframed}
+Eine Familie $\mathcal{A} \subset \mathcal{P}(X)$ ist genau dann eine Algebra auf $X$, wenn
+\begin{enumerate}[topsep=3pt, itemsep=0pt]
+\item[(i)] $\emptyset \in \mathcal{A}$,
+\item[(iii)] $\cup$- stabil,
+\item[(iv)] $\complement$- stabil, d.h. $A \in \mathcal{A} \implies \complement A := X\setminus A \in \mathcal{A}$
+\end{enumerate}
+\end{mdframed}
+\begin{proof}
+\begin{subequations}
+Sind diese Eigenschaften erfüllt, so implizieren (i + iv), dass
+\begin{equation}
+X = \complement \emptyset \in \mathcal{A}
+\end{equation}
+``$\setminus$'' kann ausgedrückt werden durch ``$\cup$'' und ``$\complement$'': Aus
+\begin{equation}
+\complement (A \setminus B) = (\complement A) \cup B
+\end{equation}
+folgt
+\begin{equation}
+A \setminus B = \complement \big( (\complement A) \cup B \big)
+\end{equation}
+Also ist $\mathcal{A}$ ein Ring, und damit $\mathcal{A}$ eine Algebra. \\
+Ist umgekehrt $\mathcal{A}$ eine Algebra, so gelten (i + iii). Da auch $X \in \mathcal{A}$, können wir ``$\complement$'' durch ``$\setminus$'' ausdrücken
+\begin{equation}
+\complement A = X \setminus A
+\end{equation}
+Also gilt auch (iv).
+\end{subequations}
+\end{proof}
+\end{lemma}
+\textbf{Folgerung.} Ist $\mathcal{R}$ ein Ring auf $X$ und $A,B \in \mathcal{R}$, so auch $A\setminus B, A\cap B, B\setminus A$ und $A\cup B \in \mathcal{R}$. (\textit{Bem.} Alle in $A\cup B$ enthalten.) Ist $\mathcal{A}$ eine Algebra auf $X$ und $A,B \in \mathcal{A}$, so ist außerdem auch $\complement (A \cup B) \in \mathcal{A}$.
+
+\begin{example} \
+\begin{enumerate}
+\item[(o)] $\{ \emptyset\} \subset \mathcal{P}(X)$ ist ein Ring auf $X$, \newline
+$\{\emptyset, X\} \subset \mathcal{P}(X)$ ist die kleinste Algebra auf $X$, $\mathcal{P}(X) \subset \mathcal{P}(X)$ die größte.
+\item [(i)] $\{ \emptyset, A \} \subset \mathcal{P}(X)$ ist ein Ring auf $X$ für ein $A \in \mathcal{P}(X)$, \newline
+$\{\emptyset, A, \complement A, X\} \subset \mathcal{P}(X) $ ist eine Algebra auf $X$.
+\item[(ii)] Die Familie der endlichen (bzw. abzählbaren) Teilmengen von $X$ ist ein Ring. (eine Algebra, nur falls $X$ selbst endlich bzw. abzählbar) \newline
+Die Familie der Teilmengen, die endlich (bzw. abzählbar) sind oder endliches (bzw. abzählbares) Komplement haben, ist eine Algebra.
+\end{enumerate}
+Weitere Beispiele folgen nach der Diskussion vom Erzeugendensystem.
+\end{example}
+\textit{Beobachtung.} Der Durchschnitt beliebig vieler Ringe (bzw. Algebren) auf einer festen Menge ist wieder ein Ring (bzw. eine Algebra). Daraus folgt
+\begin{definition}
+
+\end{definition}
+\subsubsection{Halbringe}
+
+
+
+%\input{zentraluebung.tex}
 \end{document}
