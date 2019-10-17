@@ -47,7 +47,7 @@ $\leadsto$ flexibilisiert Volumenmessung entscheidend, wir können also komplizi
 \end{enumerate}
 \end{subequations}
 Cantons Mengenlehre $\leadsto$ Existenz von ``naiver'' Volumenfunktion wurde hinterfragt: %\vspace{-10pt}
-\paragraph{Maßproblem (naiv)} Existiert eine Volumenfunktion $\vol: \mathcal{P}(\R^d) \longrightarrow [0,\infty]$ mit (i') + (ii) + (iii)?
+\paragraph{Maßproblem} Existiert eine Volumenfunktion $\vol: \mathcal{P}(\R^d) \longrightarrow [0,\infty]$ mit (i') + (ii) + (iii)?
 \begin{satz}[Vitali, 1905] Nein, das naive Maßproblem ist unlösbar.
 \begin{proof}
 Aus dem Auswahlaxiom folgt die Existenz ``verrückter'' (d.h. geometrisch unvorstellbarer) Teilmengen des $\R^d$. Hier existiert $M \subset \R^d$, ein \emph{Vertretersystem} für Nebenklassen von $\mathbb{Q}^d$ (Untergruppe von $\R^d$) in $\R^d$. Der Quotient abelscher Gruppen $\R^d/\mathbb{Q}^d$ ist also die Menge der Nebenklassen. Die Nebenklassen $a+\mathbb{Q}^d$ für $a\in \R^d$ partitionieren (d.h. zerlegen disjunkt) $\R^d$ (überabzählbar viele). Für alle $a,b \in \R^d$ besteht Dichotomie:
@@ -146,8 +146,8 @@ A \cap B & = A \setminus (A \setminus B)
 \end{align}
 und umgekehrt
 \begin{align}
-A \setminus B = (A \triangle B) \cap A \\
-A \cup B = (A \triangle B) \triangle (A \cap B)
+A \setminus B &= (A \triangle B) \cap A \\
+A \cup B &= (A \triangle B) \triangle (A \cap B)
 \end{align}
 \end{subequations}
 \textit{Bemerkung.} Die letzte Gleichung gilt, da $(A\triangle B)$ und $(A\cap B)$ disjunkt sind. \newline \newline
@@ -208,13 +208,63 @@ Die Familie der Teilmengen, die endlich (bzw. abzählbar) sind oder endliches (b
 \end{enumerate}
 Weitere Beispiele folgen nach der Diskussion vom Erzeugendensystem.
 \end{example}
-\textit{Beobachtung.} Der Durchschnitt beliebig vieler Ringe (bzw. Algebren) auf einer festen Menge ist wieder ein Ring (bzw. eine Algebra). Daraus folgt
-\begin{definition}
-
+\textit{Beobachtung.} Der Durchschnitt beliebig vieler Ringe (bzw. Algebren) auf einer festen Menge ist wieder ein Ring (bzw. eine Algebra). Zu jeder Menge $\mathcal{E} \subset \mathcal{P}(X)$ gibt es eine(n) bezüglich mengentheoretischer Inklusion kleinste(n) Ring (bzw. Algebra), der (die) $\mathcal{E}$ umfasst, nämlich den Durchschnitt aller Ringe (bzw. Algebren), die $\mathcal{E}$ umfassen.
+\begin{definition}[\textbf{Erzeugendensystem}]
+\begin{mdframed}
+Der von einer Familie $\mathcal{E} \subset \mathcal{P}(X)$ erzeugte Ring auf $X$ ist der kleinste Ring, der sie enthält. Man nennt $\mathcal{E}$ ein \emph{Erzeugendensystem} dieses Rings, oder \emph{Erzeuger}. (Analog für Algebren)
+\end{mdframed}
+Die Algebra eines Erzeugendensystems ist oft die einfachste Art, eine(n) Ring bzw. Algebra zu beschreiben. 
 \end{definition}
+Ein Ring geht aus einem Erzeugendensystem $\mathcal{E} \subset \mathcal{P}(X)$ \emph{konstruktiv} durch einen \emph{abzählbaren} (induktiv!) Prozess hervor, ebenso eine Algebra. \vspace{0.5pc}
+\newline
+\textbf{Ring.} Definiere induktiv eine Folge von Familien $\mathcal{F}_0 \subset \mathcal{F}_1 \subset ... \subset \mathcal{F}_n \subset ... \subset \mathcal{P}(X)$ mit
+\begin{subequations}
+\begin{align}
+\mathcal{F}_0 : = &\mathcal{E}\cup \{\emptyset\}  \\
+\mathcal{F}_n :=  &\{ A\setminus B, A \cup B \mid A,B \in \mathcal{F}_{n-1} \},\  n \geq 1
+\end{align}
+So ist $\bigcup_{n\in \N} \mathcal{F}_n \subset \mathcal{P}(x)$ $\setminus$- und $\cup$-stabil, also ein Ring.  \vspace{0.5pc} \newline 
+\textbf{Algebra.} analog.
+\end{subequations}
 \subsubsection{Halbringe}
-
-
-
+Hat ein Erzeugendensystem strukturelle Eigenschaft, so ist die Beschreibung des erzeugenden Rings einfach. Eine natürliche auftretende Bedingung ist:
+\begin{definition}[\textbf{Halbringe}]
+\begin{mdframed}
+Eine Familie $\mathcal{H}\subset \mathcal{P}(X)$ heißt ein \emph{Halbring} auf $X$, falls
+\begin{enumerate}[(\roman*), topsep=3pt, itemsep=0pt]
+	\item $\emptyset \in \mathcal{H}$,
+	\item $\mathcal{H}$ ist $\cap$- stabil,
+	\item Für $A,B \in \mathcal{H}$ existieren \emph{disjunkte} Teilmengen $C_1,...,C_n \in \mathcal{H}$ mit $A\setminus B = C_1 \cup ...\cup C_n$.
+\end{enumerate}
+\end{mdframed}
+\end{definition}
+\begin{remark}
+Halbring ist eine Verallgemeinerung des Begriffs Ring, Ringe sind also Halbringe.
+\end{remark}
+\begin{example} \
+\begin{enumerate}
+	\item[(o)] $\{ \emptyset\} \subset \mathcal{P}(X)$ ist ein Halbring auf $X$.
+	\item[(i)] Die Familie bestehend aus $\emptyset$ und allen (einelementigen) Teilmengen $\{\emptyset\} \cup \{ \{a\} \mid a \in X \}$  ist ein Halbring auf $X$, sie erzeugt den Ring der endlichen Teilmengen von $X$.
+\end{enumerate}
+\end{example}
+Der Grundbaustein für später:
+\begin{enumerate}
+	\item[(ii)] Die Familie der \emph{halboffenen} Intervalle $[a,b) \subset \R$, falls $a<b$, also $\{[a,b) \mid a,b \in \R, a<b\}$, ist ein Halbring auf $\R$.
+\end{enumerate}
+Beschreibe den von einem Halbring erzeugenden Ring: (Die folgende Beobachtung wird darüber hinaus nützlich sein.)
+\begin{lemma}
+\begin{mdframed}
+Zu beliebigen Teilmengen $H_1,...,H_m \in \mathcal{H}$ existieren paarweise disjunkte Teilmengen $H_1',...,H_n' \in \mathcal{H}$, sodass jedes $H_i$ sich als die Vereinigung einiger $H_j'$'s darstellen lässt.
+\end{mdframed}
+\begin{proof}
+Betrachte die $2^m-1$ Durchschnitte der Form $G_1 \cap ... \cap G_m$, wobei $G_i = H_i$ oder $\complement H_i$ und nicht alle gleich $\complement H_i$. Sie sind paarweise disjunkt und zerlegen $H_1 \cup ... \cup H_m$. Jedes $H_i$ ist die Vereinigung von $2^{m-1}$ von ihnen. Es genügt zu zeigen, dass diese Durchschnitte disjunkte Vereinigungen von Teilmengen aus $\mathcal{H}$ sind. Da Halbringe $\cap$-stabil sind, reicht es zu zeigen, dass die Teilmengen der Form
+\begin{equation}
+H \cap \complement \widetilde{H}_l \cap ... \cap \complement \widetilde{H}_1	\quad \text{mit }H,\widetilde{H}_1,...,\widetilde{H}_l \in \mathcal{H}
+\end{equation}
+disjunkte Vereinigungen von Teilmengen in $\mathcal{H}$ sind. \\
+Da 
+\end{proof}
+\end{lemma}
+\marginpar{\tiny{21.10.2019}}
 %\input{zentraluebung.tex}
 \end{document}
