@@ -6,6 +6,7 @@
 %\tableofcontents
 \addtocontents{toc}{\protect\setcounter{tocdepth}{3}}
 \newpage
+\setcounter{page}{2}
 \section{Maßtheorie}
 \subsection{Maßproblem und Paradoxien}
 \marginpar{\tiny{14.10.2019}}
@@ -125,7 +126,7 @@ Somit ist $(\mathcal{P}(X), \triangle, \cap) \cong (\mathbb{F}_2^X, +, \cdot)$ e
 Eine Familie $\mathcal{R}\subset \mathcal{P}(X)$ heißt
 \begin{enumerate}[itemsep=0pt,topsep=3pt]
 \item[($\rho$)] ein \textbf{Ring} auf $X$, falls sie ein Unterring von $(\mathcal{P}(X), \triangle, \cap)$ ist.
-\item[($\alpha$)] eine \textbf{Algebra} auf $X$, falls sie außerdem das Einselement enthält, also $X \in \mathcal{R}$.
+\item[($\alpha$)] eine \textbf{Algebra} auf $X$, falls sie außerdem das Einselement enthält, d.h. $X \in \mathcal{R}$.
 \end{enumerate}
 \end{mdframed}
 \end{definition}
@@ -246,25 +247,180 @@ Halbring ist eine Verallgemeinerung des Begriffs Ring, Ringe sind also Halbringe
 	\item[(o)] $\{ \emptyset\} \subset \mathcal{P}(X)$ ist ein Halbring auf $X$.
 	\item[(i)] Die Familie bestehend aus $\emptyset$ und allen (einelementigen) Teilmengen $\{\emptyset\} \cup \{ \{a\} \mid a \in X \}$  ist ein Halbring auf $X$, sie erzeugt den Ring der endlichen Teilmengen von $X$.
 \end{enumerate}
-\end{example}
 Der Grundbaustein für später:
 \begin{enumerate}
 	\item[(ii)] Die Familie der \emph{halboffenen} Intervalle $[a,b) \subset \R$, falls $a<b$, also $\{[a,b) \mid a,b \in \R, a<b\}$, ist ein Halbring auf $\R$.
 \end{enumerate}
-Beschreibe den von einem Halbring erzeugenden Ring: (Die folgende Beobachtung wird darüber hinaus nützlich sein.)
-\begin{lemma}
-\begin{mdframed}
+\end{example}
+Beschreibe den von einem Halbring erzeugenden Ring, die folgende Beobachtung wird darüber hinaus nützlich sein:
+
+\begin{lemma}[Simultane Zerlegung]
+%\begin{mdframed}
 Zu beliebigen Teilmengen $H_1,...,H_m \in \mathcal{H}$ existieren paarweise disjunkte Teilmengen $H_1',...,H_n' \in \mathcal{H}$, sodass jedes $H_i$ sich als die Vereinigung einiger $H_j'$'s darstellen lässt.
-\end{mdframed}
+ \label{lemmaA}
+%\end{mdframed}
 \begin{proof}
 Betrachte die $2^m-1$ Durchschnitte der Form $G_1 \cap ... \cap G_m$, wobei $G_i = H_i$ oder $\complement H_i$ und nicht alle gleich $\complement H_i$. Sie sind paarweise disjunkt und zerlegen $H_1 \cup ... \cup H_m$. Jedes $H_i$ ist die Vereinigung von $2^{m-1}$ von ihnen. Es genügt zu zeigen, dass diese Durchschnitte disjunkte Vereinigungen von Teilmengen aus $\mathcal{H}$ sind. Da Halbringe $\cap$-stabil sind, reicht es zu zeigen, dass die Teilmengen der Form
 \begin{equation}
 H \cap \complement \widetilde{H}_l \cap ... \cap \complement \widetilde{H}_1	\quad \text{mit }H,\widetilde{H}_1,...,\widetilde{H}_l \in \mathcal{H}
 \end{equation}
 disjunkte Vereinigungen von Teilmengen in $\mathcal{H}$ sind. \\
-Da 
+Da für $H \cap \complement \widetilde{H}_l = H \setminus \widetilde{H}_l$ (Axiom (iii)) gilt, reduziert die Behauptung für $l$ auf Behauptung für $l-1$, mit Induktion liefert dann die Behauptung.
 \end{proof}
 \end{lemma}
+
 \marginpar{\tiny{21.10.2019}}
-%\input{zentraluebung.tex}
+
+\begin{proposition}
+Jede Teilmenge im von einem Halbring $\mathcal{H}$ erzeugten Ring $\mathcal{R}$ ist eine endliche disjunkte Vereinigung von Teilmengen in $\mathcal{H}$, d.h. \begin{scriptsize}(ein einfacher Erzeugungsprozess!)\end{scriptsize}
+\begin{equation}
+\mathcal{R} := \left\{ \bigcup_{k=1}^n A_k \  \Big\rvert \ n\in \N, A_1,...,A_n \in \mathcal{H} \text{ paarweise disjunkt} \right\}
+\label{eqI14}
+\end{equation}
+\begin{proof}
+Sei $\mathcal{R}$ die Familie der endlichen \emph{disjunkten} Vereinigungen von Teilmengen in $\mathcal{H}$. Mit dem letzten \hyperref[lemmaA]{Lemma} ist $\mathcal{R}$ gleich der Familie aller endlichen Vereinigungen von Teilmengen in $\mathcal{H}$. Sie ist offensichtlich $\cup$-stabil. Zu verifizieren bleibt die $\setminus$- Stabilität. Seien hierzu $A = A_1 \cup ... \cup A_m$ und $B = B_1 \cup ... \cup B_n$, $A_i, B_j \in \mathcal{H}$. Aus dem \hyperref[lemmaA]{Lemma}  folgt, dass es endlich viele nichtleere, \emph{paarweise disjunkte} $H_k' \in \mathcal{H}$ existieren, sodass jedes $A_i$ und $B_j$ eine Vereinigung einiger $H_k'$'s ist. Daraus folgt, dass auch $A$ und $B$ Vereinigungen einiger $H_k'$'s sind. So ist auch $A\setminus B$ die Vereinigung einiger $H_k'$'s, nämlich derer, die in $A$, aber nicht in $B$ enthalten sind. Also ist $\mathcal{R}$ ein Ring \begin{scriptsize}($\cup$-stabil)\end{scriptsize}, enthalten in von $\mathcal{H}$ erzeugendem Ring, also gleich.
+\end{proof}
+\end{proposition}
+
+\subsubsection{Produkte von Halbringen und Ringen}
+Sind $\mathcal{F}_i \subset \mathcal{P}(X_i), i=1,...,n$ Familien von Teilmengen, so entstehen das Produkt von ``Quadern''
+\begin{equation}
+\begin{split}
+\mathcal{F}_1 \ast ... \ast \mathcal{F}_n := \{ M_1 \times ... \times M_n \mid M_i \in \F_i \text{ für } i=1,...,n\}  \\ \subset  \mathcal{P}(X_1 \times ... \times X_n)
+\end{split}
+\end{equation}
+und die $\cup$-stabile Hülle, die Familie $\F_1 \boxtimes ... \boxtimes \F_n$ der endlichen Vereinigungen von ``Quadern'' in $\F_1 \ast ... \ast \F_n$, die Figuren, d.h.
+\begin{equation}
+\F_1 \boxtimes ... \boxtimes \F_n = \left\{ \bigcup_{i=1}^m  M_{1_i} \times ... \times M_{n_i} \ \Big\vert \  M_{j_k} \in \F_j,  1 \leq j \leq n, 1 \leq k \leq m, m \in \N			\right\}
+\end{equation}
+Beide Produkte $\ast$ und $\boxtimes$ sind \emph{assoziativ}, z.B.
+\begin{subequations}
+\begin{equation}
+(\F_1 \ast \F_2) \ast \F_3 = \F_1 \ast \F_2 \ast \F_3 = \F_1 \ast (\F_2 \ast \F_3)
+\end{equation}
+und
+\begin{equation}
+(\F_1 \boxtimes \F_2) \boxtimes \F_3 = \F_1 \boxtimes \F_2 \boxtimes \F_3 = \F_1 \boxtimes (\F_2 \boxtimes \F_3)
+\end{equation}
+\end{subequations}
+Wir definieren weiter
+\begin{equation}
+\mathcal{Z} = \mathcal{Z} (\F_1,...,\F_n) \subset \F_1 \ast ... \ast \F_n
+\end{equation}
+die Zylindermenge
+\begin{equation}
+\begin{split}
+\pi_k^{-1}(M_k) = X_1 \times ... \times X_{k-1} \times M_k \times X_{k+1} \times ... \times X_n \quad\\ \text{mit } 1 \leq k \leq n, M_k \in \F_k
+\end{split}
+\end{equation}
+wobei $\pi_k: X_1 \times ... \times X_n \to X_k, (x_1,...,x_n) \mapsto x_k$ die natürliche Projektion ist.
+\begin{proposition} \
+%\begin{mdframed}
+\begin{enumerate}[(\roman*),topsep=5pt]
+	\item Seien $\mathcal{H}_i \subset \mathcal{P}(X_i)$ Halbringe $(i=1,...,n)$ und $\mathcal{R}_i \subset \mathcal{P}(X_i)$ die von ihnen erzeugten Ringe. Dann ist $\mathcal{H}_1 \ast ... \ast \mathcal{H}_n$ ein Halbring auf $X_1 \times ... \times X_n$ und $\mathcal{H}_1 \boxtimes ... \boxtimes \mathcal{H}_n =\mathcal{R}_1 \boxtimes ... \boxtimes \mathcal{R}_n$ der von ihm erzeugte Ring.
+	\item Sind $\mathcal{E}_i \subset \mathcal{H}_i$ Erzeugendensysteme der Halbringe, so ist $\mathcal{Z}(\mathcal{E}_1,...,\mathcal{E}_n)$ ein Erzeugendensystem von $\mathcal{H}_1 \ast ... \ast \mathcal{H}_n$ als Halbring sowie (folglich) ein Erzeugendensystem von $\mathcal{H}_1 \boxtimes ... \boxtimes \mathcal{H}_n$ als Ring.
+\end{enumerate}
+%\end{mdframed}
+\label{propC}
+\begin{proof} \
+\begin{enumerate}[(\roman*),topsep=5pt]
+	\item Zunächst im Fall $n=2$. Klar enthält $\mathcal{H}_1 \ast \mathcal{H}_2$ auch $\emptyset$ und ist $\cap$-stabil. Wir betrachten die disjunkte Zerlegung
+	\begin{equation}
+	\begin{split}
+		&(A_1 \times A_2) \setminus (B_1 \times B_2) =\\
+	 \big( \underbrace{(A_1 \cap B_1)}_{\in \mathcal{H}_1} \times \underbrace{(A_2 \setminus B_2)}_{\substack{\text{zerlegbar in} \\ \text{Teilmengen}\\ \text{aus }\mathcal{H}_2}} \big) & \sqcup \underbrace{\big( \underbrace{(A_1 \setminus B_1)}_{\substack{\text{zerlegbar in} \\ \text{Teilmengen}\\ \text{aus }\mathcal{H}_1}} \times \underbrace{(A_2 \setminus B_2)}_{\substack{\text{zerlegbar in} \\ \text{Teilmengen}\\ \text{aus }\mathcal{H}_2}} \big)}_{\text{zerlegbar in Teilmengen aus } \mathcal{H}_1 \times \mathcal{H}_2}
+		\sqcup \underbrace{\big( (A_1 \setminus B_1) \times (A_2 \cap B_2)\big)}_{\text{analog zerlegbar}}
+	\end{split}
+	\end{equation}
+	Also ist $(A_1 \times A_2) \setminus (B_1 \times B_2) $ disjunkt zerlegbar in Teilmengen aus $\mathcal{H}_1 \ast \mathcal{H}_2$, also erfüllt Axiom (iii) für Halbringe, d.h.  $\mathcal{H}_1 \ast \mathcal{H}_2$ ist ein Halbring. \\
+	Mit Induktion liefert dann die Behauptung auch für $\mathcal{H}_1 \ast ... \ast \mathcal{H}_n, n\geq 1$. \newline
+	Aus \eqref{eqI14} folgt, dass $\mathcal{H}_1 \boxtimes ... \boxtimes \mathcal{H}_n$ der von $\mathcal{H}_1 \ast ... \ast \mathcal{H}_n$ erzeugte Ring ist.
+	\item Für jedes $k$ gilt: Der Halbring auf $X_1 \times ... \times X_n$ bestehend aus den Zylindermengen $\pi_k^{-1}(H_k)$ für $H_k \in \mathcal{H}_k$ wird erzeugt von den Zylindermengen $\pi_k^{-1}(E_k)$ für $E_k \in \mathcal{E}_k$. Da
+	\begin{equation}
+	\begin{split}
+	& \mathcal{E}_k \subset \\ 
+	& \underbrace{\{ H_k \in \mathcal{H}_k \mid \pi^{-1}_k (H_k) \text{ gehört zum von den } \pi^{-1}_k(E_k)   \text{ für } E_k \in \mathcal{E}_k \text{ erzeugten Halbring} \}}_{\text{ist Halbring, deshalb Gleicheit}}
+	 \\ & \subset \mathcal{H}_k
+	\end{split}
+	\end{equation}
+	folgt, dass $\mathcal{Z}(\mathcal{E}_1,...,\mathcal{E}_k)$ erzeugen denselben Halbring $\mathcal{Z}(\mathcal{H}_1,...\mathcal{H}_n)$ und damit denselben wie $\mathcal{H}_1 \ast ... \ast \mathcal{H}_n$.
+\end{enumerate}
+\end{proof}
+\end{proposition}
+\begin{definition}
+Wir nennen den Halbring $\mathcal{H}_1 \ast ... \ast \mathcal{H}_n$ das Produkt der Halbringe $\mathcal{H}_i$, den Ring $\mathcal{R}_1 \boxtimes ... \boxtimes \mathcal{R}_n$ das Produkt der Ringe $\mathcal{R}_i$.
+\end{definition}
+
+\begin{example}[\textit{Hauptbeispiel}, Quader und Figuren in $\R^d$]
+Ist $a,b \in \R^d$ mit $a_i < b_i \forall i$, so entsteht achsenparalleler halboffener Quader
+\begin{subequations}
+\begin{equation}
+[a,b) := [a_1, b_1) \times ... \times [a_d,b_d)
+\end{equation}
+Wir bezeichnen
+\begin{equation}
+\mathcal{Q}^d := \text{Familie dieser Quader}
+\end{equation}
+und
+\begin{equation}
+\mathcal{I} := \mathcal{Q}^1, \text{Familie der halboffenen Intervalle}
+\end{equation}
+Also gilt
+\begin{equation}
+\mathcal{Q}^d = \underbrace{\mathcal{I} \ast ... \ast \mathcal{I}}_{d\text{-Mal}}
+\end{equation}
+Aus der \hyperref[propC]{letzten Proposition} folgt, dass $\mathcal{Q}^d$ ein Halbring auf $\mathcal{R}^d$ ist. Es folgt ebenfalls, dass
+\begin{equation}
+\mathcal{F}^d := \underbrace{\mathcal{I} \boxtimes ... \boxtimes \mathcal{I}}_{d\text{-Mal}}
+\end{equation}
+der Ring erzeugt von $\mathcal{Q}^d$ ist, also der Ring der $d$-dimensionale ``Figuren''.
+Wir haben gesehen: Figuren sind disjunkte Vereinigungen von Quadern.
+\end{subequations}
+\end{example}
+
+Wir arbeiten aus technischen Gründen mit halboffenen Intervallen und Quadern. Besonders übersichtliche sind Halbringe, die abgeschlossen unter Produktbildung sind,  jedoch nicht die Teilmengen enthalten, die uns geometrisch primär interessieren: die offenen und abgeschlossenen Quader, die nicht achsenparallele sind, Polygone und Polytope, gekrümmte ``elementare Geometrie'' sowie Gebilde: Scheiben, Bälle, Zylinder und Kegel. Deshalb müssen wir unsere Ringe weiter anreichern und flexibilisieren, damit sie stabil unter abzählbaren Vereinigungen sind. $\leadsto$ $\sigma$-Algebra.
+
+\subsection{Inhalte und Prämaße}
+Die allgemeinste von uns betrachteter Volumenfunktion Sorte ist endlich additiv und definiert auf Halbringen.
+
+\begin{definition}[\textbf{Inhalt}]
+\begin{mdframed}
+Ein Inhalt auf einer Halbring $\mathcal{H}$ ist eine Funktion $\mu: \mathcal{H} \to [0,\infty]$ mit den Eigenschaften:
+\begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
+	\item $\mu (\emptyset) = 0$
+	\item \emph{Additivität}: Sind $A_1,...,A_n \in \mathcal{H}$ paarweise disjunkt mit $A_1 \cup ... \cup A_n \in \mathcal{H}$ \footnote{Die Voraussetzung ist redundant, falls $\mathcal{H}$ ein Ring ist.}, so gilt $\mu(A_1 \cup ... \cup A_n) = \mu(A_1) + ... +\mu(A_n)$
+\end{enumerate}
+\end{mdframed}
+\end{definition}
+
+\begin{example} \
+\begin{enumerate}
+	\item[(o)] $\mu \equiv 0$ ``der Nullinhalt'' und\\
+				$\nu(A) = \begin{cases}
+					0,       & A = \emptyset \\
+					\infty, & \text{sonst}
+				\end{cases}$
+				sind stets Inhalte auf beliebigen Halbringen.
+	\item[(i)] Sei $X$ nichtleer. Betrachte die Algebra $\{ \emptyset, X\} \subset \mathcal{P}(X)$. So wird ein Inhalt \\
+			$\begin{cases}
+				\emptyset \mapsto 0 \\
+				x \mapsto v \in [0,\infty] \text{ beliebig}
+			\end{cases}$
+			definiert.
+\end{enumerate}
+\end{example}
+
+Der Grundbaustein (für Lebesgue-Maß):
+\begin{example}[halboffene Intervalle in $\R$]
+Wir betrachten den Halbring $\I = \mathcal{Q}^1 \subset \mathcal{P}(\R)$. So wird ein Inhalt gegeben durch die euklidische Länge
+\begin{align}
+\lambda^1_\I : \I \to [0, \infty), \quad \lambda^1_\I \big([a,b)\big) := b-a \ (a<b)
+\end{align}
+Wir überprüfen die Additivität: Sei $a = x_0 < x_1 < ... < x_n <b$ eine Unterteilung von $[a,b)$. So entsteht die disjunkte Zerlegung $[a,b) = [a,x_1) \sqcup ... \sqcup [x_{n-1},b)$. Es folgt 
+\begin{equation}
+\underbrace{\lambda^1_\I \big([a,b)]}_{b-a} = \underbrace{\lambda^1_\I \big( [a,x_1)\big)}_{x_1-a} + \underbrace{\lambda^1_\I \big([x_1,x_2)\big)}_{x_2 -x_1} + ... + \underbrace{\lambda^1_\I \big( [x_{n-1},b ) \big)}_{b-x_{n-1}}
+\end{equation}
+\end{example}
+\marginpar{\tiny{24.10.2019}}
+
 \end{document}
