@@ -101,7 +101,7 @@ f^{-1}(1) & \longmapsfrom f
 \end{align*}
 wobei $\chi_A$ de charakteristische Funktion von $A$ ist. \newline \newline
 Wir fassen nun $\{0,1\}$ auf als den Körper mit 2 Elementen (Restklassen modulo 2). So ist $\{0,1\}^X$ ein kommutativer Ring mit Eins (multiplikatives Einselement) (im Sinne der Algebra), sogar eine $\mathbb{F}_2$-Algebra.
-\begin{remark} Die Addition und Multiplikation von Funktionen erfolgt punktweise:
+\begin{remark} Die Addition und Multiplikation von Funktionen erfolgen punktweise:
 \begin{enumerate} [-, itemsep=0pt,topsep=3pt]
 \item  $(f+g)(x) := f(x)+g(x)$ 
 \item $(fg)(x)= f(x) \cdot g(x)$
@@ -268,7 +268,7 @@ Jede Teilmenge im von einem Halbring $\mathcal{H}$ erzeugten Ring $\mathcal{R}$ 
 \end{equation}
 \end{mdframed}
 \begin{proof}
-Sei $\mathcal{R}$ die Familie der endlichen \emph{disjunkten} Vereinigungen von Teilmengen in $\mathcal{H}$. Mit dem letzten \hyperref[lemmaA]{Lemma} ist $\mathcal{R}$ gleich der Familie aller endlichen Vereinigungen von Teilmengen in $\mathcal{H}$. Sie ist offensichtlich $\cup$-stabil. Zu verifizieren bleibt die $\setminus$- Stabilität. Seien hierzu $A = A_1 \cup ... \cup A_m$ und $B = B_1 \cup ... \cup B_n$, $A_i, B_j \in \mathcal{H}$. Aus dem \hyperref[lemmaA]{Lemma}  folgt, dass es endlich viele nichtleere, \emph{paarweise disjunkte} $H_k' \in \mathcal{H}$ existieren, sodass jedes $A_i$ und $B_j$ eine Vereinigung einiger $H_k'$'s ist. Daraus folgt, dass auch $A$ und $B$ Vereinigungen einiger $H_k'$'s sind. So ist auch $A\setminus B$ die Vereinigung einiger $H_k'$'s, nämlich derer, die in $A$, aber nicht in $B$ enthalten sind. Also ist $\mathcal{R}$ ein Ring \begin{scriptsize}($\cup$-stabil)\end{scriptsize}, enthalten in von $\mathcal{H}$ erzeugendem Ring, also gleich.
+Sei $\mathcal{R}$ die Familie der endlichen \emph{disjunkten} Vereinigungen von Teilmengen in $\mathcal{H}$. Mit dem letzten \hyperref[lemmaA]{Lemma ``Simultane Zerlegung''} ist $\mathcal{R}$ gleich der Familie aller endlichen Vereinigungen von Teilmengen in $\mathcal{H}$. Sie ist offensichtlich $\cup$-stabil. Zu verifizieren bleibt die $\setminus$- Stabilität. Seien hierzu $A = A_1 \cup ... \cup A_m$ und $B = B_1 \cup ... \cup B_n$, $A_i, B_j \in \mathcal{H}$. Aus dem \hyperref[lemmaA]{Lemma ``Simultane Zerlegung''} folgt, dass es endlich viele nichtleere, \emph{paarweise disjunkte} $H_k' \in \mathcal{H}$ existieren, sodass jedes $A_i$ und $B_j$ eine Vereinigung einiger $H_k'$'s ist. Daraus folgt, dass auch $A$ und $B$ Vereinigungen einiger $H_k'$'s sind. So ist auch $A\setminus B$ die Vereinigung einiger $H_k'$'s, nämlich derer, die in $A$, aber nicht in $B$ enthalten sind. Also ist $\mathcal{R}$ ein Ring, enthalten in von $\mathcal{H}$ erzeugendem Ring\begin{scriptsize}(denn Ringe sind $\cup$-stabil)\end{scriptsize}, also gleich.
 \end{proof}
 \end{proposition}
 
@@ -307,7 +307,7 @@ die Familie der Zylindermengen bestehend aus
 \end{split}
 \end{equation*}
 wobei $\pi_k: X_1 \times ... \times X_n \to X_k, (x_1,...,x_n) \mapsto x_k$ die natürliche Projektion ist. %\newpage
-\begin{proposition} \
+\begin{proposition}
 \begin{mdframed}
 \begin{enumerate}[(\roman*),topsep=5pt]
 	\item Seien $\mathcal{H}_i \subset \mathcal{P}(X_i)$ Halbringe $(i=1,...,n)$ und $\mathcal{R}_i \subset \mathcal{P}(X_i)$ die von ihnen erzeugten Ringe. Dann ist $\mathcal{H}_1 \ast ... \ast \mathcal{H}_n$ ein Halbring auf $X_1 \times ... \times X_n$ und $\mathcal{H}_1 \boxtimes ... \boxtimes \mathcal{H}_n =\mathcal{R}_1 \boxtimes ... \boxtimes \mathcal{R}_n$ der von ihm erzeugte Ring.
