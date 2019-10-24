@@ -2,8 +2,8 @@
 \title{Analysis III: Maßtheorie und Integralrechnung mehrerer Variablen}
 %\date{}
 \begin{document}
-%\maketitle
-%\tableofcontents
+\maketitle
+\tableofcontents
 \addtocontents{toc}{\protect\setcounter{tocdepth}{3}}
 \newpage
 \setcounter{page}{2}
@@ -16,37 +16,35 @@ Maßtheorie ist die Theorie des Volumens. Motivierende Beispiele sind:
 \item Wahrscheinlichkeiten (= ``Volumina von Ereignissen'')
 \end{enumerate}
 Wir konzentrieren uns im Rest des Abschnitts auf $\R^d$. Wir wollen leistungsfähigen Volumenbegriff haben, sodass die Volumina von möglich vielen Teilmengen flexibel gemessen werden können. Unser erster ``naiver'' Ansatz wäre, dass wir Volumenmessung für \emph{alle} Teilmengen verlangen, also eine Funktion
-\begin{equation}
+\begin{equation*}
  \vol: \mathcal{P}(\R^d) \longrightarrow [0.\infty]
-\end{equation}
+\end{equation*}
 Unsere grundlegende Forderung ist die Additivität von Volumina bei Zerlegungen, also
-\begin{subequations}
 \begin{enumerate}
 \item[(i)] \textbf{(endliche) Additivität}: Sind $M_1,...,M_n\subset \R^d$ paarweise disjunkt, so gilt
-\begin{equation}
+\begin{equation*}
 \vol (M_1\cup ... \cup M_n) = \vol(M_1)+...+\vol (M_n)
-\end{equation}
+\end{equation*}
 \end{enumerate}
 Volumina als geometrische Größen sollten durch die metrische Struktur (Längenmessung) bestimmt sein, also invariant unter Symmetrien der metrischen Struktur:
 \begin{enumerate}
 \item[(ii)] \textbf{Bewegungsinvarianz}: Für jede Bewegung $\phi: \R^d \longrightarrow \R^d$ und jede Teilmenge $A\subset \R^d$ gilt
-\begin{equation}
+\begin{equation*}
 \vol(\phi(A)) = \vol (A)
-\end{equation}
+\end{equation*}
 \item[(iii)] \textbf{Normierung}: $\vol([0,1]^d)=1$.
 \end{enumerate}
 Verstärke Forderung (i): (Borel, Lebesgue)
 \begin{enumerate}
 \item[(i')]\textbf{$\sigma$-Additivität\footnote{$\sigma$: abzählbar, unendlich oft.}}: Für Folgen $(M_n)_{n\in \N}$ paarweise disjunkter Teilmengen $M_n \subset \R^d$ gilt:
-\begin{equation}
+\begin{equation*}
 \vol\bigg( \bigcup_{n\in \N} M_n \bigg) = \sum_{n\in \N} \underbrace{\vol (M_n)}_{\in [0,\infty]} 
-\end{equation}
+\end{equation*}
 \begin{remark}
 Wegen des Umordnungssatzes spielt die Reihenfolge der Summanden keine Rolle, da sie alle positiv sind.
 \end{remark}
 $\leadsto$ flexibilisiert Volumenmessung entscheidend, wir können also komplizierte Figuren durch einfach Figuren approximieren.
 \end{enumerate}
-\end{subequations}
 Cantons Mengenlehre $\leadsto$ Existenz von ``naiver'' Volumenfunktion wurde hinterfragt: %\vspace{-10pt}
 \paragraph{Maßproblem} Existiert eine Volumenfunktion $\vol: \mathcal{P}(\R^d) \longrightarrow [0,\infty]$ mit (i') + (ii) + (iii)?
 \begin{satz}[Vitali, 1905] Nein, das naive Maßproblem ist unlösbar.
@@ -57,18 +55,18 @@ Aus dem Auswahlaxiom folgt die Existenz ``verrückter'' (d.h. geometrisch unvors
 \item oder $(a+\mathbb{Q}^d)\cap (b+\mathbb{Q}^d) = \emptyset$ (nämlich wenn $a-b \notin \mathbb{Q}^d$).
 \end{enumerate}
 D.h. für alle $a\in \R^d$ besteht $M \cap (a+\mathbb{Q}^d)$ aus genau einem Element. Daraus folgt, die Translate $q+M$ (abzählbar viele) für $q \in \mathbb{Q}^d$ partitionieren $\R^d$. Aus der $\sigma$-Additivität von Volumen folgt
-\begin{equation}
+\begin{equation*}
 \underbrace{\vol (\R^d)}_{>0}= \sum_{q \in \mathbb{Q}^d} \underbrace{\vol (q+M)}_{\overset{\text{Bew Inv}}{=} \vol(M)}
-\end{equation} 
+\end{equation*} 
 und somit also $\vol (M)>0$.\\
 Jetzt wähle $M$ spezieller, nämlich beschränkt, z.B. für $O\subset \R^d$ offen können wir $M$ so wählen, dass $M\subset O$, weil $a+\mathbb{Q}^d$ dicht in $\R^d$, also $(a+\mathbb{Q}^d)\cap O \neq \emptyset$. Z.B. wähle $M \subset (0,\frac{1}{2})^d$, so enthält $[0,1]^d$ abzählbar unendlich viele paarweise disjunkte Translate $q+M$, nämlich für alle $q\in \mathbb{Q}^d \cap (0,\frac{1}{2})^d$ gilt
-\begin{equation}
+\begin{equation*}
 V:= \bigcup_{q\in(0,\frac{1}{2})^d \cap \mathbb{Q}^d} (q+M) \subset [0,1]^d
-\end{equation}
+\end{equation*}
 weil $\vol (V) + \underbrace{\vol ([0,1]^d-V)}_{\geq 0} = \underbrace{\vol ([0,1]^d)}_{=1}$. Daraus folgt $\vol (V) \leq 1 < \infty$ und 
-\begin{equation}
+\begin{equation*}
 \vol(V) = \sum_{q\in(0,\frac{1}{2})^d \cap \mathbb{Q}^d} \underbrace{\vol (q+M)}_{=\vol(M)}
-\end{equation}
+\end{equation*}
 Somit muss gelten $\vol(M)=0$. \Lightning
 \end{proof}
 \end{satz}
@@ -90,19 +88,17 @@ Sie werden Definitionsbereiche der allgemeinsten von uns betrachteten Volumenfun
 
 \subsubsection{Die Ringstruktur auf Potenzmengen}
 Sei $X$ eine Menge. Die Potenzmenge ist definiert als die Familie aller Teilmengen $\mathcal{P}(X)$. Wir können die Potenzmenge ebenfalls auffassen als
-\begin{equation}
+\begin{equation*}
 \mathcal{P}(X) \xleftrightarrow[\text{bij}]{\cong} \{0,1\}^X = \{f:X \longrightarrow \{0,1\}\}
-\end{equation}
+\end{equation*}
 da
-\begin{subequations} 
-\begin{align}
+\begin{align*}
 A &\longmapsto \chi_A(x) = \begin{cases}
 1, \quad & \text{falls } x\in A\\
 0, \quad & \text{sonst}
 \end{cases}\\
 f^{-1}(1) & \longmapsfrom f
-\end{align}
-\end{subequations}
+\end{align*}
 wobei $\chi_A$ de charakteristische Funktion von $A$ ist. \newline \newline
 Wir fassen nun $\{0,1\}$ auf als den Körper mit 2 Elementen (Restklassen modulo 2). So ist $\{0,1\}^X$ ein kommutativer Ring mit Eins (multiplikatives Einselement) (im Sinne der Algebra), sogar eine $\mathbb{F}_2$-Algebra.
 \begin{remark} Die Addition und Multiplikation von Funktionen erfolgt punktweise:
@@ -113,12 +109,10 @@ Wir fassen nun $\{0,1\}$ auf als den Körper mit 2 Elementen (Restklassen modulo
 und $\{0,1\} = \mathbb{F}_2$ ist ein Körper mit zwei Elementen.
 \end{remark}
 Die Nullelement ist $f \equiv 0$, also $\chi_\emptyset$ und das Einselement ist $\chi_X (\equiv 1)$. Die Addition von charakteristischen Funktionen entspricht der symmetrischen Differenz $A \triangle B$ und die Multiplikation entspricht dem Duchrschnitt von Mengen. Also
-\begin{subequations}
-\begin{align}
+\begin{align*}
 \chi_A + \chi_B = A \triangle B \\
 \chi_A \cdot \chi_B = A \cap B
-\end{align}
-\end{subequations}
+\end{align*}
 Somit ist $(\mathcal{P}(X), \triangle, \cap) \cong (\mathbb{F}_2^X, +, \cdot)$ ein kommutativer Ring mit dem Nullelement $\emptyset$ bzw. $\chi_\emptyset$ und dem Einselement $X$ bzw. $\chi_X$. 
 \subsubsection{Ringe und Algebren}
 \begin{definition}
@@ -136,21 +130,19 @@ Eine Familie $\mathcal{R}\subset \mathcal{P}(X)$ heißt
 \end{small}
 \end{remark}
 $(\rho)$ bedeutet $\emptyset \in \mathcal{R}$, abgeschlossen unter Addition ($\triangle$) (dasselbe wie Subtraktion, da $\mod 2$) und Multiplikation ($\cap$), d.h.
-\begin{equation}
+\begin{equation*}
 A,B \in \mathcal{R} \implies A\triangle B, A\cap B \in \mathcal{R}
-\end{equation} 
+\end{equation*} 
 d.h. $\triangle$- stabil und $\cap$- stabil. Wir können $\triangle, \cap$ ausdrücken durch $\setminus$ und $\cup$:
-\begin{subequations}
-\begin{align}
+\begin{align*}
 A \triangle B & = (A \setminus B) \cup (B \setminus A) \\
 A \cap B & = A \setminus (A \setminus B)
-\end{align}
+\end{align*}
 und umgekehrt
-\begin{align}
+\begin{align*}
 A \setminus B &= (A \triangle B) \cap A \\
 A \cup B &= (A \triangle B) \triangle (A \cap B)
-\end{align}
-\end{subequations}
+\end{align*}
 \textit{Bemerkung.} Die letzte Gleichung gilt, da $(A\triangle B)$ und $(A\cap B)$ disjunkt sind. \newline \newline
 Daraus folgt die Charakterisierung von Ringen:
 \begin{lemma}
@@ -170,30 +162,28 @@ Eine Familie $\mathcal{A} \subset \mathcal{P}(X)$ ist genau dann eine Algebra au
 \begin{enumerate}[topsep=3pt, itemsep=0pt]
 \item[(i)] $\emptyset \in \mathcal{A}$,
 \item[(iii)] $\cup$- stabil,
-\item[(iv)] $\complement$- stabil, d.h. $A \in \mathcal{A} \implies \complement A := X\setminus A \in \mathcal{A}$
+\item[(iv)] $\complement$- stabil, d.h. $A \in \mathcal{A} \implies \complement A := X\setminus A \in \mathcal{A}$.
 \end{enumerate}
 \end{mdframed}
 \begin{proof}
-\begin{subequations}
 Sind diese Eigenschaften erfüllt, so implizieren (i + iv), dass
-\begin{equation}
+\begin{equation*}
 X = \complement \emptyset \in \mathcal{A}
-\end{equation}
+\end{equation*}
 ``$\setminus$'' kann ausgedrückt werden durch ``$\cup$'' und ``$\complement$'': Aus
-\begin{equation}
+\begin{equation*}
 \complement (A \setminus B) = (\complement A) \cup B
-\end{equation}
+\end{equation*}
 folgt
-\begin{equation}
+\begin{equation*}
 A \setminus B = \complement \big( (\complement A) \cup B \big)
-\end{equation}
+\end{equation*}
 Also ist $\mathcal{A}$ ein Ring, und damit $\mathcal{A}$ eine Algebra. \\
 Ist umgekehrt $\mathcal{A}$ eine Algebra, so gelten (i + iii). Da auch $X \in \mathcal{A}$, können wir ``$\complement$'' durch ``$\setminus$'' ausdrücken
-\begin{equation}
+\begin{equation*}
 \complement A = X \setminus A
-\end{equation}
+\end{equation*}
 Also gilt auch (iv).
-\end{subequations}
 \end{proof}
 \end{lemma}
 \textbf{Folgerung.} Ist $\mathcal{R}$ ein Ring auf $X$ und $A,B \in \mathcal{R}$, so auch $A\setminus B, A\cap B, B\setminus A$ und $A\cup B \in \mathcal{R}$. (\textit{Bem.} Alle in $A\cup B$ enthalten.) Ist $\mathcal{A}$ eine Algebra auf $X$ und $A,B \in \mathcal{A}$, so ist außerdem auch $\complement (A \cup B) \in \mathcal{A}$.
@@ -219,14 +209,12 @@ Die Algebra eines Erzeugendensystems ist oft die einfachste Art, eine(n) Ring bz
 Ein Ring geht aus einem Erzeugendensystem $\mathcal{E} \subset \mathcal{P}(X)$ \emph{konstruktiv} durch einen \emph{abzählbaren} (induktiv!) Prozess hervor, ebenso eine Algebra. \vspace{0.5pc}
 \newline
 \textbf{Ring.} Definiere induktiv eine Folge von Familien $\mathcal{F}_0 \subset \mathcal{F}_1 \subset ... \subset \mathcal{F}_n \subset ... \subset \mathcal{P}(X)$ mit
-\begin{subequations}
-\begin{align}
+\begin{align*}
 \mathcal{F}_0 : = &\mathcal{E}\cup \{\emptyset\}  \\
 \mathcal{F}_n :=  &\{ A\setminus B, A \cup B \mid A,B \in \mathcal{F}_{n-1} \},\  n \geq 1
-\end{align}
+\end{align*}
 So ist $\bigcup_{n\in \N} \mathcal{F}_n \subset \mathcal{P}(x)$ $\setminus$- und $\cup$-stabil, also ein Ring.  \vspace{0.5pc} \newline 
 \textbf{Algebra.} analog.
-\end{subequations}
 \subsubsection{Halbringe}
 Hat ein Erzeugendensystem strukturelle Eigenschaft, so ist die Beschreibung des erzeugenden Rings einfach. Eine natürliche auftretende Bedingung ist:
 \begin{definition}[\textbf{Halbringe}]
@@ -235,7 +223,7 @@ Eine Familie $\mathcal{H}\subset \mathcal{P}(X)$ heißt ein \emph{Halbring} auf 
 \begin{enumerate}[(\roman*), topsep=3pt, itemsep=0pt]
 	\item $\emptyset \in \mathcal{H}$,
 	\item $\mathcal{H}$ ist $\cap$- stabil,
-	\item Für $A,B \in \mathcal{H}$ existieren \emph{disjunkte} Teilmengen $C_1,...,C_n \in \mathcal{H}$ mit $A\setminus B = C_1 \cup ...\cup C_n$.
+	\item Für $A,B \in \mathcal{H}$ existieren \emph{disjunkte} Teilmengen $C_1,...,C_n \in \mathcal{H}$ mit $A\setminus B = C_1 \sqcup ...\sqcup C_n$.
 \end{enumerate}
 \end{mdframed}
 \end{definition}
@@ -255,15 +243,15 @@ Der Grundbaustein für später:
 Beschreibe den von einem Halbring erzeugenden Ring, die folgende Beobachtung wird darüber hinaus nützlich sein:
 
 \begin{lemma}[Simultane Zerlegung]
-%\begin{mdframed}
+\begin{mdframed}
 Zu beliebigen Teilmengen $H_1,...,H_m \in \mathcal{H}$ existieren paarweise disjunkte Teilmengen $H_1',...,H_n' \in \mathcal{H}$, sodass jedes $H_i$ sich als die Vereinigung einiger $H_j'$'s darstellen lässt.
  \label{lemmaA}
-%\end{mdframed}
+\end{mdframed}
 \begin{proof}
 Betrachte die $2^m-1$ Durchschnitte der Form $G_1 \cap ... \cap G_m$, wobei $G_i = H_i$ oder $\complement H_i$ und nicht alle gleich $\complement H_i$. Sie sind paarweise disjunkt und zerlegen $H_1 \cup ... \cup H_m$. Jedes $H_i$ ist die Vereinigung von $2^{m-1}$ von ihnen. Es genügt zu zeigen, dass diese Durchschnitte disjunkte Vereinigungen von Teilmengen aus $\mathcal{H}$ sind. Da Halbringe $\cap$-stabil sind, reicht es zu zeigen, dass die Teilmengen der Form
-\begin{equation}
+\begin{equation*}
 H \cap \complement \widetilde{H}_l \cap ... \cap \complement \widetilde{H}_1	\quad \text{mit }H,\widetilde{H}_1,...,\widetilde{H}_l \in \mathcal{H}
-\end{equation}
+\end{equation*}
 disjunkte Vereinigungen von Teilmengen in $\mathcal{H}$ sind. \\
 Da für $H \cap \complement \widetilde{H}_l = H \setminus \widetilde{H}_l$ (Axiom (iii)) gilt, reduziert die Behauptung für $l$ auf Behauptung für $l-1$, mit Induktion liefert dann die Behauptung.
 \end{proof}
@@ -272,110 +260,120 @@ Da für $H \cap \complement \widetilde{H}_l = H \setminus \widetilde{H}_l$ (Axio
 \marginpar{\tiny{21.10.2019}}
 
 \begin{proposition}
+\begin{mdframed}
 Jede Teilmenge im von einem Halbring $\mathcal{H}$ erzeugten Ring $\mathcal{R}$ ist eine endliche disjunkte Vereinigung von Teilmengen in $\mathcal{H}$, d.h. \begin{scriptsize}(ein einfacher Erzeugungsprozess!)\end{scriptsize}
 \begin{equation}
-\mathcal{R} := \left\{ \bigcup_{k=1}^n A_k \  \Big\rvert \ n\in \N, A_1,...,A_n \in \mathcal{H} \text{ paarweise disjunkt} \right\}
+\mathcal{R} := \left\{ \bigsqcup_{k=1}^n A_k \  \Big\rvert \ n\in \N, A_1,...,A_n \in \mathcal{H} \right\}
 \label{eqI14}
 \end{equation}
+\end{mdframed}
 \begin{proof}
 Sei $\mathcal{R}$ die Familie der endlichen \emph{disjunkten} Vereinigungen von Teilmengen in $\mathcal{H}$. Mit dem letzten \hyperref[lemmaA]{Lemma} ist $\mathcal{R}$ gleich der Familie aller endlichen Vereinigungen von Teilmengen in $\mathcal{H}$. Sie ist offensichtlich $\cup$-stabil. Zu verifizieren bleibt die $\setminus$- Stabilität. Seien hierzu $A = A_1 \cup ... \cup A_m$ und $B = B_1 \cup ... \cup B_n$, $A_i, B_j \in \mathcal{H}$. Aus dem \hyperref[lemmaA]{Lemma}  folgt, dass es endlich viele nichtleere, \emph{paarweise disjunkte} $H_k' \in \mathcal{H}$ existieren, sodass jedes $A_i$ und $B_j$ eine Vereinigung einiger $H_k'$'s ist. Daraus folgt, dass auch $A$ und $B$ Vereinigungen einiger $H_k'$'s sind. So ist auch $A\setminus B$ die Vereinigung einiger $H_k'$'s, nämlich derer, die in $A$, aber nicht in $B$ enthalten sind. Also ist $\mathcal{R}$ ein Ring \begin{scriptsize}($\cup$-stabil)\end{scriptsize}, enthalten in von $\mathcal{H}$ erzeugendem Ring, also gleich.
 \end{proof}
 \end{proposition}
 
+\begin{remark}
+Man kann den von einer Familie $\mathcal{E}$ erzeugten Halbring nicht (analog zu Ringen und Algebren) definieren, denn das Halbring-Axiom (iii) vererbt nicht auf Durchschnitte von Familien. Es gibt Durchschnitte von Halbringen, die keine Halbringe sind. M.a.W. existieren Familien, die nicht in einem eindeutigen kleinsten Halbring enthalten sind.
+\end{remark}
+
 \subsubsection{Produkte von Halbringen und Ringen}
 Sind $\mathcal{F}_i \subset \mathcal{P}(X_i), i=1,...,n$ Familien von Teilmengen, so entstehen das Produkt von ``Quadern''
-\begin{equation}
+\begin{equation*}
 \begin{split}
-\mathcal{F}_1 \ast ... \ast \mathcal{F}_n := \{ M_1 \times ... \times M_n \mid M_i \in \F_i \text{ für } i=1,...,n\}  \\ \subset  \mathcal{P}(X_1 \times ... \times X_n)
+\mathcal{F}_1 \ast ... \ast \mathcal{F}_n := \{ \underbrace{M_1 \times ... \times M_n}_{\subset X_1 \times ... \times X_n} \mid M_i \in \F_i \text{ für } i=1,...,n\}  \\ \subset  \mathcal{P}(X_1 \times ... \times X_n)
 \end{split}
-\end{equation}
-und die $\cup$-stabile Hülle, die Familie $\F_1 \boxtimes ... \boxtimes \F_n$ der endlichen Vereinigungen von ``Quadern'' in $\F_1 \ast ... \ast \F_n$, die Figuren, d.h.
-\begin{equation}
-\F_1 \boxtimes ... \boxtimes \F_n = \left\{ \bigcup_{i=1}^m  M_{1_i} \times ... \times M_{n_i} \ \Big\vert \  M_{j_k} \in \F_j,  1 \leq j \leq n, 1 \leq k \leq m, m \in \N			\right\}
-\end{equation}
-Beide Produkte $\ast$ und $\boxtimes$ sind \emph{assoziativ}, z.B.
-\begin{subequations}
-\begin{equation}
+\end{equation*}
+und die $\cup$-stabile Hülle, die Familie $\F_1 \boxtimes ... \boxtimes \F_n$ der endlichen Vereinigungen von ``Quadern'' in $\F_1 \ast ... \ast \F_n$, die Figuren, 
+\begin{equation*}
+\F_1 \boxtimes ... \boxtimes \F_n = \left\{\text{endlcihe Vereinigungen von Teilmengen in } \F_1 \ast ... \ast \F_n	\right\}
+\end{equation*}
+Beide Produkte $\ast$ und $\boxtimes$ sind \emph{assoziativ}, d.h.\begin{small}
+\begin{equation*}
 (\F_1 \ast \F_2) \ast \F_3 = \F_1 \ast \F_2 \ast \F_3 = \F_1 \ast (\F_2 \ast \F_3)
-\end{equation}
+\end{equation*}
 und
-\begin{equation}
+\begin{equation*}
 (\F_1 \boxtimes \F_2) \boxtimes \F_3 = \F_1 \boxtimes \F_2 \boxtimes \F_3 = \F_1 \boxtimes (\F_2 \boxtimes \F_3)
-\end{equation}
-\end{subequations}
+\end{equation*}
+\end{small}
 Wir definieren weiter
-\begin{equation}
+\begin{equation*}
 \mathcal{Z} = \mathcal{Z} (\F_1,...,\F_n) \subset \F_1 \ast ... \ast \F_n
-\end{equation}
-die Zylindermenge
-\begin{equation}
+\end{equation*}
+die Familie der Zylindermengen bestehend aus
+\begin{equation*}
 \begin{split}
 \pi_k^{-1}(M_k) = X_1 \times ... \times X_{k-1} \times M_k \times X_{k+1} \times ... \times X_n \quad\\ \text{mit } 1 \leq k \leq n, M_k \in \F_k
 \end{split}
-\end{equation}
-wobei $\pi_k: X_1 \times ... \times X_n \to X_k, (x_1,...,x_n) \mapsto x_k$ die natürliche Projektion ist.
+\end{equation*}
+wobei $\pi_k: X_1 \times ... \times X_n \to X_k, (x_1,...,x_n) \mapsto x_k$ die natürliche Projektion ist. %\newpage
 \begin{proposition} \
-%\begin{mdframed}
+\begin{mdframed}
 \begin{enumerate}[(\roman*),topsep=5pt]
 	\item Seien $\mathcal{H}_i \subset \mathcal{P}(X_i)$ Halbringe $(i=1,...,n)$ und $\mathcal{R}_i \subset \mathcal{P}(X_i)$ die von ihnen erzeugten Ringe. Dann ist $\mathcal{H}_1 \ast ... \ast \mathcal{H}_n$ ein Halbring auf $X_1 \times ... \times X_n$ und $\mathcal{H}_1 \boxtimes ... \boxtimes \mathcal{H}_n =\mathcal{R}_1 \boxtimes ... \boxtimes \mathcal{R}_n$ der von ihm erzeugte Ring.
-	\item Sind $\mathcal{E}_i \subset \mathcal{H}_i$ Erzeugendensysteme der Halbringe, so ist $\mathcal{Z}(\mathcal{E}_1,...,\mathcal{E}_n)$ ein Erzeugendensystem von $\mathcal{H}_1 \ast ... \ast \mathcal{H}_n$ als Halbring sowie (folglich) ein Erzeugendensystem von $\mathcal{H}_1 \boxtimes ... \boxtimes \mathcal{H}_n$ als Ring.
+	\item Sind $\mathcal{R}_i \subset \mathcal{P}(X_i)$ Ringe und $\mathcal{E}_i \subset \mathcal{R}_i$ Erzeugendensysteme für $i=1,...,n$, so erzeugt die Familie von Zylindermengen $\mathcal{Z}(\mathcal{E}_1,...,\mathcal{E}_n)$ den Produktring.
+	%\item Sind $\mathcal{E}_i \subset \mathcal{H}_i$ Erzeugendensysteme der Halbringe, so ist $\mathcal{Z}(\mathcal{E}_1,...,\mathcal{E}_n)$ ein Erzeugendensystem von $\mathcal{H}_1 \ast ... \ast \mathcal{H}_n$ als Halbring sowie (folglich) ein Erzeugendensystem von $\mathcal{H}_1 \boxtimes ... \boxtimes \mathcal{H}_n$ als Ring.
 \end{enumerate}
-%\end{mdframed}
+\end{mdframed}
 \label{propC}
 \begin{proof} \
 \begin{enumerate}[(\roman*),topsep=5pt]
 	\item Zunächst im Fall $n=2$. Klar enthält $\mathcal{H}_1 \ast \mathcal{H}_2$ auch $\emptyset$ und ist $\cap$-stabil. Wir betrachten die disjunkte Zerlegung
-	\begin{equation}
+	\begin{equation*}
 	\begin{split}
 		&(A_1 \times A_2) \setminus (B_1 \times B_2) =\\
 	 \big( \underbrace{(A_1 \cap B_1)}_{\in \mathcal{H}_1} \times \underbrace{(A_2 \setminus B_2)}_{\substack{\text{zerlegbar in} \\ \text{Teilmengen}\\ \text{aus }\mathcal{H}_2}} \big) & \sqcup \underbrace{\big( \underbrace{(A_1 \setminus B_1)}_{\substack{\text{zerlegbar in} \\ \text{Teilmengen}\\ \text{aus }\mathcal{H}_1}} \times \underbrace{(A_2 \setminus B_2)}_{\substack{\text{zerlegbar in} \\ \text{Teilmengen}\\ \text{aus }\mathcal{H}_2}} \big)}_{\text{zerlegbar in Teilmengen aus } \mathcal{H}_1 \times \mathcal{H}_2}
 		\sqcup \underbrace{\big( (A_1 \setminus B_1) \times (A_2 \cap B_2)\big)}_{\text{analog zerlegbar}}
 	\end{split}
-	\end{equation}
+	\end{equation*}
 	Also ist $(A_1 \times A_2) \setminus (B_1 \times B_2) $ disjunkt zerlegbar in Teilmengen aus $\mathcal{H}_1 \ast \mathcal{H}_2$, also erfüllt Axiom (iii) für Halbringe, d.h.  $\mathcal{H}_1 \ast \mathcal{H}_2$ ist ein Halbring. \\
 	Mit Induktion liefert dann die Behauptung auch für $\mathcal{H}_1 \ast ... \ast \mathcal{H}_n, n\geq 1$. \newline
 	Aus \eqref{eqI14} folgt, dass $\mathcal{H}_1 \boxtimes ... \boxtimes \mathcal{H}_n$ der von $\mathcal{H}_1 \ast ... \ast \mathcal{H}_n$ erzeugte Ring ist.
-	\item Für jedes $k$ gilt: Der Halbring auf $X_1 \times ... \times X_n$ bestehend aus den Zylindermengen $\pi_k^{-1}(H_k)$ für $H_k \in \mathcal{H}_k$ wird erzeugt von den Zylindermengen $\pi_k^{-1}(E_k)$ für $E_k \in \mathcal{E}_k$. Da
-	\begin{equation}
-	\begin{split}
-	& \mathcal{E}_k \subset \\ 
-	& \underbrace{\{ H_k \in \mathcal{H}_k \mid \pi^{-1}_k (H_k) \text{ gehört zum von den } \pi^{-1}_k(E_k)   \text{ für } E_k \in \mathcal{E}_k \text{ erzeugten Halbring} \}}_{\text{ist Halbring, deshalb Gleicheit}}
-	 \\ & \subset \mathcal{H}_k
-	\end{split}
-	\end{equation}
-	folgt, dass $\mathcal{Z}(\mathcal{E}_1,...,\mathcal{E}_k)$ erzeugen denselben Halbring $\mathcal{Z}(\mathcal{H}_1,...\mathcal{H}_n)$ und damit denselben wie $\mathcal{H}_1 \ast ... \ast \mathcal{H}_n$.
+	\item Für jedes $i$ wird der Ring auf $X_1 \times ... \times X_n$ bestehend aus den Zylindermengen $\pi_i^{-1}(M_i)$ für $M_i \in \mathcal{R}_i$ von der Familie der Zylindermengen $\pi_i^{-1}(E_i)$ für $E_i \in \mathcal{E}_i$ erzeugt, denn jede Teilmenge $M_i \in \mathcal{R}_i$ kann durch endlich viele Mengenoperationen aus Teilmengen $E_{ij} \in \mathcal{E}_i$ hergestellt werden und $\pi^{-1}_i(M_i)$ entsprechend aus den $\pi_i^{-1}(E_{ij})$. \\
+	Daraus folgt, dass $\mathcal{Z}(\mathcal{E}_1,...,\mathcal{E}_n)$ erzeugt denselben Ring wie $\mathcal{Z}( \mathcal{R}_1,...,\mathcal{R}_n)$ und denselben wie $\mathcal{R} \ast ... \ast \mathcal{R}_n$, also den Produktring $\mathcal{R}_1 \boxtimes ... \boxtimes \mathcal{R}_n$.
+	%\item Für jedes $k$ gilt: Der Halbring auf $X_1 \times ... \times X_n$ bestehend aus den Zylindermengen $\pi_k^{-1}(H_k)$ für $H_k \in \mathcal{H}_k$ wird erzeugt von den Zylindermengen $\pi_k^{-1}(E_k)$ für $E_k \in \mathcal{E}_k$. Da
+	%\begin{equation*}
+	%\begin{split}
+	%& \mathcal{E}_k \subset \\ 
+	%& \underbrace{\{ H_k \in \mathcal{H}_k \mid \pi^{-1}_k (H_k) \text{ gehört zum von den } \pi^{-1}_k(E_k)   \text{ für } E_k \in \mathcal{E}_k \text{ erzeugten Halbring} \}}_{\text{ist Halbring, deshalb Gleicheit}}
+	% \\ & \subset \mathcal{H}_k
+	%\end{split}
+	%\end{equation*}
+	%folgt, dass $\mathcal{Z}(\mathcal{E}_1,...,\mathcal{E}_k)$ erzeugen denselben Halbring $\mathcal{Z}(\mathcal{H}_1,...\mathcal{H}_n)$ und damit denselben wie $\mathcal{H}_1 \ast ... \ast \mathcal{H}_n$.
 \end{enumerate}
 \end{proof}
 \end{proposition}
 \begin{definition}
+\begin{mdframed}
 Wir nennen den Halbring $\mathcal{H}_1 \ast ... \ast \mathcal{H}_n$ das Produkt der Halbringe $\mathcal{H}_i$, den Ring $\mathcal{R}_1 \boxtimes ... \boxtimes \mathcal{R}_n$ das Produkt der Ringe $\mathcal{R}_i$.
+\end{mdframed}
 \end{definition}
 
 \begin{example}[\textit{Hauptbeispiel}, Quader und Figuren in $\R^d$]
+%\begin{mdframed}
 Ist $a,b \in \R^d$ mit $a_i < b_i \forall i$, so entsteht achsenparalleler halboffener Quader
-\begin{subequations}
-\begin{equation}
+\begin{equation*}
 [a,b) := [a_1, b_1) \times ... \times [a_d,b_d)
-\end{equation}
+\end{equation*}
 Wir bezeichnen
-\begin{equation}
+\begin{equation*}
 \mathcal{Q}^d := \text{Familie dieser Quader}
-\end{equation}
+\end{equation*}
 und
-\begin{equation}
+\begin{equation*}
 \mathcal{I} := \mathcal{Q}^1, \text{Familie der halboffenen Intervalle}
-\end{equation}
+\end{equation*}
 Also gilt
-\begin{equation}
+\begin{equation*}
 \mathcal{Q}^d = \underbrace{\mathcal{I} \ast ... \ast \mathcal{I}}_{d\text{-Mal}}
-\end{equation}
+\end{equation*}
 Aus der \hyperref[propC]{letzten Proposition} folgt, dass $\mathcal{Q}^d$ ein Halbring auf $\mathcal{R}^d$ ist. Es folgt ebenfalls, dass
-\begin{equation}
+\begin{equation*}
 \mathcal{F}^d := \underbrace{\mathcal{I} \boxtimes ... \boxtimes \mathcal{I}}_{d\text{-Mal}}
-\end{equation}
+\end{equation*}
 der Ring erzeugt von $\mathcal{Q}^d$ ist, also der Ring der $d$-dimensionale ``Figuren''.
 Wir haben gesehen: Figuren sind disjunkte Vereinigungen von Quadern.
-\end{subequations}
+%\end{mdframed}
 \end{example}
 
 Wir arbeiten aus technischen Gründen mit halboffenen Intervallen und Quadern. Besonders übersichtliche sind Halbringe, die abgeschlossen unter Produktbildung sind,  jedoch nicht die Teilmengen enthalten, die uns geometrisch primär interessieren: die offenen und abgeschlossenen Quader, die nicht achsenparallele sind, Polygone und Polytope, gekrümmte ``elementare Geometrie'' sowie Gebilde: Scheiben, Bälle, Zylinder und Kegel. Deshalb müssen wir unsere Ringe weiter anreichern und flexibilisieren, damit sie stabil unter abzählbaren Vereinigungen sind. $\leadsto$ $\sigma$-Algebra.
@@ -384,27 +382,25 @@ Wir arbeiten aus technischen Gründen mit halboffenen Intervallen und Quadern. B
 Wir beginnen mit der Untersuchung von Volumenfunktionen. Die grundlegende Forderung ist die \emph{Additivität}. Volumina dürfen nicht negativ sein, d.h. $\in [0,\infty] := [0, \infty) \cup \{ \infty\}$, also die erweiterte positive Halbgerade. 
 \begin{remark}
 Die erweiterten reellen Zahlen ist definiert als $\ol{\R} := \{- \infty\} \cup \R \{ \infty \}$ mit natürlichen Konventionen
-\begin{subequations}
-\begin{align}
+\begin{align*}
 	x + \infty = \infty & \text{ für } x > - \infty	\\
 	x \cdot \infty = \infty &\text{ für } x> 0
-\end{align}
+\end{align*}
 Später werden wir außerdem sehen 
-\begin{equation}
+\begin{equation*}
 	0 \cdot \infty = 0
-\end{equation}
-\end{subequations}
+\end{equation*}
 (da $ 0 \cdot n \longrightarrow 0$ für $n \longrightarrow \infty$).
 \end{remark}
 \subsubsection{Inhalte auf Halbringen und Ringen}
-Die allgemeinste von uns betrachteter Volumenfunktion Sorte ist endlich additiv und definiert auf Halbringen.
+Die allgemeinste Sorte von uns betrachteter Volumenfunktion ist endlich additiv und definiert auf Halbringen.
 
 \begin{definition}[\textbf{Inhalt}]
 \begin{mdframed}
 Ein Inhalt auf einer Halbring $\mathcal{H}$ ist eine Funktion $\mu: \mathcal{H} \to [0,\infty]$ mit den Eigenschaften:
 \begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
 	\item $\mu (\emptyset) = 0$
-	\item \emph{Additivität}: Sind $A_1,...,A_n \in \mathcal{H}$ paarweise disjunkt mit $A_1 \cup ... \cup A_n \in \mathcal{H}$ \footnote{Die Voraussetzung ist redundant, falls $\mathcal{H}$ ein Ring ist.}, so gilt $\mu(A_1 \cup ... \cup A_n) = \mu(A_1) + ... +\mu(A_n)$
+	\item \emph{Additivität}: Sind $A_1,...,A_n \in \mathcal{H}$ paarweise disjunkt mit $A_1 \sqcup ... \sqcup A_n \in \mathcal{H}$ \tablefootnote{Die Voraussetzung ist redundant, falls $\mathcal{H}$ ein Ring ist.}, so gilt $\mu(A_1 \sqcup ... \sqcup A_n) = \mu(A_1) + ... +\mu(A_n)$
 \end{enumerate}
 \end{mdframed}
 \end{definition}
@@ -426,17 +422,162 @@ Ein Inhalt auf einer Halbring $\mathcal{H}$ ist eine Funktion $\mu: \mathcal{H} 
 \end{enumerate}
 \end{example}
 
-Der Grundbaustein (für Lebesgue-Maß):
-\begin{example}[halboffene Intervalle in $\R$]
+\begin{example}[Halboffene Intervalle in $\R$, der Grundbaustein für Lebesgue-Maß]
 Wir betrachten den Halbring $\I = \mathcal{Q}^1 \subset \mathcal{P}(\R)$. So wird ein Inhalt gegeben durch die euklidische Länge
-\begin{align}
+\begin{align} \label{I23}
 \lambda^1_\I : \I \to [0, \infty), \quad \lambda^1_\I \big([a,b)\big) := b-a \ (a<b)
 \end{align}
 Wir überprüfen die Additivität: Sei $a = x_0 < x_1 < ... < x_{n} = b$ eine Unterteilung von $[a,b)$. So entsteht die disjunkte Zerlegung $[a,b) = [a,x_1) \sqcup ... \sqcup [x_{n-1},b)$. Es folgt 
-\begin{equation}
+\begin{equation*}
 \underbrace{\lambda^1_\I \big([a,b)]}_{b-a} = \underbrace{\lambda^1_\I \big( [a,x_1)\big)}_{x_1-a} + \underbrace{\lambda^1_\I \big([x_1,x_2)\big)}_{x_2 -x_1} + ... + \underbrace{\lambda^1_\I \big( [x_{n-1},b ) \big)}_{b-x_{n-1}}
-\end{equation}
+\end{equation*}
 \end{example}
 \marginpar{\tiny{24.10.2019}}
+\begin{lemma}[Einfache Eigenschaften von Inhalten]
+\begin{mdframed}
+Seien $\mathcal{H}$ ein Halbring und $\mu:\mathcal{H} \longrightarrow [0,\infty]$ ein Inhalt. Dann gilt:
+\begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
+	\item \emph{Monotonie}: Ist $A, B \in \mathcal{H}$ mit $A \subset B$, so ist $\mu (A) \leq \mu (B)$.
+	\item \emph{Subadditivität:} Seien $A_1, ..., A_n \in \mathcal{H}$ \emph{(nicht notwendigerweise disjunkt!)} mit $A_1 \cup ... \cup A_n \in \mathcal{H}$, dann gilt
+	\begin{equation*}
+	\mu(A_1 \cup .... \cup A_n) \leq \mu (A_1) + ... + \mu (A_n)
+	\end{equation*}
+\end{enumerate}
+\end{mdframed}
+\begin{proof} \
+\begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
+\item Setze $B \setminus A = C_1 \sqcup ... \sqcup C_n$ mit $C_i \in \mathcal{H}$ paarweise disjunkt, bzw. $B= A \sqcup C_1 \sqcup ... \sqcup C_n$. Aus der Additivität folgt dann $\mu(B) = \mu (A) + \underbrace{\mu(C_1) + ... + \mu (C_n)}_{\geq 0} \geq \mu (A)$.
+\item Aus dem \hyperref[lemmaA]{Lemma ``simultane Zerlegung''} folgt, dass es paarweise disjunkte $H_i \in \mathcal{H}$ existieren, sodass jedes $A_j$ die Vereinigung einiger von $H_i$ ist. Entsprechend summieren sich die Volumina auf. Die Ungleichung folgt, denn jedes $\mu(H_j)$ \emph{genau einmal} auf der linken Seite und je \emph{mindestens einmal} auf der rechten Seite.
+\end{enumerate}
+\end{proof}
+\end{lemma}
+
+\subsubsection{Fortsetzung von Inhalten von Halbringen auf Ringe}
+\begin{satz}
+\begin{mdframed}
+Jeder Inhalt $\mu$ auf einem Halbring $\mathcal{H}$ besitzt eine eindeutige Fortsetzung zu einem Inhalt $\ol{\mu}$ auf dem von $\mathcal{H}$ erzeugten Ring $\mathcal{R}$.
+\end{mdframed}
+\begin{proof} \
+\begin{enumerate}[-,topsep=5pt, itemsep = 0 pt]
+	\item \emph{Eindeutigkeit} folgt aus der Additivität von Inhalten und Beschreibung des erzeugten Rings $\mathcal{R}$. Jede Teilmenge in $\mathcal{R}$ ist eine disjunkte Vereinigung (wegen \eqref{eqI14}) $A_1 \sqcup ... \sqcup A_n$ mit $A_i \in \mathcal{H}$. Daher notwendig
+	\begin{equation} \label{eqI25}
+	\ol{\mu} (A_1 \sqcup ... \sqcup A_n) = \underbrace{\mu (A_1)}_{= \ol\mu(A_1)} + ... + \ol\mu (A_n)
+	\end{equation}
+	\item \emph{Existenz} bzw. \emph{Wohldefiniertheit} von $\ol\mu$ durch \eqref{eqI25}: Wir betrachten eine weitere disjunkte Zerlegung derselben Teilmengen
+	\begin{equation*}
+	A_1 \sqcup ... \sqcup A_n = B_1 \sqcup ... \sqcup B_m \in \mathcal{R}, A_i, B_j \in \mathcal{H}
+	\end{equation*}
+	so entstehen Zerlegungen 
+	\begin{align*}
+		A_i = \bigsqcup_{j=1}^m (A_i \cap B_j)	\\
+		B_j = \bigsqcup_{i=1}^n (A_i \cap B_j)
+	\end{align*}
+	Daraus folgt \emph{(Wir bemerken, dass $A_i \cap B_j \in \mathcal{H}$, denn $\mathcal{H}$ $\cap$-stabil ist.)}
+	\begin{equation*}
+	\sum_i \mu (A_i ) = \sum_i \underbrace{\sum_j \mu (A_i \cap B_j)}_{\mu (A_i)}
+	= \sum_j \underbrace{\sum_i \mu (A_i \cap B_j)}_{\mu (B_j)} = \sum_j \mu (B_j)
+	\end{equation*}
+	Also ist $\ol\mu$ wohldefiniert.
+	\item Es bleibt zu zeigen, dass $\ol\mu$ tatsächlich ein Inhalt ist. $\ol\mu$ ist laut der Definition \eqref{eqI25} offensichtlich additiv und somit ein Inhalt.
+\end{enumerate}
+\end{proof}
+\begin{remark}
+Hat $\mu$ endliche Werte, so hat $\ol\mu$ auch endliche Werte.
+\end{remark}
+\end{satz}
+\begin{example}
+Wir setzen den in dem letzten Beispiel definierten Inhalt \eqref{I23}
+\begin{equation*}
+\lambda^1_{\mathcal{Q}^1}: \underset{\text{\tiny{Halbring}}}{\mathcal{I} = \mathcal{Q}^1} \longrightarrow [0,\infty)
+\end{equation*} auf den Halbring $\mathcal{I}$ fort zu
+\begin{equation*}
+\lambda^1_{\F^1}:\mathcal{F}^1 \longrightarrow [0,\infty)
+\end{equation*}
+wobei $\mathcal{F}^1$ den von $\mathcal{Q}^1$ erzeugten Ring der 1-dimensionale Figuren bezeichnen, also die Summe der Längen der Teilintervalle.
+\end{example}
+\begin{remark}
+Die Fortsetzung von Inhalten von Ringen auf Algebren ist nicht eindeutig. Z.B. betrachten wir die vom Ring $\mathcal{R}=\{ \emptyset\}$ erzeugte Algebra $\mathcal{A} = \{ \emptyset, X\}$, so können wir den Inhalt von $X$ beliebig $\in [0,\infty)$ wählen.
+\end{remark}
+\subsubsection{Prämaße}
+Wir betrachten Verhalten von Volumina bei gewissen Grenzprozessen. (Approximation von innen und außen) Wir arbeiten mit Teilmengen einer festen Menge $X$.\newline \newline
+Falls $(A_n)_{n \in \N}$ eine aufsteigende Folge von Teilmengen von $X$ mit $\bigcup_{n \in \N} A_n =:A$,
+\begin{equation*}
+A_1 \subset A_2 \subset ... \subset A_n \subset ... \subset X
+\end{equation*}  so schreiben wir $A_n \nearrow A$. \newline \newline
+Falls $(A'_n)_{n \in \N}$ absteigend mit $\bigcap_{n \in \N} A'_n = A$, 
+\begin{equation*}
+X \supset A_1' \supset A_2' \supset ... \supset A_n' \supset ...
+\end{equation*}
+so schreiben wir $A_n' \searrow A$.
+\begin{beobachtung}
+Es gelten
+\begin{align*}
+	A_n \nearrow A \iff A \setminus A_n \searrow \emptyset	\\
+	A_n' \searrow A \iff A_n'	\setminus A \searrow \emptyset
+\end{align*}
+Sei $\mu: \mathcal{R} \longrightarrow [0,\infty]$ ein Inhalt. Dann gilt
+\begin{equation*}
+A_n \nearrow A \searrow A_n' \xRightarrow[]{\text{Monotonie}} \underset{\text{wächst}}{\mu(A_n)} \leq \mu(A) \leq \underset{\text{fällt}}{\mu(A_n')}
+\end{equation*}
+Da $\mu(A_n)$ und $\mu(A'_n)$ nur \emph{schwach} monoton sind, folgt nur die Ungleichung
+\begin{equation}	\label{I33}
+\lim\limits_{n\to\infty} \mu(A_n) \leq \mu(A) \leq \lim\limits_{n \to \infty} \mu (A_n')
+\end{equation}
+\end{beobachtung}
+Wir formulieren nun einen disjunkte Zerlegung für $A_n$ durch einen Induktiven Prozess:
+\begin{equation*}\begin{split}
+	A_0 & := \emptyset	\\
+	\widetilde{A}_n &:= A_n \setminus A_{n-1}	 \end{split}
+\end{equation*}
+so entsteht die disjunkte Zerlegung
+\begin{equation*}
+	A = \bigsqcup_{n\in \N} \widetilde{A}_n
+\end{equation*}
+Dann ist \eqref{I33} äquivalent zu: Für Folgen $(\widetilde{A}_n)_{n \in \N}$ paarweise disjunkter Teilmengen mit $A:=\bigsqcup_{n\in\N}\widetilde{A}_n \in \mathcal{R}$ gilt
+\begin{equation*}
+\mu\bigg( \underbrace{\bigsqcup_{n\in \N} \widetilde{A}_n}_{=A} \bigg) \geq \sum_{n=1}^\infty \mu(\widetilde{A}_n)
+\tag{$\sigma$-Subadditivität}
+\end{equation*}
+Gilt in einer der Gleichung \eqref{I33} die Gleichheit, so fassen wir das als \textbf{Stetigkeitseigenschaften} auf. Wir vergleichen nun die Stetigkeitseigenschaften:
+
+\begin{proposition}
+\begin{mdframed}
+Für einen Inhalt $\mu : \mathcal{R} \longrightarrow [0,\infty]$ auf einem Ring $\mathcal{R}$ sind die beiden folgenden Eigenschaften äquivalent:
+\begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
+	\item \emph{$\sigma$-Additivität:} Ist $(A_n)_{n \in \N}$ eine Folge paarweise disjunkter Teilmengen, $A_n \in \mathcal{R}$ mit $\bigsqcup_nA_n \in \mathcal{R}$, so gilt
+	$$
+	\mu \bigg(\bigsqcup_{n=1}^\infty A_n \bigg) = \sum_{n=1}^\infty \mu (A_n)	
+	$$
+	\item \textit{Stetigkeit von unten:} Ist $(B_n)_{n\in\N}$ aufsteigend, $B_n \in \mathcal{R}$ mit $B_n \nearrow B \in \mathcal{R}$, so gilt
+	$$
+	\mu (B_n) \nearrow \mu (B)	
+	$$
+\end{enumerate}
+	Sie implizieren die beiden folgenden, ebenfalls zueinander äquivalenten, Eigenschaften:
+	\begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
+	\item[(iii)] \emph{Stetigkeit von oben:} Ist $(C_n)_{n \in \N}$ absteigend, $C_n \in \mathcal{R}$ \textbf{mit} $\mu(C_n) < \infty$ \textbf{und} $C_n \searrow C \in \mathcal{R}$, so gilt
+	$$
+	\mu(C_n) \searrow \mu (C)	
+	$$
+	\item[(iv)] \emph{Stetigkeit von $\emptyset$:} Ist $(D_n)_{n \in \N}$ absteigend, $D_n \in \mathcal{R}$ mit $\mu(D_n) < \infty$ und $D_n \searrow \emptyset$, so gilt
+	$$ \mu (D_n) \searrow 0$$
+	\end{enumerate}
+	Falls $\mu$ endliche Werte hat, gilt umgekehrt (iii), (iv) $\implies$ (i), (ii).
+\end{mdframed}
+\begin{proof}\
+\begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
+	\item[-] (i) $\iff$ (ii). Übergang durch $B_n = A_1 \sqcup ... \sqcup A_n$, bzw. $A_n = B_n \setminus B_{n-1}$, $B = \bigsqcup_n A_n$. Aus der endlichen Additivität folgt $\mu (B_n) = \sum_{i=1}^n \mu(A_i)$. Daraus folgt $\lim\limits_{n \to \infty} \mu (B_n) = \sum_{n \in \N} \mu (A_n)$. Außerdem gilt $\mu(B) = \mu (\bigsqcup_n A_n)$. \checkmark
+	\item[-] (ii) $\implies$ (iii). Sei $C_n \searrow C$ mit endlichen Inhalten. Setze $B_n := C_1 \setminus C_n \in \mathcal{R}$ und $B := C_1 \setminus C$, d.h. $C_1 = B_n \sqcup C_n$ und $C_1 = B \sqcup C$. Daraus folgt wegen der Additivität des Inhalts $\mu(C_1) = \mu (B_n) + \mu(C_n)=\mu(B) + \mu (C)$. Es gilt n.V. $\mu(B_n) \nearrow \mu (B)$, da $B_n \nearrow B$. Da alle Inhalte endlich sind, gilt
+		$\mu (B_n) = \mu(C_1) - \mu (C_n)$ und
+		$\mu (B) = \mu(C_1) - \mu (C)$. Also gilt $\mu(C_1) - \mu (C_n) \nearrow \mu(C_1) - \mu (C)$.
+	Daraus folgt, dass $\mu(C_n) \searrow \mu(C)$, also (iii).
+	\item[-] (iii) $\Longleftarrow$ (iv).  (Die andere Richtung ist klar, da (iv) ist Spezialfall von (iii)!) \newline
+	Sei $C_n \searrow C$ mit endlichen Inhalten. Setze $D_n := \underbrace{C_n \setminus C}_{\in \mathcal{R}} \searrow \emptyset$. Dann ist $C_n = D_n \sqcup C$ und somit $\mu(C_n) = \mu(D_n) + \mu(C)$. Da alle Inhalte endlich sind, gilt $\underbrace{\mu(D_n)}_{\searrow 0 \text{ wegen (iv)}} = \mu(C_n) -\mu (C)$. Daraus folgt $\mu(C_n) \searrow \mu (C)$, also (iii).
+	\item[-] $\mu$ habe endliche Werte, es gelte (iv). Zeige (ii). Sei $B_n \nearrow B$. Setze $D_n:=B \setminus B_n$. Da $\underbrace{\mu(D_n)}_{\searrow 0 \text{ wg (iv)}} = \mu(B) - \mu (B_n)$ und alle Inhalte endlich sind, gilt $\mu(B_n) \nearrow \mu(B)$, d.h. (ii).
+\end{enumerate}
+\end{proof}
+\end{proposition}
+
+\marginpar{\tiny{28.10.2019}}
 
 \end{document}
