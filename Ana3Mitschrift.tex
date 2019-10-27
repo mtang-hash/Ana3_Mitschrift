@@ -1,9 +1,10 @@
 \input{settings.tex}
-\title{\huge Analysis III   \\ \vspace{0.2pc} \Large Maßtheorie und Integralrechnung mehrerer Variablen}
-%\date{}
+\title{Mitschrift der Vorlesung \\ \huge Analysis III   \\ \vspace{0.2pc} \Large Maßtheorie und Integralrechnung mehrerer Variablen\footnote{im Wintersemester 2019/20 gelesen von Prof. Bernhard Leeb, Ph.D.}}
+%\author{\normalsize bei Prof. Bernhard Leeb, Ph.D. \vspace{0.2pc}}
+%\date{27. Oktober 2019}
 \begin{document}
 \maketitle
-\tableofcontents
+\tableofcontents 
 \addtocontents{toc}{\protect\setcounter{tocdepth}{3}}
 \newpage
 \setcounter{page}{2}
@@ -578,55 +579,7 @@ Für einen Inhalt $\mu : \mathcal{R} \longrightarrow [0,\infty]$ auf einem Ring 
 \end{proof}
 \end{proposition}
 
-\marginpar{\tiny{28.10.2019}}
+%\marginpar{\tiny{28.10.2019}}
 
-\appendix
-\newpage
-\section{Integrale stetiger Funktionen \normalsize (einer reellen Variable)}
-\marginpar{\tiny{23.10.2019}}
-Wir unterscheiden zwischen
-\begin{enumerate}[- ,topsep =-3pt]
-	\item dem \emph{bestimmten Integral}
-				$$ \int\limits_a^b f(x)\D x$$
-	\item und dem \emph{unbestimmten Integral}, d.h. die Menge der Funktionen dieser Art
-	$$x \mapsto \int\limits_a^x f(\xi) \D \xi + \underset{\text{\tiny const}}C$$
-	Notation: $\int f \D x$.
-\end{enumerate}
-\paragraph{Hauptsatz der Differential- und Integralrechnung}
-\begin{enumerate}[(\roman*), topsep = -1 pt]
-	\item Ist $f$ von der Klasse $\mathcal{C}^0$ (d.h. stetig), so ist 
-		$$\left(\int f \D x\right)' = f$$
-		d.h. die Repräsentanten des unbestimmten Integrals sind Stammfunktionen.
-	\item Ist $f$ von der Klasse $\mathcal{C}^1$ (d.h. stetig differenzierbar), so ist
-	$$ \int F' \D x =F$$
-	(zu lesen: $F$ repräsentiert $\int F' \D x)$ bzw.
-	$$ \int\limits_a^x F'(\xi) \D x = F(x) -F(a)$$
-\end{enumerate}
-\paragraph{Rechenregeln für Differentialrechnung $\leadsto$ Rechenregeln für Integralrechnung}z.B.
-\begin{equation*}
-	\begin{split}
-		(\ln |x|)' = \frac{1}{x} & \implies \int \frac{\D x}{x} = \ln |x| \text{ auf } \R\setminus\{0\}\\
-		\arcsin' x {=\frac{1}{\sqrt{1-x^2}}} & \implies \int \frac{\D x}{\sqrt{1-x^2}} = \arcsin x \text{ auf } (-1,1) \\ 		
-		\arctan' x = \frac{1}{1+x^2} & \implies \int \frac{\D x}{1+x^2} = \arctan x \text{ auf }\R
-	\end{split}
-\end{equation*}
-\paragraph{Kettenregel $\leadsto$ Substitutionsregel} Aus der Kettenregel
-$$(F \circ \varphi)' (u) = F'(\varphi (u)) \cdot \varphi'(u)$$
-folgt mit dem Hauptsatz der Differential- und Integralrechnung: Sei $f := F'$ ($\mathcal{C}^0$),
-$$ \int\limits_a^b f(\varphi(u)) \cdot \varphi'(u) \D u = \int\limits_a^b (F \circ \varphi) (u) \D u= F \circ \varphi \big\vert_a^b = F\big\vert^{\varphi(b)}_{\varphi(a)} = \int\limits_{\varphi(a)}^{\varphi(b)} f \D x
-$$
-Also die \textbf{Substitutionsregel}
-$$
-\boxed{
-\int\limits_a^b f(\varphi(u)) \varphi'(u) \D u = \int_{\phi(a)}^{\phi(b)} f(x) \D x 
-}
-$$
-und die \textbf{Version für unbestimmtes Integral}
-$$ \int f(\phi(u)) \phi'(u) \D u = \underbrace{\int f(x) \D x \Big \vert_{x =\phi(u)}}_{\substack{\text{die Komposition }\phi \\ \text{ mit } \int f(x)\D x}} $$
-\begin{example} \
-\begin{enumerate}
- \item \textbf{lineare Substitution} $x = u+\alpha$ 
- \item 
-\end{enumerate}
-\end{example}
+\input{A-integrale-stetiger-funktionen.tex}
 \end{document}

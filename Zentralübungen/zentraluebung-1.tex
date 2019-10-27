@@ -1,0 +1,99 @@
+\input{settings.tex}
+\title{Zentralübungen der Vorlesung Analysis III}
+\begin{document}
+\appendix
+\section{Zentralübungen}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+\subsection{1. Zentralübung}
+\marginpar{\tiny{16.10.2019}}
+\subsubsection{Trigonometrische Funktionen}
+Wir betrachten die Kurve, die mit der Geschwindigkeit 1 durch den Einheitskreis läuft. Sie erfüllt die Gleichung
+\begin{equation*}
+\begin{cases}
+x^2+y^2=1 \\
+x'^2 +y'^2 =1
+\end{cases}
+\end{equation*}
+und die Differentialgleichungen
+\begin{equation*}
+\begin{cases}
+x'(t)=-y(t)\\
+y'(t)=x(t)
+\end{cases}
+\end{equation*}
+Die komplexe Exponentialfunktion ist definiert durch:
+\begin{equation*}
+\exp: \C \to \C, z\mapsto e^z := \sum_{n=0}^\infty \frac{z^n}{n!}
+\end{equation*}  
+Sie erfüllt die funktionale Gleichung
+\begin{equation*}
+e^{z_1+z_2}=e^{z_1} \cdot e^{z_2}
+\end{equation*}
+und hat die Ableitung
+\begin{align*}
+(e^x)' & = e^x	\quad \text{($x$ reell)} \\
+(e^{ix})' & = ie^{ix}
+\end{align*}
+Die erste Gleichung folgt aus
+$$ \frac{e^{x+h}-e^x}{h} = e^x \cdot \underbrace{\frac{e^h-1}{1}}_{\longrightarrow 1 \text{ für } h \to 0} $$
+Die Kreis -bzw. trigonometrischen Funktionen in $\C \cong \R^2$ sind eng mit der Exponentialfunktion verbunden, denn
+\begin{equation*}
+e^{it} =: \cos t +i\sin t \tag{eulersche Formel}
+\end{equation*}
+Dies ist äquivalent zu
+$$ \begin{cases}
+\cos t = \Re e^{it} \overset{(*)}= \frac{e^{it} + e^{-it}}{2}\\
+\sin t = \Im e^{it} = \frac{e^{it}-e^{-it}}{2}
+\end{cases}$$
+($*$) folgt aus
+$$
+e^{\ol{z}} = \ol{e^z}, \quad \text{also } e^{-it} = \ol{e^{it}} = \cos t - i \sin t
+$$
+$e^{it}$ bewegt sich mit Geschwindigkeit $\equiv 1$ entlang Einheitskreis, denn
+$$1 = e^0 \overset{\text{Fkt Gl}}=e^{it} \cdot e^{-it} = \cos^2 t + \sin^2 t$$
+und somit
+$$\left|\frac{d}{dt}e^{it}\right| = |ie^{it}| = |i(\cos t + i \sin t)|=1$$
+Es folgt außerdem
+\begin{equation*}
+\begin{cases}
+\cos ' = -\sin \\
+\sin' = \cos
+\end{cases}
+\end{equation*}
+da
+$$
+\underbrace{(e^{it})'}_{\cos' t + i\cdot \sin' t} =  \underbrace{i e^{it}}_{-\sin t+ i \cos t}
+$$
+\paragraph{Additionstheorem für $\sin$ und $\cos$}
+\begin{equation*}
+\begin{cases}
+\cos (\alpha + \beta ) = \cos \alpha \cos \beta - \sin \alpha \sin \beta \\
+\sin (\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta
+\end{cases}
+\end{equation*}
+Dies folgt aus
+$$e^{i(\alpha + \beta)} = e^{i\alpha}\cdot e^{i\beta}$$
+Jetzt wollen wir überprüfen, ob die Fläche = $\frac{1}{2}$ Grundseite $*$ Höhe ist. Dazu zerlegen wir die Fläche zu zwei Teilen und berechnen das Integral  \Bild
+\begin{align*}
+\int\limits_{\cos t}^1 \sqrt{1-x^2} \D x
+\end{align*}
+\newpage
+\section{Übungsblätter}
+\subsection*{Übungsblatt 1}
+\begin{aufgabe}
+Die von einem $\mathcal{R} \subset \mathcal{P}(X)$ Ring erzeugte Algebra besteht aus den Teilmengen des Rings und deren Komplementen.
+\end{aufgabe}
+
+
+\begin{aufgabe}
+Es sei $I \to \R^2$ ein $\mathcal{C}^1$-Kurve in der Ebene, $c(t) = (x(t),y(t))$, die sich mit konstanter Geschwindigkeit 1 entlang des Einheitskreises bewege, $|c|=1$ und $|\dot{c}|=1$ (wobei wir die (zeitliche) Ableitung von $c$ mit $\dot{c}$ bezeichnen). Zeigen Sie, dass die Kurve $c$ bis auf Spiegelung an der $x$- oder $y$-Achse die ODE
+\begin{equation*}
+	\begin{cases}
+		\dot{x} = -y \\
+		\dot{y} = x
+	\end{cases}
+\end{equation*}
+erfüllt. Stellen Sie eine entsprechende ODE für die Bewegung entlang der Hyperbel $x^2-y^2=1$ mit konstanten Lorentz-Geschwindigkeits-Quadrat $\dot{x}^2-\dot{y}^2=-1$ auf.
+
+\end{aufgabe}
+\end{document}

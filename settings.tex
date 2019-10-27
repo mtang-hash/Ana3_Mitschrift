@@ -1,12 +1,11 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
- 
 \usepackage{lmodern}
 \usepackage[left=28mm,top=28mm,right=28mm,bottom=28mm] {geometry}
 \usepackage{amsfonts}
 \usepackage{mathrsfs}
-\usepackage{mathtools}
+\usepackage[intlimits]{amsmath}
 \usepackage{stmaryrd}
 \usepackage{relsize}
 \usepackage{etoolbox}
@@ -28,6 +27,13 @@
 \usepackage{etoolbox}
 \usepackage[all]{xy}
 \usepackage{tikz}
+\usepackage{thmtools}
+\usepackage[
+   pdfpagelabels=true,
+   pdftitle={Analysis III: Maßtheorie und Integralrechnung mehrerer Variablen},
+   pdfauthor={MT},
+ ]{hyperref}
+\usepackage{bookmark}
 \usetikzlibrary{cd}
 \usetikzlibrary{calc}
 \theoremstyle{definition}
@@ -53,17 +59,11 @@
 \AfterEndEnvironment{remark'}{\noindent\ignorespaces}
 \AfterEndEnvironment{proposition}{\noindent\ignorespaces}
 \AfterEndEnvironment{proof}{\noindent\ignorespaces}
-\usepackage{thmtools}
- \usepackage[
-   pdfpagelabels=true,
-   pdftitle={Analysis III: Maßtheorie und Integralrechnung mehrerer Variablen},
-   %pdfauthor={},
- ]{hyperref}
-\usepackage{bookmark}
 \let\existstemp\exists
 \let\foralltemp\forall
 \newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
 \newcommand{\vsubset}{\rotatebox[origin=c]{90}{$\subset$}}
+\newcommand{\vphi}{\phi}
 \newcommand{\ol}{\overline}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
@@ -88,11 +88,11 @@
 \renewcommand{\Re}{\operatorname{Re}}
 \renewcommand{\Im}{\operatorname{Im}}
 \renewcommand{\qedsymbol}{$\blacksquare$}
+\renewcommand{\phi}{\varphi}
 \makeatletter 
 \AfterEndEnvironment{mdframed}{%
  \tfn@tablefootnoteprintout% 
  \gdef\tfn@fnt{0}% 
 }
 \numberwithin{equation}{section}
-%\setcounter{tocdepth}{3}
-
+\setlist[enumerate,1]{label={(\roman*)}}
