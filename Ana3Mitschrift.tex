@@ -187,7 +187,10 @@ Ist umgekehrt $\mathcal{A}$ eine Algebra, so gelten (i + iii). Da auch $X \in \m
 Also gilt auch (iv).
 \end{proof}
 \end{lemma}
-\textbf{Folgerung.} Ist $\mathcal{R}$ ein Ring auf $X$ und $A,B \in \mathcal{R}$, so auch $A\setminus B, A\cap B, B\setminus A$ und $A\cup B \in \mathcal{R}$. (\textit{Bem.} Alle in $A\cup B$ enthalten.) Ist $\mathcal{A}$ eine Algebra auf $X$ und $A,B \in \mathcal{A}$, so ist außerdem auch $\complement (A \cup B) \in \mathcal{A}$.
+
+\begin{folgerung}
+Ist $\mathcal{R}$ ein Ring auf $X$ und $A,B \in \mathcal{R}$, so auch $A\setminus B, A\cap B, B\setminus A$ und $A\cup B \in \mathcal{R}$. (\textit{Bem.} Alle in $A\cup B$ enthalten.) Ist $\mathcal{A}$ eine Algebra auf $X$ und $A,B \in \mathcal{A}$, so ist außerdem auch $\complement (A \cup B) \in \mathcal{A}$.
+\end{folgerung}
 
 \begin{example} \
 \begin{enumerate}
@@ -350,8 +353,8 @@ Wir nennen den Halbring $\mathcal{H}_1 \ast ... \ast \mathcal{H}_n$ das Produkt 
 \end{mdframed}
 \end{definition}
 
-\begin{example}[\textit{Hauptbeispiel}, Quader und Figuren in $\R^d$]
-%\begin{mdframed}
+\begin{hauptbsp}[Quader und Figuren in $\R^d$]
+\begin{mdframed}
 Ist $a,b \in \R^d$ mit $a_i < b_i \forall i$, so entsteht achsenparalleler halboffener Quader
 \begin{equation*}
 [a,b) := [a_1, b_1) \times ... \times [a_d,b_d)
@@ -374,8 +377,8 @@ Aus der \hyperref[propC]{letzten Proposition} folgt, dass $\mathcal{Q}^d$ ein Ha
 \end{equation*}
 der Ring erzeugt von $\mathcal{Q}^d$ ist, also der Ring der $d$-dimensionale ``Figuren''.
 Wir haben gesehen: Figuren sind disjunkte Vereinigungen von Quadern.
-%\end{mdframed}
-\end{example}
+\end{mdframed}
+\end{hauptbsp}
 
 Wir arbeiten aus technischen Gründen mit halboffenen Intervallen und Quadern. Besonders übersichtliche sind Halbringe, die abgeschlossen unter Produktbildung sind,  jedoch nicht die Teilmengen enthalten, die uns geometrisch primär interessieren: die offenen und abgeschlossenen Quader, die nicht achsenparallele sind, Polygone und Polytope, gekrümmte ``elementare Geometrie'' sowie Gebilde: Scheiben, Bälle, Zylinder und Kegel. Deshalb müssen wir unsere Ringe weiter anreichern und flexibilisieren, damit sie stabil unter abzählbaren Vereinigungen sind. $\leadsto$ $\sigma$-Algebra.
 
@@ -494,7 +497,7 @@ Wir setzen den in dem letzten Beispiel definierten Inhalt \eqref{I23}
 \begin{equation*}
 \lambda^1_{\F^1}:\mathcal{F}^1 \longrightarrow [0,\infty)
 \end{equation*}
-wobei $\mathcal{F}^1$ den von $\mathcal{Q}^1$ erzeugten Ring der 1-dimensionale Figuren bezeichnen, also die Summe der Längen der Teilintervalle.
+wobei $\mathcal{F}^1$ den von $\mathcal{Q}^1$ erzeugten Ring der 1-dimensionale Figuren bezeichnen, also ist $\lambda^1_{\mathcal{F}}$ definiert als die Summe der Längen der Teilintervalle.
 \end{example}
 \begin{remark}
 Die Fortsetzung von Inhalten von Ringen auf Algebren ist nicht eindeutig. Z.B. betrachten wir die vom Ring $\mathcal{R}=\{ \emptyset\}$ erzeugte Algebra $\mathcal{A} = \{ \emptyset, X\}$, so können wir den Inhalt von $X$ beliebig $\in [0,\infty)$ wählen.
@@ -537,7 +540,7 @@ so entsteht die disjunkte Zerlegung
 Dann ist \eqref{I33} äquivalent zu: Für Folgen $(\widetilde{A}_n)_{n \in \N}$ paarweise disjunkter Teilmengen mit $A:=\bigsqcup_{n\in\N}\widetilde{A}_n \in \mathcal{R}$ gilt
 \begin{equation*}
 \mu\bigg( \underbrace{\bigsqcup_{n\in \N} \widetilde{A}_n}_{=A} \bigg) \geq \sum_{n=1}^\infty \mu(\widetilde{A}_n)
-\tag{$\sigma$-Subadditivität}
+\tag{$\sigma$-Supadditivität}
 \end{equation*}
 Gilt in einer der Gleichung \eqref{I33} die Gleichheit, so fassen wir das als \textbf{Stetigkeitseigenschaften} auf. Wir vergleichen nun die Stetigkeitseigenschaften:
 
@@ -579,7 +582,179 @@ Für einen Inhalt $\mu : \mathcal{R} \longrightarrow [0,\infty]$ auf einem Ring 
 \end{proof}
 \end{proposition}
 
-%\marginpar{\tiny{28.10.2019}}
+\marginpar{\tiny{28.10.2019}}
 
-\input{A-integrale-stetiger-funktionen.tex}
+Es ist natürlich und geboten, von Inhalten $\sigma$-Additivität zu verlangen. $\leadsto$ leistungsfähige Volumentheorie. (E. Borel, Lebesgue $\sim$1900)
+
+\begin{definition}
+\begin{mdframed}
+Ein \textbf{Prämaß} auf einem \emph{Ring} ist $\sigma$-additiver Inhalt.
+\end{mdframed}
+\end{definition}
+
+\begin{example}
+Sei $X$ unendlich. Betrachte $\mathcal{A} \subset \mathcal{P}(X)$ die Algebra erzeugt von endlichen Teilmengen, besteht aus endlichen Teilmengen und deren Komplementen. Definieren Inhalt $\mu$ auf $\mathcal{A}$ durch
+$$ \mu (A) := \begin{cases}
+	0, & \text{falls } A \text{ endlich} \\
+	1, & \text{falls } \complement A \text{ endlich}
+	\end{cases}$$
+Sind $A_1,...,A_n$ paarweise disjunkt und nicht alle $A_i$ endlich, so gibt es genau ein $A_i$ unendlich. Daraus folgt
+$$\underset{\text{genau ein Beitrag }1}{\mu(A_1)+...\mu(A_n)} = 1 = \mu(A_1 \sqcup ... \sqcup A_n).$$
+Also war die endliche Additivität. Die $\sigma$-Additivität wird genau dann verletzt, falls $X$ abzählbare Zerlegung in endlichen Teilmengen ($\iff$ $X$ abzählbar) zulässt. \begin{small}Zum Beispiel betrachten wir die natürlichen Zahlen $\N$. Es gilt $\sum_{n\in \N} \mu (\{n\}) =0 \neq 1 = \mu \left( \bigcup_{n \in \N} \{n\} \right)$.
+\end{small} Daraus folgt: $\mu $ Prämaß $\iff$ $X$ überabzählbar (z.B. $X = \R$).
+\end{example}
+
+\begin{satz}
+\begin{mdframed}
+Der Inhalt $\lambda^1_{\mathcal{F}^1}$ ist ein Prämaß.
+\end{mdframed}
+(Später, nach Produkten, Beweis in beliebiger Dimension.)
+\begin{proof}
+Zu zeigen ist die $\sigma$-Additivität. Dies ist wegen endlicher Werte von $\lambda^1_{\mathcal{F}^1}$ äquivalent zu Stetigkeit in $\emptyset$. Diese weisen wir jetzt nach. Das Argument beruht auf \emph{topologischen} Eigenschaften von $\R$, nämlich Lokalkompaktheit. Wir betrachten eine Folge absteigender Figuren (d.h. \emph{endliche} Vereinigung halboffener Intervalle $[a,b)$), nämlich
+$$F_1 \supset F_2 \supset ... \supset ... \supset F_n \supset ...  \quad  \text{mit } F_n \in \mathcal{F}^1.$$
+Stetigkeit in $\emptyset$ bedeutet: $\underbrace{F_n \searrow \emptyset}_{\iff \bigcap_n F_n = \emptyset} \implies \lambda^1_{\mathcal{F}^1}(F_n) \searrow 0$. Wir notieren $\lambda = \lambda^1_{\mathcal{F}^1}$.
+Annahme: $\lim\limits_{n \to \infty} \lambda(F_n) \geq v_0 >0$. Zu zeigen: $\bigcap_n F_n \neq \emptyset$.\\
+Dazu approximieren wir von innen durch eine geschachtelte Folge von Kompakta $K_n$.
+Sei $\varepsilon_n \searrow 0$. Dann existieren $F_n' \in \mathcal{F}^1$ und Kompakta $K_n \subset \R$ sodass $F_n' \subset K_n \subset F_n$ \begin{scriptsize} (\textit{Bem.} $K_n$ sind nicht notwendigweise geschachtelt. Wir brauchen $F_n'$, denn $\mu$ ist nicht auf Kompakta definiert.) \end{scriptsize}und $\lambda(F_n') > \lambda(F_n) -\varepsilon_n$. Wir vergleichen absteigende Folgen
+$$ \bigcap_{i\leq n} F_i' \subset \bigcap_{i \leq n} K_i \subset \underbrace{\bigcap_{i \leq n} F_i}_{= F_n}.$$
+Es genügt zu zeigen, dass
+\begin{equation}\label{I5}
+\bigcap_{i \leq n} K_i \neq \emptyset \  \ \forall_n,
+\end{equation}
+denn \eqref{I5} $ \xRightarrow{\text{Topologie}} \bigcap_{i=1}^\infty K_i \neq \emptyset \implies \bigcap_{i=1}^n F_i \neq \emptyset$. \newline
+Es gilt
+$$
+\underbrace{\left( \bigcap_{i \leq n} F_i \right)}_{F_n} \setminus \left( \bigcap_{i \leq n} F_i' \right) = \bigcup_{i \leq n} (\underbrace{F_n}_{\subset F_i} \setminus F_i') \subset \bigcup_{i \leq n}(F_i \setminus F_i'),
+$$
+also
+$$F_n = {\bigcap_{i\leq n} F_i} \subset \left( \bigcap_{i \leq n} F_i' \right) \cup \bigcup_{i \leq n} (F_i \setminus F_i'),$$
+d.h. Überdeckung von $F_n$ durch $n+1$ Teilmengen aus $\mathcal{F}^1$. Aus der $\sigma$-Subaddtivität folgt dann
+$$
+\lambda (F_n) \leq \lambda \left( \bigcap_{i\leq n} F_i' \right) + \sum_{i \leq n} \underbrace{\lambda (F_i \setminus F_i')}_{< \varepsilon_i}
+$$
+Da $\lambda$ endlich-wertig ist, können wir die Gleichung umstellen zu
+$$
+\lambda\left( \bigcap_{i \leq n} F_i' \right) \geq \underbrace{\lambda(F_n)}_{\geq v_0} - \sum_{i \leq n} \varepsilon_i > v_0 - \sum_{n \in \N} \varepsilon_n
+$$
+Wähle $(\varepsilon_n)$ so, dass $\sum_{n\in \N} \varepsilon_n < v_0$. Dann folgt
+$$\lambda \left( \bigcap_{i \leq n } F_i' \right) > 0 \implies \bigcap_{i \leq n} F_i' \neq \emptyset \implies \bigcap_{i \leq n }K_i \neq \emptyset $$
+Also haben wir \eqref{I5} gezeigt und somit war die Behauptung.
+\end{proof}
+
+\begin{definition}
+\begin{mdframed}
+$\lambda^1_{\mathcal{F}^1}$ heißt das 1-dimensionale \textbf{Lebesgue-Prämaß}.
+\end{mdframed}
+\end{definition}
+\end{satz}
+
+\subsubsection{Produkte von Inhalten und Prämaßen}
+Man kann in natürlicher Weise Produkte von Inhalten auf Halbringen und Ringen bilden. Zunächst Halbringe:
+\begin{satz}
+\begin{mdframed}
+Seien $\mu_i$ Inhalte auf Halbringen $\mathcal{H}_i \subset \mathcal{P}(X_i), i=1,...,n$. Dann wird durch
+$$
+(\mu_1 \times ... \times \mu_n) \big(H_1 \times ... \times H_n \big) := \mu(H_1) \cdot ... \cdot \mu(H_n), H_i \in \mathcal{H}_i
+$$
+ein Inhalt $\mu_1 \times ... \times \mu_n$ auf dem Produkthalbring $\mathcal{H}_1 \ast ... \ast \mathcal{H}_n \subset \mathcal{P}(X_1 \times ... \times X_n)$ definiert. \\
+Zusätzliche \emph{Konvention} für Multiplikation auf $\R$: $0 \cdot \infty = 0$, weil $ 0 \cdot n \xrightarrow{n \to \infty} 0$. 
+\end{mdframed}
+\begin{proof} (Für $n=2$, der allgemeiner Fall folgt mit Induktion.) \\
+Wir müssen die \emph{Additivität} nachweisen. Betrachte die endliche Zerlegung eines ``Rechtecks'' $H_1 \times H_2 \in \mathcal{H}_1 \ast \mathcal{H}_2$ in endlich viele paarweise disjunkte ``Rechtecken'' $H_1^{(j)} \times H_2^{(j)} \in \mathcal{H}_1 \ast \mathcal{H}_2$:
+$$
+H_1 \cdot H_2 = \bigsqcup_{j} (H_1^{(j)} \times H_2^{(j)}).
+$$
+Aus dem \hyperref[lemmaA]{Lemma ``simultane Zerlegung''} folgt, dass wir $H_i$ in $H_i'^{(k)} \in \mathcal{H}_i, k \in \underset{\text{endlich!}}{K_i}$ zerlegen können, sodass jedes $H_i^{(j)}$  die disjunkte Vereinigung einiger $H_i'^{(k)}$ ist, also
+$$
+H_i^{(j)} = \bigsqcup_{k \in K_i^{(j)}} H_i'^{(k)}, K_i^{(j)}\subset K_i.
+$$
+So entsteht die ``karierte'' Zerlegung
+$$
+H_1 \times H_2 = \bigsqcup_{(k_1,k_2)\in K_1\times K_2} \Big (H_1'^{(k_1)} \times H_2'^{(k_2)} \Big)	
+$$
+bzw.
+$$
+H_1^{j} \times H_2^{j} = \bigsqcup_{(k_1,k_2)\in K_1^{(j)}\times K_2^{(j)}} \Big (H_1'^{(k_1)} \times H_2'^{(k_2)} \Big).
+$$
+Es gilt die Zerlegung der Indexmenge
+$$
+K_1 \times K_2 = \bigsqcup_j \Big( K_1^{(j)} \times K_2^{(j)} \Big).
+$$
+Da $\mu_i$ additiv ist, folgt
+$$
+\mu_i (H_i) = \sum_{k \in K_i} \mu_i (H_i'^{(k)})
+$$
+bzw. 
+$$
+\mu_i (H_i^{(j)}) = \sum_{k \in K_i^{(j)}} \mu_i (H_i'^{(k)}).
+$$
+Es folgt \begin{scriptsize}
+(Die Additivität von $\mu_1 \times \mu_2$ ist klar für ``karierte'' Zerlegung)
+\end{scriptsize}
+\begin{equation*}
+	\begin{split}
+	(\mu_1 \times \mu_2) \big( H_1 \times H_2 \big) & = \sum_{(k_1,k_2) \in K_1 \times K_2} (\mu_1 \times \mu_2) \big(H_1'^{(k_1)} \times H_2'^{(k_2)} \big) \\
+	& = \sum_j \underbrace{ \sum_{(k_1,k_2) \in K_1^{(j)} \times K_2^{(j)}} (\mu_1 \times \mu_2) \big(H_1'^{(k_1)} \times H_2'^{(k_2)} \big)}_{= \mu_1 \times \mu_2 (H_1^{(j)} \times H_2 ^{(j)})}.
+	\end{split}
+\end{equation*}
+Also war die Additivität von $\mu_1 \times \mu_2$.
+\end{proof}
+\end{satz}
+
+\begin{definition}
+\begin{mdframed}
+Wir nennen den Inhalt $\mu_1 \times ... \times \mu_n$ auf dem Halbring $\mathcal{H}_1 \ast ... \ast \mathcal{H}_n$ das Produkte der Inhalte $\mu_i$.
+\end{mdframed}
+\end{definition}
+
+\begin{hauptbsp}[\textbf{Elementarinhalt}]
+Der Elementarinhalt achsenparalleler Quader $[a,b) \subset \R^d$ für $a,b \in \R^d$ mit $a_i < b_i$ ist definiert als ihr $d$-dimensionales euklidisches Volumen
+$$
+\lambda^d_{\mathcal{Q}^d}\big([a,b)\big) := (b_1 -a_1) \cdot ... \cdot (b_d-a_d)
+$$
+Der Elementarinhalt $\lambda^d_{\mathcal{Q}^d}$ ist ein Inhalt, denn
+$$
+\lambda^d_{\mathcal{Q}^d} = \underbrace{\lambda^1_\mathcal{I} \times ... \times \lambda^1_\mathcal{I}}_{d\text{-mal}}
+$$
+bezüglich der Zerlegung $\mathcal{Q}^d = \mathcal{I} \times ... \times \mathcal{I}$.
+\end{hauptbsp}
+
+Für Ringe folgt mit dem Fortsetzungsresultat für Inhalte von Halbringen auf (die von den erzeugte) Ringe:
+
+\begin{korollar}
+Seien $\mu_i$ Inhalte auf Ringen $\mathcal{R}_i \subset \mathcal{P}(X_i)$, $(i=1,...,n)$. Dann existiert einen eindeutigen Inhalt $\mu_1 \boxtimes .... \boxtimes \mu_n$ auf dem Produktring $\mathcal{R}_1 \boxtimes ... \boxtimes \mathcal{R}_n \subset \mathcal{P}(X_1 \times ... \times X_n)$ mit
+$$(\mu_1 \boxtimes ... \boxtimes \mu_n) \big( R_1 \times ... R_n\big) = \mu_1 (R_1) \cdot ... \mu_n(R_n), R_i \in \mathcal{R}_i$$
+\end{korollar}
+
+\begin{hauptbsp}
+Der Elementarinhalt $\lambda^d_{\mathcal{Q}^d}: \mathcal{Q}^d \longrightarrow [0,\infty)$ setzt sich eindeutig fort zu einem Inhalt
+$$
+\lambda^d_{\mathcal{F}^d}: \mathcal{F}^d \longrightarrow [0,\infty)
+$$
+auf $d$-dimensionalen Figuren, den wir als \emph{$d$-dimensionales euklidisches Volumen} auffassen.
+\end{hauptbsp}
+
+Auch Prämaße verhalten sich gut unter Produkten:
+
+\begin{satz}
+\begin{mdframed}
+Endliche Produkte von Prämaßen sind wieder Prämaße.
+\end{mdframed}
+\begin{proof}
+($n=2$, der allgemeiner Fall folgt mit Induktion.)   \newline
+Seien $\mu_i$ Prämaße auf Ringen $R_i \subset \mathcal{P}(X_i)$, $i=1,2$. Zu zeigen: Der Produktinhalt $\mu_1 \boxtimes \mu_2$ auf $\mathcal{R}_1 \boxtimes \mathcal{R}_2$ ist $\sigma$-additiv. Weil Figuren endliche disjunkte Vereinigungen von Quadern sind und der Inhalt $\mu_1 \boxtimes \mu_2$ (endlich) additiv ist, genügt es, abzählbare disjunkte Zerlegungen
+$$
+A_1 \times A_2 = \bigsqcup_m (A_{1,m} \times A_{2,m})
+$$
+mit $A_i, A_{i,m} \in \mathcal{R}_i$ zu betrachten. Zu zeigen ist also
+$$
+\sum_m \mu_1(A_{1,m}) \cdot \mu_2(A_{2,m}) = \mu_1 (A_1) \cdot \mu_2(A_2)
+$$
+Wegen der Monotonie gilt die Richtung ``$\leq$'', zu zeigen ist ``$\geq$''.
+\marginpar{\tiny{31.10.2019}}
+\end{proof}
+\end{satz}
+
+
+%\input{A-integrale-stetiger-funktionen.tex}
 \end{document}
