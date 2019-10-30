@@ -312,7 +312,7 @@ die Familie der Zylindermengen bestehend aus
 \end{equation*}
 wobei $\pi_k: X_1 \times ... \times X_n \to X_k, (x_1,...,x_n) \mapsto x_k$ die natürliche Projektion ist. %\newpage
 \begin{proposition}
-\begin{mdframed}
+\begin{mdframed} \
 \begin{enumerate}[(\roman*),topsep=5pt]
 	\item Seien $\mathcal{H}_i \subset \mathcal{P}(X_i)$ Halbringe $(i=1,...,n)$ und $\mathcal{R}_i \subset \mathcal{P}(X_i)$ die von ihnen erzeugten Ringe. Dann ist $\mathcal{H}_1 \ast ... \ast \mathcal{H}_n$ ein Halbring auf $X_1 \times ... \times X_n$ und $\mathcal{H}_1 \boxtimes ... \boxtimes \mathcal{H}_n =\mathcal{R}_1 \boxtimes ... \boxtimes \mathcal{R}_n$ der von ihm erzeugte Ring.
 	\item Sind $\mathcal{R}_i \subset \mathcal{P}(X_i)$ Ringe und $\mathcal{E}_i \subset \mathcal{R}_i$ Erzeugendensysteme für $i=1,...,n$, so erzeugt die Familie von Zylindermengen $\mathcal{Z}(\mathcal{E}_1,...,\mathcal{E}_n)$ den Produktring.
@@ -756,5 +756,135 @@ Wegen der Monotonie gilt die Richtung ``$\leq$'', zu zeigen ist ``$\geq$''.
 \end{satz}
 
 
-%\input{A-integrale-stetiger-funktionen.tex}
+\input{A-integrale-stetiger-funktionen.tex}
+\rule{\textwidth}{0.4pt}
+\marginpar{\tiny{30.10.2019}}
+Die \emph{Produktregel} für die Ableitung führt zur Methode der \emph{partiellen} Integration.
+\paragraph{Partielle Integration:} Für $\mathcal{C}^1$ Funktionen $f,g:I\to \C$ auf einem offenen Intervall $I \subset \R$ gilt:
+\begin{equation*}
+	\boxed{
+	\int_a^b f' \cdot g \D x = f\cdot g \big\vert^b_a - \int^b_a f \cdot g' \D x	
+	}
+\end{equation*}
+für $a,b \in I$ Mann nennt $f\cdot g \vert^b_a$ \emph{Randterm}. \\\\
+Für unbestimmte Integrale schreibt man
+\begin{equation*}
+	\boxed{
+	\int f' g\D x = f \cdot g \big\vert -  \int f \cdot g' \D x
+	}
+\end{equation*}
+Man kann diese Gleichung lesen als eine Gleichheit von Funktionenmengen oder so, dass jeder Repräsentant der rechten Seite $f \cdot g \big\vert -  \int f \cdot g'$ ein Repräsentant der linken Seite $\int f' g$ ist.
+\begin{proof}
+Nach der Produktregel ist $f \cdot g$ Stammfunktion von $f'g+fg'$. Der Hauptsatz der Differential- und Integralrechnung liefert dann 
+$$ \int (f' g + fg') = fg \big\vert$$
+\end{proof}
+
+\begin{example}
+\begin{enumerate}
+	\item Berechnung von $\int \ln x \D x$ auf $(0,\infty)$. Dort gilt wegen $\ln' x = \frac{1}{x}$
+	\begin{equation*}
+		\int \ln x \D x = \int (x)'\ln x \D x = x\ln x \big\vert - \int x \cdot \frac{1}{x} \D x = x (\ln x -1)\big\vert
+	\end{equation*}
+	\item Berechnung von $\int x e^x \D x$ auf $\R$.
+	\begin{equation*}
+		\int x e^x \D x = \int x (e^x)' \D x = x e^x\big\vert - \int \underbrace{(x)'}_{=1} e^x \D x =e^x (x-1)
+	\end{equation*}
+	\item[(ii)'] Berechnung von $\int x^n e^x \D x$ auf $\R$.
+	\begin{equation*}
+		I_n(x) := \int x^n e^x \D x  = \int x^n (e^x)' \D x = x^ne^x - n \underbrace{\int x^{n-1} e^x \D x}_{I_{n-1}(x)}
+	\end{equation*}
+	Wir erhalten die Rekursionsformel 
+	$$I_n (x) = x^n e^x \big\vert - n I_{n-1}(x)$$
+	\item Berechnung von $\int\sqrt{1-x^2}\D x $ auf $(-1,1)$.
+	\begin{equation*}
+	\begin{split}
+		\int \sqrt{1-x^2} \D x= \int (x') \sqrt{1-x^2} \D x & = x \sqrt{1-x^2} \big\vert + \int x  \frac{-x}{\sqrt{1-x^2}} \D x \\
+		& = x \sqrt{1-x^2}\big\vert + \int \underbrace{\frac{1-x^2}{\sqrt{1-x^2}}}_{\sqrt{1-x^2}}\D x + \underbrace{\int \frac{1}{\sqrt{1-x^2}} \D x}_{\arcsin x} \\
+		& = \frac{1}{2}\cdot \Big( x \sqrt{1-x^2} + \arcsin (x) \Big) \Big\vert
+	\end{split}
+	\end{equation*}
+	\begin{remark}
+	Die Regel für die Berechnung der Ableitung von Umkehrfunktion ist
+	$$ (f^{-1})' = \frac{1}{f'(f^{-1})} $$
+	\end{remark}
+	und somit haben wir die Ableitung von $\arcsin$:
+	$$\arcsin' (x) = \frac{1}{\cos (\arcsin (x))} = \frac{1}{\sqrt{1-\sin^2\big(\arcsin(x)\big)}} = \frac{1}{1-x^2}$$
+	Insbesondere erhalten wir durch Grenzübergang \begin{small} (Hier ist der Grenzübergang nötig, da $\sqrt{1-x^2}$ nicht stetig differenzierbar in Punkten $-1$ und $1$ sind) \end{small} für das abgeschlossene Intervall $[-1,1]$:
+	\begin{equation*}
+		\begin{split}
+		\int_{-1}^1 \sqrt{1-x^2} \D x = \lim\limits_{\varepsilon \to 0} \int_{-1+\varepsilon}^{1-\varepsilon} \sqrt{1-x^2} \D x & = \lim\limits_{\varepsilon \to 0} \frac{1}{2} \big(x \sqrt{1-x^2} + \arcsin x\big) \Big\vert_{-1+\varepsilon}^{1-\varepsilon} \\
+		& = \frac{1}{2} \left( \frac{\pi}{2} - \left( - \frac{\pi}{2} \right) \right) \\ 
+		& = \frac{\pi }{2}
+		\end{split}
+	\end{equation*}
+	Dies zeigt insbesondere, dass die Fläche der Einheitsscheibe $\pi$ ist.  \\ Außerdem können wir das Integral auch mit Substitution berechnen: 
+	\begin{equation*}
+	\begin{split}
+	 \int_{-1}^1 \sqrt{1-x^2} \D x & \overset{x= \sin u}= \int^{\pi/2}_{-\pi/2} \sqrt{1-\sin^2(u)} \cos u \D u  = \int_{-\pi/2}^{\pi/2} \underbrace{\cos^2 u}_{ \frac{1+\cos 2u}{2}} \D u \\
+		& = 	\Big(\frac{u}{2}+\frac{1}{4}\sin 2u\Big) \Big\vert_{-\pi/2}^{\pi/2} = \frac{\pi}{2}
+	 \end{split}
+	\end{equation*}
+	\item Berechnung von $\int \arctan$: Wir bemerken, dass $\arctan ' (x)=\frac{1}{1+x^2}$, denn $\tan'(x)=1+\tan^2x $.
+	\begin{equation*}
+	\begin{split}
+	  \int \arctan(x) \D x &= \int (x')\arctan(x) \D x = x \cdot \arctan x \big\vert - \int \frac{1}{2} \frac{2x}{1+x^2} \D x \\
+	  &  \overset{t = x^2}= x \cdot \arctan x - \int \frac{1}{2} \cdot \frac{1}{1+t} \D t \Big\vert_{t=x^2} \\
+	  & = x \cdot \arctan x - \frac{1}{2} \ln (1+x^2)
+	  	\end{split}
+	\end{equation*}
+	\item Berechnung von $\int \arcsin(x)$ auf $(-1,1)$
+	\begin{equation*}
+	\begin{split}
+		\int \arcsin(x) \D x = \int (x)' \arcsin(x) \D x & = x\arcsin(x) \big\vert - \int \frac{1}{2} \frac{2 x \D x}{\sqrt{1-x^2}} \\
+		& \overset{t:= x^2}= x\arcsin (x) \big\vert - \int \frac{1}{2} \frac{\D t}{\sqrt{1-t}}  \Big\vert_{t=x^2}	 \\
+		& = x\arcsin x + \sqrt{1-t}\big\vert_{t=x^2} \\
+		& = x\arcsin x + \sqrt{1-x^2} \big\vert
+	\end{split}
+	\end{equation*}
+	\item Berechnung von $\int \sin^2x \D x$. Da
+	\begin{equation*}
+		\int \sin^2 x \D x = \int (-\cos(x))' \sin x \D x = -\cos x \sin x + \int \underbrace{\cos^2 x}_{1-\sin^2 x} \D x
+	\end{equation*}
+	erhalten wir
+	$$
+	\int \sin^2 x \D x = \frac{1}{2} (-\cos x \sin x + x )	
+	$$
+	\item[(vi)'] Berechnung von $\int \sin^n(x) \D x$ für $n \in \N$.
+	\begin{equation*}
+		\begin{split}
+		I_n (x) := \int \sin^n (x) \D x & = \int (-\cos(x))' \sin^{n-1}(x)\D x \\
+				& = -\cos x \sin^{n-1} x + \int 	\underbrace{\cos^2 (x)}_{1-\sin^2(x)} (n-1) \sin^{n-2} (x) \D x \\
+				&  = -\cos x \sin^{n-1} x +(n-1) \left( \underbrace{\int \sin^{n-2} (x) \D x}_{I_{n-2}(x)} - \underbrace{\int \sin^n(x)\D x}_{I_n(x)} \right)
+		\end{split}
+	\end{equation*}
+	Wir erhalten:
+	$$n \cdot I_n(x) = -\cos (x)\sin^{(n-1)}(x) + (n-1) I_{n-2}(x)$$
+	Zum Beispiel gilt $I_0(x)=x$, $I_1(x)=-\cos x $, $I_2(x)=\frac{1}{2}(x-\sin x\cos x)$, $I_3(x)=\frac{1}{3} \cos^3 x - \cos x$.
+\end{enumerate}
+\end{example}
+\newline
+\rule{\textwidth}{0.4pt}
+
+\paragraph{Rationale Funktionen:} $\int \frac{p(x)}{q(x)} \D x$ mit $p,q$ Polynome, $q \neq 0$.Zunächst $p,q \in \C[x]$:
+\begin{satz}[\textbf{Fundamentalsatz der Algebra}] \begin{mdframed} Jedes Polynom $p \in \C[x]$ vom Grad $n= \deg (p)$ besitzt eine Zerlegung in Linearfaktoren:
+$$ p(x) = c \cdot \prod_{n=1}^m (x-\alpha_k)^{n_k}$$
+mit $m \leq n, c \in \C \setminus \{0\}, \alpha_1,...,\alpha_m \in \C, \sum_{k=1}^m n_k = n$. Hierbei sind $\alpha_1,...,\alpha_m$ die verschiedenen Nullstellen von $p$ und $n_k$ die Vielfachheit von $\alpha_k$. Die Linearfaktorzerlegung ist bis auf Vertauschung von Faktoren eindeutig.
+\end{mdframed}
+Polynomdivision führt zu:
+$$\frac{p(x)}{q(x)} = s(x) + \frac{r(x)}{q(x)} \quad \text{mit } s\in \C [x] \text{ und } \deg r < \deg q$$
+\end{satz}
+
+\paragraph{Partialbruchzerlegung:} Sei $q(x) \in \C [x]$ mit $q(x) = c \cdot \prod_{n=1}^m (x-\alpha_k)^{n_k} $. \linebreak Für jedes komplexe Polynom $r(x) \in \C[x]$ mit $\deg r < \deg q =n $ existiert eine eindeutige Zerlegung:
+$$
+\frac{r(x)}{q(x)} = \sum_{k=1}^m \sum_{j=1}^{n_k} \frac{c_{kj}}{(x-x_k)^j}, \quad c_{jk} \in \C
+$$
+d.h.
+$$r(x) = \sum_{k=1}^m \sum_{j=1}^{n_k} b_{kj}(x) c_{kj}$$
+mit 
+$$b_{kj} = (x-\alpha_k)^{n_k-j} \cdot \prod_{\substack{l=1 \\ l \neq k}}^m (x-\alpha_l)^{n_l}$$
+Anderes gesagt, $\{b_{kj}\}$ für $k=1,...,m$ und $j=1,...,n_k$ bilden Basis von $\C_{\deg<n}[x]$. Insbesondere $\dim( \C_{\deg <n}[x])=n$.
+
+\begin{example}
+$$\int \frac{1}{1-x^2} \D x = \frac{1}{2} \int \frac{1}{1-x} \D x + \frac{1}{2} \int \frac{1}{1+x} \D x = \frac{1}{2} \ln \left| \frac{1+x}{1-x} \right|$$
+\end{example}
 \end{document}
