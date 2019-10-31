@@ -284,30 +284,30 @@ Man kann den von einer Familie $\mathcal{E}$ erzeugten Halbring nicht (analog zu
 Sind $\mathcal{F}_i \subset \mathcal{P}(X_i), i=1,...,n$ Familien von Teilmengen, so entstehen das Produkt von ``Quadern''
 \begin{equation*}
 \begin{split}
-\mathcal{F}_1 \ast ... \ast \mathcal{F}_n := \{ \underbrace{M_1 \times ... \times M_n}_{\subset X_1 \times ... \times X_n} \mid M_i \in \F_i \text{ für } i=1,...,n\}  \\ \subset  \mathcal{P}(X_1 \times ... \times X_n)
+\mathcal{F}_1 \ast ... \ast \mathcal{F}_n := \{ \underbrace{M_1 \times ... \times M_n}_{\subset X_1 \times ... \times X_n} \mid M_i \in \FF_i \text{ für } i=1,...,n\}  \\ \subset  \mathcal{P}(X_1 \times ... \times X_n)
 \end{split}
 \end{equation*}
-und die $\cup$-stabile Hülle, die Familie $\F_1 \boxtimes ... \boxtimes \F_n$ der endlichen Vereinigungen von ``Quadern'' in $\F_1 \ast ... \ast \F_n$, die Figuren, 
+und die $\cup$-stabile Hülle, die Familie $\FF_1 \boxtimes ... \boxtimes \FF_n$ der endlichen Vereinigungen von ``Quadern'' in $\FF_1 \ast ... \ast \FF_n$, die Figuren, 
 \begin{equation*}
-\F_1 \boxtimes ... \boxtimes \F_n = \left\{\text{endlcihe Vereinigungen von Teilmengen in } \F_1 \ast ... \ast \F_n	\right\}
+\FF_1 \boxtimes ... \boxtimes \FF_n = \left\{\text{endlcihe Vereinigungen von Teilmengen in } \FF_1 \ast ... \ast \FF_n	\right\}
 \end{equation*}
 Beide Produkte $\ast$ und $\boxtimes$ sind \emph{assoziativ}, d.h.\begin{small}
 \begin{equation*}
-(\F_1 \ast \F_2) \ast \F_3 = \F_1 \ast \F_2 \ast \F_3 = \F_1 \ast (\F_2 \ast \F_3)
+(\FF_1 \ast \FF_2) \ast \FF_3 = \FF_1 \ast \FF_2 \ast \FF_3 = \FF_1 \ast (\FF_2 \ast \FF_3)
 \end{equation*}
 und
 \begin{equation*}
-(\F_1 \boxtimes \F_2) \boxtimes \F_3 = \F_1 \boxtimes \F_2 \boxtimes \F_3 = \F_1 \boxtimes (\F_2 \boxtimes \F_3)
+(\FF_1 \boxtimes \FF_2) \boxtimes \FF_3 = \FF_1 \boxtimes \FF_2 \boxtimes \FF_3 = \FF_1 \boxtimes (\FF_2 \boxtimes \FF_3)
 \end{equation*}
 \end{small}
 Wir definieren weiter
 \begin{equation*}
-\mathcal{Z} = \mathcal{Z} (\F_1,...,\F_n) \subset \F_1 \ast ... \ast \F_n
+\mathcal{Z} = \mathcal{Z} (\FF_1,...,\FF_n) \subset \FF_1 \ast ... \ast \FF_n
 \end{equation*}
 die Familie der Zylindermengen bestehend aus
 \begin{equation*}
 \begin{split}
-\pi_k^{-1}(M_k) = X_1 \times ... \times X_{k-1} \times M_k \times X_{k+1} \times ... \times X_n \quad\\ \text{mit } 1 \leq k \leq n, M_k \in \F_k
+\pi_k^{-1}(M_k) = X_1 \times ... \times X_{k-1} \times M_k \times X_{k+1} \times ... \times X_n \quad\\ \text{mit } 1 \leq k \leq n, M_k \in \FF_k
 \end{split}
 \end{equation*}
 wobei $\pi_k: X_1 \times ... \times X_n \to X_k, (x_1,...,x_n) \mapsto x_k$ die natürliche Projektion ist. %\newpage
@@ -427,13 +427,13 @@ Ein Inhalt auf einer Halbring $\mathcal{H}$ ist eine Funktion $\mu: \mathcal{H} 
 \end{example}
 
 \begin{example}[Halboffene Intervalle in $\R$, der Grundbaustein für Lebesgue-Maß]
-Wir betrachten den Halbring $\I = \mathcal{Q}^1 \subset \mathcal{P}(\R)$. So wird ein Inhalt gegeben durch die euklidische Länge
+Wir betrachten den Halbring $\II = \mathcal{Q}^1 \subset \mathcal{P}(\R)$. So wird ein Inhalt gegeben durch die euklidische Länge
 \begin{align} \label{I23}
-\lambda^1_\I : \I \to [0, \infty), \quad \lambda^1_\I \big([a,b)\big) := b-a \ (a<b)
+\lambda^1_\II : \II \to [0, \infty), \quad \lambda^1_\II \big([a,b)\big) := b-a \ (a<b)
 \end{align}
 Wir überprüfen die Additivität: Sei $a = x_0 < x_1 < ... < x_{n} = b$ eine Unterteilung von $[a,b)$. So entsteht die disjunkte Zerlegung $[a,b) = [a,x_1) \sqcup ... \sqcup [x_{n-1},b)$. Es folgt 
 \begin{equation*}
-\underbrace{\lambda^1_\I \big([a,b)]}_{b-a} = \underbrace{\lambda^1_\I \big( [a,x_1)\big)}_{x_1-a} + \underbrace{\lambda^1_\I \big([x_1,x_2)\big)}_{x_2 -x_1} + ... + \underbrace{\lambda^1_\I \big( [x_{n-1},b ) \big)}_{b-x_{n-1}}
+\underbrace{\lambda^1_\II \big([a,b)]}_{b-a} = \underbrace{\lambda^1_\II \big( [a,x_1)\big)}_{x_1-a} + \underbrace{\lambda^1_\II \big([x_1,x_2)\big)}_{x_2 -x_1} + ... + \underbrace{\lambda^1_\II \big( [x_{n-1},b ) \big)}_{b-x_{n-1}}
 \end{equation*}
 \end{example}
 \marginpar{\tiny{24.10.2019}}
@@ -495,7 +495,7 @@ Wir setzen den in dem letzten Beispiel definierten Inhalt \eqref{I23}
 \lambda^1_{\mathcal{Q}^1}: \underset{\text{\tiny{Halbring}}}{\mathcal{I} = \mathcal{Q}^1} \longrightarrow [0,\infty)
 \end{equation*} auf den Halbring $\mathcal{I}$ fort zu
 \begin{equation*}
-\lambda^1_{\F^1}:\mathcal{F}^1 \longrightarrow [0,\infty)
+\lambda^1_{\FF^1}:\mathcal{F}^1 \longrightarrow [0,\infty)
 \end{equation*}
 wobei $\mathcal{F}^1$ den von $\mathcal{Q}^1$ erzeugten Ring der 1-dimensionale Figuren bezeichnen, also ist $\lambda^1_{\mathcal{F}}$ definiert als die Summe der Längen der Teilintervalle.
 \end{example}
@@ -600,7 +600,7 @@ $$ \mu (A) := \begin{cases}
 	\end{cases}$$
 Sind $A_1,...,A_n$ paarweise disjunkt und nicht alle $A_i$ endlich, so gibt es genau ein $A_i$ unendlich. Daraus folgt
 $$\underset{\text{genau ein Beitrag }1}{\mu(A_1)+...\mu(A_n)} = 1 = \mu(A_1 \sqcup ... \sqcup A_n).$$
-Also war die endliche Additivität. Die $\sigma$-Additivität wird genau dann verletzt, falls $X$ abzählbare Zerlegung in endlichen Teilmengen ($\iff$ $X$ abzählbar) zulässt. \begin{small}Zum Beispiel betrachten wir die natürlichen Zahlen $\N$. Es gilt $\sum_{n\in \N} \mu (\{n\}) =0 \neq 1 = \mu \left( \bigcup_{n \in \N} \{n\} \right)$.
+Also war die endliche Additivität. Die $\sigma$-Additivität wird genau dann verletzt, falls $X$ abzählbare Zerlegung in endlichen Teilmengen ($\iff$ $X$ abzählbar) zulässt. \begin{small}(Zum Beispiel betrachten wir die natürlichen Zahlen $\N$. Es gilt $\sum_{n\in \N} \mu (\{n\}) =0 \neq 1 = \mu \left( \bigcup_{n \in \N} \{n\} \right)$.)
 \end{small} Daraus folgt: $\mu $ Prämaß $\iff$ $X$ überabzählbar (z.B. $X = \R$).
 \end{example}
 
@@ -742,149 +742,146 @@ Endliche Produkte von Prämaßen sind wieder Prämaße.
 \end{mdframed}
 \begin{proof}
 ($n=2$, der allgemeiner Fall folgt mit Induktion.)   \newline
-Seien $\mu_i$ Prämaße auf Ringen $\mathcal{R}_i \subset \mathcal{P}(X_i)$, $i=1,2$. Zu zeigen: Der Produktinhalt $\mu_1 \boxtimes \mu_2$ auf $\mathcal{R}_1 \boxtimes \mathcal{R}_2$ ist $\sigma$-additiv. Weil Figuren endliche disjunkte Vereinigungen von Quadern sind und der Inhalt $\mu_1 \boxtimes \mu_2$ (endlich) additiv ist, genügt es, abzählbare disjunkte Zerlegungen
+Seien $\mu_i$ Prämaße auf Ringen $\mathcal{R}_i \subset \mathcal{P}(X_i)$, $i=1,2$. und der Produktinhalt $\mu_1 \boxtimes \mu_2$ auf $\mathcal{R}_1 \boxtimes \mathcal{R}_2$ gegeben durch
+$$(\mu_1 \boxtimes \mu_2) (R_1 \times R_2) = \mu_1 (R_1) \cdot \mu_2(R_2), R_i \in \mathcal{R}_i.$$ Jetzt müssen wir die Additivität des Volumens nachweisen bei \emph{abzählbaren} Zerlegungen von Figuren (d.h. Teilmengen aus $\mathcal{R}_1 \boxtimes \mathcal{R}_2$) in Figuren. Weil Figuren endliche disjunkte Vereinigungen von Quadern sind und der Inhalt $\mu_1 \boxtimes \mu_2$ (endlich) additiv ist, genügt es, abzählbare disjunkte Zerlegungen
 $$
-A_1 \times A_2 = \bigsqcup_m (A_{1,m} \times A_{2,m})
+A_1 \times A_2 = \bigsqcup_{\substack{m\in \N \\ \text{\tiny abzählbar!}}} (A_{1,m} \times A_{2,m})
 $$
 mit $A_i, A_{i,m} \in \mathcal{R}_i$ zu betrachten. Zu zeigen ist also
 $$
-\sum_m \mu_1(A_{1,m}) \cdot \mu_2(A_{2,m}) = \mu_1 (A_1) \cdot \mu_2(A_2)
+\sum_{m\in \N} \underbrace{\mu_1(A_{1,m}) \cdot \mu_2(A_{2,m})}_{(\mu_1 \boxtimes \mu_2) (A_{1,m}\times A_{2,m})} = \mu_1 (A_1) \cdot \mu_2(A_2)
 $$
-Wegen der Monotonie gilt die Richtung ``$\leq$'', zu zeigen ist ``$\geq$''.
+Wegen der Monotonie von Inhalten gilt die Richtung ``$\leq$'', zu zeigen ist ``$\geq$''.
 \marginpar{\tiny{31.10.2019}}
+Hierbei wird verwendet, dass $\mu_i$ Prämaße sind. Wir brauchen eine \emph{untere} Abschätzung von der Summe der Teilvolumina. Betrachte eine Folge approximierender Figuren
+$$F_m := \bigsqcup_{i \leq m}(A_{1,m} \times A_{2,m}).$$
+Wir schätzen $(\mu_1 \boxtimes \mu_2) (F_m)$ nach unten ab. Die $X_2$-Querschnitte für $x_1 \in A_1$ 
+$$S_{2,m}(x_1) \subset A_2$$
+sind definiert durch
+$$\{x_1\} \times S_{2,m}(x_1) = F_m \cap ( \{x_1\} \times A_2).$$
+Dann folgt
+$$S_{2,m} (x_1) \in \mathcal{R}_2$$
+da $S_{2,m}(x_1)$ die Vereinigung einiger $A_{2,i}$ ist. $S_{2,m}(x_1)$ wachsen mit $m$ und $S_{2,m}(x_1) \nearrow A_2$ für $m \to \infty$ und festes $x_1$. \\
+Für festes $m$ treten endlich viele Querschnitte auf. Die Punkte $x_1 \in A_1$, für die $S_{2,m}(x_1)$ ein bestimmter Querschnitt ist, bilden eine Figur $\in \mathcal{R}_1$. (Liegt im Unterring erzeugt von $A_{1,i}$.) \\
+Für $0<v_2<\mu_2(A_2)$ setze
+$$
+B_{1,m}(v_2) := \{x_1 \in A_1 \mid \mu_2(S_{2,m} (x_1) ) \geq v_2 \} \in \mathcal{R}_1.
+$$
+Dann erhalten wir die Volumenabschätzung:
+$$(\mu_1 \boxtimes \mu_2) (F_m) \geq \mu_1 (B_{1,m}(v_2))\cdot v_2.$$
+Somit:
+\begin{equation*}
+	\begin{split}
+				&	S_{2,m}(x_1) \nearrow A_2	\\
+			\xRightarrow{\mu_2 \text{ Prämaß}} & \mu(S_{2,m}(x_1) \nearrow \mu_2(A_2) \\
+			\xRightarrow{\quad \quad\quad\  \,} & B_{1,m}(v_2) \nearrow A_1 \\
+			\xRightarrow{\mu_1 \text{ Prämaß}} & \mu_1 (B_{1,m}(v_2)) \nearrow \mu_1(A_1) \\
+			\xRightarrow{\quad \quad\quad\  \,} & \lim_{m \to \infty} (\mu_1 \boxtimes \mu_2) (F_m) \geq \mu_1(A_1) \cdot v_2\ \  \forall v_2 \in (0,\mu_2(A_2)) \\
+			\xRightarrow{\quad \quad\quad\  \,} & \lim_{m \to \infty} (\mu_1 \boxtimes \mu_2) (F_m) \geq \mu_1(A_1) \cdot \mu_2(A_2) \\
+	\end{split}
+\end{equation*}
+Also die Gleichheit, d.h. $\mu_1 \boxtimes \mu_2$ ist ein Prämaß.
 \end{proof}
 \end{satz}
 
+\begin{remark}
+Der letzte Satz wird häufig erst im Rahmen der Integrationstheorie bewiesen (mit Satz von der monotonen Konvergenz).
+\end{remark}
 
-\input{A-integrale-stetiger-funktionen.tex}
-\rule{\textwidth}{0.4pt}
-\marginpar{\tiny{30.10.2019}}
-Die \emph{Produktregel} für die Ableitung führt zur Methode der \emph{partiellen} Integration.
-\paragraph{Partielle Integration:} Für $\mathcal{C}^1$ Funktionen $f,g:I\to \C$ auf einem offenen Intervall $I \subset \R$ gilt:
-\begin{equation*}
-	\boxed{
-	\int_a^b f' \cdot g \D x = f\cdot g \big\vert^b_a - \int^b_a f \cdot g' \D x	
-	}
-\end{equation*}
-für $a,b \in I$ Mann nennt $f\cdot g \vert^b_a$ \emph{Randterm}. \\\\
-Für unbestimmte Integrale schreibt man
-\begin{equation*}
-	\boxed{
-	\int f' g\D x = f \cdot g \big\vert -  \int f \cdot g' \D x
-	}
-\end{equation*}
-Man kann diese Gleichung lesen als eine Gleichheit von Funktionenmengen oder so, dass jeder Repräsentant der rechten Seite $f \cdot g \big\vert -  \int f \cdot g'$ ein Repräsentant der linken Seite $\int f' g$ ist.
-\begin{proof}
-Nach der Produktregel ist $f \cdot g$ Stammfunktion von $f'g+fg'$. Der Hauptsatz der Differential- und Integralrechnung liefert dann 
-$$ \int (f' g + fg') = fg \big\vert$$
-\end{proof}
+Zurück zum unsren Hauptbeispiel: Weil der Inhalt $\lambda^d_{\mathcal{F}^d}$ die $d$-te Potenz des Prämaßes $\lambda^1_{\mathcal{F}^1}$ ist, folgt
 
-\begin{example}
-\begin{enumerate}
-	\item Berechnung von $\int \ln x \D x$ auf $(0,\infty)$. Dort gilt wegen $\ln' x = \frac{1}{x}$
-	\begin{equation*}
-		\int \ln x \D x = \int (x)'\ln x \D x = x\ln x \big\vert - \int x \cdot \frac{1}{x} \D x = x (\ln x -1)\big\vert
-	\end{equation*}
-	\item Berechnung von $\int x e^x \D x$ auf $\R$.
-	\begin{equation*}
-		\int x e^x \D x = \int x (e^x)' \D x = x e^x\big\vert - \int \underbrace{(x)'}_{=1} e^x \D x =e^x (x-1)
-	\end{equation*}
-	\item[(ii)'] Berechnung von $\int x^n e^x \D x$ auf $\R$.
-	\begin{equation*}
-		I_n(x) := \int x^n e^x \D x  = \int x^n (e^x)' \D x = x^ne^x - n \underbrace{\int x^{n-1} e^x \D x}_{I_{n-1}(x)}
-	\end{equation*}
-	Wir erhalten die Rekursionsformel 
-	$$I_n (x) = x^n e^x \big\vert - n I_{n-1}(x)$$
-	\item Berechnung von $\int\sqrt{1-x^2}\D x $ auf $(-1,1)$.
-	\begin{equation*}
-	\begin{split}
-		\int \sqrt{1-x^2} \D x= \int (x') \sqrt{1-x^2} \D x & = x \sqrt{1-x^2} \big\vert + \int x  \frac{-x}{\sqrt{1-x^2}} \D x \\
-		& = x \sqrt{1-x^2}\big\vert + \int \underbrace{\frac{1-x^2}{\sqrt{1-x^2}}}_{\sqrt{1-x^2}}\D x + \underbrace{\int \frac{1}{\sqrt{1-x^2}} \D x}_{\arcsin x} \\
-		& = \frac{1}{2}\cdot \Big( x \sqrt{1-x^2} + \arcsin (x) \Big) \Big\vert
-	\end{split}
-	\end{equation*}
-	\begin{remark}
-	Die Regel für die Berechnung der Ableitung von Umkehrfunktion ist
-	$$ (f^{-1})' = \frac{1}{f'(f^{-1})} $$
-	\end{remark}
-	und somit haben wir die Ableitung von $\arcsin$:
-	$$\arcsin' (x) = \frac{1}{\cos (\arcsin (x))} = \frac{1}{\sqrt{1-\sin^2\big(\arcsin(x)\big)}} = \frac{1}{1-x^2}$$
-	Insbesondere erhalten wir durch Grenzübergang \begin{small} (Hier ist der Grenzübergang nötig, da $\sqrt{1-x^2}$ nicht stetig differenzierbar in Punkten $-1$ und $1$ sind) \end{small} für das abgeschlossene Intervall $[-1,1]$:
+\begin{korollar}
+Der Inhalt $\lambda^d_{\mathcal{F}^d}$ ist ein Prämaß.
+\end{korollar}
+
+\begin{definition}
+	\begin{mdframed} 
+		Der Prämaß $\lambda^d_{\mathcal{F}^d}$ heißt \textbf{$d$-dimensionales Lebesgue-Prämaß}.
+	\end{mdframed}
+\end{definition}
+
+\subsection{$\sigma$-Algebren}
+Wir fordern von Teilmengenfamilien jetzt, dass sie \emph{reichhaltiger} und \emph{flexibel} sind, d.h. dass man innerhalb von ihnen zusätzlich zu den genannten endlichen Mengenoperationen auch gewisse \emph{abzählbar unendliche} Operationen (nämlich Vereinigungen) durchführen kann. D.h. Sie sollen abgeschlossen sein unter gewissen \emph{Grenzprozessen.}
+
+\begin{definition}[\textbf{$\sigma$-Algebra}]
+\begin{mdframed}
+Eine Familie $\mathcal{A}\subset \mathcal{P}(X)$ heißt $\sigma$-Algebra auf $X$, falls:
+\begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
+	\item $\emptyset \in \mathcal{A}$,
+	\item \emph{$\sigma$-$\cup$-stabil}, d.h. Für jede Folge $(A_n)_{n\in \N}$ von Teilmengen mit $A_n \in \mathcal{A}$ gilt $\bigcup\limits_{n\in\N} A_n \in \mathcal{A}$,
+	\item \emph{$\complement$-stabil}, d.h. $A \in \mathcal{A} \implies \complement A \in \mathcal{A}$.
+\end{enumerate}
+\end{mdframed}
+Man kann (i) bzw. (iii) ersetzen durch die bezüglich Komplementbildung duale Forderung:
+\begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
+	\item[(i*)] $X \in \mathcal{A}$,
+	\item[(iii*)] \emph{$\delta$-$\cap$-stabil}, d.h. Für jede Folge $(A_n)_{n\in \N}$ von Teilmengen mit $A_n \in \mathcal{A}$ gilt $\bigcap\limits_{n\in\N}A_n \in \mathcal{A}$.
+\end{enumerate}
+Leicht können wir einsehen, dass $\sigma$-Algebren Algebren sind.
+\begin{remark}
+\begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
+	\item Beachte formale Ähnlichkeit von (iii) bzw. (iii*) mit Definition einer Topologie: Die Topologie ist die Familie aller offenen Teilmengen, sie ist stabil unter beliebigen Vereinigungen und endlichen Durchschnitten.
+	\item In $\sigma$-Algebren gilt: Alle von innen bzw. außen durch Teilmengen in der $\sigma$-Algebra approximierbare Teilmengen gehören wieder zur $\sigma$-Algebra.
+\end{enumerate}
+\end{remark}
+\end{definition}
+
+Wie im Fall von Ringen und Algebren: Beliebige Durchschnitte von $\sigma$-Algebren sind wieder $\sigma$-Algebren, deswegen ist die folgende Definition sinnvoll:
+
+\begin{definition}[\textbf{Erzeugendensystem von $\sigma$-Algebren}]
+\begin{mdframed}
+Die von einer Familie $\mathcal{E}\subset \mathcal{P}(X)$ \emph{erzeugte} $\sigma$-Algebra $\sigma(\mathcal{E})$  ist die eindeutige kleinste sie enthaltende $\sigma$-Algebra. Man nennt $\mathcal{E}$ ein(en) \emph{Erzeugendensystem} oder \emph{Erzeuger} von $\sigma(\mathcal{E})$
+\end{mdframed}
+\end{definition}
+Die Definition einer $\sigma$-Algebra durch ein Erzeugendensystem ist nicht \emph{konstruktiv}! Im Fall von Ringen und Algebren kann man die enthaltenen Teilmengen ausgehend von einem Erzeugendensystem noch explizit angeben, nämlich \emph{induktiv} in \emph{abzählbaren vielen} Schritten konstruieren. Diese ist bei $\sigma$-Algebren abgesehen von Ausnahmenfällen nicht mehr möglich, sondern man benötigt zur Konstruktion aus einem Erzeugendensystem einen Prozess mit \emph{überabzählbaren vielen} Schritten. (siehe transfinite Induktion) Dieser Umstand reflektiert, dass die in $\sigma$-Algebren enthaltenen Teilmengen i.A. so kompliziert sind, dass man sie nicht mehr explizit beschreiben kann. \newline \newline
+\begin{small}
+\textit{Ergänzend:} Ist $\mathcal{E}\subset\mathcal{P}(X)$, so kann man durch Anwenden abzählbarer Mengenoperationen immer eine größere Teilmengenfamilie angeben, die zu $\sigma(\mathcal{E})$ gehören müssen und deren ``Verwandtschaftsgrad'' zu $\mathcal{E}$ gleichzeitig sukzessive abnimmt.\\
+Zu $\mathcal{F} \subset \mathcal{P}$ definiere 
+\begin{equation*}
+\begin{split}
+\mathcal{F} \subset \mathcal{F}^\nu & := \left\{
+\substack{\text{\small abzählbare Vereinigungen von Teilmengen in $\mathcal{F}$}  \\ \text{\small sowie deren Komplementen}}
+\right\} \subset \mathcal{P}(X) 	\\
+\mathcal{E}_0 & := \mathcal{E} \cap \{\emptyset\} \\
+\mathcal{E}_n & := \mathcal{E}^\nu_{n-1}	\text{ für } n\in \N
+\end{split}
+\end{equation*}
+Anfang der ``Borel-Hierarchie'', fortsetzen mit transfiniter Induktion.
+\end{small} 
+
+\paragraph{Einfachste Beispiele.} 
+\begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
+	\item[(o)]  $\{\emptyset, X\} \subset \mathcal{P}(X)$ ist eine $\sigma$-Algebra auf $X$, erzeugt von $\{\emptyset\}$.\\
+	$\PP (X) \subset \PP (X)$ ist ebenfalls eine $\sigma$-Algebra.
+	\item Ist $A \subset X$, so ist $\{\emptyset, A, \complement A, X\}$ eine $\sigma$-Algebra auf $X$, erzeugt von $\EE=\{A\}$.
+	\item Die Teilmengen von $X$, die abzählbar sind oder abzählbares Komplement haben, bilden eine $\sigma$-Algebra $\mathcal{A}$ auf $X$, erzeugt von den \emph{einelementigen} Teilmengen. Es gilt: $A \neq \PP (X) \iff X $ überabzählbar. 
+\end{enumerate}
+Von zentraler Wichtigkeit sind Beispiele \emph{topologischen} Ursprungs:
+
+\begin{example} \ 
+\begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
+	\item (\textbf{Borelsche $\sigma$-Algebra, Borel-Mengen}) Jeder topologische Raum $(X,\TT)$ trägt eine natürliche $\sigma$-Algebra, nämlich die von seiner Topologie erzeugte $\sigma$-Algebra
+	$$\BB(X):=\sigma(\TT).$$
+	Wir nennen $\BB(X)$ die \emph{Borelsche $\sigma$-Algebra} von $X$. In ihnen enthaltenen Teilmengen heißen \emph{Borel-Mengen}. \\
+	\textit{Notation}: 
 	\begin{equation*}
 		\begin{split}
-		\int_{-1}^1 \sqrt{1-x^2} \D x = \lim\limits_{\varepsilon \to 0} \int_{-1+\varepsilon}^{1-\varepsilon} \sqrt{1-x^2} \D x & = \lim\limits_{\varepsilon \to 0} \frac{1}{2} \big(x \sqrt{1-x^2} + \arcsin x\big) \Big\vert_{-1+\varepsilon}^{1-\varepsilon} \\
-		& = \frac{1}{2} \left( \frac{\pi}{2} - \left( - \frac{\pi}{2} \right) \right) \\ 
-		& = \frac{\pi }{2}
+			\BB(\R^d) & =: \BB^d \\
+			\BB(\R) & =: \BB
 		\end{split}
 	\end{equation*}
-	Dies zeigt insbesondere, dass die Fläche der Einheitsscheibe $\pi$ ist.  \\ Außerdem können wir das Integral auch mit Substitution berechnen: 
-	\begin{equation*}
-	\begin{split}
-	 \int_{-1}^1 \sqrt{1-x^2} \D x & \overset{x= \sin u}= \int^{\pi/2}_{-\pi/2} \sqrt{1-\sin^2(u)} \cos u \D u  = \int_{-\pi/2}^{\pi/2} \underbrace{\cos^2 u}_{ \frac{1+\cos 2u}{2}} \D u \\
-		& = 	\Big(\frac{u}{2}+\frac{1}{4}\sin 2u\Big) \Big\vert_{-\pi/2}^{\pi/2} = \frac{\pi}{2}
-	 \end{split}
-	\end{equation*}
-	\item Berechnung von $\int \arctan$: Wir bemerken, dass $\arctan ' (x)=\frac{1}{1+x^2}$, denn $\tan'(x)=1+\tan^2x $.
-	\begin{equation*}
-	\begin{split}
-	  \int \arctan(x) \D x &= \int (x')\arctan(x) \D x = x \cdot \arctan x \big\vert - \int \frac{1}{2} \frac{2x}{1+x^2} \D x \\
-	  &  \overset{t = x^2}= x \cdot \arctan x - \int \frac{1}{2} \cdot \frac{1}{1+t} \D t \Big\vert_{t=x^2} \\
-	  & = x \cdot \arctan x - \frac{1}{2} \ln (1+x^2)
-	  	\end{split}
-	\end{equation*}
-	\item Berechnung von $\int \arcsin(x)$ auf $(-1,1)$
-	\begin{equation*}
-	\begin{split}
-		\int \arcsin(x) \D x = \int (x)' \arcsin(x) \D x & = x\arcsin(x) \big\vert - \int \frac{1}{2} \frac{2 x \D x}{\sqrt{1-x^2}} \\
-		& \overset{t:= x^2}= x\arcsin (x) \big\vert - \int \frac{1}{2} \frac{\D t}{\sqrt{1-t}}  \Big\vert_{t=x^2}	 \\
-		& = x\arcsin x + \sqrt{1-t}\big\vert_{t=x^2} \\
-		& = x\arcsin x + \sqrt{1-x^2} \big\vert
-	\end{split}
-	\end{equation*}
-	\item Berechnung von $\int \sin^2x \D x$. Da
-	\begin{equation*}
-		\int \sin^2 x \D x = \int (-\cos(x))' \sin x \D x = -\cos x \sin x + \int \underbrace{\cos^2 x}_{1-\sin^2 x} \D x
-	\end{equation*}
-	erhalten wir
-	$$
-	\int \sin^2 x \D x = \frac{1}{2} (-\cos x \sin x + x )	
-	$$
-	\item[(vi)'] Berechnung von $\int \sin^n(x) \D x$ für $n \in \N$.
-	\begin{equation*}
-		\begin{split}
-		I_n (x) := \int \sin^n (x) \D x & = \int (-\cos(x))' \sin^{n-1}(x)\D x \\
-				& = -\cos x \sin^{n-1} x + \int 	\underbrace{\cos^2 (x)}_{1-\sin^2(x)} (n-1) \sin^{n-2} (x) \D x \\
-				&  = -\cos x \sin^{n-1} x +(n-1) \left( \underbrace{\int \sin^{n-2} (x) \D x}_{I_{n-2}(x)} - \underbrace{\int \sin^n(x)\D x}_{I_n(x)} \right)
-		\end{split}
-	\end{equation*}
-	Wir erhalten:
-	$$n \cdot I_n(x) = -\cos (x)\sin^{(n-1)}(x) + (n-1) I_{n-2}(x)$$
-	Zum Beispiel gilt $I_0(x)=x$, $I_1(x)=-\cos x $, $I_2(x)=\frac{1}{2}(x-\sin x\cos x)$, $I_3(x)=\frac{1}{3} \cos^3 x - \cos x$.
+	\item Jeder \emph{metrische} Raum $(X,d)$ trägt eine natürliche Topologie, die von den offenen metrischen Bällen erzeugte Topologie $\TT_d$ und damit eine natürliche $\sigma$-Algebra
+	$$\BB(X):=\sigma(\TT_d).$$
 \end{enumerate}
 \end{example}
-\newline
-\rule{\textwidth}{0.4pt}
 
-\paragraph{Rationale Funktionen:} $\int \frac{p(x)}{q(x)} \D x$ mit $p,q$ Polynome, $q \neq 0$.Zunächst $p,q \in \C[x]$:
-\begin{satz}[\textbf{Fundamentalsatz der Algebra}] \begin{mdframed} Jedes Polynom $p \in \C[x]$ vom Grad $n= \deg (p)$ besitzt eine Zerlegung in Linearfaktoren:
-$$ p(x) = c \cdot \prod_{n=1}^m (x-\alpha_k)^{n_k}$$
-mit $m \leq n, c \in \C \setminus \{0\}, \alpha_1,...,\alpha_m \in \C, \sum_{k=1}^m n_k = n$. Hierbei sind $\alpha_1,...,\alpha_m$ die verschiedenen Nullstellen von $p$ und $n_k$ die Vielfachheit von $\alpha_k$. Die Linearfaktorzerlegung ist bis auf Vertauschung von Faktoren eindeutig.
-\end{mdframed}
-Polynomdivision führt zu:
-$$\frac{p(x)}{q(x)} = s(x) + \frac{r(x)}{q(x)} \quad \text{mit } s\in \C [x] \text{ und } \deg r < \deg q$$
-\end{satz}
+\begin{remark} \
+\begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
+	\item Die Borelsche $\sigma$-Algebra eines topologischen Raumes wird ebenfalls von den abgeschlossenen Teilmengen erzeugt. (vgl. die Stabilität unter Komplementbildung)
+	\item Ist die Topologie \emph{Hausdorffsch}, so sind kompakte Teilmengen abgeschlossen, und daher die von den Kompakta erzeugte $\sigma$-Algebra in der Borelschen enthalten. Besitzt der Raum eine abzählbare Überdeckung durch Kompakta, so sind beide $\sigma$-Algebren gleich.
+\end{enumerate}
+\end{remark}
+\marginpar{\tiny{4.11.2019}}
+\input{A-integrale-stetiger-funktionen.tex}
 
-\paragraph{Partialbruchzerlegung:} Sei $q(x) \in \C [x]$ mit $q(x) = c \cdot \prod_{n=1}^m (x-\alpha_k)^{n_k} $. \linebreak Für jedes komplexe Polynom $r(x) \in \C[x]$ mit $\deg r < \deg q =n $ existiert eine eindeutige Zerlegung:
-$$
-\frac{r(x)}{q(x)} = \sum_{k=1}^m \sum_{j=1}^{n_k} \frac{c_{kj}}{(x-x_k)^j}, \quad c_{jk} \in \C
-$$
-d.h.
-$$r(x) = \sum_{k=1}^m \sum_{j=1}^{n_k} b_{kj}(x) c_{kj}$$
-mit 
-$$b_{kj} = (x-\alpha_k)^{n_k-j} \cdot \prod_{\substack{l=1 \\ l \neq k}}^m (x-\alpha_l)^{n_l}$$
-Anderes gesagt, $\{b_{kj}\}$ für $k=1,...,m$ und $j=1,...,n_k$ bilden Basis von $\C_{\deg<n}[x]$. Insbesondere $\dim( \C_{\deg <n}[x])=n$.
-
-\begin{example}
-$$\int \frac{1}{1-x^2} \D x = \frac{1}{2} \int \frac{1}{1-x} \D x + \frac{1}{2} \int \frac{1}{1+x} \D x = \frac{1}{2} \ln \left| \frac{1+x}{1-x} \right|$$
-\end{example}
 \end{document}
