@@ -506,13 +506,13 @@ Die Fortsetzung von Inhalten von Ringen auf Algebren ist nicht eindeutig. Z.B. b
 \end{remark}
 \subsubsection{Prämaße}
 Wir betrachten Verhalten von Volumina bei gewissen Grenzprozessen. (Approximation von innen und außen) Wir arbeiten mit Teilmengen einer festen Menge $X$.\newline \newline
-Falls $(A_n)_{n \in \N}$ eine aufsteigende Folge von Teilmengen von $X$ mit $\bigcup_{n \in \N} A_n =:A$,
+Falls $(A_n)_{n \in \N}$ eine aufsteigende Folge von Teilmengen von $X$ mit
 \begin{equation*}
-A_1 \subset A_2 \subset ... \subset A_n \subset ... \subset X
+\bigcup_{n \in \N} A_n =A, \ \ A_1 \subset A_2 \subset ... \subset A_n \subset ... \subset X
 \end{equation*}  so schreiben wir $A_n \nearrow A$. \newline \newline
-Falls $(A'_n)_{n \in \N}$ absteigend mit $\bigcap_{n \in \N} A'_n = A$, 
+Falls $(A'_n)_{n \in \N}$ absteigend mit 
 \begin{equation*}
-X \supset A_1' \supset A_2' \supset ... \supset A_n' \supset ...
+\bigcap_{n \in \N} A'_n = A, \ \ X \supset A_1' \supset A_2' \supset ... \supset A_n' \supset ...
 \end{equation*}
 so schreiben wir $A_n' \searrow A$.
 \begin{beobachtung}
@@ -523,7 +523,7 @@ Es gelten
 \end{align*}
 Sei $\mu: \RR \longrightarrow [0,\infty]$ ein Inhalt. Dann gilt
 \begin{equation*}
-A_n \nearrow A \searrow A_n' \xRightarrow[]{\text{Monotonie}} \underset{\text{wächst}}{\mu(A_n)} \leq \mu(A) \leq \underset{\text{fällt}}{\mu(A_n')}
+A_n \nearrow A \swarrow A_n' \xRightarrow[]{\text{Monotonie}} \underset{\text{wächst}}{\mu(A_n)} \leq \mu(A) \leq \underset{\text{fällt}}{\mu(A_n')}
 \end{equation*}
 Da $\mu(A_n)$ und $\mu(A'_n)$ nur \emph{schwach} monoton sind, folgt nur die Ungleichung
 \begin{equation}	\label{I33}
@@ -550,23 +550,27 @@ Gilt in einer der Gleichung \eqref{I33} die Gleichheit, so fassen wir das als \t
 \begin{mdframed}
 Für einen Inhalt $\mu : \RR \longrightarrow [0,\infty]$ auf einem Ring $\RR$ sind die beiden folgenden Eigenschaften äquivalent:
 \begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
-	\item \emph{$\sigma$-Additivität:} Ist $(A_n)_{n \in \N}$ eine Folge paarweise disjunkter Teilmengen, $A_n \in \RR$ mit $\bigsqcup_nA_n \in \RR$, so gilt
+	\item \emph{$\sigma$-Additivität:} Ist $(A_n)_{n \in \N}$ eine Folge paarweise disjunkter Teilmengen in $\RR$ mit $\bigsqcup_nA_n \in \RR$, so gilt
 	$$
-	\mu \bigg(\bigsqcup_{n=1}^\infty A_n \bigg) = \sum_{n=1}^\infty \mu (A_n)	
+	\mu \bigg(\bigsqcup_{n=1}^\infty A_n \bigg) = \sum_{n=1}^\infty \mu (A_n).
 	$$
-	\item \textit{Stetigkeit von unten:} Ist $(B_n)_{n\in\N}$ aufsteigend, $B_n \in \RR$ mit $B_n \nearrow B \in \RR$, so gilt
+	\item \textit{Stetigkeit von unten:} Ist $(B_n)_{n\in\N}$ eine aufsteigende Folge in $\RR$, so gilt %$B_n \in \RR$ mit $B_n \nearrow B \in \RR$, so gilt
 	$$
-	\mu (B_n) \nearrow \mu (B)	
+	B_n \nearrow B \in \RR \implies \mu (B_n) \nearrow \mu (B).
 	$$
 \end{enumerate}
 	Sie implizieren die beiden folgenden, ebenfalls zueinander äquivalenten, Eigenschaften:
 	\begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
-	\item[(iii)] \emph{Stetigkeit von oben:} Ist $(C_n)_{n \in \N}$ absteigend, $C_n \in \RR$ \textbf{mit} $\mu(C_n) < \infty$ \textbf{und} $C_n \searrow C \in \RR$, so gilt
-	$$
-	\mu(C_n) \searrow \mu (C)	
-	$$
-	\item[(iv)] \emph{Stetigkeit von $\emptyset$:} Ist $(D_n)_{n \in \N}$ absteigend, $D_n \in \RR$ mit $\mu(D_n) < \infty$ und $D_n \searrow \emptyset$, so gilt
-	$$ \mu (D_n) \searrow 0$$
+	\item[(iii)] \emph{Stetigkeit von oben:} Ist $(C_n)_{n \in \N}$ eine absteigende Folge in $\RR$ \textbf{mit} $\mu(C_n) < \infty$, so gilt
+	$$C_n \searrow C \in \RR \implies \mu (C_n) \searrow \mu (C).$$
+	%Ist $(C_n)_{n \in \N}$ absteigend, $C_n \in \RR$ \textbf{mit} $\mu(C_n) < \infty$ {und} $C_n \searrow C \in \RR$, so gilt
+	%$
+	%\mu(C_n) \searrow \mu (C)	
+	%$
+	\item[(iv)] \emph{Stetigkeit von $\emptyset$:} Ist $(D_n)_{n \in \N}$ eine absteigende Folge in $\RR$ \textbf{mit} $\mu(D_n)<\infty$, so gilt
+	$$D_n \searrow \emptyset \implies \mu (D_n) \searrow 0.$$
+	%Ist $(D_n)_{n \in \N}$ absteigend, $D_n \in \RR$ \textbf{mit} $\mu(D_n) < \infty$ und $D_n \searrow \emptyset$, so gilt
+	%$ \mu (D_n) \searrow 0$
 	\end{enumerate}
 	Falls $\mu$ endliche Werte hat, gilt umgekehrt (iii), (iv) $\implies$ (i), (ii).
 \end{mdframed}
