@@ -357,7 +357,7 @@ Wir nennen den Halbring $\HH_1 \ast ... \ast \HH_n$ das Produkt der Halbringe $\
 
 \begin{hauptbsp}[Quader und Figuren in $\R^d$]
 \begin{mdframed}
-Ist $a,b \in \R^d$ mit $a_i < b_i \forall i$, so entsteht achsenparalleler halboffener Quader
+Ist $a,b \in \R^d$ mit $a_i < b_i \forall i$, so entsteht ein achsenparalleler halboffener Quader
 \begin{equation*}
 [a,b) := [a_1, b_1) \times ... \times [a_d,b_d)
 \end{equation*}
@@ -373,7 +373,7 @@ Also gilt
 \begin{equation*}
 \QQ^d = \underbrace{\mathcal{I} \ast ... \ast \mathcal{I}}_{d\text{-Mal}}
 \end{equation*}
-Aus der \hyperref[propC]{letzten Proposition} folgt, dass $\QQ^d$ ein Halbring auf $\RR^d$ ist. Es folgt ebenfalls, dass
+Aus der \hyperref[propC]{letzten Proposition} folgt, dass $\QQ^d$ ein Halbring auf $\R^d$ ist. Es folgt ebenfalls, dass
 \begin{equation*}
 \FF^d := \underbrace{\mathcal{I} \boxtimes ... \boxtimes \mathcal{I}}_{d\text{-Mal}}
 \end{equation*}
@@ -405,8 +405,8 @@ Die allgemeinste Sorte von uns betrachteter Volumenfunktion ist endlich additiv 
 \begin{mdframed}
 Ein Inhalt auf einer Halbring $\HH$ ist eine Funktion $\mu: \HH \to [0,\infty]$ mit den Eigenschaften:
 \begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
-	\item $\mu (\emptyset) = 0$
-	\item \emph{Additivität}: Sind $A_1,...,A_n \in \HH$ paarweise disjunkt mit $A_1 \sqcup ... \sqcup A_n \in \HH$ \tablefootnote{Die Voraussetzung ist redundant, falls $\HH$ ein Ring ist.}, so gilt $\mu(A_1 \sqcup ... \sqcup A_n) = \mu(A_1) + ... +\mu(A_n)$
+	\item $\mu (\emptyset) = 0$,
+	\item \emph{Additivität}: Sind $A_1,...,A_n \in \HH$ paarweise disjunkt mit $A_1 \sqcup ... \sqcup A_n \in \HH$ \tablefootnote{Die Voraussetzung ist redundant, falls $\HH$ ein Ring ist.}, so gilt $\mu(A_1 \sqcup ... \sqcup A_n) = \mu(A_1) + ... +\mu(A_n)$.
 \end{enumerate}
 \end{mdframed}
 \end{definition}
@@ -443,10 +443,10 @@ Wir überprüfen die Additivität: Sei $a = x_0 < x_1 < ... < x_{n} = b$ eine Un
 \begin{mdframed}
 Seien $\HH$ ein Halbring und $\mu:\HH \longrightarrow [0,\infty]$ ein Inhalt. Dann gilt:
 \begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
-	\item \emph{Monotonie}: Ist $A, B \in \HH$ mit $A \subset B$, so ist $\mu (A) \leq \mu (B)$.
+	\item \emph{Monotonie}: Ist $A, B \in \HH$ mit $A \subset B$, so ist $\mu (A) \leq \mu (B)$,
 	\item \emph{Subadditivität:} Seien $A_1, ..., A_n \in \HH$ \emph{(nicht notwendigerweise disjunkt!)} mit $A_1 \cup ... \cup A_n \in \HH$, dann gilt
 	\begin{equation*}
-	\mu(A_1 \cup .... \cup A_n) \leq \mu (A_1) + ... + \mu (A_n)
+	\mu(A_1 \cup .... \cup A_n) \leq \mu (A_1) + ... + \mu (A_n).
 	\end{equation*}
 \end{enumerate}
 \end{mdframed}
@@ -530,10 +530,10 @@ Da $\mu(A_n)$ und $\mu(A'_n)$ nur \emph{schwach} monoton sind, folgt nur die Ung
 \lim\limits_{n\to\infty} \mu(A_n) \leq \mu(A) \leq \lim\limits_{n \to \infty} \mu (A_n')
 \end{equation}
 \end{beobachtung}
-Wir formulieren nun einen disjunkte Zerlegung für $A_n$ durch einen Induktiven Prozess:
+Wir formulieren nun einen disjunkte Zerlegung für $A_n$ durch einen Induktiven Prozess: (Man beachte, dass $(A_n)_{n\in \N}$ eine aufsteigende Folge ist.)
 \begin{equation*}\begin{split}
 	A_0 & := \emptyset	\\
-	\widetilde{A}_{n} &:= {A}_{n} \setminus (A_0\cup ... \cup A_{n-1})	 \end{split}
+	\widetilde{A}_{n} &:= {A}_{n} \setminus A_{n-1} \end{split}
 \end{equation*}
 so entsteht die disjunkte Zerlegung
 \begin{equation*}
@@ -898,7 +898,7 @@ $\BB^d=\BB(\R^d)$ hat verschiedene natürliche Erzeuger, z.B.
 	\item die Familie der offenen Teilmengen,
 	\item die Familie der abgeschlossenen Teilmengen,
 	\item die Familie von Kompakta,
-	\item die Familie der offenen Bälle, bzw. offene Bälle mit Radien $\in \QQ^+$ und Zentren $\in \QQ^d$, denn jede offene Teilmenge ist eine abzählbare Vereinigung von offenen Bällen,
+	\item die Familie der offenen Bälle, bzw. offene Bälle mit Radien $\in \Q^+$ und Zentren $\in \Q^d$, denn jede offene Teilmenge ist eine abzählbare Vereinigung von offenen Bällen,
 	\item die Familie der abgeschlossenen Bälle,
 	\item die Familie der offenen (achsenparallelen) Quader,
 	\item die Familie der abgeschlossenen (achsenparallelen) Quader.
@@ -909,7 +909,7 @@ $\BB^d=\BB(\R^d)$ hat verschiedene natürliche Erzeuger, z.B.
 $\BB^d$ wird auch von $\QQ^d$ (halboffenen, achsenparallelen Quadern) erzeugt.
 \end{mdframed}
 \begin{proof}
-Einerseits: Jede offene Teilmenge von $\R^d$ ist (notwendigerweise) wegen der Dichtheit von $\QQ$ in $\R$ eine abzählbare Vereinigung von Quandern $[a,b)$ aus $\QQ^d$ mit rationalen Ecken, d.h. $a_i<b_i \ \forall i, a,b\in \QQ^d$. Also $\BB^d \subset \sigma (\QQ^d)$.\\
+Einerseits: Jede offene Teilmenge von $\R^d$ ist (notwendigerweise) wegen der Dichtheit von $\Q$ in $\R$ eine abzählbare Vereinigung von Quandern $[a,b)$ aus $\QQ^d$ mit rationalen Ecken, d.h. $a_i<b_i \ \forall i, a,b\in \Q^d$. Also $\BB^d \subset \sigma (\QQ^d)$.\\
 Anderseits ist jeder Quader $[a,b)$ mit $a_i<b_i\ \forall i$ ein abzählbarer Durchschnitt offener Quader, gehört also zu $\BB^d$, denn
 $$
 [a,b) = \underbrace{\bigcap_{n\in \N} \underbrace{\left(a_1-\frac{1}{n}, b_1\right) \times ... \times \left(a_d-\frac{1}{n},b_d \right)}_{\in \TT}}_{\in \ \sigma(\TT) = \BB^d}
