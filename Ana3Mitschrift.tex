@@ -16,7 +16,7 @@ Maßtheorie ist die Theorie des Volumens. Motivierende Beispiele sind:
 \item Volumina von Teilmengen des euklidischen Raums
 \item Wahrscheinlichkeiten (= ``Volumina von Ereignissen'')
 \end{enumerate}
-Wir konzentrieren uns im Rest des Abschnitts auf $\R^d$. Wir wollen leistungsfähigen Volumenbegriff haben, sodass die Volumina von möglich vielen Teilmengen flexibel gemessen werden können. Unser erster ``naiver'' Ansatz wäre, dass wir Volumenmessung für \emph{alle} Teilmengen verlangen, also eine Funktion
+Wir konzentrieren uns im Rest des Abschnitts auf $\R^d$. Wir wollen einen leistungsfähigen Volumenbegriff haben, sodass die Volumina von möglich vielen Teilmengen flexibel gemessen werden können. Unser erster ``naiver'' Ansatz wäre, dass wir Volumenmessung für \emph{alle} Teilmengen verlangen, also eine Funktion
 \begin{equation*}
  \vol: \mathcal{P}(\R^d) \longrightarrow [0.\infty]
 \end{equation*}
@@ -390,9 +390,9 @@ Die erweiterten reellen Zahlen ist definiert als $\ol{\R} := \{- \infty\} \cup \
 	x \cdot \infty = \infty &\text{ für } x> 0
 \end{align*}
 Später werden wir außerdem sehen 
-\begin{equation*}
-	0 \cdot \infty = 0
-\end{equation*}
+%\begin{equation*}
+	$0 \cdot \infty = 0$
+%\end{equation*}
 (da $ 0 \cdot n \longrightarrow 0$ für $n \longrightarrow \infty$).
 \end{remark}
 \subsubsection{Inhalte auf Halbringen und Ringen}
@@ -799,7 +799,7 @@ Der Inhalt $\lambda^d_{\FF^d}$ ist ein Prämaß.
 
 \begin{definition}
 	\begin{mdframed} 
-		Der Prämaß $\lambda^d_{\FF^d}$ heißt \textbf{$d$-dimensionales Lebesgue-Prämaß}.
+		Das Prämaß $\lambda^d_{\FF^d}$ heißt \textbf{$d$-dimensionales Lebesgue-Prämaß}.
 	\end{mdframed}
 \end{definition}
 
@@ -825,7 +825,7 @@ Leicht können wir einsehen, dass $\sigma$-Algebren Algebren sind.
 \begin{remark}
 \begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
 	\item Beachte formale Ähnlichkeit von (iii) bzw. (iii*) mit Definition einer Topologie: Die Topologie ist die Familie aller offenen Teilmengen, sie ist stabil unter beliebigen Vereinigungen und endlichen Durchschnitten.
-	\item In $\sigma$-Algebren gilt: Alle von innen bzw. außen durch Teilmengen in der $\sigma$-Algebra approximierbare Teilmengen gehören wieder zur $\sigma$-Algebra.
+	\item In $\sigma$-Algebren gilt: Alle von innen bzw. außen durch Teilmengen in der $\sigma$-Algebra approximierbaren Teilmengen gehören wieder zur $\sigma$-Algebra.
 \end{enumerate}
 \end{remark}
 \end{definition}
@@ -894,8 +894,8 @@ $\BB^d=\BB(\R^d)$ hat verschiedene natürliche Erzeuger, z.B.
 \begin{itemize}
 	\item die Familie der offenen Teilmengen,
 	\item die Familie der abgeschlossenen Teilmengen,
-	\item die Familie von Kompakta,
-	\item die Familie der offenen Bälle, bzw. offene Bälle mit Radien $\in \Q^+$ und Zentren $\in \Q^d$, denn jede offene Teilmenge ist eine abzählbare Vereinigung von offenen Bällen,
+	\item die Familie der Kompakta,
+	\item die Familie der offenen Bälle, bzw. offenen Bälle mit Radien $\in \Q^+$ und Zentren $\in \Q^d$, denn jede offene Teilmenge ist eine abzählbare Vereinigung von offenen Bällen,
 	\item die Familie der abgeschlossenen Bälle,
 	\item die Familie der offenen (achsenparallelen) Quader,
 	\item die Familie der abgeschlossenen (achsenparallelen) Quader.
@@ -944,7 +944,7 @@ $\cap$-stabile Dynkin-Systeme sind $\sigma$-Algebren.
 %	\end{split}
 %\end{equation*}
 %Also ist $\DD$ eine $\sigma$-Algebra.
-Sei $\DD$ ein $\cap$-stabiles Dynkin-System. Aus der $\complement$-Stabilität und $\cap$-Stabilität folgt die $\cup$-Stabilität wegen $A\cup B=\complement(\complement A \cap \complement B)$. $\D$ ist also eine Algebra. In Algebren lassen sich abzählbare Vereinigungen als abzählbare \emph{disjunkte} Vereinigungen ausdrücken:
+Sei $\DD$ ein $\cap$-stabiles Dynkin-System. Aus der $\complement$-Stabilität und $\cap$-Stabilität folgt die $\cup$-Stabilität wegen $A\cup B=\complement(\complement A \cap \complement B)$. $\DD$ ist also eine Algebra. In Algebren lassen sich abzählbare Vereinigungen als abzählbare \emph{disjunkte} Vereinigungen ausdrücken:
 \begin{equation*}
 A_1 \cup A_2 ... \cup A_n \cup ... = A_1 \sqcup \underbrace{(A_2 \setminus A_1)}_{\in \DD} \sqcup \underbrace{(A_3 \setminus (A_1\sqcup A_2))}_{\in \DD} \sqcup ... \in \DD
 \end{equation*}
@@ -953,9 +953,9 @@ D.h. $\DD$ enthält beliebige abzählbare Vereinigungen von Teilmengen aus $\DD$
 \end{proposition}
 
 \begin{lemma}
-%\begin{mdframed}
+\begin{mdframed}
 Ist $\DD \subset \PP(X)$ ein Dynkin-System und $D_1, D_2 \in \DD$ mit $D_1 \subset D_2$, so ist $D_2 \setminus D_1 \in \DD$.
-%\end{mdframed}
+\end{mdframed}
 \begin{proof}
 Wegen $\complement(D_2\setminus D_1) = D_1 \sqcup \complement D_2 \in \DD$ gilt $D_2 \setminus D_1 \in \DD$.
 \end{proof}
@@ -1108,7 +1108,7 @@ Sind $\EE_i \subset \AA_i$ Erzeugendensysteme, so ist $\ZZ(\EE_1,...,\EE_n)$ ein
 \subsubsection{Beispiele und Definitionen}
 \begin{definition}
 \begin{mdframed}
-Ein Maß ist ein auf einer $\sigma$-Algebra definierter Prämaß.
+Ein Maß ist ein auf einer $\sigma$-Algebra definiertes Prämaß.
 \end{mdframed}
 \end{definition}
 
@@ -1156,7 +1156,7 @@ Daher brauchen wir Fortsetzungsresultate.
 
 \subsubsection{Äußere Maße und Messbarkeit}
 Sei $\HH \subset \PP(X)$ ein Halbring und $\mu:\HH \longrightarrow [0,\infty]$ ein Inhalt. Unser Ziel ist, $\mu$ auf $\sigma(\HH)$ fortzusetzen.\\\\
-Wir geben für \emph{beliebige} Teilmengen von $X$ ein \textbf{äußeres $\mu$-Volumen} \ (\textbf{obere \linebreak $\mu$-Volumenschranke}), indem wir \emph{abzählbare} Überdeckungen durch Teilmengen aus $\HH$ verwenden. Wir definieren für $M \subset X$
+Wir geben für \emph{beliebige} Teilmengen von $X$ ein \textbf{äußeres $\mu$-Volumen} \ (bzw. eine \textbf{obere $\mu$-Volumenschranke}), indem wir \emph{abzählbare} Überdeckungen durch Teilmengen aus $\HH$ verwenden. Wir definieren für $M \subset X$
 $$
 \mu^*(M):= \inf \left\{ \sum_{n=1}^\infty \mu(A_n) \ \bigg\vert\ (A_n)_{n\in \N} \text{ Folge in $\HH$ mit } M \subset {\bigcup_{n\in \N} A_n} \right\}.
 $$
@@ -1216,5 +1216,5 @@ $$
 ``Volumen-Exzess'' wird also erzeugt durch ``erzwungene Überlappung''. Intuition: der Exzess ist positiv, wenn der ``Rand'' von $M$ bzw. Übergangsbereich (Interface) von $M$ in $\complement M$ ``dick'' bzw. ``diffus'' ist.
  
 \marginpar{\tiny{11.11.2019}}
-\input{A-integrale-stetiger-funktionen.tex}
+%\input{A-integrale-stetiger-funktionen.tex}
 \end{document}
