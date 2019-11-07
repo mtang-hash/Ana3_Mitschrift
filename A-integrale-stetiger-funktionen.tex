@@ -1,7 +1,7 @@
 \newpage
 \appendix
 %\subsection*{Appendix}
-\subsubsection*{Integrale stetiger Funktionen einer Variable} %\small (einer reellen Variable)}
+\subsection*{Integrale stetiger Funktionen einer Variable} %\small (einer reellen Variable)}
 \marginpar{\tiny{23.10.2019}}
 Wir unterscheiden zwischen
 \begin{enumerate}[- ,topsep =-3pt]
@@ -211,3 +211,15 @@ Anderes gesagt, $\{b_{kj}\}$ für $k=1,...,m$ und $j=1,...,n_k$ bilden Basis von
 $$\int \frac{1}{1-x^2} \D x = \frac{1}{2} \int \frac{1}{1-x} \D x + \frac{1}{2} \int \frac{1}{1+x} \D x = \frac{1}{2} \ln \left| \frac{1+x}{1-x} \right|$$
 \end{example}
 \end{example}
+
+% \subsection*{Auswahlaxiom} \marginpar{\tiny{6.11.2019}}
+% \paragraph{Auswahlaxiom (informell).} Gegeben eine Familie \emph{nichtleerer} Mengen, so können wir ``simultan'' aus jeder von ihnen jeweils ein Element auswählen. \\\\
+% Sei $\MM$ eine Familie nichtleerer Mengen. Eine Grundkonstruktion ist die Vereinigung $\bigcup\limits_{m \in \MM} M$, besteht aus den Elementen, die in (mindestens) einer der Menge $M$ enthalten sind. \\\\
+% Die simultane Auswahl von Elementen der Mengen entspricht einer \emph{Auswahlfunktion} (choice function) $f: \MM \to \bigcup\limits_{M \in \MM} M$, sodass $f(M) \in M \ \forall M \in \MM$.
+% \paragraph{Auswahlaxiom.} Es existieren stets Auswahlfunktionen. 
+% \\ Betrachten wir $\MM := \{A,B\}$, so entspricht die Auswahlfunktion geordneten Paaren $(a,b)$, d.h. die Auswahlfunktion ist Element vom kartesischen Produkt $A\times B$. Eine andere Grundkonstruktion ist das kartesische Produkt, das aufgefasst werden kann als
+% $$\prod_{M\in \MM}M := \{\text{Auswahlfunktionen}\}.$$
+% Wir können das Auswahlaxiom also reformulieren: Kartesische Produkte nichtleerer Familien nichtleerer Mengen sind nichtleer. \\\\
+% Das AC reduziert sich auf Spezialfall der Potenzmenge:
+% \paragraph{Auswahlaxiom für Potenzmengen.} Für jede Menge $X$ existiert eine Auswahlfunktion $f: \PP(X)\setminus\{\emptyset\} \longrightarrow X$ sodass $f(M)\in M \ \forall \emptyset \neq M \subset X$.
+% \subsection*{Ordnung}

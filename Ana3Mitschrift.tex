@@ -261,11 +261,9 @@ Da für $H \cap \complement \widetilde{H}_l = H \setminus \widetilde{H}_l$ (Axio
 \end{proof}
 \end{lemma}
 
-\marginpar{\tiny{21.10.2019}}
-
-\begin{proposition}
+\begin{proposition}\marginpar{\tiny{21.10.2019}}
 \begin{mdframed}
-Jede Teilmenge im von einem Halbring $\HH$ erzeugten Ring $\RR$ ist eine endliche disjunkte Vereinigung von Teilmengen in $\HH$, d.h. \begin{scriptsize}(ein einfacher Erzeugungsprozess!)\end{scriptsize}
+Jede Teilmenge im von einem Halbring $\HH$ erzeugten Ring $\RR$ ist eine endliche disjunkte Vereinigung von Teilmengen in $\HH$, d.h. \begin{scriptsize}(ein einfacher Erzeugungsprozess!)\end{scriptsize} 
 \begin{equation}
 \RR = \left\{ \bigsqcup_{k=1}^n H_k \  \Big\rvert \ n\in \N, H_1,...,H_n \in \HH \right\}
 \label{eqI14}
@@ -281,7 +279,7 @@ Man kann den von einer Familie $\EE$ erzeugten Halbring nicht (analog zu Ringen 
 \end{remark}
 
 \subsubsection{Produkte von Halbringen und Ringen}
-Sind $\FF_i \subset \mathcal{P}(X_i), i=1,...,n$ Familien von Teilmengen, so entstehen das Produkt von ``Quadern''
+Sind $\FF_i \subset \mathcal{P}(X_i), i=1,...,n$ Familien von Teilmengen, so entsteht das Produkt von ``Quadern''
 \begin{equation*}
 \begin{split}
 \FF_1 \ast ... \ast \FF_n := \{ \underbrace{M_1 \times ... \times M_n}_{\subset X_1 \times ... \times X_n} \mid M_i \in \FF_i \text{ für } i=1,...,n\}  \\ \subset  \mathcal{P}(X_1 \times ... \times X_n)
@@ -294,10 +292,8 @@ und die $\cup$-stabile Hülle, die Familie $\FF_1 \boxtimes ... \boxtimes \FF_n$
 Beide Produkte $\ast$ und $\boxtimes$ sind \emph{assoziativ}, d.h.\begin{small}
 \begin{equation*}
 (\FF_1 \ast \FF_2) \ast \FF_3 = \FF_1 \ast \FF_2 \ast \FF_3 = \FF_1 \ast (\FF_2 \ast \FF_3)
-\end{equation*}
-und
-\begin{equation*}
-(\FF_1 \boxtimes \FF_2) \boxtimes \FF_3 = \FF_1 \boxtimes \FF_2 \boxtimes \FF_3 = \FF_1 \boxtimes (\FF_2 \boxtimes \FF_3)
+\text{ \scriptsize und }
+(\FF_1 \boxtimes \FF_2) \boxtimes \FF_3 = \FF_1 \boxtimes \FF_2 \boxtimes \FF_3 = \FF_1 \boxtimes (\FF_2 \boxtimes \FF_3).
 \end{equation*}
 \end{small}
 Wir definieren weiter
@@ -305,7 +301,7 @@ Wir definieren weiter
 %\mathcal{Z} = 
 \mathcal{Z} (\FF_1,...,\FF_n) %\subset \FF_1 \ast ... \ast \FF_n
 \end{equation*}
-die Familie der Zylindermengen bestehend aus
+die Familie der \textbf{Zylindermengen} bestehend aus
 \begin{equation*}
 \begin{split}
 \pi_k^{-1}(M_k) = X_1 \times ... \times X_{k-1} \times M_k \times X_{k+1} \times ... \times X_n \quad\\ \text{mit } 1 \leq k \leq n, M_k \in \FF_k
@@ -317,7 +313,8 @@ Falls $X_i \in \FF_i \ \forall i$, so ist $\mathcal{Z}(\FF_1,...,\FF_n) \subset 
 \begin{mdframed} \
 \begin{enumerate}[(\roman*),topsep=5pt]
 	\item Seien $\HH_i \subset \mathcal{P}(X_i)$ Halbringe $(i=1,...,n)$ und $\RR_i \subset \mathcal{P}(X_i)$ die von ihnen erzeugten Ringe. Dann ist $\HH_1 \ast ... \ast \HH_n$ ein Halbring auf $X_1 \times ... \times X_n$ und $\HH_1 \boxtimes ... \boxtimes \HH_n =\RR_1 \boxtimes ... \boxtimes \RR_n$ der von ihm erzeugte Ring.
-	\item Sind $\RR_i \subset \mathcal{P}(X_i)$ Ringe und $\EE_i \subset \RR_i$ Erzeugendensysteme für $i=1,...,n$, so erzeugt die Familie von Zylindermengen $\mathcal{Z}(\EE_1,...,\EE_n)$ den Produktring.
+	\item Sind $\RR_i \subset \mathcal{P}(X_i)$ Ringe und $\EE_i \subset \RR_i$ Erzeugendensysteme für $i=1,...,n$, so wird der Produktring $\RR_i \boxtimes ... \boxtimes \RR_n$ von $\EE_1 \ast ... \EE_n$ erzeugt.
+	\item Sind die $\RR_i$ Algebren, so wird der Produktring von $\ZZ(\EE_1,...,\EE_n)$ erzeugt.
 	%\item Sind $\EE_i \subset \HH_i$ Erzeugendensysteme der Halbringe, so ist $\mathcal{Z}(\EE_1,...,\EE_n)$ ein Erzeugendensystem von $\HH_1 \ast ... \ast \HH_n$ als Halbring sowie (folglich) ein Erzeugendensystem von $\HH_1 \boxtimes ... \boxtimes \HH_n$ als Ring.
 \end{enumerate}
 \end{mdframed}
@@ -935,17 +932,23 @@ Im Vergleich zu $\sigma$-Algebren fordern wir zusätzlich die (paarweise) Disjun
 
 \begin{proposition}
 \begin{mdframed}
-$\cap$-stabile Dynkin-Systeme sind genau $\sigma$-Algebren.
+$\cap$-stabile Dynkin-Systeme sind $\sigma$-Algebren.
 \end{mdframed}
 \begin{proof}
-$\sigma$-Algebren sind Dynkin-Systeme und $\cap$-stabil, also $\cap$-stabile Dynkin-Systeme. Ist $\DD$ ein $\cap$-stabiles Dynkin-System, so lassen sich abzählbare Vereinigungen als abzählbare \emph{disjunkte} Vereinigungen ausdrücken:
+%$\sigma$-Algebren sind Dynkin-Systeme und $\cap$-stabil, also $\cap$-stabile Dynkin-Systeme. 
+%Ist $\DD$ ein $\cap$-stabiles Dynkin-System, so lassen sich abzählbare Vereinigungen als abzählbare \emph{disjunkte} Vereinigungen ausdrücken:
+%\begin{equation*}
+%	\begin{split}
+%		     \bigcup_{n \in \N}A_n
+%		=    A_1 \sqcup (A_2 \cap \complement A_1) \sqcup  ... \sqcup \underbrace{\left(A_n \cap \bigcap\limits_{i=1}^{n-1}\complement A_i\right)}_{\in \DD} \sqcup ... \in \DD
+%	\end{split}
+%\end{equation*}
+%Also ist $\DD$ eine $\sigma$-Algebra.
+Sei $\DD$ ein $\cap$-stabiles Dynkin-System. Aus der $\complement$-Stabilität und $\cap$-Stabilität folgt die $\cup$-Stabilität wegen $A\cup B=\complement(\complement A \cap \complement B)$. $\D$ ist also eine Algebra. In Algebren lassen sich abzählbare Vereinigungen als abzählbare \emph{disjunkte} Vereinigungen ausdrücken:
 \begin{equation*}
-	\begin{split}
-		     \bigcup_{n \in \N}A_n
-		=    A_1 \sqcup (A_2 \cap \complement A_1) \sqcup  ... \sqcup \underbrace{\left(A_n \cap \bigcap\limits_{i=1}^{n-1}\complement A_i\right)}_{\in \DD} \sqcup ... \in \DD
-	\end{split}
+A_1 \cup A_2 ... \cup A_n \cup ... = A_1 \sqcup \underbrace{(A_2 \setminus A_1)}_{\in \DD} \sqcup \underbrace{(A_3 \setminus (A_1\sqcup A_2))}_{\in \DD} \sqcup ... \in \DD
 \end{equation*}
-Also ist $\DD$ eine $\sigma$-Algebra.
+D.h. $\DD$ enthält beliebige abzählbare Vereinigungen von Teilmengen aus $\DD$, ist also eine $\sigma$-Algebra.
 \end{proof}
 \end{proposition}
 
@@ -1054,7 +1057,164 @@ $
 \{A \in \sigma(\FF) \mid f^{-1}(A) \in \sigma(f^* \FF) \}
 $ eine Algebra, die $\FF$ enthält und in $\sigma(\FF)$ enthalten ist, somit Gleichheit.
 \end{proof}
-\end{lemma}
 \marginpar{\tiny{7.11.2019}}
+Das Lemma lässt sich reformulieren: Ist $f: X \to Y$ eine Abbildung, $\BB \subset \PP(Y)$ eine $\sigma$-Algebra und $\EE \subset \BB$ Erzeugendensystem, so wird $f^*\BB$ von $f^* \EE$ erzeugt. Wir können also Erzeuger zurückziehen.
+\end{lemma}
+\begin{equation*}
+	\begin{array}{ccc}
+		\text{topologische Kategorie} & \leadsto & \text{Klasse der Borelschen Messräume} \\
+		(X,\TT) & \leadsto & (X, \BB(X))
+	\end{array}
+\end{equation*}
+
+\begin{definition}
+\begin{mdframed}
+Sind $(X,\TT_X)$ und $(Y,\TT_Y)$ topologische Räume, so heißt eine Abbildung $f:X \longrightarrow Y$ \textbf{Borel-messbar}, falls sie $\BB(X)$-$\BB(Y)$-messbar ist.
+\end{mdframed}
+\end{definition}
+
+\begin{lemma}
+\begin{mdframed}
+Stetige Abbildungen sind Borel-messbar.
+\end{mdframed}
+\begin{proof}
+Mit Notation der Definition: Die Stetigkeit von $f:X \longrightarrow Y$ bedeutet, dass $f^* \TT_Y \subset \TT_X$. Es folgt
+$$
+f^*(\underbrace{\BB(Y)}_{\sigma(\TT_Y)}) \overset{\text{Lemma}}= \sigma(\underbrace{f^*\TT_Y}_{\subset \TT_X}) \subset \sigma(\TT_X) = \BB(X).
+$$
+\end{proof}
+\end{lemma}
+
+\subsubsection{Produkte von $\sigma$-Algebren}
+Wir konstruieren endliche Produkte von $\sigma$-Algebren bzw. Messräumen. Seien $(X_i, \AA_i)$ Messräume ($i=1,...,n)$. Die Produkt-$\sigma$-Algebra $\AA = \AA_1 \otimes ... \otimes \AA_n$ ist definiert als die $\sigma$-Algebra auf $X = X_1 \times ... \times X_n$ erzeugt von $\ZZ = \ZZ(\AA_1, ..., \AA_n)$, d.h. von $\pi_i^{-1}(A_i) \ \forall A_i \in \AA_i$\footnote{Die $\pi_i^{-1}(A_i)$ sind spezielle Quader, da $X_i \in \AA_i$.}, $i=1,...,n$ und ebenfalls erzeugt vom Halbring $\QQ = \AA_1 \ast ... \ast \AA_n \supset \ZZ$ der Quader $A_1 \times ... \times A_n$ mit $A_i \in \AA_i$.
+
+\begin{definition}
+\begin{mdframed}
+Die $\sigma$-Algebra $\AA_1 \otimes ... \otimes \AA_n$ auf $X_1 \times ... \times X_n$ heißt das Produkt der $\sigma$-Algebren $\AA_i$, und der Messraum $(X_1\times ... \times X_n, \AA_1 \otimes ... \times \AA_n)$ das Produkt der Messräume $(X_i,\AA_i)$.
+\end{mdframed}
+\end{definition}
+Das Produkt ist assoziativ, z.B. gilt $(\AA_1 \otimes \AA_2) \otimes \AA_3 = \AA_1 \otimes \AA_2 \otimes \AA_3 = \AA_1 \otimes (\AA_2 \otimes \AA_3)$.\Ueb \\\\
+Die natürlichen Projektionen $\pi_k:X_1 \times ... \times X_n \longrightarrow X_k$ sind messbar. Die Produkt-$\sigma$-Algebra ist charakterisiert als die kleinste $\sigma$-Algebra auf $X_1 \times ... \times X_n$, so dass die $\pi_k$ bezüglich der $\AA_k$ messbar sind. \\\\
+Sind $\EE_i \subset \AA_i$ Erzeugendensysteme, so ist $\ZZ(\EE_1,...,\EE_n)$ ein Erzeugendensystem von $\AA_1 \otimes ... \otimes \AA_n$, ebenso wie $\EE_1 \ast ... \ast \EE_n$, denn
+\begin{equation*}
+	\begin{array}{ccc}
+		\pi_k^{-1}(M_k) & \xleftrightarrow{\quad\text{bij.}\quad} & M_k \subset X_k \\
+		\{ \pi^{-1}_k(E_k) \} & \xleftrightarrow{\quad\text{bij.}\quad} & \{E_k\} \\
+		\text{erzeugt} & &\text{erzeugt} \\
+		\underset{\sigma\text{-Algebra}}{\{\pi_k^{-1}(A_k)\}} & \xleftrightarrow{\quad\text{bij.}\quad}  & \AA_k
+	\end{array}
+\end{equation*}
+\subsection{Maße}
+\subsubsection{Beispiele und Definitionen}
+\begin{definition}
+\begin{mdframed}
+Ein Maß ist ein auf einer $\sigma$-Algebra definierter Prämaß.
+\end{mdframed}
+\end{definition}
+
+\begin{example} \
+\begin{enumerate}[label=(\roman*),topsep=3pt, itemsep=0pt]
+	\item(Punkteinheitsmaße, Diracmaße) Sei $x\in X$. Die \emph{Dirac-Maße} $\delta_x$ auf $\PP(X)$ sind definiert als 
+	$$
+\delta_x(A):=\begin{cases}
+	1, \quad &\text{falls }x \in A, \\
+	0, \quad &\text{sonst}
+\end{cases}	
+	$$
+	Durch Linearkombinationen $\sum\limits_{i=1}^k m_i \delta_{x_i}, m_i \in \R_0^+, x_i \in X$ erhält man weitere Maße, die ``endlichen Maßverteilungen''. Man kann ebenfalls allgemeinere Maßverteilungen $(\longleftrightarrow \text{ Fkt }X\to \R_0^+)$ mit beliebigem Träger $\subset X$ bilden.
+	\item (Zählmaß) Das Zählmaß $\zeta:\PP(X) \longrightarrow \N_0 \cup \{\infty\} \subset [0,\infty]$ ist definiert durch
+	$$\zeta(A)= \begin{cases}
+	|A|, \quad &\text{falls $A$ endlich},\\
+	\infty,\quad &\text{sonst}
+	\end{cases}$$
+	\item Auf $\PP(X)$ wird ein Maß $\mu$ definiert durch
+	$$\mu(A)=\begin{cases}
+		0, \quad &\text{falls } A = \emptyset, \\
+		\infty, \quad &\text{sonst}
+	\end{cases}$$
+	\item Sei $X$ überabzählbar und $\AA$ die von den endlichen Teilmengen erzeugte $\sigma$-Algebra, d.h. abzählbare Teilmengen und deren Komplemente. Dann ist
+	$$\nu(A)=\begin{cases}
+	0, \quad &\text{falls } A \text{ abzählbar},\\
+	1, \quad &\text{falls }\complement A \text{ abzählbar}
+	\end{cases}$$
+	ein Maß auf $\AA$.
+\end{enumerate}
+\end{example}
+
+Teilmengen von $\sigma$-Algebren sind i.A. kompliziert und nicht explizit beschreibbar. Entsprechend sind Maße i.A. nicht beschreibbar durch explizite Angabe ihrer Werte. $\leadsto$ Konstruktion durch \emph{Fortsetzung}.
+\\\\
+\textbf{Ansatz/ Methode:}
+\begin{equation*}
+	\begin{array}{c}
+	\text{Inhalt auf Halbring}\\
+	\text{(Prämaß auf Ring)}
+	\end{array}
+	\underset{\text{Fortsetzung}}{\overset{\text{eindeutige}}\leadsto}
+	\text{Maße auf $\sigma$-Algebren}
+\end{equation*}
+Daher brauchen wir Fortsetzungsresultate.
+
+\subsubsection{Äußere Maße und Messbarkeit}
+Sei $\HH \subset \PP(X)$ ein Halbring und $\mu:\HH \longrightarrow [0,\infty]$ ein Inhalt. Unser Ziel ist, $\mu$ auf $\sigma(\HH)$ fortzusetzen.\\\\
+Wir geben für \emph{beliebige} Teilmengen von $X$ ein \textbf{äußeres $\mu$-Volumen} \ (\textbf{obere \linebreak $\mu$-Volumenschranke}), indem wir \emph{abzählbare} Überdeckungen durch Teilmengen aus $\HH$ verwenden. Wir definieren für $M \subset X$
+$$
+\mu^*(M):= \inf \left\{ \sum_{n=1}^\infty \mu(A_n) \ \bigg\vert\ (A_n)_{n\in \N} \text{ Folge in $\HH$ mit } M \subset {\bigcup_{n\in \N} A_n} \right\}.
+$$
+$\bigcup\limits_{n\in\N} A_n$ ist also eine abzählbare Überdeckung von $M$, beinhaltet alle endlichen. Falls keine Überdeckung existiert, so $\mu^*(M)=\inf \emptyset = \infty$.
+\\\\
+Wir können immer zu disjunkter Überdeckung übergehen:
+$$\bigcup_{n=1}^\infty A_n = A_1 \cup (A_2\setminus A_1) \cup ... \cup \underbrace{(A_n \setminus (A_1 \cup ... \cup A_{n-1}))}_{\text{disjunkt zerlegbar in Teilmengen aus }\HH} \cup ...$$
+Daher genügt es, Infimum über disjunkte Überdeckung zu bilden.\\\\
+Wir erinnern uns an unser erstes Fortsetzungsresultat: Ist $\mu$ ein Inhalt auf $\HH$, so existiert eine eindeutige $\ol{\mu}$ auf dem von $\HH$ erzeugten Ring $\RR$, der aus endlichen disjunkten Vereinigungen von Teilmengen aus $\HH$ besteht. D.h. Überdeckungen durch Teilmengen aus $\RR$ sind nicht effektiver als Überdeckungen durch Teilmengen aus $\HH$. Anders gesagt,
+$$\boxed{\ol\mu^* = \mu^*}.$$
+Ist $M \subset B \in \RR$, so genügt es, Infimum über Überdeckungen durch in $B$ enthaltene Teilmengen zu bilden. \Bild \ Analog: Ist $M\cap B = \emptyset$, so genügt es, Infimum über Überdeckungen durch zu $B$ disjunkte Teilmengen zu bilden.
+
+\begin{lemma}
+\begin{mdframed}
+Die obere $\mu$-Volumenschranke $\mu^*:\PP(X) \longrightarrow [0,\infty]$ hat folgende Eigenschaften:
+\begin{enumerate}[label=(\roman*),topsep=3pt, itemsep=0pt]
+	\item $\mu^*(\emptyset) = 0$,
+	\item \emph{Monotonie:} $M \subset M' \implies \mu^*(M) \leq \mu^*(M')$,
+	\item \emph{$\sigma$-Subadditivität:} Für Folgen $(M_n)_{n \in \N}$ von (nicht notwendigerweise disjunkten) Teilmengen $M_n \subset X$ gilt: $\mu^*\big(\bigcup\limits_{n \in \N} M_n \big)\leq \sum\limits_{n\in\N}\mu^*(M_n)$.
+\end{enumerate}
+\end{mdframed}
+\begin{proof}
+Zu (iii): Sei $(\underbrace{A_{n,m}}_{\in \HH})_m$ eine Überdeckung von $M_n$. Dann ist $(A_{n,m})_{(n,m)}$ eine Überdeckung von $\bigcup\limits_{n \in \N}M_n$. Es folgt
+$$
+\mu^*\left( \bigcup_{n \in \N} M_n\right) \leq \sum_{\substack{m\in\N\\n\in\N}} \mu^*(A_{n,m}) \underset{\text{\tiny für Doppelreihen}}{\overset{\text{\tiny großer Umordnungssatz}}=}  \sum_{n\in\N}\sum_{n\in\N} \mu^* (A_{n,m})
+$$
+Die Summe $\sum_{\substack{m\in\N\\n\in\N}} \mu^*(A_{n,m})$ ist wohldefiniert, da unabhängig von Summationsreihenfolge (siehe Umordnungssatz für Reihen mit nichtnegativen Summanden). Zu $\varepsilon_n >0$ können wir die Überdeckung $(A_{n,m})$ so wählen, dass $\sum\limits_{m\in \N} \mu^*(A_{n,m}) \leq \mu^*(M_n)+\varepsilon_n$. Dann folgt
+$$
+\sum_{n\in\N}\sum_{n\in\N} \mu^* (A_{n,m}) \leq \sum_{n \in \N} \mu^*(M_n) + \underbrace{\sum_{n \in \N} \varepsilon_n}_{\substack{>0, \\ \text{wird bel. klein}}}
+$$
+Also war die $\sigma$-Subadditivität.
+\end{proof}
+\end{lemma}
+
+\begin{definition}
+\begin{mdframed}
+Eine Funktion $\mu^*: \PP(X) \longrightarrow [0,\infty]$ mit den oben genannten Eigenschaften (i)-(iii) heißt ein \textbf{äußeres Maß} auf $X$.
+\end{mdframed}
+\end{definition}
+
+$\mu^*$ muss nicht von (zu) einem $\mu$ induziert (assoziiert) sein. Falls $\mu^*$ zu Inhalt $\mu:\HH\longrightarrow [0,\infty]$ assoziiert, so gilt wegen (iii)
+$$\boxed{\mu^*|_{\RR} \leq \ol{\mu}}.$$
+
+Man kann auch ein \textbf{inneres $\mu$-Volumen} (bzw. \textbf{untere $\mu$-Volumenschranke} definieren\footnote{Dies ist nicht logisch notwendig für unsere Diskussion, motiviert aber die Diskussion von Messbarkeit, siehe unten.}. Die Approximation geschieht durch äußere Approximation des Komplements. Sei $M\subset X$ so, dass $M \subset R\in \RR$ mit $\ol\mu(R)<\infty$. Das innere $\mu$-Volumen ist definiert als
+$$
+\mu_*(M):= \underbrace{\mu^*(R)}_{\substack{\text{i.A. nur }\\\leq \ol\mu(R)}}-\mu^*(R\setminus M).
+$$
+Ist $R \subset R'$ mit $\ol\mu(R')<\infty$, so gilt
+$$
+\mu^*(R'\setminus M)-\mu^*(R\setminus M)%=\mu^*(R'\setminus R) 
+= \mu^*(R')-\mu^*(R).
+$$
+Diskrepanz zwischen äußerem und innerem Volumen:
+$$
+\mu^*(M)-\mu_*(M)=\underbrace{\mu^*(M)+\mu^*(R\setminus M)}_{\geq \mu^*(R)} - \mu^*(R)\geq 0
+$$
+``Volumen-Exzess'' wird also erzeugt durch ``erzwungene Überlappung''. Intuition: der Exzess ist positiv, wenn der ``Rand'' von $M$ bzw. Übergangsbereich (Interface) von $M$ in $\complement M$ ``dick'' bzw. ``diffus'' ist.
+ 
+\marginpar{\tiny{11.11.2019}}
 \input{A-integrale-stetiger-funktionen.tex}
 \end{document}
