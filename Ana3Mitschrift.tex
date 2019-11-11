@@ -1055,7 +1055,7 @@ Einerseits: $f^*(\sigma(\FF))$ ist $\sigma$-Algebra, enthält $f^*\FF$ $\implies
 Anderseits ist
 $
 \{A \in \sigma(\FF) \mid f^{-1}(A) \in \sigma(f^* \FF) \}
-$ eine Algebra, die $\FF$ enthält und in $\sigma(\FF)$ enthalten ist, somit Gleichheit.
+$ eine Algebra, die $\FF$ enthält und in $\sigma(\FF)$ enthalten ist, somit Gleichheit. D.h. $A\in \sigma(\FF)\implies f^{-1}(A) \in \sigma(f^*\FF)$, somit $f^*(\sigma(\FF))\subset \sigma(f^*\FF).$ %Dies zeigt: $f^{-1}(A)\in \sigma(f^*\FF)\implies A \in \sigma(\FF)$.
 \end{proof}
 \marginpar{\tiny{7.11.2019}}
 Das Lemma lässt sich reformulieren: Ist $f: X \to Y$ eine Abbildung, $\BB \subset \PP(Y)$ eine $\sigma$-Algebra und $\EE \subset \BB$ Erzeugendensystem, so wird $f^*\BB$ von $f^* \EE$ erzeugt. Wir können also Erzeuger zurückziehen.
@@ -1158,7 +1158,7 @@ Daher brauchen wir Fortsetzungsresultate.
 Sei $\HH \subset \PP(X)$ ein Halbring und $\mu:\HH \longrightarrow [0,\infty]$ ein Inhalt. Unser Ziel ist, $\mu$ auf $\sigma(\HH)$ fortzusetzen.\\\\
 Wir geben für \emph{beliebige} Teilmengen von $X$ ein \textbf{äußeres $\mu$-Volumen} \ (bzw. eine \textbf{obere $\mu$-Volumenschranke}), indem wir \emph{abzählbare} Überdeckungen durch Teilmengen aus $\HH$ verwenden. Wir definieren für $M \subset X$
 $$
-\mu^*(M):= \inf \left\{ \sum_{n=1}^\infty \mu(A_n) \ \bigg\vert\ (A_n)_{n\in \N} \text{ Folge in $\HH$ mit } M \subset {\bigcup_{n\in \N} A_n} \right\}.
+\boxed{\mu^*(M):= \inf \left\{ \sum_{n=1}^\infty \mu(A_n) \ \bigg\vert\ (A_n)_{n\in \N} \text{ Folge in $\HH$ mit } M \subset {\bigcup_{n\in \N} A_n} \right\}}.
 $$
 $\bigcup\limits_{n\in\N} A_n$ ist also eine abzählbare Überdeckung von $M$, beinhaltet alle endlichen. Falls keine Überdeckung existiert, so $\mu^*(M)=\inf \emptyset = \infty$.
 \\\\
@@ -1181,11 +1181,11 @@ Die obere $\mu$-Volumenschranke $\mu^*:\PP(X) \longrightarrow [0,\infty]$ hat fo
 \begin{proof}
 Zu (iii): Sei $(\underbrace{A_{n,m}}_{\in \HH})_m$ eine Überdeckung von $M_n$. Dann ist $(A_{n,m})_{(n,m)}$ eine Überdeckung von $\bigcup\limits_{n \in \N}M_n$. Es folgt
 $$
-\mu^*\left( \bigcup_{n \in \N} M_n\right) \leq \sum_{\substack{m\in\N\\n\in\N}} \mu^*(A_{n,m}) \underset{\text{\tiny für Doppelreihen}}{\overset{\text{\tiny großer Umordnungssatz}}=}  \sum_{n\in\N}\sum_{n\in\N} \mu^* (A_{n,m})
+\mu^*\left( \bigcup_{n \in \N} M_n\right) \leq \sum_{\substack{m\in\N\\n\in\N}} \mu^*(A_{n,m}) \underset{\text{\tiny für Doppelreihen}}{\overset{\text{\tiny großer Umordnungssatz}}=}  \sum_{n\in\N}\sum_{m\in\N} \mu^* (A_{n,m})
 $$
-Die Summe $\sum_{\substack{m\in\N\\n\in\N}} \mu^*(A_{n,m})$ ist wohldefiniert, da unabhängig von Summationsreihenfolge (siehe Umordnungssatz für Reihen mit nichtnegativen Summanden). Zu $\varepsilon_n >0$ können wir die Überdeckung $(A_{n,m})$ so wählen, dass $\sum\limits_{m\in \N} \mu^*(A_{n,m}) \leq \mu^*(M_n)+\varepsilon_n$. Dann folgt
+Die Summe $\sum\limits_{\substack{m\in\N\\n\in\N}} \mu^*(A_{n,m})$ ist wohldefiniert, da unabhängig von Summationsreihenfolge\footnote{siehe Umordnungssatz für Reihen mit nichtnegativen Summanden.}. Zu $\varepsilon_n >0$ können wir die Überdeckung $(A_{n,m})_m$ so wählen, dass $\sum\limits_{m\in \N} \mu^*(A_{n,m}) \leq \mu^*(M_n)+\varepsilon_n$. Dann folgt
 $$
-\sum_{n\in\N}\sum_{n\in\N} \mu^* (A_{n,m}) \leq \sum_{n \in \N} \mu^*(M_n) + \underbrace{\sum_{n \in \N} \varepsilon_n}_{\substack{>0, \\ \text{wird bel. klein}}}
+\sum_{n\in\N}\sum_{m\in\N} \mu^* (A_{n,m}) \leq \sum_{n \in \N} \mu^*(M_n) + \underbrace{\sum_{n \in \N} \varepsilon_n}_{\substack{>0, \\ \text{wird bel. klein}}}
 $$
 Also war die $\sigma$-Subadditivität.
 \end{proof}
@@ -1197,24 +1197,178 @@ Eine Funktion $\mu^*: \PP(X) \longrightarrow [0,\infty]$ mit den oben genannten 
 \end{mdframed}
 \end{definition}
 
-$\mu^*$ muss nicht von (zu) einem $\mu$ induziert (assoziiert) sein. Falls $\mu^*$ zu Inhalt $\mu:\HH\longrightarrow [0,\infty]$ assoziiert, so gilt wegen (iii)
-$$\boxed{\mu^*|_{\RR} \leq \ol{\mu}}.$$
-
+$\mu^*$ muss nicht von (zu) einem Inhalt $\mu$ induziert (assoziiert) sein. Falls $\mu^*$ zu Inhalt $\mu:\HH\longrightarrow [0,\infty]$ assoziiert, so gilt %wegen (iii)
+\begin{equation*}
+\boxed{\mu^*|_{\RR} \leq \ol{\mu}}.
+\end{equation*}
+\textbf{Partielle Additivität äußerer Maße:}  Seien $M_1,M_2\subset X$ disjunkt und durch $\RR$ trennbar, d.h. es existiert ein $B\in \RR$ mit $M_1\subset B$ und $M_2 \cap B = \emptyset$. Dann gilt\Ueb $$\mu^*(M_1\sqcup M_2)=\mu^*(M_1) + \mu^*(M_2).$$
 Man kann auch ein \textbf{inneres $\mu$-Volumen} (bzw. \textbf{untere $\mu$-Volumenschranke} definieren\footnote{Dies ist nicht logisch notwendig für unsere Diskussion, motiviert aber die Diskussion von Messbarkeit, siehe unten.}. Die Approximation geschieht durch äußere Approximation des Komplements. Sei $M\subset X$ so, dass $M \subset R\in \RR$ mit $\ol\mu(R)<\infty$. Das innere $\mu$-Volumen ist definiert als
 $$
 \mu_*(M):= \underbrace{\mu^*(R)}_{\substack{\text{i.A. nur }\\\leq \ol\mu(R)}}-\mu^*(R\setminus M).
 $$
-Ist $R \subset R'$ mit $\ol\mu(R')<\infty$, so gilt
+Die Approximation von innen gelingt nicht: Ist z.B. $O\subset X$ offen und $A\subset O$ eine abzählbare dichte Teilmenge, so enthält $O\setminus A$ keine Quader, d.h. inneres Volumen $=0$.\\\\
+Ist $R \subset R'$ mit $\ol\mu(R')<\infty$, so gilt wegen der partiellen Additivität
 $$
-\mu^*(R'\setminus M)-\mu^*(R\setminus M)%=\mu^*(R'\setminus R) 
-= \mu^*(R')-\mu^*(R).
+\underbrace{\mu^*(R'\setminus M)}_{\mu^*(R\setminus M) + \mu^*(R'\setminus R)}-\mu^*(R\setminus M)=\mu^*(R'\setminus R) = \mu^*(R')-\mu^*(R),
 $$
+also ist $\mu_*$ wohldefiniert. \\\\
 Diskrepanz zwischen äußerem und innerem Volumen:
 $$
 \mu^*(M)-\mu_*(M)=\underbrace{\mu^*(M)+\mu^*(R\setminus M)}_{\geq \mu^*(R)} - \mu^*(R)\geq 0
 $$
-``Volumen-Exzess'' wird also erzeugt durch ``erzwungene Überlappung''. Intuition: der Exzess ist positiv, wenn der ``Rand'' von $M$ bzw. Übergangsbereich (Interface) von $M$ in $\complement M$ ``dick'' bzw. ``diffus'' ist.
- 
+Der ``Volumen-Exzess'' wird also erzeugt durch ``erzwungene Überlappung''. Intuition: der Exzess ist positiv, wenn der ``Rand'' von $M$ bzw. Übergangsbereich (Interface) von $M$ in $\complement M$ ``dick'' bzw. ``diffus'' ist.\\\\
 \marginpar{\tiny{11.11.2019}}
+Unser Ziel ist nun, die \emph{$\mu^*$-messbare} Teilmengen zu definieren und danach zeigen, dass diese eine \emph{$\sigma$-Algebra} $\AA^*\supset \RR$ bilden und dass $\mu^*|_{\AA^*}$ ein Maß ist. (Es setzt $\ol{\mu}$ fort, falls $\ol\mu$ ein Prämaß ist.)
+\\\\
+Wir betrachten $M$ als ``messbar'', falls es keinen ``Volumen-Exzess'' gibt, d.h. wir verlangen
+$$
+\mu^*(M)=\mu_*(M),
+$$
+also
+$$
+\mu^*(R)=\mu^*(M)+\mu^*(R\setminus M)		\quad \forall R \in \RR \text{ mit } R \supset M, \ol\mu(R)<\infty.
+$$
+Um auf \emph{beliebige} Teilmengen $M\subset X$ auszudehnen, \emph{lokalisiere} und \emph{verlange}:
+\begin{equation}\label{I.6}
+\mu^*(R)=\mu^*(R\cap M) + \mu^*(\underbrace{R\setminus M}_{R\cap \complement M}) \ \ \forall R \in \RR
+\end{equation}
+(\textit{Bemerkung:} Dies gilt wegen der Subadditivität von $\mu^*$ sowieso, falls $\mu^*(R)=\infty$.)\\
+Es folgt, dass diese Gleichheit auch für Schnitte von $M$ mit \emph{beliebigen} Teilmengen $S \subset X$, d.h.
+\begin{equation}\label{I.7}
+\boxed{
+\mu^*(S)=\mu^*(S\cap M) + \mu^*(S \setminus M)
+}
+\end{equation}
+Denn: Falls $(A_n)_{n \in \N}$ eine Überdeckung von $S$ durch Teilmengen $A_n \in \RR$, so gilt 
+\begin{equation*}
+\begin{split}
+\sum_{n\in\N}\ol\mu(A_n) \geq \sum_{n\in\N}\underbrace{\mu^*(A_n)}_{\overset{\eqref{I.6}}= \mu^*(A_n \cap M)+\mu^*(A_n \setminus M)} & = \underbrace{\sum_{n\in\N}\mu^*\underbrace{(A_n \cap M)}_{\text{Überdeckung } S\cap M}}_{\geq \mu^*(S\cap M)}+\underbrace{\sum_{n\in \N}\mu^*\underbrace{(A_n\setminus M)}_{\text{Überdeckung }S\setminus M}}_{\geq \mu^*(S\setminus M)} \\
+& \geq  \mu^*(S\cap M) + \mu^*(S \setminus M) \overset{\text{Subadd.}}{\geq} \mu^*(S)
+\end{split}
+\end{equation*}
+Nehmen wir nun Infimum über $(A_n)$, so ist die linke Seite der Ungleichung gleich $\mu^*(S)$ und es folgt
+$$\mu^*(S)\geq \mu^*(S\cap M) + \mu^*(S \setminus M) \geq \mu^*(S),$$
+also Gleichheit überall, d.h. \eqref{I.7} gilt. $\blacksquare$\\
+
+Man gelangt so auf natürlicher Weise zur Schlüssel-Definition: (Carathéodory, 1914)
+
+\begin{definition}
+\begin{mdframed}
+$M\subset X$ heißt \textbf{$\mu^*$-messbar}, falls 
+\begin{equation*}
+\mu^*(S)=\mu^*(S\cap M) + \mu^*(S\setminus M)
+\end{equation*}
+für alle $S\subset X$ gilt. \footnotesize{$S$ ist also eine ``Testmenge''.}
+\end{mdframed}
+\end{definition}
+\textit{Vorstellungen:} $M$ und $\complement M$ ``durchdringen sich nicht''. $M$ hat ``dünnen Rand''. Jede Teilmenge $S$ wird durch ``sauberen Schnitt'' durch $M$ geteilt.\\\\
+Wir setzen
+$$\AA^*:=\{\mu^*\text{-messbare Teilmengen}\}\subset \PP(X).$$
+\begin{small}
+\begin{remark}
+Ältere Ansätze (Jordan, Peano) arbeiten noch mit \emph{endlichen} Überdeckungen durch Teilmengen aus $\HH$, bzw. äquivalent, \emph{Einschließungen} durch Teilmengen in $\RR$. Das äußere Maß wird also so definiert:
+\begin{equation*}
+\begin{split}
+\mu^{*,\text{fin}}&:= \inf \left\{ \sum_{i=1}^n \mu(A_i)\  \big\vert \ A_1,...,A_n \in \HH, \text{ mit } A_1\cup...\cup A_n \supset M\right\} \\
+ &= \inf \left\{ \ol\mu(\ol{A}) \mid \ol{A} \in \RR \text{ mit } \ol{A} \supset M \right\}
+\end{split}
+\end{equation*}
+$\mu^{*,\text{fin}}:\PP(X)\longrightarrow [0,\infty]$ ist wieder monoton, aber nur \emph{endlich} additiv. Es ist $\mu^{*,\text{fin}}|_{\RR}=\ol{\mu}$ und somit $\mu^{*,\text{fin}}\geq \mu^*$. Deswegen ist $\mu^{*,\text{fin}}$ nur nützlich auf kleineren Klassen von Teilmengen. Das innere Maß wird definiert durch
+\begin{equation*}
+	\mu_{*,\text{fin}}:=\sup \{\ol\mu(I) \mid I \in \RR \text{ mit } I \subset M\}
+\end{equation*}
+Also schöpft man $M$ durch Teilmenge $I\in \RR$ aus. Dies ist wiederum unflexibler, denn:
+$$
+\mu_{*,\text{fin}}\leq \mu_* (\leq \mu^* \leq \mu^{*,\text{fin}}).
+$$
+Dies führt zur einer größeren Diskrepanz $\mu^{*,\text{fin}}-\mu_{*,\text{fin}}\geq \mu^*-\mu_*$ und deswegen sind weniger Teilmengen $\mu^{*,\text{fin}}$-messbar (bzw. Jordan-messbar, Jordan-quadrierbar).\\
+Die ältere Version der Theorie bleibt unbefriedigend, denn z.B. betrachten wir $\Q \cap [0.1]$ dicht in $[0,1]$ und $\lambda^1_\II$ (euklidische Länge $b-a$) auf $\II$ (Halbring halboffener Intervalle $[a,b)$). Es gilt $(\lambda_\II^1)^{*,\text{fin}}(\Q \cap [0,1])=1$, weil jede Teilmenge aus $\FF^1$, die $\Q \cap [0,1]$ enthält, auch $[0,1]$ enthält. Anderseits gilt $(\lambda^1_\II)^*(\Q \cap [0,1]) =0$, da es abzählbare Überdeckung durch abzählbare viele Teilintervalle beliebig kleiner Gesamtlänge gibt. Es folgt $\lambda_{*,\text{fin}}(\Q\cap[0,1])\leq \lambda_*(\Q\cap[0,1]) \leq \underbrace{\lambda^*(\Q\cap[0,1])}_{=0}\leq \underbrace{\lambda^{*,\text{fin}}(\Q\cap[0,1])}_{=1}$. Also ist $\Q\cap[0,1]$ nicht $(\lambda^1_{\II})^{*,\text{fin}}$-messbar, aber $(\lambda^1_\II)^*$-messbar.
+\end{remark}
+\end{small}
+
+\subsubsection{Die $\sigma$-Algebra der messbaren Mengen und ihr Maß}
+Sei $\AA^*\subset \PP(X)$ die Familie der $\mu^*$-messbaren Teilmengen. ($\mu^*$ nicht notwendigerweise induziert von einem Inhalt, fordere nur Axiome eines äußeren Maßes)
+
+\begin{definition}
+$N \subset X$ heißt \textbf{$\mu^*$-Nullmenge}, falls $\mu^*(N)=0$.
+\end{definition}
+
+\begin{lemma}
+Alle $\mu^*$-Nullmengen gehören zu $\AA^*$.
+\begin{proof}
+Für $S\subset X$ gilt:
+$$
+\mu^*(S) \overset{\text{Subadd.}}\leq \underbrace{\mu^*(\underbrace{S\cap N}_{\subset N})}_{\overset{\text{Monot.}}\leq \mu^*(N)=0}+\underbrace{\mu^*({\underbrace{S\setminus N}_{\subset S}})}_{\leq \mu^*(S)} \leq \mu^*(S)
+$$
+Also Gleichheit in allen Ungleichungen. Also $N$ $\mu^*$-messbar.
+\end{proof}
+\end{lemma}
+
+\begin{beobachtung}
+$\AA^*$ ist $\complement$-stabil, d.h. $M \in \AA^* \implies \complement M \in \AA^*$, denn ``Rand von $M$ = Rand von $\complement M$''.
+\end{beobachtung}
+
+Äußere Maße sind i.A. nicht additiv, d.h. sie sind keine Inhalte auf $\PP(X)$, sondern nur partiell additiv (vgl. oben). Es ist aber plausibel zu erwarten, dass sie $\sigma$-additiv auf Teilmengen mit ``dünnem Rand'' sind, da keine ``Volumendurchdringung''.
+
+\begin{satz}[\textbf{Carathéodory}]
+\begin{mdframed}
+$\AA^*$ ist eine $\sigma$-Algebra und $\mu^*|_{\AA^*}$ ist ein Maß.
+\end{mdframed}
+\end{satz}
+
+\begin{lemma}\
+\begin{enumerate}[label=(\roman*),topsep=3pt, itemsep=0pt]
+\item Sind $M_1,...,M_n \subset X$ Teilmengen (nicht notwendigerweise disjunkt) mit $\mu^*(M_1\cup...\cup M_n)=\mu^*(M_1)+...+\mu^*(M_n)$, so auch $\mu^*(M_1 \cup ... \cup M_k) = \mu^*(M_1) + ... +\mu^*(M_k)$ für $1 \leq k <n$.
+\item Sind $M_1,...,M_n \in \AA^*$ paarweise disjunkt und $S\subset X$, so gilt $\mu^*(S\cap(M_1 \cup ... \cup M_n)) = \mu^*(S \cap M_1) + ... +\mu^*(S \cap M_n)$
+\end{enumerate}
+\begin{proof}
+\begin{enumerate}[label=(\roman*),topsep=3pt, itemsep=0pt]
+	\item Subadditivität von $\mu^*$ liefert
+	\begin{equation*}
+	\mu^*\left( \bigcup_{i=1}^n M_i \right) \overset{\text{nV}}= \sum_{i=1}^n \mu^*(M_i)= \underbrace{\sum_{i\leq k} \mu^*(M_i)}_{\geq \mu^*\left(\bigcup\limits_{i\leq k} M_i\right)}+\underbrace{\sum_{i>k}\mu^*(M_i)}_{\geq \mu^*\left(\bigcup\limits_{i> k} M_i\right)} \geq \mu^*\left( \bigcup_{i=1}^n M_i \right)
+	\end{equation*}
+	Also Gleichheit überall und insbesondere gilt $\sum\limits_{i\leq k} \mu^*(M_i)=\mu^* \left(\bigcup\limits_{i\leq k} M_i \right)$
+	\item Für $1 \leq k \leq n$ gilt, da $M_i$ disjunkt:
+	\begin{equation*}
+		\begin{split}
+			(S\cap (M_k \cup ... \cup M_n))\cap M_k &= S \cap M_k \\
+			(S\cap (M_k \cup ... \cup M_n))\cap \complement M_k &= S \cap (M_{k+1}\cup...\cup M_n)
+		\end{split}
+	\end{equation*}
+	Setze nun die Testmenge $S \cup (M_k \cup ... \cup M_n)$, und weil $M_k \in \AA^*$ ist, folgt nach der Definition der $\mu^*$-Messbarkeit:
+	$$\mu^*(S \cup (M_k \cup ... \cup M_n)) = \mu^*(S \cap M_k) + \mu^*(S \cap (M_{k+1}\cup...\cup M_n))$$
+	Induktion liefert die Behauptung.
+\end{enumerate}
+\end{proof}
+\end{lemma}
+\textbf{Beweis des Satzes von Carathéodory.} Zuerst zeigen wir, dass $\AA^*$ $\cup$-stabil ist: Hierzu seinen $M_1, M_2 \in \AA^*$. Sei $S \subset X$ beliebig. Dann folgt
+\begin{equation*}
+	\begin{split}
+	\mu^*(S) & \underset{\text{messbar}}{\overset{M_1}=} 
+	\underbrace{\mu^*(S \cap M_1)}_{ \substack{=
+	\mu^*(S\cap M_1 \cap M_2) + \mu^* (S \cap M_1 \cap \complement M_2)\\\text{da } M_2 \text{ messbar}} 		} 
+	+ \underbrace{\mu^* (S \cap \complement M_1)}_{=\mu^*(S\cap\complement M_1 \cap M_2) +\mu^*(S\cap \complement M_1 \cap \complement M_2)} \\
+	& =\mu^*(S\cap M_1 \cap M_2) + \mu^* (S \cap M_1 \cap \complement M_2)+\mu^*(S\cap\complement M_1 \cap M_2) +\mu^*(S\cap \complement M_1 \cap \complement M_2)
+	\end{split}
+\end{equation*}
+Das Lemma (i) liefert, dass \Bild
+$$
+\mu^*(S\cap (M_1 \cup M_2)) = \mu^*(S\cap M_1 \cap M_2) + \mu^* (S \cap \complement M_1 \cap M_2) + \mu^*(S\cap M_1 \cap \complement M_2).
+$$
+Daraus folgt
+$$
+\mu^*(S)= \mu^*(S\cap(M_1\cup M_2))+\mu^*(S\cap \complement (M_1 \cup M_2))
+$$
+Also $M_1 \cup M_2 \in \AA^*$, also ist $\AA^*$ eine Algebra. Zu zeigen bleibt: $\AA^*$ ist $\sigma$-$\cup$-stabil. Es genügt, für abzählbare disjunkte Vereinigungen zu zeigen (da $\AA^*$ eine Algebra). Sei $(M_n)_{n \in \N}$ eine Folge in $\AA^*$ mit paarweise disjunkten Folgengliedern. Sei $S \subset X$. Setze $\ol{M}_{n}=M_1 \cup ... \cup M_n$ und $\ol{M}_{\infty} = \bigcup\limits_{i\in\N}M_i$. Für alle $n \in \N$ gilt:
+\begin{equation*}
+\mu^*(S)=\overbrace{\mu^*(\underbrace{S\cap \ol{M}_n}_{\nearrow S \cap \ol{M}_\infty})}^{ \underset{(\text{ii})}{\overset{\text{\tiny Lemma}} {=}}\sum\limits_{i=1}^n\mu^*(S\cap M_i)} + \underbrace{\mu^*(\underbrace{S\cap \complement \ol{M}_n}_{\searrow S \cap \complement \ol{M}_\infty})}_{\geq \mu^*(S\cap \complement \ol{M}_\infty)}
+\end{equation*}
+Es folgt für $n\longrightarrow \infty$:
+\begin{equation*}
+	\mu^*(S) \geq \underbrace{\sum_{i=1}^\infty \mu^*(S \cap M_i)}_{\geq \mu^*(S\cap \ol{M}_\infty)} + \mu^*(S\cap \complement \ol{M}_\infty) \geq \mu^*(S)
+\end{equation*}
+Also überall Gleichheit, dies zeigt, dass $\ol{M}_\infty \in \AA^*$, d.h. $\AA^*$ eine $\sigma$-Algebra.
+\marginpar{\tiny{14.11.2019}}
+
 %\input{A-integrale-stetiger-funktionen.tex}
 \end{document}
