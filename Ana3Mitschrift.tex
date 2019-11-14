@@ -240,9 +240,11 @@ Halbring ist eine Verallgemeinerung des Begriffs Ring, Ringe sind also Halbringe
 	\item[(i)] Die Familie bestehend aus $\emptyset$ und allen (einelementigen) Teilmengen $\{\emptyset\} \cup \{ \{a\} \mid a \in X \}$  ist ein Halbring auf $X$, sie erzeugt den Ring der endlichen Teilmengen von $X$.
 \end{enumerate}
 Der Grundbaustein für später:
+\begin{mdframed}
 \begin{enumerate}
-	\item[(ii)] Die Familie der \emph{halboffenen} Intervalle $[a,b) \subset \R$, falls $a<b$, also $\{[a,b) \mid a,b \in \R, a<b\}$, ist ein Halbring auf $\R$.
+	\item[(ii)] Die Familie der \emph{halboffenen} Intervalle $[a,b) \subset \R$, falls $a<b$, also ist $$\II := \{[a,b) \mid a,b \in \R, a<b\}$$  ein Halbring auf $\R$.
 \end{enumerate}
+\end{mdframed}
 \end{example}
 Beschreibe den von einem Halbring erzeugenden Ring, die folgende Beobachtung wird darüber hinaus nützlich sein:
 
@@ -426,10 +428,12 @@ Ein Inhalt auf einer Halbring $\HH$ ist eine Funktion $\mu: \HH \to [0,\infty]$ 
 \end{example}
 
 \begin{example}[Halboffene Intervalle in $\R$, der Grundbaustein für Lebesgue-Maß]
-Wir betrachten den Halbring $\II = \mathcal{Q}^1 \subset \mathcal{P}(\R)$. So wird ein Inhalt gegeben durch die euklidische Länge
-\begin{align} \label{I23}
+\begin{mdframed}
+Auf dem Halbring $\II = \mathcal{Q}^1 \subset \mathcal{P}(\R)$ wird ein Inhalt gegeben durch die euklidische Länge
+\begin{align*} %\label{I23}
 \lambda^1_\II : \II \to [0, \infty), \quad \lambda^1_\II \big([a,b)\big) := b-a \ (a<b)
-\end{align}
+\end{align*}
+\end{mdframed}
 Wir überprüfen die Additivität: Sei $a = x_0 < x_1 < ... < x_{n} = b$ eine Unterteilung von $[a,b)$. So entsteht die disjunkte Zerlegung $[a,b) = [a,x_1) \sqcup ... \sqcup [x_{n-1},b)$. Es folgt 
 \begin{equation*}
 \underbrace{\lambda^1_\II \big([a,b)]}_{b-a} = \underbrace{\lambda^1_\II \big( [a,x_1)\big)}_{x_1-a} + \underbrace{\lambda^1_\II \big([x_1,x_2)\big)}_{x_2 -x_1} + ... + \underbrace{\lambda^1_\II \big( [x_{n-1},b ) \big)}_{b-x_{n-1}}
@@ -488,16 +492,18 @@ Jeder Inhalt $\mu$ auf einem Halbring $\HH$ besitzt eine eindeutige Fortsetzung 
 Hat $\mu$ endliche Werte, so hat $\ol\mu$ auch endliche Werte.
 \end{remark}
 \end{satz}
+
 \begin{example}
-Wir setzen den in dem letzten Beispiel definierten Inhalt \eqref{I23}
-\begin{equation*}
-\lambda^1_{\QQ^1}: \underset{\text{\tiny{Halbring}}}{\mathcal{I} = \QQ^1} \longrightarrow [0,\infty)
-\end{equation*} auf den Halbring $\mathcal{I}$ fort zu
+\begin{mdframed}
+Wir setzen den auf dem Halbring $\mathcal{I}$ definierten Inhalt
+$\lambda^1_{\QQ^1}: \underset{\text{\tiny{Halbring}}}{\mathcal{I} = \QQ^1} \to [0,\infty)$  fort zu
 \begin{equation*}
 \lambda^1_{\FF^1}:\FF^1 \longrightarrow [0,\infty)
 \end{equation*}
 wobei $\FF^1$ den von $\QQ^1$ erzeugten Ring der 1-dimensionale Figuren bezeichnen, also ist $\lambda^1_{\FF}$ definiert als die Summe der Längen der Teilintervalle.
+\end{mdframed}
 \end{example}
+
 \begin{remark}
 Die Fortsetzung von Inhalten von Ringen auf Algebren ist nicht eindeutig. Z.B. betrachten wir die vom Ring $\RR=\{ \emptyset\}$ erzeugte Algebra $\AA = \{ \emptyset, X\}$, so können wir den Inhalt von $X$ beliebig $\in [0,\infty)$ wählen.
 \end{remark}
@@ -647,7 +653,7 @@ Also haben wir \eqref{I5} gezeigt und somit war die Behauptung.
 
 \begin{definition}
 \begin{mdframed}
-$\lambda^1_{\FF^1}$ heißt das 1-dimensionale \textbf{Lebesgue-Prämaß}.
+$\lambda^1_{\FF^1}$ heißt \textbf{das 1-dimensionale Lebesgue-Prämaß}.
 \end{mdframed}
 \end{definition}
 
@@ -799,7 +805,7 @@ Der Inhalt $\lambda^d_{\FF^d}$ ist ein Prämaß.
 
 \begin{definition}
 	\begin{mdframed} 
-		Das Prämaß $\lambda^d_{\FF^d}$ heißt \textbf{$d$-dimensionales Lebesgue-Prämaß}.
+		Das Prämaß $\lambda^d_{\FF^d}$ heißt \textbf{das $\boldsymbol{d}$-dimensionale Lebesgue-Prämaß}.
 	\end{mdframed}
 \end{definition}
 
@@ -807,7 +813,7 @@ Der Inhalt $\lambda^d_{\FF^d}$ ist ein Prämaß.
 \subsubsection{$\sigma$-Algebren}
 Wir fordern von Teilmengenfamilien jetzt, dass sie \emph{reichhaltiger} und \emph{flexibel} sind, d.h. dass man innerhalb von ihnen zusätzlich zu den genannten endlichen Mengenoperationen auch gewisse \emph{abzählbar unendliche} Operationen (nämlich Vereinigungen) durchführen kann. D.h. Sie sollen abgeschlossen sein unter gewissen \emph{Grenzprozessen.}
 
-\begin{definition}[\textbf{$\sigma$-Algebra}]
+\begin{definition}[\textbf{$\boldsymbol\sigma$-Algebra}]
 \begin{mdframed}
 Eine Familie $\AA\subset \mathcal{P}(X)$ heißt $\sigma$-Algebra auf $X$, falls:
 \begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
@@ -832,7 +838,7 @@ Leicht können wir einsehen, dass $\sigma$-Algebren Algebren sind.
 
 Wie im Fall von Ringen und Algebren: Beliebige Durchschnitte von $\sigma$-Algebren sind wieder $\sigma$-Algebren, deswegen ist die folgende Definition sinnvoll:
 
-\begin{definition}[\textbf{Erzeugendensystem von $\sigma$-Algebren}]
+\begin{definition}[\textbf{Erzeugendensystem von $\boldsymbol\sigma$-Algebren}]
 \begin{mdframed}
 Die von einer Familie $\EE\subset \mathcal{P}(X)$ \emph{erzeugte} $\sigma$-Algebra $\sigma(\EE)$  ist die eindeutige kleinste sie enthaltende $\sigma$-Algebra. Man nennt $\EE$ ein(en) \emph{Erzeugendensystem} oder \emph{Erzeuger} von $\sigma(\EE)$.
 \end{mdframed}
@@ -864,7 +870,7 @@ Von zentraler Wichtigkeit sind Beispiele \emph{topologischen} Ursprungs:
 
 \begin{example} \ 
 \begin{enumerate}[(\roman*),topsep=5pt, itemsep = 0 pt]
-	\item (\textbf{Borelsche $\sigma$-Algebra, Borel-Mengen}) Jeder topologische Raum $(X,\TT)$ trägt eine natürliche $\sigma$-Algebra, nämlich die von seiner Topologie erzeugte $\sigma$-Algebra
+	\item (\textbf{Borelsche $\boldsymbol\sigma$-Algebra, Borel-Mengen}) Jeder topologische Raum $(X,\TT)$ trägt eine natürliche $\sigma$-Algebra, nämlich die von seiner Topologie erzeugte $\sigma$-Algebra
 	$$\BB(X):=\sigma(\TT).$$
 	Wir nennen $\BB(X)$ die \emph{Borelsche $\sigma$-Algebra} von $X$. In ihnen enthaltenen Teilmengen heißen \emph{Borel-Mengen}. \\
 	\textit{Notation}: 
@@ -1086,7 +1092,7 @@ $$
 \end{lemma}
 
 \subsubsection{Produkte von $\sigma$-Algebren}
-Wir konstruieren endliche Produkte von $\sigma$-Algebren bzw. Messräumen. Seien $(X_i, \AA_i)$ Messräume ($i=1,...,n)$. Die Produkt-$\sigma$-Algebra $\AA = \AA_1 \otimes ... \otimes \AA_n$ ist definiert als die $\sigma$-Algebra auf $X = X_1 \times ... \times X_n$ erzeugt von $\ZZ = \ZZ(\AA_1, ..., \AA_n)$, d.h. von $\pi_i^{-1}(A_i) \ \forall A_i \in \AA_i$\footnote{Die $\pi_i^{-1}(A_i)$ sind spezielle Quader, da $X_i \in \AA_i$.}, $i=1,...,n$ und ebenfalls erzeugt vom Halbring $\QQ = \AA_1 \ast ... \ast \AA_n \supset \ZZ$ der Quader $A_1 \times ... \times A_n$ mit $A_i \in \AA_i$.
+Wir konstruieren endliche Produkte von $\sigma$-Algebren bzw. Messräumen. Seien $(X_i, \AA_i)$ Messräume ($i=1,...,n)$. Die \textbf{Produkt-$\boldsymbol\sigma$-Algebra} $\AA = \AA_1 \otimes ... \otimes \AA_n$ ist definiert als die $\sigma$-Algebra auf $X = X_1 \times ... \times X_n$ erzeugt von $\ZZ = \ZZ(\AA_1, ..., \AA_n)$, d.h. von $\pi_i^{-1}(A_i) \ \forall A_i \in \AA_i$\footnote{Die $\pi_i^{-1}(A_i)$ sind spezielle Quader, da $X_i \in \AA_i$.}, $i=1,...,n$ und ebenfalls erzeugt vom Halbring $\QQ = \AA_1 \ast ... \ast \AA_n \supset \ZZ$ der Quader $A_1 \times ... \times A_n$ mit $A_i \in \AA_i$.
 
 \begin{definition}
 \begin{mdframed}
@@ -1156,7 +1162,7 @@ Daher brauchen wir Fortsetzungsresultate.
 
 \subsubsection{Äußere Maße und Messbarkeit}
 Sei $\HH \subset \PP(X)$ ein Halbring und $\mu:\HH \longrightarrow [0,\infty]$ ein Inhalt. Unser Ziel ist, $\mu$ auf $\sigma(\HH)$ fortzusetzen.\\\\
-Wir geben für \emph{beliebige} Teilmengen von $X$ ein \textbf{äußeres $\mu$-Volumen} \ (bzw. eine \textbf{obere $\mu$-Volumenschranke}), indem wir \emph{abzählbare} Überdeckungen durch Teilmengen aus $\HH$ verwenden. Wir definieren für $M \subset X$
+Wir geben für \emph{beliebige} Teilmengen von $X$ ein \textbf{äußeres $\boldsymbol\mu$-Volumen} \ (bzw. eine \textbf{obere $\boldsymbol\mu$-Volumenschranke}), indem wir \emph{abzählbare} Überdeckungen durch Teilmengen aus $\HH$ verwenden. Wir definieren für $M \subset X$
 $$
 \boxed{\mu^*(M):= \inf \left\{ \sum_{n=1}^\infty \mu(A_n) \ \bigg\vert\ (A_n)_{n\in \N} \text{ Folge in $\HH$ mit } M \subset {\bigcup_{n\in \N} A_n} \right\}}.
 $$
@@ -1254,7 +1260,7 @@ Man gelangt so auf natürlicher Weise zur Schlüssel-Definition: (Carathéodory,
 
 \begin{definition}
 \begin{mdframed}
-$M\subset X$ heißt \textbf{$\mu^*$-messbar}, falls 
+$M\subset X$ heißt \textbf{$\boldsymbol\mu^{\boldsymbol*}$-messbar}, falls 
 \begin{equation*}
 \mu^*(S)=\mu^*(S\cap M) + \mu^*(S\setminus M)
 \end{equation*}
@@ -1290,7 +1296,7 @@ Die ältere Version der Theorie bleibt unbefriedigend, denn z.B. betrachten wir 
 Sei $\AA^*\subset \PP(X)$ die Familie der $\mu^*$-messbaren Teilmengen. ($\mu^*$ nicht notwendigerweise induziert von einem Inhalt, fordere nur Axiome eines äußeren Maßes)
 
 \begin{definition}
-$N \subset X$ heißt \textbf{$\mu^*$-Nullmenge}, falls $\mu^*(N)=0$.
+$N \subset X$ heißt \textbf{$\boldsymbol\mu^{\boldsymbol*}$-Nullmenge}, falls $\mu^*(N)=0$.
 \end{definition}
 
 \begin{lemma}
@@ -1367,8 +1373,166 @@ Es folgt für $n\longrightarrow \infty$:
 \begin{equation*}
 	\mu^*(S) \geq \underbrace{\sum_{i=1}^\infty \mu^*(S \cap M_i)}_{\geq \mu^*(S\cap \ol{M}_\infty)} + \mu^*(S\cap \complement \ol{M}_\infty) \geq \mu^*(S)
 \end{equation*}
-Also überall Gleichheit, dies zeigt, dass $\ol{M}_\infty \in \AA^*$, d.h. $\AA^*$ eine $\sigma$-Algebra.
+Also überall Gleichheit, d.h.
 \marginpar{\tiny{14.11.2019}}
+\begin{equation} \label{I.8}
+\mu^*(S) = \sum_{n=1}^\infty \mu^*(S\cap M_n) + \mu^*(S\cap \complement \ol{M}_\infty) =\mu^*(S\cap \ol{M}_\infty) + \mu^* (S \cap \complement \ol{M}_\infty)
+\end{equation}
+dies zeigt, dass $\ol{M}_\infty \in \AA^*$, d.h. $\AA^*$ eine $\sigma$-Algebra. Setze nun $S= \ol{M}_\infty$ in \eqref{I.8}, dann folgt
+\begin{equation*}
+\mu^*(M_\infty)=\sum_{i=1}^\infty \mu^*(\underbrace{\ol{M}_\infty \cap M_i}_{M_i}),
+\end{equation*}
+also $\mu^*$ $\sigma$-additiv, also $\mu^*|_{\AA^*}$ Maß. $\blacksquare$
+
+\subsubsection{Beziehung eines Inhalts zu seinem assoziierten äußerem Maß}
+Wir betrachten folgende Situation:
+\begin{equation*}
+\begin{array}{ccccccccc}
+\underset{\text{Halbring}}{\HH} & \subset & \underset{\text{von } \HH \text{ erz. Ring}}{\RR} & \subset &\sigma(\RR)& \subset & \underset{\substack{\sigma \text{ Algebra der} \\ \mu^*\text{-messb. Mengen}}}{\AA^*} & \subset & \PP(X)\\
+\mu \text{ Inhalt} && \underset{\text{eind. Forts. von }\mu}{\ol\mu \text{ Inhalt}} &&&& \underset{\mu^* \text{ induziert von } \mu}{\mu^*|_{\AA^*} \text{ Maß}} \\
+&& \mu^*|_\RR \leq \ol\mu
+\end{array}
+\end{equation*}
+\begin{beobachtung}
+Es gilt $\RR \subset \AA^*$, d.h. für $R \in \RR$ und $S \subset X$ gilt
+$$
+\mu^*(S) = \mu^*(\underbrace{R \cap S}_{\subset R \in \RR}) + \mu^* \underbrace{(R \cap \complement S)}_{\text{disjunkt zu } R}
+$$
+Dies folgt unmittelbar aus partieller Additivität von $\mu^*$.
+\end{beobachtung}
+Aus dem Satz von Carathéodory folgt unmittelbar folgendes Korollar:
+\begin{korollar}
+\begin{mdframed}
+$\sigma(\RR) \subset \AA^*$ und $\mu^*|_{\sigma (\RR)}$ ist Maß (Insbesondere ist $\mu^*|_\RR$ ein Prämaß). Dies ist notwendig dafür, dass $\mu^*$ eine Fortsetzung von $\ol\mu$ ist, dass $\ol\mu$ Prämaß.
+\end{mdframed}
+\end{korollar}
+
+\subsubsection{Fortsetzung von Prämaßen zu Maßen}
+\begin{lemma}
+\begin{mdframed}
+Sei $\mu$ Inhalt auf einem Ring $\RR$. Ist $\mu$ Prämaß, so gilt $\mu^*|_\RR = \mu$.
+\end{mdframed}
+\begin{proof}
+Sei $A \in \RR$ und $(A_n)_{n \in \N}$ eine abzählbare Überdeckung von $A$ durch Teilmengen in $\RR$. Setze $\ol{A}_n:=A_1 \cup ... \cup A_n \in \RR$. Da $\mu$ Inhalt ist, folgt
+$$
+\sum_{i=1}^n \mu(A_i) \geq \mu (\ol{A}_n) \overset{\text{Monot.}}\geq  \overbrace{\mu(\underbrace{\ol{A}_n \cap A}_{\nearrow A})}^{\leq \mu(A)}
+$$
+Für $n \longrightarrow \infty$ gilt
+$$
+\sum_{i=1}^\infty \mu(A_i)\geq \lim_{n \to \infty} \mu(\ol{A}_n) = \lim_{n \to \infty} \mu(\ol{A}_n \cap A) \overset{\mu \text{ Prämaß}}= \mu(A)
+$$
+Jetzt nehmen wir Infimum über $(A_n)$, so folgt
+$$ \mu^*(A) \geq \mu(A),$$
+also $\mu^*|_\RR \geq \mu$, somit Gleichheit.
+\end{proof}
+\end{lemma}
+
+\begin{satz}
+\begin{mdframed}
+Ist $\mu$ ein Prämaß auf $\RR$, so wird $\mu$ durch das assoziierte äußere Maß $\mu^*$ zu einem Maß $\mu^*|_{\sigma(\RR)}$ auf dem von Ring erzeugten $\sigma$-Algebra $\sigma(\RR)$ fortgesetzt.
+\end{mdframed}
+\begin{proof}
+Aus $\RR \subset \AA^*$ folgt $\sigma(\RR)\subset \AA^*$, da $\AA^*$ eine $\sigma\text{-Algebra}$ ist. Da $\mu^*|_{\AA^*}$ ein Maß ist, ist $\mu^*|_{\sigma(\RR)} = (\mu^*|_{\AA^*})_{\sigma(\RR)}$ auch ein Maß. Das obige Lemma liefert dann, dass $\mu^*|_{\sigma(\RR)}$ den Inhalt $\mu$ fortsetzt.
+\end{proof}
+\end{satz}
+Dies zeigt, dass Prämaße auf Ringen \emph{auf mindestens eine Weise} \emph{fortsetzbar zu Maßen} auf den von den Ringen erzeugten $\sigma$-Algebren. 
+\subsubsection{Eindeutigkeit fortgesetzter Maße}
+Im folgenden betrachten wir
+\begin{equation*}
+\begin{array}{ccccccc}
+\RR	&	 \subset		&	 \BB 		&	\subset		&	 \AA^* 	&	\subset		&	 \PP(X)\\
+\text{Ring} & &\text{eine }\sigma\text{-Alg}	&& \substack{\sigma\text{-Alg der} \\ \mu^*\text{-messb. Mengen}}
+\end{array}
+\end{equation*}
+Weiter sei $\nu$ ein Maß, der das Prämaß $\mu$ fortsetzt. Es ist dann natürlich, $\mu^*|_\BB$ mit $\nu$ zu vergleichen.
+
+\begin{lemma}
+Es gilt $\boxed{\nu \leq \mu^*|_\BB}$.
+\begin{proof}
+Sei $M\in \BB$ und $(A_n)_{n \in \N}$ eine abzählbare Überdeckung von $M$, $A_n \in \RR$, $M \subset \bigcup\limits_{n\in \N} A_n$. Dann gilt
+$$
+\sum_{n \in \N} \mu(A_n) \overset{\nu \text{ Forts.}}= \sum_{n \in \N} \nu(A_n) \overset{\nu \text{ Maß}}\geq \nu \left( \bigcup_{n \in \N} A_n \right)  \overset{\text{monot.}}\geq \nu (M)  
+$$
+Bilde nun Infimum über $(A_n)$, es folgt dann
+$$
+\mu^*(M) \geq \nu (M)
+$$
+\end{proof}
+\end{lemma}
+
+\begin{satz}
+\begin{mdframed}
+Auf der Familie der Teilmengen aus $\BB$, die eine abzählbare Überdeckung durch Teilmengen aus $\RR$ mit endlichem $\mu$-Inhalt zulassen, stimmt $\nu$ mit $\mu^*$ überein.
+\end{mdframed}
+\begin{proof}
+Sei $M \in \BB$. Zunächst zeigen wir unter der Annahme: $\exists R \in \RR$ mit $M \subset R$ und $\mu(R)< \infty$. Unter dieser Annahme gilt
+$$
+\mu^*(M)+\mu^*(R\setminus M)\overset{\mu^* \text{ Maß}}=\mu^*(R) \overset{\mu \text{ Prämaß}}= \mu (R) \overset{\nu|_{\RR}=\mu} = \nu (R) \overset{\nu \text{ Maß}}= \underbrace{\nu(M)}_{\leq \mu^*(M)}+\underbrace{\nu(R \setminus M)}_{\leq \mu^*(R\setminus M)}
+$$
+Also muss es gelten $\nu(M)= \mu^*(M)$. \\
+Jetzt unter der allgemeinen Annahme: $M$ hat eine abzählbare Überdeckung durch $R_n \in \RR$ mit $\mu(R_n)< \infty$. OBdA dürfen wir annehmen, dass alle $R_i$ paarweise disjunkt sind, da $\RR$ ein Ring ist. Wir haben schon gezeigt: $\nu(\underbrace{M \cap R_n}_{\in \BB}) = \mu^*(M\cap  R_n).$
+Da $\nu$ und $\mu^*$ Maße sind, folgt
+$$
+\nu\bigg( \underbrace{\bigcup_{n \in \N} (M \cap R_n)	}_{=M}	\bigg) = \mu^* \bigg( \underbrace{\bigcup_{n \in \N} (M \cap R_n)}_{=M} \bigg)
+$$
+\end{proof}
+\end{satz}
+Dieser Satz zeigt, dass wir Eindeutigkeit unter geeigneten Endlichkeitsvoraussetzungen haben.\footnote{Nichteindeutigkeit schon in einfachen Situationen: Sei $\RR = \{\emptyset\}$. Dann ist $\sigma(\RR)=\{\emptyset, X\} $. Ist $\mu$ ein endlicher Inhalt auf $\RR$, so können wir den Inhalt von $X$ beliebig wählen. Das Problem besteht darin, dass $\mu$ nicht $\sigma$-endlich ist.}
+
+\begin{definition}
+\begin{mdframed}
+Ein Inhalt $\mu$ auf einem Ring $\RR \subset \PP(X)$ heißt 
+\begin{enumerate}[label=(\roman*),topsep=3pt, itemsep=0pt]
+	\item \textbf{endlich}, falls $X \in \RR$ mit $\mu(X) < \infty$.
+	\item \textbf{$\boldsymbol\sigma$-endlich}, falls $X$ eine abzählbare Überdeckung durch Teilmengen aus $\RR$ mit endlichem $\mu$-Inhalt zulässt.
+\end{enumerate}
+\end{mdframed}
+\end{definition}
+
+\begin{korollar}
+\begin{mdframed}
+Ein $\sigma$-endliches Prämaß auf einem Ring $\RR \subset \PP(X)$ besitzt eine eindeutige Fortsetzung zu einem Inhalt auf $\sigma(\RR)$.
+\end{mdframed}
+\end{korollar}
+
+\begin{definition}
+\begin{mdframed}
+Da das Lebesgue-Prämaß $\lambda^d_{\FF^d}$ auf $\FF^d\subset \PP(\R^d)$ $\sigma$-endlich ist, können wir es eindeutig fortsetzen zu einem Maß $\beta^d$ auf der Borelschen $\sigma$-Algebra $\BB^d = \sigma(\FF^d)$. Wir nennen $\beta^d$ \textbf{das Lebesgue-Borel-Maß}. Wir dehnen dieses Maß weiter aus auf alle (bzgl. des äußeren Maßes) messbaren Teilmengen $(\beta^d)^* \overset{\text{\Ueb}}= (\lambda^d_{\FF^d})^*$. Wir definieren $\BB^d \subset \boldsymbol{\LL^d} \subset \PP(\R^d)$ als \textbf{die $\boldsymbol\sigma$-Algebra der $\boldsymbol{(\beta^d)^*}$-messbaren Teilmengen. } Das Maß $(\beta^d)^*|_{\LL^d} =: \boldsymbol{\lambda^d}$ heißt \textbf{$\boldsymbol{d}$-dimensionale Lebesgue-Maß}.
+\end{mdframed}
+\end{definition}
+
+\subsubsection{Approximation messbarer Teilmengen}
+Sei $\mu$ ein Prämaß auf dem Ring $\RR \subset \PP(X)$, $\sigma(\RR)$ die von $\RR$ erzeugte $\sigma$-Algebra und $\AA^*$ die Familie der $\mu^*$-messbaren Teilmengen. Wir wollen nun $\sigma(\RR)$ mit $\AA^*$ vergleichen. Erster Erinnerung: $\mu^*$-Nullmengen sind $\mu^*$-messbar, liegen also in $\AA^*$.\\\\
+\textit{Sprechweise:} Es seien $M,M'\subset X$ mit $\mu^*(M \triangle M') = 0$. wir nennen dann $M, M'$ \textbf{Modifikationen} voneinander durch $\mu^*$-Nullmengen. Wir sagen, dass sie ``bis auf $\mu^*$-Nullmengen übereinstimmen''.
+
+\begin{lemma}
+Für $M, M' \subset X$ mit $\mu^*(M \triangle M') =0$ gilt:
+\begin{enumerate}[label=(\roman*),topsep=3pt, itemsep=0pt]
+	\item $\mu^*(M) = \mu^*(M')$,
+	\item $M \in \AA^* \iff M' \in \AA^*$.
+\end{enumerate}
+\begin{proof}
+Zu (i): Aus $M \cup M' = (M \cap M') \cup (M \triangle M')$ folgt
+$$
+\mu^*(M \cup M' ) \leq \mu^*(M \cap M') + \underbrace{\mu^* (M \triangle M')}_{=0}=\mu^*(M\cap M')
+$$ 
+Also $\mu^*(M\cup M') = \mu^*(M\cap M')$. Wegen $\mu^*(M\cap M') \leq \mu^*(M) \leq \mu^*(M \cup M')$ folgt Gleichheit überall. Insbesondere gilt $\mu^*(M)=\mu^*(M')$.\\
+Zu (ii): Wir erkennen zunächst $M \triangle M' = \complement M \triangle \complement M'$. Sei $S \subset X$. Dann gilt
+$$
+(S\cap M) \triangle (S \cap M') = S\cap (M \triangle M') \subset M \triangle M'
+$$
+Es folgt
+$$\mu^*((S\cap M)\triangle (S \cap M'))=0$$
+und analog für die Komplemente: $\mu^*((S\cap \complement M)\triangle (S \cap \complement M'))=0$
+Es folgt
+$$
+\mu^*(S\cap M) + \mu^*(S\cap \complement M) =\mu^*(S \cap M') + \mu^*(S \cap \complement M')
+$$
+Dies zeigt, dass $\mu^*(S\cap M) + \mu^*(S\cap \complement M) = \mu^*(S)$ genau dann gilt, wenn $\mu^*(S \cap M') + \mu^*(S \cap \complement M')=\mu^*(S)$. Also $M \in \AA^*$ genau dann wenn $M'\in \AA^*$.
+\end{proof}
+\end{lemma}
+
+\marginpar{\tiny{18.11.2019}}
 
 %\input{A-integrale-stetiger-funktionen.tex}
 \end{document}
