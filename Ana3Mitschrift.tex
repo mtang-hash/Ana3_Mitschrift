@@ -300,10 +300,10 @@ Beide Produkte $\ast$ und $\boxtimes$ sind \emph{assoziativ}, d.h.\begin{small}
 \end{small}
 Wir definieren weiter
 \begin{equation*}
-%\mathcal{Z} = 
-\mathcal{Z} (\FF_1,...,\FF_n) %\subset \FF_1 \ast ... \ast \FF_n
+\mathcal{Z} = 
+\mathcal{Z} (\FF_1,...,\FF_n) = \bigcup_{k=1}^n \pi_k^{-1}(M_k)\subset \PP(X_1 \times ...\times X_n) %\subset \FF_1 \ast ... \ast \FF_n 
 \end{equation*}
-die Familie der \textbf{Zylindermengen} bestehend aus
+bestehend aus aus den \textbf{Zylindermengen}
 \begin{equation*}
 \begin{split}
 \pi_k^{-1}(M_k) = X_1 \times ... \times X_{k-1} \times M_k \times X_{k+1} \times ... \times X_n \quad\\ \text{mit } 1 \leq k \leq n, M_k \in \FF_k
@@ -1092,10 +1092,10 @@ $$
 \end{lemma}
 
 \subsubsection{Produkte von $\sigma$-Algebren}
-Wir konstruieren endliche Produkte von $\sigma$-Algebren bzw. Messräumen. Seien $(X_i, \AA_i)$ Messräume ($i=1,...,n)$. Die \textbf{Produkt-$\boldsymbol\sigma$-Algebra} $\AA = \AA_1 \otimes ... \otimes \AA_n$ ist definiert als die $\sigma$-Algebra auf $X = X_1 \times ... \times X_n$ erzeugt von $\ZZ = \ZZ(\AA_1, ..., \AA_n)$, d.h. von $\pi_i^{-1}(A_i) \ \forall A_i \in \AA_i$\footnote{Die $\pi_i^{-1}(A_i)$ sind spezielle Quader, da $X_i \in \AA_i$.}, $i=1,...,n$ und ebenfalls erzeugt vom Halbring $\QQ = \AA_1 \ast ... \ast \AA_n \supset \ZZ$ der Quader $A_1 \times ... \times A_n$ mit $A_i \in \AA_i$.
-
+Wir konstruieren endliche Produkte von $\sigma$-Algebren bzw. Messräumen. 
 \begin{definition}
 \begin{mdframed}
+Seien $(X_i, \AA_i)$ Messräume ($i=1,...,n)$. Die \textbf{Produkt-$\boldsymbol\sigma$-Algebra} $\AA = \AA_1 \otimes ... \otimes \AA_n$ ist definiert als die $\sigma$-Algebra auf $X = X_1 \times ... \times X_n$ erzeugt von $\ZZ = \ZZ(\AA_1, ..., \AA_n)$, d.h. von $\pi_i^{-1}(A_i) \ \forall A_i \in \AA_i$\footnote{Die $\pi_i^{-1}(A_i)$ sind spezielle Quader, da $X_i \in \AA_i$.}, $i=1,...,n$ und ebenfalls erzeugt vom Halbring $\QQ = \AA_1 \ast ... \ast \AA_n \supset \ZZ$ der Quader $A_1 \times ... \times A_n$ mit $A_i \in \AA_i$.
 Die $\sigma$-Algebra $\AA_1 \otimes ... \otimes \AA_n$ auf $X_1 \times ... \times X_n$ heißt das Produkt der $\sigma$-Algebren $\AA_i$, und der Messraum $(X_1\times ... \times X_n, \AA_1 \otimes ... \times \AA_n)$ das Produkt der Messräume $(X_i,\AA_i)$.
 \end{mdframed}
 \end{definition}
@@ -1429,10 +1429,10 @@ also $\mu^*|_\RR \geq \mu$, somit Gleichheit.
 
 \begin{satz}
 \begin{mdframed}
-Ist $\mu$ ein Prämaß auf $\RR$, so wird $\mu$ durch das assoziierte äußere Maß $\mu^*$ zu einem Maß $\mu^*|_{\sigma(\RR)}$ auf dem von Ring erzeugten $\sigma$-Algebra $\sigma(\RR)$ fortgesetzt.
+Ist $\mu$ ein Prämaß auf dem Ring $\RR$, so wird $\mu$ durch das assoziierte äußere Maß $\mu^*$ zu einem Maß $\mu^*|_{\sigma(\RR)}$ auf dem von $\RR$ erzeugten $\sigma$-Algebra $\sigma(\RR)$ fortgesetzt.
 \end{mdframed}
 \begin{proof}
-Aus $\RR \subset \AA^*$ folgt $\sigma(\RR)\subset \AA^*$, da $\AA^*$ eine $\sigma\text{-Algebra}$ ist. Da $\mu^*|_{\AA^*}$ ein Maß ist, ist $\mu^*|_{\sigma(\RR)} = (\mu^*|_{\AA^*})_{\sigma(\RR)}$ auch ein Maß. Das obige Lemma liefert dann, dass $\mu^*|_{\sigma(\RR)}$ den Inhalt $\mu$ fortsetzt.
+Aus $\RR \subset \AA^*$ folgt $\sigma(\RR)\subset \AA^*$, da $\AA^*$ eine $\sigma\text{-Algebra}$ ist. Da $\mu^*|_{\AA^*}$ ein Maß ist, ist $\mu^*|_{\sigma(\RR)} = (\mu^*|_{\AA^*})|_{\sigma(\RR)}$ auch ein Maß. Das obige Lemma liefert dann, dass $\mu^*|_{\sigma(\RR)}$ den Inhalt $\mu$ fortsetzt.
 \end{proof}
 \end{satz}
 Dies zeigt, dass Prämaße auf Ringen \emph{auf mindestens eine Weise} \emph{fortsetzbar zu Maßen} auf den von den Ringen erzeugten $\sigma$-Algebren. 
