@@ -1095,7 +1095,7 @@ $$
 Wir konstruieren endliche Produkte von $\sigma$-Algebren bzw. Messräumen. 
 \begin{definition}
 \begin{mdframed}
-Seien $(X_i, \AA_i)$ Messräume ($i=1,...,n)$. Die \textbf{Produkt-$\boldsymbol\sigma$-Algebra} $\AA = \AA_1 \otimes ... \otimes \AA_n$ ist definiert als die $\sigma$-Algebra auf $X = X_1 \times ... \times X_n$ erzeugt von $\ZZ = \ZZ(\AA_1, ..., \AA_n)$, d.h. von $\pi_i^{-1}(A_i) \ \forall A_i \in \AA_i$\footnote{Die $\pi_i^{-1}(A_i)$ sind spezielle Quader, da $X_i \in \AA_i$.}, $i=1,...,n$ und ebenfalls erzeugt vom Halbring $\QQ = \AA_1 \ast ... \ast \AA_n \supset \ZZ$ der Quader $A_1 \times ... \times A_n$ mit $A_i \in \AA_i$.
+Seien $(X_i, \AA_i)$ Messräume ($i=1,...,n)$. Die \textbf{Produkt-$\boldsymbol\sigma$-Algebra} $\AA = \AA_1 \otimes ... \otimes \AA_n$ ist definiert als die $\sigma$-Algebra auf $X = X_1 \times ... \times X_n$ erzeugt von $\ZZ = \ZZ(\AA_1, ..., \AA_n)$, d.h. von $\pi_i^{-1}(A_i) \ \forall A_i \in \AA_i$\tablefootnote{Die $\pi_i^{-1}(A_i)$ sind spezielle Quader, da $X_i \in \AA_i$.}, $i=1,...,n$ und ebenfalls erzeugt vom Halbring $\QQ = \AA_1 \ast ... \ast \AA_n \supset \ZZ$ der Quader $A_1 \times ... \times A_n$ mit $A_i \in \AA_i$.
 Die $\sigma$-Algebra $\AA_1 \otimes ... \otimes \AA_n$ auf $X_1 \times ... \times X_n$ heißt das Produkt der $\sigma$-Algebren $\AA_i$, und der Messraum $(X_1\times ... \times X_n, \AA_1 \otimes ... \times \AA_n)$ das Produkt der Messräume $(X_i,\AA_i)$.
 \end{mdframed}
 \end{definition}
@@ -1296,11 +1296,15 @@ Die ältere Version der Theorie bleibt unbefriedigend, denn z.B. betrachten wir 
 Sei $\AA^*\subset \PP(X)$ die Familie der $\mu^*$-messbaren Teilmengen. ($\mu^*$ nicht notwendigerweise induziert von einem Inhalt, fordere nur Axiome eines äußeren Maßes)
 
 \begin{definition}
+\begin{mdframed}
 $N \subset X$ heißt \textbf{$\boldsymbol\mu^{\boldsymbol*}$-Nullmenge}, falls $\mu^*(N)=0$.
+\end{mdframed}
 \end{definition}
 
 \begin{lemma}
+\begin{mdframed}
 Alle $\mu^*$-Nullmengen gehören zu $\AA^*$.
+\end{mdframed}
 \begin{proof}
 Für $S\subset X$ gilt:
 $$
@@ -1501,16 +1505,29 @@ Da das Lebesgue-Prämaß $\lambda^d_{\FF^d}$ auf $\FF^d\subset \PP(\R^d)$ $\sigm
 \end{mdframed}
 \end{definition}
 
+Zusammengefasst:
+\begin{equation*}
+\begin{array}{ccccccc}
+\FF^d	& \subset & 
+	\underset{\text{Borel-}\sigma\text{-Algebra}}{\BB^d=\sigma(\FF^d)} & \subset  & \underset{(\lambda^d_{\FF^d})^*\text{-messb. Teilmengen}}{\LL^d}	& \subset & \PP(\R^d) \\ 
+\underset{\text{Lebesgue-Prämaß}}{\lambda^d_{\FF^d}} & &
+\underset{\text{Lebesgue-Borel-Maß}}{\beta^d := \underbrace{(\lambda^d_{\FF^d})^*}_{\lambda^d}|_{\BB^d}} &&
+\underset{\text{Lebesgue-Maß}}{\lambda^d := (\lambda^d_{\FF^d})^*|_{\LL^d}}
+\end{array}
+\end{equation*}
+
 \subsubsection{Approximation messbarer Teilmengen}
 Sei $\mu$ ein Prämaß auf dem Ring $\RR \subset \PP(X)$, $\sigma(\RR)$ die von $\RR$ erzeugte $\sigma$-Algebra und $\AA^*$ die Familie der $\mu^*$-messbaren Teilmengen. Wir wollen nun $\sigma(\RR)$ mit $\AA^*$ vergleichen. Erster Erinnerung: $\mu^*$-Nullmengen sind $\mu^*$-messbar, liegen also in $\AA^*$.\\\\
 \textit{Sprechweise:} Es seien $M,M'\subset X$ mit $\mu^*(M \triangle M') = 0$. wir nennen dann $M, M'$ \textbf{Modifikationen} voneinander durch $\mu^*$-Nullmengen. Wir sagen, dass sie ``bis auf $\mu^*$-Nullmengen übereinstimmen''.
 
-\begin{lemma}
+\begin{lemma} \label{uebereinstimmen}
+\begin{mdframed}
 Für $M, M' \subset X$ mit $\mu^*(M \triangle M') =0$ gilt:
 \begin{enumerate}[label=(\roman*),topsep=3pt, itemsep=0pt]
 	\item $\mu^*(M) = \mu^*(M')$,
 	\item $M \in \AA^* \iff M' \in \AA^*$.
 \end{enumerate}
+\end{mdframed}
 \begin{proof}
 Zu (i): Aus $M \cup M' = (M \cap M') \cup (M \triangle M')$ folgt
 $$
@@ -1531,8 +1548,114 @@ $$
 Dies zeigt, dass $\mu^*(S\cap M) + \mu^*(S\cap \complement M) = \mu^*(S)$ genau dann gilt, wenn $\mu^*(S \cap M') + \mu^*(S \cap \complement M')=\mu^*(S)$. Also $M \in \AA^*$ genau dann wenn $M'\in \AA^*$.
 \end{proof}
 \end{lemma}
-
 \marginpar{\tiny{18.11.2019}}
+
+Wir wollen jetzt (angelehnt an Archimedes-Kompressionsmethode) beliebige Teilmengen von innen/außen im Volumen-Sinne durch Teilmengen aus $\sigma(\RR)$ (möglich ``nah verwandt\footnote{im Sinne der Borel-Hierarchie}'' mit $\RR$) approximieren. Für \emph{messbare} Teilmengen werden wir Approximationen bis auf $\mu^*$-Nullmengen erhalten.
+
+\begin{satz}
+\begin{mdframed}
+Sei $M\subset X$ mit $\mu^*(M)<\infty$. Dann existieren Teilmengen $I, A\in \sigma (\RR)$ mit $I \subset M \subset A$ sodass $\mu^*(A) = \mu^*(M)$ und $\mu^*(A\setminus I) = \mu^*(A \setminus M)$.\tablefootnote{I steht für innen, A steht für außen.} Diese sind eindeutig bis auf Modifikationen durch $\mu^*$-Nullmengen. Es gilt außerdem: $M \in \AA^* \iff \mu^*(A\setminus I)=0$.\tablefootnote{$M$ stimmt genau dann bis auf Nullmengen mit $A$ und $I$ überein, wenn $M$ $\mu^*$-messbar ist.}
+\end{mdframed}
+\begin{proof}\
+\begin{itemize}
+\item {Die \emph{äußere} Approximation:} Aus der Definition von $\mu^*$ folgt, dass es abzählbare Überdeckungen von $M$ durch Teilmengen aus $\RR$ existieren, deren Gesamtvolumen $\mu^*(M)$ beliebig gut approximiert. D.h. Zu jedem $\varepsilon>0$ existiert ein $A_\varepsilon \in \sigma(\RR)$ sodass $M\subset A_\varepsilon$ und $\mu^*(A_\varepsilon) < \mu^*(M)+\varepsilon$. Wir wählen $$A:=\underbrace{\bigcap_{n\in\N}A_{\frac{1}{n}}}_{\supset M} \in \sigma(\RR).$$
+Es erfüllt $\mu^*(A)=\mu^*(M)$.
+\item Die \emph{innere} Approximation geschieht durch die äußere Approximation von $A\setminus M$. Weil $\mu^*(A\setminus M) \leq \mu^*(M) < \infty$, können wir $A\setminus M$ von außen approximieren. Nämlich gibt es ein $B\in \sigma(\RR)$ so, dass $A\setminus M \subset B$ und $\mu^*(B)=\mu^*(A\setminus M)$. Wir wählen $I:= A \setminus B \subset M$. Weil $ A\setminus I =B$, folgt $\mu^*(A\setminus I) =\mu^*(A \setminus M)$.\\
+Das obige Argument zeigt die Existenz der Approximationen.
+\item Zur \emph{Eindeutigkeit} bis auf Nullmengen: Sei $A' \in \sigma (\RR)$ mit $M\subset A'$ und $\mu^*(A')=\mu^*(M)$ eine weitere äußere Approximation. Dann gilt $\mu^*(A \cap A') = \mu^*(M) =\mu^*(A) =\mu^*(A')$. Weil $A,A',A\cap A'$ $\mu^*$-messbar sind und endliche Volumina haben, folgt $\mu^*(A \triangle A') = \mu^*(A)+\mu^*(A')-2\mu^*(A\cap A') = 0$. Dies zeigt, dass die äußere Approximation eindeutig bis auf Nullmengen ist. (Analog für die innere Approximation.)
+\item Ist $M \in \AA^*$, so gilt $\mu^*(A\setminus I) = \mu^*(A\setminus M) \underset{
+\text{endl. Vol.}}{\overset{M \in \AA^*}=} \mu^*(A)-\mu^*(M)=0$. \\
+ Ist umgekehrt $\mu^*(A\setminus I)=0$, so gilt $\mu^*(A\triangle I)=0$ (weil $I \subset A$)  und somit stimmen $I,M,A$ bis auf Nullmengen überein. Weil $I,A \in \AA^*$, folgt wegen \hyperref[uebereinstimmen]{des obigen Lemmas} auch $M \in \AA^*$.
+\end{itemize}
+\end{proof}
+\begin{remark}\
+%\begin{enumerate}[label=(\roman*)]
+%\item
+ Die Aussage des Satzes gilt allgemeiner für Teilmengen $M\subset X$, die abzählbare Vereinigungen von Teilmengen endlichen $\mu^*$-Volumens sind. Begründung: Sei $M=\bigcup\limits_{n\in\N}M_n$ mit $\mu^*(M_n)<\infty$. oBdA sei $M_n$ paarweise disjunkt. Der obige Satz liefert, dass es $I_n, A_n \in \sigma(\RR)$ existieren mit $I_n \subset M_n \subset A_n$ und $\mu^*(A_n \setminus I_n)=0$. Die gewünschten Approximationen folgen durch Bildung der Vereinigungen $\bigcup\limits_{n \in \N}I_n \subset M \subset \bigcup\limits_{n\in\N}A_n$, denn aus
+$$\bigg( 
+\bigcup\limits_{n\in\N} A_n
+\bigg) \setminus \bigg(
+\bigcup\limits_{n\in \N} I_n
+\bigg) =
+\bigcup_{n \in \N} \bigg(\underbrace{A_n \setminus \bigcup_{m\in\N}I_m}_{\subset A_n \setminus I_n} \bigg) \subset \bigcup_{n \in \N} (A_n \setminus I_n)$$
+folgt $\mu^*\bigg( \bigg( \bigcup\limits_{n\in \N}A_n \bigg)\setminus \bigg( \bigcup\limits_{n \in \N} I_n \bigg)  \bigg)=0$.
+%\end{enumerate}
+\end{remark}
+\end{satz}
+
+Für \emph{Struktur} von \emph{messbaren Teilmengen} folgt:
+\begin{korollar}\
+\begin{mdframed}
+\begin{enumerate}[label=(\roman*)]
+\item Jede $\mu^*$-Nullmenge wird von einer $\mu^*$-Nullmenge aus $\sigma(\RR)$ eingeschlossen.
+\item Lässt $M \in \AA^*$ eine abzählbare Überdeckung durch (oBdA messbare) Teilmengen endlichen $\mu^*$-Inhalts zu, so ist $M$ die Vereinigung einer Teilmenge\footnote{wähle z.B. die innere Approximation} mit einer $\mu^*$-Nullmenge.
+\end{enumerate}
+\end{mdframed}
+\end{korollar}
+
+\begin{korollar}
+\begin{mdframed}
+Für ein $\sigma$-endliches Prämaß $\mu$ auf einem Ring $\RR \subset \PP(X)$ stimmen alle $\mu^*$-messbaren Teilmengen bis auf Modifikationen durch $\mu^*$-Nullmengen mit Teilmengen aus $\sigma(\RR)$ überein.\footnote{Wir können es so interpretieren, dass die Kompliziertheit messbarer Teilmengen im Vergleich zu Teilmengen aus $\sigma(\RR)$ von Nullmengen ``aufgefangen'' wird. Letztere sind oft vernachlässigbar.}
+\end{mdframed}
+\end{korollar}
+
+Wir betrachten nun speziell \emph{Lebesgue-messbare} (d.h. bezüglich des äußeren Maßes $(\lambda^d_{\FF^d})^* = (\beta^d)^* = (\lambda^d)^*$) Teilmengen in $\R^d$. Das letzte Korollar liefert einen Vergleich von Borel- und Lebesgue-Messbarkeit für Teilmengen des $\R^d$.
+
+\begin{korollar}
+\begin{mdframed}
+Jede Lebesgue-messbare Teilmenge stimmt bis auf eine Lebesgue-Nullme-nge (d.h. $(\lambda^d)^*(N)=0$) überein mit einer Borel-messbaren Teilmenge. (Wir nennen eine Borel-messbare Teilmenge kurz eine \textbf{Borel-Menge}.)
+\end{mdframed}
+\end{korollar}
+
+Um eine bessere geometrische Vorstellung von messbaren Teilmengen des $\R^d$ zu bekommen, vergleichen wir jetzt die \emph{messbare} und \emph{topologische} Struktur auf $\R^d$, d.h. die $\sigma$-Algebra $\BB^d$ mit einem geometrisch natürlichen Erzeuger, nämlich der \emph{Topologie}.
+
+\begin{definition}
+\begin{mdframed}
+Eine Teilmenge eines topologischen Raums heißt
+\begin{enumerate}[label=(\roman*),topsep=3pt, itemsep=0pt]
+\item $G_\delta$-Menge, falls sie ein abzählbarer Durchschnitt offener Mengen ist.
+\item $F_\sigma$-Menge, falls sie eine abzählbare Vereinigung abgeschlossener Mengen ist.
+\end{enumerate}
+\end{mdframed}
+\end{definition}
+
+\paragraph{Topologische Approximation einer messbaren Teilmenge $M\in \LL^d \subset \PP(\R^d)$}
+\begin{itemize}
+\item \textbf{1. Schritt:} Sei $M$ beschränkt, d.h. $M\subset B$, wobei $B$ ein offener Ball ist. Es gilt $\lambda^d(M)<\infty$. Weil $M \in \LL^d$, existiert zu jedem $\varepsilon>0$ eine abzählbare Überdeckung von $M$ durch Teilmengen aus $\FF^d$ mit Gesamtvolumen $< \lambda^d(M) +\varepsilon$. Durch offene Aufdickung von Quadern bzw. Figuren existiert ebenfalls ein $O_\varepsilon$ offen mit $$M \subset O_{\varepsilon} \subset B \text{\ \  und \ } \lambda^d(O_\varepsilon) < \lambda^d(M)+\varepsilon.$$ 
+Analog (durch äußere Approximation von $\ol{B}\setminus M$) existiert ein $O'_\varepsilon$ offen sodass $$\ol{B}\setminus M\subset O'_\varepsilon \text{\ \  mit \ } \lambda^d(O'_\varepsilon)<\lambda^d(\ol{B}\setminus M)+\varepsilon\overset{M \text{ messbar}}= \lambda^d(\ol{B})-\lambda^d(M)+\varepsilon.$$ 
+Es ist $$\ol{B}\subset O_\varepsilon \cup O'_\varepsilon \text{\ \  mit \ } \lambda^d(O_\varepsilon)+\lambda^d(O'_\varepsilon)<\lambda^d(\ol{B})+2\varepsilon.$$
+Wir wählen $$K_\varepsilon := \ol{B} \setminus O'_\varepsilon \subset M.$$ Dann ist $K_\varepsilon$ eine kompakte \emph{innere} Approximation, denn $$\lambda^d(K_\varepsilon)=\lambda^d(\ol{B})-\lambda^d(O'_\varepsilon)>\lambda^d(O'_\varepsilon)-2\varepsilon.$$
+Also $K_\varepsilon \subset M \subset O_\varepsilon$ mit $\lambda^d(O_\varepsilon \setminus K_\varepsilon) <2\varepsilon$.
+\item \textbf{2. Schritt:} Jetzt sei $M\in\LL^d$ beliebig. Dann gibt es eine Darstellung $M=\bigcup\limits_{n\in \N}M_n$ mit $M_n \in \LL^d$ beschränkt, sodass $(M_n)$ eine \emph{lokal endliche} Familie bildet, d.h. jeder Ball in $\R^d$ schneidet nur endlich viele $M_n$. Der erste Schritt liefert, dass es Approximationen $\underset{\text{kompakt}}{K_n} \subset M_n \subset \underset{\text{offen}}{O_n}$ für jedes $M_n$ gibt sodass $\lambda^d (O_n \setminus K_n) < \varepsilon_n$. Die $\varepsilon_n$ sind positiv beliebig vorgebbar. Durch die Vereinigung erhalten wir ${\bigcup\limits_{n \in \N} K_n} \subset M \subset \underset{\text{offen}}{\bigcup\limits_{n \in \N} O_n}$. Weil $(K_n)$ lokal endlich sind und der Schnitt eines abgeschlossen Balls mit jedem Kompaktum wieder kompakt ist, ist $\bigcup\limits_{n\in \N} K_n$ abgeschlossen. Es gilt
+$$
+\lambda^d\bigg( \underbrace{\bigg(\bigcup_{n\in\N}O_n \bigg) \setminus \bigg( \bigcup_{n\in\N}K_n\bigg)}_{\subset \bigcup\limits_{n \in \N}(O_n \setminus K_n)}\bigg) < \underset{\substack{\text{positiv beliebig}\\\text{klein wählbar}}}{\sum_{n \in \N}\varepsilon_n}
+$$
+\end{itemize}
+
+Dies zeigt:
+
+\begin{satz}
+\begin{mdframed}
+Sei $M \in \LL^d$. Dann existiert zu jedem $\varepsilon>0$ $A_\varepsilon, O_\varepsilon \subset \R^d$ mit $A_\varepsilon$ abgeschlossen und $O_\varepsilon$ offen, sodass
+${A_\varepsilon} \subset M \subset {O_\varepsilon}$
+und 
+$\lambda^d(O_\varepsilon \setminus A_\varepsilon) < \varepsilon$.
+Falls $\lambda^d(M)<\infty$, kann $A_\varepsilon$ kompakt gewählt werden.
+\end{mdframed}
+\end{satz}
+
+Es folgt:
+\begin{satz}
+\begin{mdframed}
+Sei $M\in \LL^d$. Dann existieren eine $F_\sigma$-Menge $F\subset \R^d$ und eine $G_\delta$-Menge\footnote{Sie sind Borel-messbar, ``nah verwandt'' (1.Grades) mit der Topologie.}  $G\subset \R^d$sodass $F\subset M \subset G$ und $\lambda^d(G\setminus F)=0$.
+\end{mdframed}
+\end{satz}
+
+Folgerung für das Lebesgue-Maß: für $M\in \LL^d$ gilt
+$$
+\boxed{\sup\{\lambda^d(K) \mid K \subset M, K \text{ kompakt}\} = \lambda^d(M)=\inf \{\lambda^d(O)\mid O \supset M, O \text{ offen}\}}.
+$$
+\marginpar{\tiny{21.11.2019}}
 
 %\input{A-integrale-stetiger-funktionen.tex}
 \end{document}
