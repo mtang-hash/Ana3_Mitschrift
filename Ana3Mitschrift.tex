@@ -313,10 +313,11 @@ wobei $\pi_k: X_1 \times ... \times X_n \to X_k, (x_1,...,x_n) \mapsto x_k$ die 
 Falls $X_i \in \FF_i \ \forall i$, so ist $\mathcal{Z}(\FF_1,...,\FF_n) \subset \FF_1 \ast ... \ast \FF_n$.%\newpage
 \begin{proposition}
 \begin{mdframed} \
-\begin{enumerate}[(\roman*),topsep=5pt]
+\begin{enumerate}[(\roman*),topsep=5pt, itemsep= 0pt]
 	\item Seien $\HH_i \subset \mathcal{P}(X_i)$ Halbringe $(i=1,...,n)$ und $\RR_i \subset \mathcal{P}(X_i)$ die von ihnen erzeugten Ringe. Dann ist $\HH_1 \ast ... \ast \HH_n$ ein Halbring auf $X_1 \times ... \times X_n$ und $\HH_1 \boxtimes ... \boxtimes \HH_n =\RR_1 \boxtimes ... \boxtimes \RR_n$ der von ihm erzeugte Ring.
-	\item Sind $\RR_i \subset \mathcal{P}(X_i)$ Ringe und $\EE_i \subset \RR_i$ Erzeugendensysteme für $i=1,...,n$, so wird der Produktring $\RR_i \boxtimes ... \boxtimes \RR_n$ von $\EE_1 \ast ... \EE_n$ erzeugt.
-	\item Sind die $\RR_i$ Algebren, so wird der Produktring von $\ZZ(\EE_1,...,\EE_n)$ erzeugt.
+	\item Sind $\RR_i \subset \mathcal{P}(X_i)$ Ringe und $\EE_i \subset \RR_i$ Erzeugendensysteme für $i=1,...,n$, so wird der Produktring $\RR_1 \boxtimes ... \boxtimes \RR_n$ von der Familie von Quandern $\EE_1 \ast ... \EE_n$ erzeugt.
+	\item Sind die $\RR_i$ Algebren, so wird der Produktring $\RR_1 \boxtimes ... \boxtimes \RR_n$ von den Zylindermengen $\ZZ = \ZZ(\EE_1,...,\EE_n)$ erzeugt.
+	\item Sind $\AA_i \subset \PP(X_i)$ $\sigma$-Algebren und $\EE_i \subset \AA_i$ Erzeugendensysteme für $i=1,...,n$, so wird die Produkt-$\sigma$-Algebra von $\ZZ(\EE_1,...,\EE_n)$ sowie von $\EE_1 \ast ... \ast \EE_n$ erzeugt.
 	%\item Sind $\EE_i \subset \HH_i$ Erzeugendensysteme der Halbringe, so ist $\mathcal{Z}(\EE_1,...,\EE_n)$ ein Erzeugendensystem von $\HH_1 \ast ... \ast \HH_n$ als Halbring sowie (folglich) ein Erzeugendensystem von $\HH_1 \boxtimes ... \boxtimes \HH_n$ als Ring.
 \end{enumerate}
 \end{mdframed}
@@ -335,7 +336,8 @@ Falls $X_i \in \FF_i \ \forall i$, so ist $\mathcal{Z}(\FF_1,...,\FF_n) \subset 
 	Mit Induktion liefert dann die Behauptung auch für $\HH_1 \ast ... \ast \HH_n, n\geq 1$. \newline
 	Aus \eqref{eqI14} folgt, dass $\HH_1 \boxtimes ... \boxtimes \HH_n$ der von $\HH_1 \ast ... \ast \HH_n$ erzeugte Ring ist.
 	\item Für jedes $i$ wird der Ring auf $X_1 \times ... \times X_n$ bestehend aus den Zylindermengen $\pi_i^{-1}(M_i)$ für $M_i \in \RR_i$ von der Familie der Zylindermengen $\pi_i^{-1}(E_i)$ für $E_i \in \EE_i$ erzeugt, denn jede Teilmenge $M_i \in \RR_i$ kann durch endlich viele Mengenoperationen aus Teilmengen $E_{ij} \in \EE_i$ hergestellt werden und $\pi^{-1}_i(M_i)$ entsprechend aus den $\pi_i^{-1}(E_{ij})$. \\
-	Daraus folgt, dass $\mathcal{Z}(\EE_1,...,\EE_n)$ erzeugt denselben Ring wie $\mathcal{Z}( \RR_1,...,\RR_n)$ und denselben wie $\RR \ast ... \ast \RR_n$, also den Produktring $\RR_1 \boxtimes ... \boxtimes \RR_n$.
+	Daraus folgt, dass $\mathcal{Z}(\EE_1,...,\EE_n)$ erzeugt denselben Ring wie $\mathcal{Z}( \RR_1,...,\RR_n)$ und denselben wie $\RR \ast ... \ast \RR_n$, also den Produktring $\RR_1 \boxtimes ... \boxtimes \RR_n$. 
+	\item Übung.
 	%\item Für jedes $k$ gilt: Der Halbring auf $X_1 \times ... \times X_n$ bestehend aus den Zylindermengen $\pi_k^{-1}(H_k)$ für $H_k \in \HH_k$ wird erzeugt von den Zylindermengen $\pi_k^{-1}(E_k)$ für $E_k \in \EE_k$. Da
 	%\begin{equation*}
 	%\begin{split}
@@ -1647,7 +1649,7 @@ Falls $\lambda^d(M)<\infty$, kann $A_\varepsilon$ kompakt gewählt werden.
 Es folgt:
 \begin{satz}
 \begin{mdframed}
-Sei $M\in \LL^d$. Dann existieren eine $F_\sigma$-Menge $F\subset \R^d$ und eine $G_\delta$-Menge\footnote{Sie sind Borel-messbar, ``nah verwandt'' (1.Grades) mit der Topologie.}  $G\subset \R^d$sodass $F\subset M \subset G$ und $\lambda^d(G\setminus F)=0$.
+Sei $M\in \LL^d$. Dann existieren eine $F_\sigma$-Menge $F\subset \R^d$ und eine $G_\delta$-Menge\footnote{Sie sind Borel-messbar, ``nah verwandt'' (1.Grades) mit der Topologie.}  $G\subset \R^d$ sodass $F\subset M \subset G$ und $\lambda^d(G\setminus F)=0$.
 \end{mdframed}
 \end{satz}
 
