@@ -1416,7 +1416,7 @@ $\sigma(\RR) \subset \AA^*$ und $\mu^*|_{\sigma (\RR)}$ ist Maß (Insbesondere i
 \subsubsection{Fortsetzung von Prämaßen zu Maßen}
 \begin{lemma}
 \begin{mdframed}
-Sei $\mu$ Inhalt auf einem Ring $\RR$. Ist $\mu$ Prämaß, so gilt $\mu^*|_\RR = \mu$.
+Sei $\mu$ ein Inhalt auf einem Ring $\RR$. Ist $\mu$ ein Prämaß, so gilt $\mu^*|_\RR = \mu$.
 \end{mdframed}
 \begin{proof}
 Sei $A \in \RR$ und $(A_n)_{n \in \N}$ eine abzählbare Überdeckung von $A$ durch Teilmengen in $\RR$. Setze $\ol{A}_n:=A_1 \cup ... \cup A_n \in \RR$. Da $\mu$ Inhalt ist, folgt
@@ -1503,7 +1503,7 @@ Ein $\sigma$-endliches Prämaß auf einem Ring $\RR \subset \PP(X)$ besitzt eine
 
 \begin{definition}
 \begin{mdframed}
-Da das Lebesgue-Prämaß $\lambda^d_{\FF^d}$ auf $\FF^d\subset \PP(\R^d)$ $\sigma$-endlich ist, können wir es eindeutig fortsetzen zu einem Maß $\beta^d$ auf der Borelschen $\sigma$-Algebra $\BB^d = \sigma(\FF^d)$. Wir nennen $\beta^d$ \textbf{das Lebesgue-Borel-Maß}. Wir dehnen dieses Maß weiter aus auf alle (bzgl. des äußeren Maßes) messbaren Teilmengen $(\beta^d)^* \overset{\text{\Ueb}}= (\lambda^d_{\FF^d})^*$. Wir definieren $\BB^d \subset \boldsymbol{\LL^d} \subset \PP(\R^d)$ als \textbf{die $\boldsymbol\sigma$-Algebra der $\boldsymbol{(\beta^d)^*}$-messbaren Teilmengen. } Das Maß $(\beta^d)^*|_{\LL^d} =: \boldsymbol{\lambda^d}$ heißt \textbf{$\boldsymbol{d}$-dimensionale Lebesgue-Maß}.
+Da das Lebesgue-Prämaß $\lambda^d_{\FF^d}$ auf $\FF^d\subset \PP(\R^d)$ $\sigma$-endlich ist, können wir es eindeutig fortsetzen zu einem Maß $\beta^d$ auf der Borelschen $\sigma$-Algebra $\BB^d = \sigma(\FF^d)$. Wir nennen $\beta^d$ \textbf{das Lebesgue-Borel-Maß}. Wir dehnen dieses Maß weiter aus auf alle (bzgl. des äußeren Maßes) messbaren Teilmengen $(\beta^d)^* \overset{\text{\Ueb}}= (\lambda^d_{\FF^d})^*$. Wir definieren $\BB^d \subset \boldsymbol{\LL^d} \subset \PP(\R^d)$ als \textbf{die $\boldsymbol\sigma$-Algebra der $\boldsymbol{(\beta^d)^*}$-messbaren Teilmengen.} Das Maß $(\beta^d)^*|_{\LL^d} =: \boldsymbol{\lambda^d}$ heißt \textbf{$\boldsymbol{d}$-dimensionale Lebesgue-Maß}.
 \end{mdframed}
 \end{definition}
 
@@ -1520,7 +1520,7 @@ Zusammengefasst:
 
 \subsubsection{Approximation messbarer Teilmengen}
 Sei $\mu$ ein Prämaß auf dem Ring $\RR \subset \PP(X)$, $\sigma(\RR)$ die von $\RR$ erzeugte $\sigma$-Algebra und $\AA^*$ die Familie der $\mu^*$-messbaren Teilmengen. Wir wollen nun $\sigma(\RR)$ mit $\AA^*$ vergleichen. Erster Erinnerung: $\mu^*$-Nullmengen sind $\mu^*$-messbar, liegen also in $\AA^*$.\\\\
-\textit{Sprechweise:} Es seien $M,M'\subset X$ mit $\mu^*(M \triangle M') = 0$. wir nennen dann $M, M'$ \textbf{Modifikationen} voneinander durch $\mu^*$-Nullmengen. Wir sagen, dass sie ``bis auf $\mu^*$-Nullmengen übereinstimmen''.
+\textit{Sprechweise:} Es seien $M,M'\subset X$ mit $\mu^*(M \triangle M') = 0$. Wir nennen dann $M, M'$ \textbf{Modifikationen} voneinander durch $\mu^*$-Nullmengen. Wir sagen, dass sie ``bis auf $\mu^*$-Nullmengen übereinstimmen''.
 
 \begin{lemma} \label{uebereinstimmen}
 \begin{mdframed}
@@ -1590,7 +1590,7 @@ Für \emph{Struktur} von \emph{messbaren Teilmengen} folgt:
 \begin{mdframed}
 \begin{enumerate}[label=(\roman*)]
 \item Jede $\mu^*$-Nullmenge wird von einer $\mu^*$-Nullmenge aus $\sigma(\RR)$ eingeschlossen.
-\item Lässt $M \in \AA^*$ eine abzählbare Überdeckung durch (oBdA messbare) Teilmengen endlichen $\mu^*$-Inhalts zu, so ist $M$ die Vereinigung einer Teilmenge\footnote{wähle z.B. die innere Approximation} mit einer $\mu^*$-Nullmenge.
+\item Lässt $M \in \AA^*$ eine abzählbare Überdeckung durch (oBdA messbare) Teilmengen endlichen $\mu^*$-Inhalts zu, so ist $M$ die Vereinigung einer Teilmenge\footnote{wähle z.B. die innere Approximation} aus $\sigma(\RR)$ mit einer $\mu^*$-Nullmenge.
 \end{enumerate}
 \end{mdframed}
 \end{korollar}
@@ -1628,7 +1628,7 @@ Analog (durch äußere Approximation von $\ol{B}\setminus M$) existiert ein $O'_
 Es ist $$\ol{B}\subset O_\varepsilon \cup O'_\varepsilon \text{\ \  mit \ } \lambda^d(O_\varepsilon)+\lambda^d(O'_\varepsilon)<\lambda^d(\ol{B})+2\varepsilon.$$
 Wir wählen $$K_\varepsilon := \ol{B} \setminus O'_\varepsilon \subset M.$$ Dann ist $K_\varepsilon$ eine kompakte \emph{innere} Approximation, denn $$\lambda^d(K_\varepsilon)=\lambda^d(\ol{B})-\lambda^d(O'_\varepsilon)>\lambda^d(O'_\varepsilon)-2\varepsilon.$$
 Also $K_\varepsilon \subset M \subset O_\varepsilon$ mit $\lambda^d(O_\varepsilon \setminus K_\varepsilon) <2\varepsilon$.
-\item \textbf{2. Schritt:} Jetzt sei $M\in\LL^d$ beliebig. Dann gibt es eine Darstellung $M=\bigcup\limits_{n\in \N}M_n$ mit $M_n \in \LL^d$ beschränkt, sodass $(M_n)$ eine \emph{lokal endliche} Familie bildet, d.h. jeder Ball in $\R^d$ schneidet nur endlich viele $M_n$. Der erste Schritt liefert, dass es Approximationen $\underset{\text{kompakt}}{K_n} \subset M_n \subset \underset{\text{offen}}{O_n}$ für jedes $M_n$ gibt sodass $\lambda^d (O_n \setminus K_n) < \varepsilon_n$. Die $\varepsilon_n$ sind positiv beliebig vorgebbar. Durch die Vereinigung erhalten wir ${\bigcup\limits_{n \in \N} K_n} \subset M \subset \underset{\text{offen}}{\bigcup\limits_{n \in \N} O_n}$. Weil $(K_n)$ lokal endlich sind und der Schnitt eines abgeschlossen Balls mit jedem Kompaktum wieder kompakt ist, ist $\bigcup\limits_{n\in \N} K_n$ abgeschlossen. Es gilt
+\item \textbf{2. Schritt:} Jetzt sei $M\in\LL^d$ beliebig. Dann gibt es eine Darstellung $M=\bigcup\limits_{n\in \N}M_n$ mit $M_n \in \LL^d$ beschränkt, sodass $(M_n)$ eine \emph{lokal endliche} Familie bildet, d.h. jeder Ball in $\R^d$ schneidet nur endlich viele $M_n$. Der erste Schritt liefert, dass es Approximationen $\underset{\text{kompakt}}{K_n} \subset M_n \subset \underset{\text{offen}}{O_n}$ für jedes $M_n$ gibt sodass $\lambda^d (O_n \setminus K_n) < \varepsilon_n$. Die $\varepsilon_n$ sind positiv beliebig vorgebbar. Durch die Vereinigung erhalten wir ${\bigcup\limits_{n \in \N} K_n} \subset M \subset \underset{\text{offen}}{\bigcup\limits_{n \in \N} O_n}$. Weil $(K_n)$ lokal endlich sind und der Schnitt einer abgeschlossenen Menge mit jedem Kompaktum wieder kompakt ist, ist $\bigcup\limits_{n\in \N} K_n$ abgeschlossen. Es gilt
 $$
 \lambda^d\bigg( \underbrace{\bigg(\bigcup_{n\in\N}O_n \bigg) \setminus \bigg( \bigcup_{n\in\N}K_n\bigg)}_{\subset \bigcup\limits_{n \in \N}(O_n \setminus K_n)}\bigg) < \underset{\substack{\text{positiv beliebig}\\\text{klein wählbar}}}{\sum_{n \in \N}\varepsilon_n}
 $$
