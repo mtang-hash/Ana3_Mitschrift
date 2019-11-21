@@ -1595,7 +1595,7 @@ Für \emph{Struktur} von \emph{messbaren Teilmengen} folgt:
 \end{mdframed}
 \end{korollar}
 
-\begin{korollar}
+\begin{korollar} \label{uebereinstimmung-alg}
 \begin{mdframed}
 Für ein $\sigma$-endliches Prämaß $\mu$ auf einem Ring $\RR \subset \PP(X)$ stimmen alle $\mu^*$-messbaren Teilmengen bis auf Modifikationen durch $\mu^*$-Nullmengen mit Teilmengen aus $\sigma(\RR)$ überein.\footnote{Wir können es so interpretieren, dass die Kompliziertheit messbarer Teilmengen im Vergleich zu Teilmengen aus $\sigma(\RR)$ von Nullmengen ``aufgefangen'' wird. Letztere sind oft vernachlässigbar.}
 \end{mdframed}
@@ -1658,6 +1658,157 @@ $$
 \boxed{\sup\{\lambda^d(K) \mid K \subset M, K \text{ kompakt}\} = \lambda^d(M)=\inf \{\lambda^d(O)\mid O \supset M, O \text{ offen}\}}.
 $$
 \marginpar{\tiny{21.11.2019}}
+
+Im folgenden sei $\nu$ ein Maß auf einer $\sigma$-Algebra $\AA \subset \PP(X)$.
+
+\begin{definition}
+\begin{mdframed}
+Eine Menge $N\in \AA$ mit $\nu(N)=0$ heißt \textbf{$\boldsymbol{\nu}$-Nullmenge}.
+\end{mdframed}
+\end{definition}
+Es ist klar, dass abzählbare Vereinigungen von $\nu$-Nullmengen wegen der $\sigma$-(Sub)Additivität von Maßen wieder $\nu$-Nullmengen sind. Zu $\AA$ gehörige Teilmengen von $\nu$-Nullmengen sind $\nu$-Nullmengen.
+
+\begin{definition}[Vollständigkeit von Maßen]
+\begin{mdframed}
+Das Maß $\nu$ heißt \textbf{vollständig}, wenn alle Teilmengen von $\nu$-Nullmengen zu $\AA$ gehören, also $\nu$-Nullmengen sind.
+\end{mdframed}
+\end{definition}
+
+\begin{example}
+Die Einschränkung $\mu^*|_{\AA^*}$ eines äußeren Maßes auf die $\sigma$-Algebra der $\mu^*$-messbaren Teilmengen ist vollständig.
+\end{example}
+
+\begin{proposition}
+\begin{mdframed}
+Ist $\NN \subset \PP(X)$ die Familie aller Teilmengen von $\nu$-Nullmengen, so ist
+\begin{equation*}
+	\begin{split}
+		\widetilde{\AA} & := \{ A \cup N \mid A \in \AA, N \in \NN\}	\\
+								& = \{\widetilde{A} \subset X \mid \exists A \in \AA \text{ mit } \widetilde{A} \triangle A \in \NN \}
+	\end{split}
+\end{equation*}
+eine $\sigma$-Algebra und $\nu$ lässt sich in eindeutiger Weise zu einem Maß $\widetilde{\nu}$ auf $\widetilde{\AA}$ fortsetzen. 
+Für $\widetilde{A} \in \widetilde{\AA}$ und $A \in \AA$ mit $\widetilde{A} \triangle A \in \NN$ gilt $\widetilde{\nu}(\widetilde{A})=  \nu (A)$.
+\end{mdframed}
+
+\begin{proof}\
+\begin{itemize}[itemsep=0pt,topsep=3pt]
+\item Ist $A\in \AA, N \in \NN$, so ist $(A \cup N) \triangle A = N\in \NN$, d.h. $\subseteq$.
+\item Sei $\widetilde{A}\subset X$ so, dass es ein $A \in \AA$ existiert mit $A \triangle \widetilde{A} \in \NN$. Dann ist $\widetilde{A}= A \cup (\widetilde{A} \triangle A)$, also $\supseteq$.
+%Sei $A \in \AA$, $N$ eine $\nu$-Nullmenge, $\widetilde{A}\subset X$ sodass $\widetilde{A} \triangle A \subset N$. Dann gilt $A \setminus N \subset \widetilde{A} \subset A \cup N$. Es folgt $\widetilde{A} \subset (A \setminus N) \cup N$. Wir setzen $A':=A \setminus N$, wegen Definition ist $A' \in \widetilde{\AA}$. Es folgt $\widetilde{A} \subset A' \subset N'$.
+\end{itemize}
+Also stimmen beide Familien überein. Die erste Beschreibung der Familie zeigt, dass sie $\sigma$-$\cup$-stabil ist. Die zweite Beschreibung zeigt, dass sie $\complement$-stabil ist. (da $\complement \widetilde{A} \triangle \complement A  = \widetilde{A} \triangle A$.) Also ist sie eine $\sigma$-Algebra. Ein $\nu$ auf $\widetilde{A}$ fortsetzendes Maß $\widetilde{\nu}$ erfüllt
+\begin{equation}\label{vervollst}
+\widetilde{\nu}(\widetilde{A})=\nu(A) \text{ für } \widetilde{A} \in \widetilde{\AA} \text{ mit } \widetilde{A}\triangle A \in \NN \text{ und } A \in \AA.
+\end{equation}
+Wir definieren nun die Fortsetzung $\widetilde{\nu}$ von $\nu$ durch \eqref{vervollst}.
+\begin{itemize}[itemsep=0pt,topsep=3pt]
+\item
+\emph{Wohldefiniertheit:} Wir wollen zeigen, dass $\widetilde{\nu}(\widetilde{A})$ nicht von der Auswahl von $A\in \AA$ abhängt. Seien hierzu $A,A' \in \AA$ und $N,N'$ zwei $\nu$-Nullmengen sodass $\widetilde{A} \triangle A \subset N$ und $\widetilde{A} \triangle A' \subset N'$. Weil $A \triangle A' \subset (A \triangle \widetilde{A}) \cup (A' \triangle \widetilde{A})$, ist $A \triangle A' \in \AA$ eine $\nu$-Nullmenge. Es folgt $\nu(A)=\nu(A')$. Also gibt \eqref{vervollst} wohldefiniertes $\widetilde{\nu}$.
+\item Es bleibt zu überprüfen, dass $\widetilde{\nu}$ tatsächlich ein Maß ist, d.h. \emph{$\sigma$-additiv} ist. Sei $(A_n)_{n \in \N}$ eine Folge in $\AA$ und $(N_n)_{n\in\N}$ eine Folge in $\NN$ sodass die $\underbrace{A_n \cup N_n}_{\in \widetilde{\AA}}$ paarweise disjunkt sind. Es gilt
+$$
+\sum_{n \in \N} \widetilde{\nu}(A_n \cup N_n) \overset{\text{Def}}= \sum_{n \in \N} \widetilde\nu (A_n) \underset{\nu \text{ Maß}}{\overset{A_n \text{ disj}}=} \nu\Big(\bigcup_{n\in\N} A_n\Big) \overset{\text{Def}}= \widetilde{\nu} \bigg( \underbrace{ \overbrace{\Big( \bigcup_{n\in \N}A_n}^{\in \AA} \Big) \cup \overbrace{\Big(\bigcup_{n\in\N} N_n \Big)}^{\in \NN}}_{\bigcup\limits_{n\in\N}(A_n \cup M_n)} \bigg)
+$$
+Also ist $\widetilde{\nu}$ auch $\sigma$-additiv.
+\end{itemize}
+\end{proof}
+\end{proposition}
+
+\begin{definition}
+\begin{mdframed}
+Das Maß $\widetilde{\nu}$ heißt die \textbf{Vervollständigung} des Maßes $\nu$. 
+\end{mdframed}
+\end{definition}
+
+Wir erinnern uns an \hyperref[uebereinstimmung-alg]{ein früheres Korollar}: Ist $\mu$ ein $\sigma$-endliches Prämaß auf einem Ring $\RR \subset \PP(X)$, so stimmen alle $\mu^*$-messbaren Teilmengen bis auf Nullmengen mit Teilmengen aus $\sigma(\RR)$ überein. Daraus folgt folgendes Korollar:
+
+\begin{korollar}
+\begin{mdframed}
+Ist $\mu$ ein $\sigma$-endliches Prämaß auf einem Ring $\RR \subset \PP(X)$, so ist $\mu^*|_{\AA^*}$ die Vervollständigung von $\mu^*|_{\sigma(\RR)}$.
+\end{mdframed}
+\end{korollar}
+
+\begin{hauptbsp}
+\begin{mdframed}
+$\lambda^d$ ist die Vervollständigung von $\beta^d$.
+\end{mdframed}
+\end{hauptbsp}
+
+\subsubsection{Bildmaße}
+Wir kommen kurz zurück auf die messbare Kategorie.
+\begin{definition}
+\begin{mdframed}
+Ein \textbf{Maßraum} ist ein Triple $(X,\AA,\mu)$, besteht aus einer Menge $X$, einer $\sigma$-Algebra $\AA\subset \PP(X)$ und einem Maß $\mu$ auf $\AA$.
+\end{mdframed}
+\end{definition}
+
+Maße können mittel Abbildungen ``nach vorne'' (kovariant im Sinne der Kategorientheorie) transportiert werden:
+
+\begin{definition}
+\begin{mdframed}
+Sei $f:(X,\AA)\longrightarrow (Y,\BB)$ eine \emph{messbare} Abbildung zwischen Messräumen. Ist $\mu$ ein Maß auf $\AA$, so ist das \textbf{Bildmaß} $f_*\mu$ auf $\BB$ gegeben durch für $B\in \BB$
+$$
+(f_*\mu)(B):= \mu (\underbrace{f^{-1}(B)}_{\in \AA}) 
+$$
+\end{mdframed}
+\end{definition}
+Klar ist, dass $f_*\mu$ wieder $\sigma$-additiv ist, also tatsächlich ein Maß.
+Wir betrachten
+$$(X,\AA)\xrightarrow[\text{messbar}]{f} (Y,\BB) \xrightarrow[\text{messbar}]{g} (Z,\CC).$$
+Es gilt die \emph{Transitivität} $(g\circ f)_* \mu = g_*(f_*\mu)$, denn für $C \in \CC$ gilt:
+\begin{equation*}
+\begin{split}
+	((g\circ f)_* \mu) (C) = \mu ((g\circ f)^{-1}(C))	
+								 = \mu(f^{-1}(g^{-1}(C))	
+								 = (f_*\mu)(g^{-1}(C))		
+								  = (g_*(f_*\mu))(C).
+\end{split}
+\end{equation*}
+Eine messbare Abbildung $f:(X,\AA,\mu)\longrightarrow (Y,\BB,\nu)$ heißt \textbf{maßerhaltend}, falls $\boxed{f_*\mu=\nu}$. Ist $f$ bijektiv, maßerhaltend und $f^*\BB=\AA$, so ist $f$ ein \textbf{Isomorphismus von Maßräumen}. Ist eine Selbstabbildung $f:(X, \AA,\mu) \longrightarrow (X, \AA, \mu)$ maßerhaltend, so sagt man, dass das Maß $\mu$ unter der messbaren Abbildung $f$ \textbf{invariant} ist. Die maßerhaltenden bijektiven Selbstabbildungen eines Maßraums nennt man seine \textbf{Automorphismen}. Sie bilden eine Gruppe. 
+
+\begin{remark}\
+\begin{itemize}
+\item
+Eine bijektive Abbildung von Mengen $f:X \longrightarrow Y$ induziert eine ebenfalls bijektive Abbildung $f_*:\PP(Y) \longrightarrow \PP(X), M \longmapsto f^{-1}(M)$ mit der Umkehrabbildung $M\mapsto f(M)$. 
+\item Ist  $f:(X,\TT_X) \longrightarrow (Y,\TT_Y)$ eine Bijektion topologischer Räume, so ist $f$ genau dann Homöomorphismus, wenn $f^*\TT_Y=\TT_X$.  In diesem Fall gilt auch $f^*(\underbrace{\BB(Y)}_{\sigma(\TT_Y)}) = \sigma (\underbrace{f^*\TT_Y}_{\TT_X}) = \BB(X)$. D.h. $f$ und $f^{-1}$ messbar, also ist $f:(X,\BB(X))\longrightarrow (Y,\BB(Y))$ ein Isomorphismus von Messräumen.
+\end{itemize}
+\end{remark}
+
+
+\subsubsection{Produktmaße}
+Wir konstruieren nun endliche Produkte von Maßen bzw. Maßräumen.
+\vspace{0.5pc}
+\\Seien $(X_i,\AA_i,\mu_i)$ Maßräume. Dann wird die Produkt-$\sigma$-Algebra $\AA_1 \otimes ... \otimes \AA_n \subset \PP(X_1\times ... \times X_n)$ erzeugt von dem Halbring $\QQ =\AA_1 \ast ... \ast \AA_n$ der Quander sowie dem Ring $\FF=\AA_1 \boxtimes ... \boxtimes \AA_n$ der Figuren. Der Produktinhalt $\mu_1 \times ... \times \mu_n$ auf $\QQ$ wird eindeutig fortgesetzt zu dem Produktinhalt $\mu_1 \boxtimes ... \boxtimes \mu_n$ auf $\FF$.
+\vspace{0.5pc}
+\\ Sind $\mu_i$ Prämaße, so ist $\mu_1 \boxtimes ... \boxtimes \mu_n$ auch ein Prämaß und wird fortgesetzt zu einem Maß auf der Produkt-$\sigma$-Algebra
+$$
+\mu_1 \otimes ... \otimes \mu_n =  (\mu_1 \boxtimes ... \boxtimes \mu_n)^*|_{\AA_1 \otimes ... \otimes \AA_n}
+$$
+Sind alle $\mu_i$ $\sigma$-endlich, so ist $\mu_1 \boxtimes ... \boxtimes \mu_n$ auch $\sigma$-endlich. Somit ist $\mu_1 \otimes ... \otimes \mu_n $ die \emph{eindeutige} Fortsetzung des Prämaßes $\mu_1 \boxtimes ... \boxtimes \mu_n$ zu einem Maß auf $\AA_1 \otimes ... \otimes \AA_n$. In diesem Fall heißt $\mu_1 \otimes ... \otimes \mu_n$ das \textbf{Produktmaß} (der $\mu_i$) und 
+$$
+(X_1 \times ... \times X_n, \AA_1 \otimes ... \otimes \AA_n, \mu_1 \otimes ... \otimes \mu_n)
+$$
+das Produkt der Maßräume $(X_i,\AA_i,\mu_i)$.
+
+
+\subsubsection{Charakterisierung des Lebesgue-Maßes}
+Wir wollen zeigen, dass das Lebesgue-Maß \emph{eine natürliche Lösung} des eingangs diskutierten ``Maßproblems'' ist und dadurch \emph{charakterisiert} wird.
+
+\paragraph{Geometrische Transformationen des $\R^d$}
+\begin{itemize}
+\item \textbf{Affine Transformationen}  des $\R^d$ sind Abbildung $\phi_{A,v}$ der Form
+$$
+\phi_{A,v}(x)=Ax + v	\quad \text{ mit }	\underset{\text{linearer Anteil}}{A\in \GL (n,\R)}, v\in\R^d
+$$
+Sie sind geometrisch charakterisierbar als injektive Selbstabbildungen, welche 
+	\begin{itemize}
+		\item Geraden erhalten\footnote{D.h. Geraden werden auf Geraden abgebildet.},
+		\item Teilverhältnisse kollinearer\footnote{Punkte, die auf einer Geraden liegen, sind kollinear.} Triple werden erhalten.
+	\end{itemize}
+	Affine Transformationen sind Homöomorphismen, also auch Automorphismen von $(\R^d,\BB^d,\beta^d)$. Die affinen Transformationen des $\R^d$ bilden die \emph{affine Gruppe} (Lie-Gruppe) $\operatorname{Aff}(\R^d) \subset \operatorname{Homöos} (\R^d) \subset \operatorname{messb. Autom.}$
+	\item \textbf{Bewegungen} bzw. \textbf{Isometrien} des $\R^d$ sind die Selbstabbildungen $\R^d \longrightarrow \R^d$, die die metrische Struktur, d.h. den \emph{euklidischen Abstand} erhalten. Sie sind genau die affinen Transformationen $\phi_{A,v}$, für die gilt $A \in \O(n)$\footnote{$\mathrm{O}(n) := \{ A \in \operatorname{GL}(n,\R) \mid AA^t = \operatorname{id}_{\R^n}\} \subset \End(\R^n)$, ist eine $\mathcal{C}^\infty$ Untermannigfaltigkeit von $\End(\R^n)\cong \R^{n^2}$.}. Sie bilden ebenfalls eine Bewegungsgruppe und es gilt $\operatorname{Translationen} \subset \operatorname{Isom(\R^d)}  \subset \operatorname{Aff}(\R^d)$.
+\end{itemize}
+\marginpar{\tiny{25.11.2019}}
 
 %\input{A-integrale-stetiger-funktionen.tex}
 \end{document}
