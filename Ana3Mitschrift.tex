@@ -1247,7 +1247,7 @@ Es folgt, dass diese Gleichheit auch für Schnitte von $M$ mit \emph{beliebigen}
 \mu^*(S)=\mu^*(S\cap M) + \mu^*(S \setminus M)
 }
 \end{equation}
-Denn: Falls $(A_n)_{n \in \N}$ eine Überdeckung von $S$ durch Teilmengen $A_n \in \RR$, so gilt 
+\textit{Begründung}: Ist $(A_n)_{n \in \N}$ eine Überdeckung von $S$ durch Teilmengen $A_n \in \RR$, so gilt 
 \begin{equation*}
 \begin{split}
 \sum_{n\in\N}\ol\mu(A_n) \geq \sum_{n\in\N}\underbrace{\mu^*(A_n)}_{\overset{\eqref{I.6}}= \mu^*(A_n \cap M)+\mu^*(A_n \setminus M)} & = \underbrace{\sum_{n\in\N}\mu^*\underbrace{(A_n \cap M)}_{\text{Überdeckung } S\cap M}}_{\geq \mu^*(S\cap M)}+\underbrace{\sum_{n\in \N}\mu^*\underbrace{(A_n\setminus M)}_{\text{Überdeckung }S\setminus M}}_{\geq \mu^*(S\setminus M)} \\
@@ -1256,7 +1256,7 @@ Denn: Falls $(A_n)_{n \in \N}$ eine Überdeckung von $S$ durch Teilmengen $A_n \
 \end{equation*}
 Nehmen wir nun Infimum über $(A_n)$, so ist die linke Seite der Ungleichung gleich $\mu^*(S)$ und es folgt
 $$\mu^*(S)\geq \mu^*(S\cap M) + \mu^*(S \setminus M) \geq \mu^*(S),$$
-also Gleichheit überall, d.h. \eqref{I.7} gilt. $\blacksquare$\\
+also Gleichheit überall, d.h. \eqref{I.7} gilt. \hfill $\blacksquare$\\
 
 Man gelangt so auf natürlicher Weise zur Schlüssel-Definition: (Carathéodory, 1914)
 
@@ -1388,7 +1388,7 @@ dies zeigt, dass $\ol{M}_\infty \in \AA^*$, d.h. $\AA^*$ eine $\sigma$-Algebra. 
 \begin{equation*}
 \mu^*(M_\infty)=\sum_{i=1}^\infty \mu^*(\underbrace{\ol{M}_\infty \cap M_i}_{M_i}),
 \end{equation*}
-also $\mu^*$ $\sigma$-additiv, also $\mu^*|_{\AA^*}$ Maß. $\blacksquare$
+also $\mu^*$ $\sigma$-additiv, also $\mu^*|_{\AA^*}$ Maß. \hfill $\qed$
 
 \subsubsection{Beziehung eines Inhalts zu seinem assoziierten äußerem Maß}
 Wir betrachten folgende Situation:
@@ -1806,7 +1806,7 @@ Sie sind geometrisch charakterisierbar als injektive Selbstabbildungen, welche
 		\item Teilverhältnisse kollinearer\footnote{Punkte, die auf einer Geraden liegen, sind kollinear.} Triple werden erhalten.
 	\end{itemize}
 	Affine Transformationen sind Homöomorphismen, also auch Automorphismen von $(\R^d,\BB^d,\beta^d)$. Die affinen Transformationen des $\R^d$ bilden die \emph{affine Gruppe} (Lie-Gruppe) $\operatorname{Aff}(\R^d) \subset \operatorname{Homöos} (\R^d) \subset \operatorname{messb. Autom.}$
-	\item \textbf{Bewegungen} bzw. \textbf{Isometrien} des $\R^d$ sind die Selbstabbildungen $\R^d \longrightarrow \R^d$, die die metrische Struktur, d.h. den \emph{euklidischen Abstand} erhalten. Sie sind genau die affinen Transformationen $\phi_{A,v}$, für die gilt $A \in \O(n)$\footnote{$\mathrm{O}(n) := \{ A \in \operatorname{GL}(n,\R) \mid AA^t = \operatorname{id}_{\R^n}\} \subset \End(\R^n)$, ist eine $\mathcal{C}^\infty$ Untermannigfaltigkeit von $\End(\R^n)\cong \R^{n^2}$.}. Sie bilden ebenfalls eine Bewegungsgruppe und es gilt $\operatorname{Translationen} \subset \operatorname{Isom(\R^d)}  \subset \operatorname{Aff}(\R^d)$.
+	\item \textbf{Bewegungen} bzw. \textbf{Isometrien} des $\R^d$ sind die Selbstabbildungen $\R^d \longrightarrow \R^d$, die die metrische Struktur, d.h. den \emph{euklidischen Abstand} erhalten. Sie sind genau die affinen Transformationen $\phi_{A,v}$, für die gilt $A \in \O(n)$\footnote{$\mathrm{O}(n) := \{ A \in \operatorname{GL}(n,\R) \mid AA^t = \operatorname{id}_{\R^n}\} \subset \End(\R^n)$, ist (überall) eine $\mathcal{C}^\infty$-Untermannigfaltigkeit von $\End(\R^n)\cong \R^{n^2}$.}. Sie bilden ebenfalls eine Bewegungsgruppe und es gilt $\operatorname{Translationen} \subset \operatorname{Isom(\R^d)}  \subset \operatorname{Aff}(\R^d)$.
 \end{itemize}
 \marginpar{\tiny{25.11.2019}}
 
