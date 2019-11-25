@@ -31,7 +31,7 @@ Volumina als geometrische Größen sollten durch die metrische Struktur (Längen
 \begin{enumerate}
 \item[(ii)] \textbf{Bewegungsinvarianz}: Für jede Bewegung $\phi: \R^d \longrightarrow \R^d$ und jede Teilmenge $A\subset \R^d$ gilt
 \begin{equation*}
-\vol(\phi(A)) = \vol (A)
+\vol(\Phi(A)) = \vol (A)
 \end{equation*}
 \item[(iii)] \textbf{Normierung}: $\vol([0,1]^d)=1$.
 \end{enumerate}
@@ -74,8 +74,8 @@ Somit muss gelten $\vol(M)=0$. \Lightning
 Noch dramatischer: In $\dim \geq 3$ kann man je zwei Teilmengen (unter sehr allgemeinen Annahmen) aus demselben (abzählbaren, oft sogar endlichen) ``Bausatz'' zusammensetzen.
 \begin{satz}[Banach-Tarski, 1924] Seien $A,B\subset \R^d$ Teilmengen mit nichtleerem Inneren.
 \begin{enumerate}[(\roman*)]
-\item Sei $d \geq 3$ und seien $A,B$ beschränkt. Dann existieren endlich viele Teilmengen $M_k \subset \R^d$ und Bewegungen $\phi_k$ des $\R^d$, so dass \emph{disjunkte Zerlegungen} $A=\bigsqcup_k M_k$ und $B = \bigsqcup_k \phi(M_k)$ bestehen.
-\item Jetzt $d\geq 1$ beliebig und $A,B$ nicht notwendig beschränkt. Dann existieren abzählbar viele Teilmengen $M_k \subset \R^d$ und Bewegungen $\phi_k$, sodass  \emph{disjunkte Zerlegungen} $A=\bigsqcup_k M_k$ und $B = \bigsqcup_k \phi(M_k)$ bestehen.
+\item Sei $d \geq 3$ und seien $A,B$ beschränkt. Dann existieren endlich viele Teilmengen $M_k \subset \R^d$ und Bewegungen $\Phi_k$ des $\R^d$, so dass \emph{disjunkte Zerlegungen} $A=\bigsqcup_k M_k$ und $B = \bigsqcup_k \Phi(M_k)$ bestehen.
+\item Jetzt $d\geq 1$ beliebig und $A,B$ nicht notwendig beschränkt. Dann existieren abzählbar viele Teilmengen $M_k \subset \R^d$ und Bewegungen $\Phi_k$, sodass  \emph{disjunkte Zerlegungen} $A=\bigsqcup_k M_k$ und $B = \bigsqcup_k \Phi(M_k)$ bestehen.
 \end{enumerate}
 Der Beweis verwendet Gruppentheorie, Struktur von orthogonalen Gruppen $\mathrm{O}(d)$. (nicht mehr auflösbar für $d\geq 3$.)
 \end{satz}
@@ -1795,23 +1795,149 @@ das Produkt der Maßräume $(X_i,\AA_i,\mu_i)$.
 
 
 \subsubsection{Charakterisierung des Lebesgue-Maßes}
-Wir wollen zeigen, dass das Lebesgue-Maß \emph{eine natürliche Lösung} des eingangs diskutierten ``Maßproblems'' ist und dadurch \emph{charakterisiert} wird.
+Wir wollen zeigen, dass das Lebesgue-Maß \emph{eine natürliche Lösung} des eingangs diskutierten ``(post-paradoxalen) Maßproblems\footnote{Man definiere eine Volumenfunktion $\FF \longrightarrow [0,\infty]$ mit geforderten Eigenschaften ($\sigma$-additiv, Bewegungsinvarianz und Normierung) auf einer möglich flexiblen und reichhaltigen Familie (jetzt $\sigma$-Algebra) $\FF\subset \PP(\R^d)$.}"" ist und dadurch \emph{charakterisiert} wird.
 
 \paragraph{Geometrische Transformationen des $\R^d$}
 \begin{itemize}
-\item \textbf{Affine Transformationen}  des $\R^d$ sind Abbildung $\phi_{A,v}$ der Form
+\item \textbf{Affine Transformationen}  des $\R^d$ sind Abbildung $\Phi_{A,v}$ der Form
 $$
-\phi_{A,v}(x)=Ax + v	\quad \text{ mit }	\underset{\text{linearer Anteil}}{A\in \GL (n,\R)}, v\in\R^d
+\Phi_{A,v}(x)=Ax + v	\quad \text{ mit }	\underset{\text{linearer Anteil}}{A\in \GL (d,\R)}, v\in\R^d
 $$
 Sie sind geometrisch charakterisierbar als injektive Selbstabbildungen, welche 
 	\begin{itemize}
 		\item Geraden erhalten\footnote{D.h. Geraden werden auf Geraden abgebildet.},
 		\item Teilverhältnisse kollinearer\footnote{Punkte, die auf einer Geraden liegen, sind kollinear.} Triple werden erhalten.
 	\end{itemize}
-	Affine Transformationen sind Homöomorphismen, also auch Automorphismen von $(\R^d,\BB^d,\beta^d)$. Die affinen Transformationen des $\R^d$ bilden die \emph{affine Gruppe} (Lie-Gruppe) $\operatorname{Aff}(\R^d) \subset \operatorname{Homöos} (\R^d) \subset \operatorname{messb. Autom.}$
-	\item \textbf{Bewegungen} bzw. \textbf{Isometrien} des $\R^d$ sind die Selbstabbildungen $\R^d \longrightarrow \R^d$, die die metrische Struktur, d.h. den \emph{euklidischen Abstand} erhalten. Sie sind genau die affinen Transformationen $\phi_{A,v}$, für die gilt $A \in \O(n)$\footnote{$\mathrm{O}(n) := \{ A \in \operatorname{GL}(n,\R) \mid AA^t = \operatorname{id}_{\R^n}\} \subset \End(\R^n)$, ist (überall) eine $\mathcal{C}^\infty$-Untermannigfaltigkeit von $\End(\R^n)\cong \R^{n^2}$.}. Sie bilden ebenfalls eine Bewegungsgruppe und es gilt $\operatorname{Translationen} \subset \operatorname{Isom(\R^d)}  \subset \operatorname{Aff}(\R^d)$.
+	Affine Transformationen sind \emph{Homöomorphismen}, also auch Automorphismen\footnote{Ein Automorphismus ist ein \emph{Isomorphismus} auf sich selbst.} von $(\R^d,\BB^d,\beta^d)$. Die affinen Transformationen des $\R^d$ bilden die \emph{affine Gruppe} (Lie-Gruppe) $\operatorname{Aff}(\R^d) \subset \operatorname{Homöos} (\R^d) \subset \operatorname{messb. Autom.}$
+	\item \textbf{Bewegungen} bzw. \textbf{Isometrien} des $\R^d$ sind die Selbstabbildungen $\R^d \longrightarrow \R^d$, die die metrische Struktur, d.h. den \emph{euklidischen Abstand} erhalten. Sie sind genau die affinen Transformationen $\Phi_{A,v}$, für die gilt $A \in \O(n)$\footnote{$\mathrm{O}(d) := \{ A \in \operatorname{GL}(d,\R) \mid AA^t = \operatorname{id}_{\R^d}\} \subset \End(\R^d)$, ist (überall) eine $\mathcal{C}^\infty$-Untermannigfaltigkeit von $\End(\R^d)\cong \R^{d^2}$.}. Sie bilden ebenfalls eine Bewegungsgruppe und es gilt $\operatorname{Trans}(\R^d) \subset \operatorname{Isom(\R^d)}  \subset \operatorname{Aff}(\R^d)$.
 \end{itemize}
 \marginpar{\tiny{25.11.2019}}
+Zusammengefasst:
+\begin{equation*}
+	\begin{array}{ccccc}
+			\Aff(\R^d) & \supset &  \Isom(\R^d)  & \supset  & \Trans (\R^d)	\vspace{0.5pc}\\
+			\te{affine Transformationen} && \te{Bewegungen} && \te{Translationen}\\
+			&& \te{(Isometrien)} \vspace{0.5pc}\\
+			\Phi_{A,v} = Ax+v && A \te{ orthogonal} && \te{trivialer lin. Anteil} \\
+			A \in \GL(d,\R) && \te{(Rotationsanteil)} && A= \id_{\R^d}
+	\end{array}
+\end{equation*}
+
+\begin{remark}
+Die lineare Abbildung $\operatorname{lin}:\Aff(\R^d) \overset{\operatorname{}}\longrightarrow \GL(d,\R), \Phi_{A,v} \longmapsto A$ ist ein Epimorphismus. Ihr Kern sind die Translationen, also ein  Normalteiler\footnote{Eine Untergruppe $H$ einer Gruppe $G$ heißt Normalteil, falls für jedes $g \in G$ gilt $gH=Hg$. D.h. für jedes $g\in G$ stimmen die Linksnebenklassen mit der Rechtsnebenklasse überein. Man kann zeigen, dass die folgenden Aussagen äquivalent sind:
+\begin{enumerate}[topsep=0pt,itemsep=0pt]
+\item $H$ ist ein Normalteil von $G$.
+\item Es existiert ein Gruppenhomomorphismus aus $G$, dessen Kern $H$ ist.
+\item Für jedes $h\in H$ und $g \in G$ gilt $g\circ h \circ g^{-1} \in H$.
+\end{enumerate}\vspace{-0.7pc}} in $\Aff(\R^d)$, also $\Trans(\R^d) \triangleleft \Aff(\R^d)$. Im Sinne der Algebra ist 
+$$
+\Trans (\R^d) \xrightarrow[\te{inj.}]{\te{Inklusion}} \Aff(\R^d) \xrightarrow[\te{surj.}]{\te{linear}} \GL(d,\R)
+$$
+ eine exakte Sequenz.\footnote{Eine Sequenz $A' \to A \to A''$ von Objekten und Morphismen in einer geeigneten Kategorie heißt exakt an der Stelle $A$, wenn $\Im(A'\to A) = \ker(A \to A'')$.} Bezüglich der Einschränkung auf den Isometrien $$\Isom(\R^d)\xrightarrow[\te{Epimorphismus}]{\operatorname{lin}|_{\Isom(\R^d)}=:\operatorname{rot}} \O(d)$$ ist
+$$
+\Trans(\R^d) \longrightarrow \Isom(\R^d) \longrightarrow \O(d)
+$$
+eine exakte Sequenz.
+\end{remark}
+
+Wir untersuchen nun den Effekt affiner Transformationen $\Phi:\R^d\longrightarrow \R^d$ auf Lebesgue-Maß $\lambda^d$.\vspace{0.5pc}
+
+Weil $\Phi$ ein Homöomorphismus ist, erhält $\Phi$ die Borelsche-$\sigma$-Algebra $\BB^d$. Es gilt nämlich $\Phi^*\BB^d= \Phi^*(\sigma(\TT_{\R^d})) = \sigma (\Phi^*(\TT_{\R^d})) = \sigma (\TT_{\R^d})=\BB^d$, d.h. $\Phi$ ist Borel-messbar.\footnote{Vorsicht: Nicht alle Homöomorphismen erhalten $\LL^d$! Dies ist äquivalent dazu, dass Nullmengen erhalten werden (von $\Phi$ und $\Phi^{-1}$).} Affine Transformationen sind auch Lebesgue-messbar, d.h. $\Phi^* \LL^d = \LL^d$. Dies folgt sowohl aus der Lipschitz-Stetigkeit (und damit werden Nullmengen erhalten\Ueb), als auch aus dem Skalierungsverhalten von $\lambda^d$ unter $\Aff(\R^d)$ (siehe spätere Diskussion).\vspace{0.5pc}
+
+Wir untersuchen zunächst den Effekt von Translationen auf $\lambda^d$. Weil die Translationen Volumina von Quadern erhalten, also $\lambda^d_{\QQ^d}$ (der Elementarinhalt) invariant unter Translationen, folgt, dass $\beta^d$ translationsinvariant ist. Außerdem ist $\BB^d = \sigma (\QQ^d)$ translationsinvariant, weil $\QQ^d$ translationsinvariant ist.
+
+\begin{lemma}
+\begin{mdframed}
+Die $\sigma$-Algebren $\BB^d$ und $\LL^d$ sowie die Maße $\beta^d$ und $\lambda^d$ sind invariant unter Translationen, ebenso das äußere Maß $(\beta^d)^* = (\lambda^d)^*$.
+\end{mdframed}
+\begin{proof}
+Seien $Q = [a,b) \in \QQ^d$, $a<b$ (d.h. $a_i<b_i \ \forall i$) und $v \in \R^d$. Es ist
+$$
+\underbrace{T^{-1}_v}_{T_{-v}}(Q) = [a-v, b-v) \subset \QQ^d
+$$
+und
+$$
+((T_v)_* \lambda^d_{\QQ^d})(Q) = \lambda^d_{\QQ^d} (T^{-1}_v(Q)) = \prod_{i=1}^d ((b_i-v_i)-(a_i-v_i))=\prod_{i=1}^d (b_i-a_i)=\lambda^d_{\QQ^d}(Q).
+$$
+Also ist $T^*_{v}\QQ^d=\QQ^d$ und $(T_v)_* \lambda^d_{\QQ^d} = \lambda^d_{\QQ^d}$.  Da Figuren endliche Vereinigungen von Quadern sind, folgt die Translationsinvarianz des von $\QQ^d$ erzeugten Rings $\FF^d$ sowie die Translationsinvarianz des den Inhalt $\lambda^d_{\QQ^d}$ eindeutig fortsetzenden Inhalts $\lambda^d_{\FF^d}$ (Lebesgue-Prämaß) $T^*_{v} \FF^d = \FF^d$ und $(T_v)_*\lambda^d_{\FF^d}\footnote{Inhalt, der $(T_v)_* \lambda^d_{\QQ^d}$ auf $\QQ^d$ eindeutig fortsetzt.} = \lambda^d_{\FF^d}$.\\\\
+Weiter folgt: die von $\QQ^d$ erzeugte $\sigma$-Algebra $\BB^d$ ist invariant unter Translationen, da $T^*_v \BB^d = T^*_v (\sigma(\FF^d)) = \sigma(T^*_v(\FF^d)) = \sigma(\FF^d)=\BB^d$. Ebenfalls ist das äußere Maß $(\lambda^d)^*=(\beta^d)^*=(\lambda^d_{\FF^d})^*=(\lambda^d_{\QQ^d})^*$ translationsinvariant:
+$$
+(T_v)_*(\lambda^d_{\FF^d})^*=
+((T_v)_* \lambda^d_{\FF^d})^* = (\lambda^d_{\FF^d})^*%\ \ \footnote{Äußeres Maß und Bildmaß vertauschbar}
+$$
+Es folgt, dass die $\sigma$-Algebra der $(\lambda^d_{\FF^d})^*$-messbaren Teilmengen invariant (unter Translationen) ist, damit auch $\lambda^d=(\lambda^d_{\FF^d})^*|_{\LL^d}$. Also $T^*_v \LL^d = \LL^d$ und $(T_v)_* \lambda^d = \lambda^d$. Es folgt, dass $\beta^d=\lambda^d|_{\BB^d}$ ebenfalls translationsinvariant ist, denn 
+$$
+(T_v)_*\beta^d=(T_v)_*(\lambda^d|_{\BB^d}) = (T_v)_*\lambda^d|_{T^*_{-v}\BB^d}= \lambda^d|_{\BB^d}=\beta^d
+$$
+\end{proof}
+\end{lemma}
+Es war ein großer Schritt zur Lösung des Maßproblems, denn $\beta^d$ ist translationsinvariant und normiert durch $\beta^d([0,1)^d)=\lambda^d_{\FF^d}([0,1)^d)=1$. Diese Eigenschaften charakterisieren das Lebesgue-Borel-Maß bereits:
+
+\begin{satz}
+\begin{mdframed}
+Ist $\mu$ ein translationsinvariant Maß auf $\BB^d$ mit $\mu([0,1)^d)=c<\infty$, so ist $\mu$ ein Vielfaches des Lebesgue-Borel-Maßes, d.h. $\mu=c\cdot \beta^d$.
+\end{mdframed}
+\begin{proof}
+Weil $\mu$ translationsinvariant ist, hängt das $\mu$-Volumen von Quadern in $\QQ^d$ nur von deren euklidischen Kantenlängen ab. Wir betrachten einen kleineren Erzeuger von $\BB^d$, nämlich 
+$$
+\QQ^d_{\Q} := \{ \te{Quader aus }\QQ^d \te{ mit Ecken in } \Q^d\} \subset \QQ^d.
+$$
+Es folgt unmittelbar, dass die Kantenlängen der Quader aus $\QQ^d_\Q$ rational sind.\\
+Zu $Q,Q' \in \QQ^d_\Q$ existieren $n,n'\in\N$ und ein weiterer größerer Quader $\in \QQ^d_\Q$, der disjunkt sowohl in $n$ Translate von $Q$ zerlegt werden kann als auch disjunkt in $n'$ Translate von $Q'$. Es folgt
+\begin{equation*}
+\begin{cases}
+	n \cdot \mu(Q) = n' \cdot  \mu(Q') \\
+	n \cdot \underbrace{\beta^d(Q)}_{>0} = n' \cdot \underbrace{\beta^d(Q')}_{>0}
+\end{cases}
+\end{equation*}
+Also ist $\dfrac{\mu(Q)}{\beta^d(Q)}$ unabhängig von Auswahl $Q\in \QQ^d_\Q$. Es ist $\dfrac{\mu(Q)}{\beta^d(Q)} = \dfrac{\mu([0,1)^d)}{\beta^d([0,1)^d} =c \in [0,\infty)$. Es folgt $\mu|_{\QQ^d_\Q}= c \cdot \beta^d|_{\QQ^d_\Q}$. Weil die Fortsetzung von Inhalten von Halbringen auf Ringen eindeutig ist, folgt $\mu|_{\FF^d_\QQ} = c \cdot \beta^d|_{\FF^d_\Q}$. $\mu|_{\FF^d_\QQ}$ ist ein Prämaß (da Einschränkung von Maß $\beta^d$) und $\sigma$-endlich. Wegen der Eindeutigkeit der Fortsetzung von $\sigma$-endlichen Prämaßen auf Ringen $\RR$ zu Maßen auf $\sigma(\RR)$ folgt $\mu = c \cdot \beta^d$, denn $\BB^d=\sigma(\FF^d_\Q)$.
+\end{proof}
+\end{satz}
+
+\begin{korollar}[Charakterisierung des Lebesgue-Borel-Maßes]
+\begin{mdframed}
+$\beta^d$ ist das eindeutig bestimmte translationsinvariante Maß auf $\BB^d$ mit $\beta([0,1)^d)=1$.
+\end{mdframed}
+\end{korollar}
+
+Wir nutzen diese Charakterisierung jetzt, um die \emph{Bewegungsinvarianz} von $\beta^d$ einzusehen. Dies basiert auf der Struktur der affinen Gruppen, nämlich dass $\Trans(\R^d) \triangleleft \Aff(\R^d)$. Die natürliche Operation $\Aff(\R^d) \curvearrowright \{\te{Maße auf }\BB^d\}$ erhält die Fixpunktemenge des Normalteilers $\Trans(\R^d)$, d.h. die translationsinvarianten Maße $\{c\cdot\beta^d \mid c\geq 0\}$
+
+\begin{lemma}
+\begin{mdframed}
+Ist $\mu$ ein translationsinvariantes Maß auf $\BB^d$ und $\Phi \in \Aff(\R^d)$, so ist das Bildmaß $\Phi_*\mu$ auch translationsinvariant.
+\end{mdframed}
+\begin{proof}
+Weil $\Trans(\R^d) \triangleleft \Aff(\R^d)$, gilt
+$$
+\Phi^{-1} T_v \Phi \in \Trans(\R^d)
+$$
+Die Invarianz unter Translationen von $\mu$ liefert
+$$
+(T_v)_*\Phi_*\mu=  \Phi_* \underbrace{(\Phi^{-1})_*(T_v)_*\Phi_*}_{\substack{(\Phi^{-1}T_v\Phi)_*\\ \te{Translation}}}\mu = \Phi_* \mu
+$$
+Also ist $\Phi_*\mu$ translationsinvariant.
+\end{proof}
+\end{lemma}
+
+Weil laut Charakterisierung alle translationsinvarianten Maße zueinander proportional sind, folgt
+\begin{korollar}
+\begin{mdframed}
+Es existiert einen Gruppenhomomorphismus $c:\Aff(\R^d)\longrightarrow \R^+$ sodass 
+$\Phi_*\beta^d = c(\Phi)\beta^d$ für $\Phi \in \Aff(\R^d)$.
+\end{mdframed}
+\begin{proof}
+Das letzte Lemma zusammen mit dem Charakterisierungssatz liefert eine Funktion $c:\Aff(\R^d)\longrightarrow \R^+$. Seien $\Phi,\Psi \in \Aff(\R^d)$. Ihre Multiplikativität folgt aus
+\begin{equation*}
+\begin{split}
+c(\Psi \circ \Phi) \cdot \beta^d = \underbrace{(\Psi \circ \Phi)_*}_{\Psi_*\circ\Phi_*} \beta^d= \Psi_*(\underbrace{\Phi_*\beta^d}_{c(\Phi)\beta^d}) = c(\Psi) \cdot c(\Phi) \cdot \beta^d
+\end{split}
+\end{equation*}
+Weil $\beta^d \neq 0$ folgt $c(\Psi \circ \Phi)=c(\Psi)\cdot c(\Phi)$.
+\end{proof}
+\end{korollar}
+
+
+\marginpar{\tiny{28.11.2019}}
 
 %\input{A-integrale-stetiger-funktionen.tex}
 \end{document}
