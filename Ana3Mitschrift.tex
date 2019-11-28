@@ -1919,7 +1919,7 @@ Also ist $\Phi_*\mu$ translationsinvariant.
 \end{proof}
 \end{lemma}
 
-Weil laut Charakterisierung alle translationsinvarianten Maße zueinander proportional sind, folgt
+Weil laut der Charakterisierung alle translationsinvarianten Maße zueinander proportional sind, folgt
 \begin{korollar}
 \begin{mdframed}
 Es existiert einen Gruppenhomomorphismus $c:\Aff(\R^d)\longrightarrow \R^+$ sodass 
@@ -1939,5 +1939,115 @@ Weil $\beta^d \neq 0$ folgt $c(\Psi \circ \Phi)=c(\Psi)\cdot c(\Phi)$.
 
 \marginpar{\tiny{28.11.2019}}
 
+Wir haben also gesehen: der Effekt affiner Transformationen auf Lebesgue-Maß ist die Skalierung. Die Translationsinvarianz entspricht der Tatsache, dass 
+$$ c|_{\Trans(\R^d)} \equiv 1.$$
+Weil das Lebesgue-Maß invariant unter Translationen ist, ist $c$ bereits bestimmt durch seine Werte auf linearen Transformationen, d.h. durch $c|_{\GL(d,\R)}$:
+$$c(\Phi_{A,v})=c(A)$$
+bzw.
+$$(\Phi_{A,v})_* \beta^d = c(A) \cdot \beta^d.$$
+\begin{lemma}
+${c|_{\Isom(\R^d)}=1}.$\footnote{$c|_{\Isom(\R^d)}$ ist wiederum bestimmt durch $c|_{\O(d)}$.}
+\begin{proof}
+Sei $A \in \O(d)$ und $B = B_1(0)$. Insbesondere ist $B_1(0)$ $\O(d)$-invariant. Es ist
+$$
+(\underbrace{A_*\beta^d}_{c(A)\beta^d})(B)= \beta^d (A^{-1}(B)) = \beta^d(B).
+$$
+Wegen $0<\beta^d(B)<\infty$ folgt $c(A)=1$.
+\end{proof}
+\end{lemma}
+
+\begin{satz}[\textbf{Bewegungsinvarianz des Lebesgue-Maßes}]
+\begin{mdframed}
+Die $\sigma$-Algebren $\BB^d$ und $\LL^d$ sowie die Maße $\beta^d$ und $\lambda^d$ sind invariant unter Bewegungen des $\R^d$, ebenso $(\beta^d)^*=(\lambda^d)^*$.
+\end{mdframed}
+\begin{proof}
+$\BB^d$ ist invariant unter allen Homöomorphismen des $\R^d$, also insbesondere unter Bewegungen. Die Bewegungsinvarianz von $\beta^d$ folgt aus dem Lemma. Daraus folgt weiter die Invarianz des assoziierten äußeren Maßes $(\beta^d)^*$ und seiner Nullmengen, also auch die Invarianz von $\LL^d$ als Vervollständigung von $\BB^d$ und $\lambda^d$ als Einschränkung von $(\beta^d)^*$.
+\end{proof}
+\end{satz}
+
+Wir haben also gesehen, dass $\lambda^d$ eine befriedigende Lösung des Maßproblems auf $\R^d$ ist.\footnote{\textit{Bemerkung.} Es existieren bewegungsinvariante Fortsetzungen von $\lambda^d$ auf echt größere $\sigma$-Algebren (Szpilrajn, 1935), jedoch keine maximale Fortsetzung (Ciesielski-Pele, 1985).}
+
+\begin{remark}
+$\LL^d$ ist unter allen affinen Transformationen invariant, denn $(\beta^d)^*$ wird skaliert, Nullmengen bleiben also Nullmengen. $\lambda^d$ hat deshalb dasselbe Transformationsverhalten wie $\beta^d$. Es ist nämlich $\Phi_*\lambda^d=c(\Phi)\cdot \lambda^d$.
+\end{remark}
+
+Um den gesamten Homomorphismen $c$ zu bestimmen, machen wir eine weitere Beobachtung.
+
+\begin{lemma}
+Für Diagonalmatrizen $D \in \GL(d,\R)$, $De_i=\lambda_i e_i$ mit $\lambda_i\in\R\setminus\{0\}$ für $i=1,...,d$ gilt\footnote{$D$ hat die Gestalt
+$\begin{pmatrix}
+	\lambda_1 & & 0 \\
+	& \ddots&\\
+	0&&\lambda_d
+\end{pmatrix}$.
+}
+$$c(D)=|\det(D)^{-1}|.$$
+\begin{proof}
+Sei $Q = [a,b) \in \QQ^d, a_i<b_i\ \forall i$. Es ist $D^*(Q)=D^{-1}(Q)=[D^{-1}a,D^{-1}b)$ und 
+$$
+(\underbrace{D_*\beta^d}_{c(D)\beta^d})(Q)=\beta^d(D^{-1}(Q))=\prod_{i=1}^d |\lambda_i^{-1}(b_i-a_i)|=\underbrace{\bigg| \prod_{i=1}^d \lambda_i^{-1}\bigg|}_{|\det D^{-1}|} \cdot \beta^d(Q).
+$$
+Es folgt $c(D)=|\det D^{-1}|$.
+\end{proof}
+\end{lemma}
+
+\begin{satz}
+Jede Matrix $A\in \GL(d,\R)$ lässt sich in der Form $A=RDR'$ darstellen mit $R,R'\in \O(d)$ und einer Diagonalmatrix $D\in \GL(d,\R)$.\footnote{Dies entspricht der ``KAK-Zerlegung'' (K steht für kompakt, hier: orthogonal, A steht für abelsch, hier: diagonal) in der Lie-Gruppe $\GL(d,\R)$.}
+\begin{proof}
+Dies ist eine Konsequenz aus der Tatsache, dass zu je zwei Skalarprodukten auf $\R^d$ eine gemeinsame Orthogonalbasis existiert. Betrachte das Standardskalarprodukt $\langle \cdot, \cdot \rangle$ sowie sein Bild $\underbrace{(A_* \langle \cdot, \cdot \rangle)}_{:= \langle A^{-1} \cdot ,A^{-1}\cdot \rangle}(u,v):= \langle A^{-1}u, A^{-1}v \rangle$. Es existiert also eine Basis $(v_i)$ von $\R^d$, die bzgl. beider Skalarprodukte orthogonal ist, und o.B.d.A. sei $(v_i)$ ein Orthonormalbasis bzgl. $\langle \cdot, \cdot \rangle$. Dann existiert ein $R \in \O(d)$ sodass $v_i = R e_i \ \forall i$.  Somit ist also $(e_i)$ orthogonal bzgl. $R^{-1}_*A_*\langle \cdot, \cdot \rangle = \langle A^{-1}R\cdot,A^{-1}R\cdot\rangle$. Gehe zu ONB über durch geeinigte Skalierung der Vektoren. Es existiert eine Diagonalmatrix $D\in \GL (d,\R)$ sodass $(De_i)$ sogar orthogonal ist bzgl. dieses Skalarprodukts. Es folgt, dass $(e_i)$ orthonormal ist bezüglich $D^{-1}_* R^{-1}_* A_* \langle \cdot , \cdot \rangle = \langle A^{-1} RD\cdot ,\cdot A^{-1} RD\rangle$. Dies bedeutet $(D^{-1}R^{-1}A)_*\langle \cdot ,\cdot \rangle=D^{-1}_* R^{-1}_* A_* \langle \cdot ,\cdot \rangle = \langle \cdot, \cdot \rangle$. Es folgt $D^{-1}R^{-1}A =: R' \in \O(d)$ und $A=RDR'$.
+\end{proof}
+\end{satz}
+
+\begin{korollar}
+$c= |\det^{-1}|$ auf $\GL(d,\R)$.
+\begin{proof}
+Dies gilt auf $\O(d)$, somit auf Diagonalmatrizen. Wegen des beiden Satzes und der Multiplikativität von $c$ gilt dies auf ganz $\GL(d,\R)$.
+\end{proof}
+Also $c(\Phi_{A,v})=|\det A^{-1}|$.
+\end{korollar}
+
+\begin{satz}[Skalierungsverhalten des Lebesgue-Maßes unter affinen Transformationen]
+\begin{mdframed}
+$\BB^d$ und $\LL^d$ sind invariant unter affinen Transformationen des $\R^d$. Für $\Phi_{A,v} \in \Aff(\R^d)$ gilt
+$$
+(\Phi_{A,v})_*(\lambda^d)=|\det A^{-1}|\cdot \lambda^d
+$$
+bzw
+$$
+(\Phi_{A,v})_*((\lambda^d)^*)=|\det A^{-1}|\cdot ((\lambda^d)^*).
+$$
+\end{mdframed}
+Dieser Satz besagt also, dass die Volumenverzerrung von $\Phi$ durch den Faktor $|\det A|$ bestimmt ist, wobei $A$ der linearer Anteil von $\Phi$ ist.
+\end{satz}
+
+
+\subsubsection{Existenz nicht Lebesgue-messbarer Teilmengen}
+Wir weisen die Existenz nicht Lebesgue-messbaren Teilmengen nach mit Hilfe des Auswahlaxioms. (Dieses ist zum Nachweis nötig (Solovay, 1970)).\vspace{0.5pc}\\
+Wir gehen zurück zu Vitali-Argument (vgl. Beginn der Vorlesung). Der Ausgangspunkt war eine (überabzählbare) Partition $\PP$ von $\R^{|d|\geq 1}$ durch die (abzählbaren) Nebenklassen $a+\Q^d$ der Untergruppe $\Q^d \subset \R^d$. Um die Nebenklassen ``ohne Wiederholung'' aufzulisten, braucht man Repräsentantensystem (es folgt aus dem Auswahlaxiom) $M\subset \R^d$, d.h. $M$ enthält genau ein Element aus jeder Nebenklasse $a+\Q^d$. Äquivalent dazu: jedes $x\in\R^d$ besitzt eine eindeutige Zerlegung
+$$
+{x=m+q, m\in M, q\in \Q^d}.
+$$
+Es folgt, dass auch $M+q$ ein Repräsentantensystem ist, d.h.
+\begin{equation}\label{zerlegungRd}
+\R^d = \bigsqcup_{q\in\Q^d} (M+q).
+\end{equation}
+Es folgt, die abzählbare Partition $\PP^*$ transversal bzw. komplementär durch überabzählbare viele Translate $M+q, q\in \Q^d$. Wir wollen zeigen, dass $M\notin \LL^d$. Weil $\lambda^d$ und $(\lambda^d)^*$ translationsinvariant sind, ist $(\lambda^d)(M+q)$ unabhängig von $q\in \Q^d$. Die $\sigma$-Subadditivität äußerer Maße zusammen mit $\lambda^d(\R^d)>0$ und \eqref{zerlegungRd} impliziert, dass
+$$
+0<\lambda^d(\R^d)\leq \sum_{q\in\Q^d} \underbrace{(\lambda^d)^*(M+q)}_{\te{unabhängig von }q}.
+$$
+Es folgt, dass $(\lambda^d)^*(M)>0$.
+
+\begin{satz}
+Alle Lebesgue-messbaren Teilmengen eines Repräsentantensystems sind Nullmengen.
+\begin{proof}
+Sei $N\subset M$, $N\in \LL^d$. Wir nehmen zunächst an, dass $N$ beschränkt ist. Wir argumentieren mit Packungsargument: abzählbar unendlich viele Translate $N+q$ für $q\in \Q^d \cap B_1(0)$ haben beschränkte Vereinigung, diese haben also endliches $\lambda^d$-Volumen. Weil $N$ messbar ist, folgt, dass $\lambda^d(N)=0$. Falls $N$ nicht beschränkt ist, dann ist $N$ eine abzählbare Vereinigung von beschränkten messbaren Teilmengen von $M$. Die Vereinigung hat also Maß $0$.
+\end{proof}
+\end{satz}
+
+\begin{korollar}
+Repräsentantensysteme sind nicht Lebesgue-messbar.
+\end{korollar}
+\marginpar{\tiny{2.12.2019}}
+%\section{Integrationstheorie}
 %\input{A-integrale-stetiger-funktionen.tex}
 \end{document}
