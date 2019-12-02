@@ -2023,7 +2023,7 @@ Dieser Satz besagt also, dass die Volumenverzerrung von $\Phi$ durch den Faktor 
 
 \subsubsection{Existenz nicht Lebesgue-messbarer Teilmengen}
 Wir weisen die Existenz nicht Lebesgue-messbaren Teilmengen nach mit Hilfe des Auswahlaxioms. (Dieses ist zum Nachweis nötig (Solovay, 1970)).\vspace{0.5pc}\\
-Wir gehen zurück zu Vitali-Argument (vgl. Beginn der Vorlesung). Der Ausgangspunkt war eine (überabzählbare) Partition $\PP$ von $\R^{|d|\geq 1}$ durch die (abzählbaren) Nebenklassen $a+\Q^d$ der Untergruppe $\Q^d \subset \R^d$. Um die Nebenklassen ``ohne Wiederholung'' aufzulisten, braucht man Repräsentantensystem (es folgt aus dem Auswahlaxiom) $M\subset \R^d$, d.h. $M$ enthält genau ein Element aus jeder Nebenklasse $a+\Q^d$. Äquivalent dazu: jedes $x\in\R^d$ besitzt eine eindeutige Zerlegung
+Wir gehen zurück zu Vitali-Argument (vgl. Beginn der Vorlesung). Der Ausgangspunkt war eine (überabzählbare) Partition $\PP$ von $\R^{d\geq 1}$ durch die (abzählbaren) Nebenklassen $a+\Q^d$ der Untergruppe $\Q^d \subset \R^d$. Um die Nebenklassen ``ohne Wiederholung'' aufzulisten, braucht man ein Repräsentantensystem\footnote{Die Existenz folgt aus dem Auswahlaxiom.} $M\subset \R^d$, sodass $M$ genau ein Element aus jeder Nebenklasse $a+\Q^d$ enthält. Äquivalent dazu: jedes $x\in\R^d$ besitzt eine eindeutige Zerlegung
 $$
 {x=m+q, m\in M, q\in \Q^d}.
 $$
@@ -2038,16 +2038,121 @@ $$
 Es folgt, dass $(\lambda^d)^*(M)>0$.
 
 \begin{satz}
+\begin{mdframed}
 Alle Lebesgue-messbaren Teilmengen eines Repräsentantensystems sind Nullmengen.
+\end{mdframed}
 \begin{proof}
-Sei $N\subset M$, $N\in \LL^d$. Wir nehmen zunächst an, dass $N$ beschränkt ist. Wir argumentieren mit Packungsargument: abzählbar unendlich viele Translate $N+q$ für $q\in \Q^d \cap B_1(0)$ haben beschränkte Vereinigung, diese haben also endliches $\lambda^d$-Volumen. Weil $N$ messbar ist, folgt, dass $\lambda^d(N)=0$. Falls $N$ nicht beschränkt ist, dann ist $N$ eine abzählbare Vereinigung von beschränkten messbaren Teilmengen von $M$. Die Vereinigung hat also Maß $0$.
+Sei $M$ ein Repräsentantensystem, $N\subset M$, $N\in \LL^d$. Wir nehmen zunächst an, dass $N$ beschränkt ist. Wir argumentieren mit einem Packungsargument: abzählbar unendlich viele Translate $N+q$ für $q\in \Q^d \cap B_1(0)$ haben beschränkte Vereinigung, diese haben also endliches $\lambda^d$-Volumen. Weil $N$ messbar ist, folgt, dass $\lambda^d(N)=0$. Falls $N$ nicht beschränkt ist, dann ist $N$ eine abzählbare Vereinigung von beschränkten messbaren Teilmengen von $M$. Die Vereinigung hat also Maß $0$. \marginpar{\tiny{2.12.2019}}
 \end{proof}
 \end{satz}
 
 \begin{korollar}
+\begin{mdframed}
 Repräsentantensysteme sind nicht Lebesgue-messbar.
+\end{mdframed}
+\end{korollar} 
+Erweiterung bzw. Lokalisierung dieser Existenzaussage über messbare Teilmengen:
+\begin{satz}
+\begin{mdframed}
+Jede messbare Teilmenge von $\R^d$ mit \emph{strikt} positivem Maß enthält nicht Lebesgue-messbare Teilmengen.
+\end{mdframed}
+\begin{proof}
+Sei $A\in \LL^d$ mit $\lambda^d(A)>0$. Dadurch, dass wir $A$ mit $\PP^*$ schneiden, induziert eine Partition von $A$ durch Teilmengen $A\cap (M+q),q\in\Q^d$. Wir vorher liefert die $\sigma$-Subaddtivität äußerer Maße, dass es ein $q_0 \in \Q^d$ existiert, sodass $\lambda^*(A\cap (M+q_0))>0$. Setze $A\cap (M+q_0) =: W \subset M+q_0$. Mit dem letzten Satz folgt dann $W \notin \LL^d$.
+\end{proof}
+\end{satz}
+
+\begin{remark}
+Dieselbe Argumente sind durchführbar für Fortsetzung von $\lambda^d$ auf translationsinvarianten $\sigma$-Algebren, die $\LL^d$ enthalten.
+\end{remark}
+\textbf{Anwendung auf Fragen der Lebesgue-Messbarkeit von Homöomorphismen des $\R^d$: }
+Wir wissen: stetige Abbildung euklidischer Räume sind Borel-messbar, jedoch i.A. nicht Lebesgue-messbar. Gegenbeispiele sind \emph{injektive} stetige Abbildungen $\R^d \longrightarrow \R^{d'>d}$, deren Bilder Nullmengen sind. Das lässt offen, ob Homöomorphismen von $\R^{d\geq 1}$ Lebesgue-messbar sind. Dies gilt i.A. nicht. Es gibt ein genaues Kriterium:
+
+\begin{satz}
+\begin{mdframed}
+Für Homöomorphismen $\R^d \overset\Phi\longrightarrow \R^d$ gilt: $\Phi$ ist genau dann Lebesgue-messbar, wenn $\Phi^{-1}$ die Borel-Nullmengen auf Borel-Nullmengen abbildet.
+\end{mdframed}
+\begin{proof}
+Jede Teilmenge in $\LL^d$ ist darstellbar als die Vereinigung einer Borel-Menge und einer $\lambda^d$-Nullmenge. Weil das Urbild der Borel-Menge eine Borel-Menge bleibt, ist $\Phi$ genau dann Lebesgue-messbar, wenn die $\Phi$-Urbilder, also genau die $\Phi^{-1}$ Bilder, von $\lambda^d$-Nullmengen Lebesgue-messbar sind. Wegen der Injektivität von $\Phi$ und wegen des letzten Satzes folgt, dass diese $\Phi$-Urbilder ebenfalls $\lambda^d$-Nullmengen sein müssen, denn sonst enthalten sie nicht Lebesgue-messbare Teilmengen, und diese sind ebenfalls (wegen der Injektivität von $\Phi$) Urbilder von $\lambda^d$-Nullmengen. Es folgt: $\Phi$ ist genau dann Lebesgue-messbar, wenn $\Phi$-Urbilder  von $\lambda^d$-Nullmengen  wieder $\lambda^d$-Nullmengen sind. Weil jede $\lambda^d$ Nullmenge Teilmenge einer $\beta^d$-Nullmenge (folgt aus der Approximation von Lebesgue-messbaren Teilmengen) ist, ist dies äquivalent dazu, dass $\Phi$-Urbilder von $\beta^d$-Nullmengen wieder $\beta^d$-Nullmengen sind.
+\end{proof}
+\end{satz}
+
+\begin{example}[$d=1$, die Cantor-Funktion] Die Cantor-Funktion $c:\R\to \R$ ist stetig und $c|_{[0,1]}:[0,1]\longrightarrow[0,1]$ ist surjektiv. $c|_{[0,1]}$ bildet die Nullmenge $C$, die Cantor-Menge, auf $[0,1]$ ab. Durch Modifikationen, nämlich Hinzufügen von kleinen Steigerungen erhalten wir einen Homöomorphismus $\phi:\R\longrightarrow\R$. Weil $\lambda^1(\phi([0,1]\setminus C)) \ll 1$, folgt $\lambda^1(\phi(C))>0$. 
+\end{example}
+
+\section{Integrationstheorie}
+\subsection{Messbare Funktionen}
+\subsubsection{Numerische Funktionen}
+Eine \textbf{numerische Funktion} ist definiert als eine $\ol\R$-wertige Funktion. $\ol\R$ trägt die natürliche messbare Struktur und die $\sigma$-Algebra $\ol\BB$, die Erweiterung von $\BB$, wird erzeugt von jeder der Familien: $[-\infty,a]$ bzw. $[-\infty,a)$ bzw. $(a,\infty]$ bzw. $[a,\infty]$ jeweils für $a\in \R$.\\\\
+Sei $(X,\AA)$ ein Messraum. Wir nennen eine numerische Funktion $f:X\longrightarrow\ol\R$ \textbf{(Borel-)messbar}, falls sie $\AA$-$\ol\BB$-messbar ist. Dies ist äquivalent dazu, dass die Sub/Supniveaumengen $\{f\leq a\}= \{x\in X \mid f(x)\leq a \}$ bzw. $\{f<a\}$ bzw. $\{f>a\}$ bzw. $\{f\geq a\}$ für alle $a\in \R$ zu $\AA$ gehören.\\\\
+$\MM_{\ol\R}:=\MM_{\ol\R}(X,\AA)$ ist definiert als \textbf{der Raum aller messbaren Funktionen} $X \to \ol\R$ und $\MM_{\geq 0} \subset \MM_{\ol\R}$ der Unterraum der nichtnegativwertigen Funktionen und $\MM_{\R}$ der Unterraum der endlichwertigen Funktionen. Operationen (Rechenoperationen, Bildung of Maximum, Supremum, etc.) auf Funktionen führen wir punktweise aus.\footnote{Für jede Folge $(a_n){n\in\N}$ in $\ol\R$ sind der \emph{Limes superior} und der \emph{Limes inferior} gegeben durch
+\begin{equation*}
+\begin{split}
+\limsup_{n \to \infty} a_n = \lim_{n\to\infty} (\sup \{a_k \mid k\geq n\})=\inf_{n\in\N}\sup_{k\geq n} a_k, \\
+ \liminf_{n\to \infty} a_n = \lim_{n\to \infty}(\inf \{a_k \mid k\geq n\}) = \sup_{n\in\N} \inf_{k \geq n} a_k
+\end{split}
+\end{equation*}
+und dieses sind der größte bzw. kleinste Häufungspunkt von $(a_n)_{n\in\N}$ in $\ol\R$. Diese Ausführungen über Zahlenfolgen gelten auch für die punktweise Konvergenz von Folgen von Funktionen $f_n:X\to \ol\R$, $n\in\N$. 
+%https://math.stackexchange.com/questions/281807/two-definitions-of-limsup
+}
+
+\begin{lemma}
+\begin{mdframed}
+Für eine Folge von Funktionen $f_n \in \MM_{\ol\R}$ sind auch die Funktionen
+$
+\sup\limits_{n\in\N}f_n, \inf\limits_{n\in\N}f_n, \limsup\limits_{n\to\infty}f_n, \liminf\limits_{n\to\infty}f_n
+$
+messbar, d.h. liegen in $\MM_{\ol\R}$.
+\end{mdframed}
+\begin{proof} Die Funktion $\sup\limits_{n\in\N} f_n$ ist messbar wegen
+$$\Big\{ \sup\limits_{n\in\N}  f_n \leq a \Big\} = \bigcap\limits_{n\in\N} \underbrace{\{f_n \leq a\}}_{\in \AA} \in \AA,$$
+und die Messbarkeit von $\inf\limits_{n\in\N} f_n$ folgt aus $\inf\limits_{n\in\N} f_n = - \Big( \sup\limits_{n\in\N} (-f_n) \Big)$. Weil
+$$
+\limsup_{n\to\infty} f_n=\inf_{n \in \N} \Big(\sup_{k \geq n} f_k\Big),
+$$
+folgt, dass $\limsup\limits_{n\to\infty} f_n$ messbar ist, analog auch $\liminf\limits_{n\to\infty} f_n$.
+\end{proof}
+\end{lemma}
+
+Insbesondere folgt:
+
+\begin{korollar}
+Ist $f_1,...,f_n \in \MM_{\ol\R}$, so ist $\max(f_1,...,f_n),\min(f_1,...,f_n)\in \MM_{\ol\R}$.
 \end{korollar}
-\marginpar{\tiny{2.12.2019}}
-%\section{Integrationstheorie}
+
+\begin{korollar}
+Falls $f \in \MM_{\ol\R}$, so liegen auch der Positivanteil $f^+=\max(f,0)$, der Negativanteil  $f^-=\max(-f,0)$ und der Absolutbetrag $|f|+f^++f^-=\max (f,-f)$ wieder in $\MM_{\ol\R}$.
+\end{korollar}
+%\rule{\textwidth}{0.4pt}
+Sei $M\subset X$. Eine Funktion $f_M:M\longrightarrow\ol\R$ wird \textbf{durch Null fortsetzt} zu $\ol{f}_M:X\to\ol\R$ durch
+$$
+\ol{f}_M(x)=\begin{cases}
+f_M(x), &x\in M\\
+0, &\te{sonst}
+\end{cases}.
+$$
+Und eine Funktion $f:X\longrightarrow \R$ wird außerhalb der Teilmenge $M$ \textbf{abgeschnitten}, indem wir übergehen zu $\chi_M f:X \longrightarrow\ol{\R}$
+$$
+(\chi_M f)(x)=\begin{cases}
+f(x), & x\in M\\
+0, &\te{sonst}
+\end{cases},
+$$
+d.h. $\chi_M f$ setzt $f|_M$ durch Null fort.\\\\
+%\rule{\textwidth}{0.4pt}\\
+Sei $f:X\longrightarrow \ol\R$ mit $X\supset A\in \AA$. Dann gilt:
+$$
+\chi_Af \in \MM_{\ol\R}(X,\AA) \iff f|_A \in \MM_{\ol\R}(A,\AA|_A)
+$$
+Dies tritt ein, wenn $f\in \MM_{\ol\R}(X,\AA)$.\\\\
+Bei \emph{Rechenoperationen} auf numerischen Funktionen sind die resultierenden Funktionen i.A. nicht überall auf dem gemeinsamen Definitionsbereich definiert. Betrachte $X\supset A_i \overset{f_i}\longrightarrow \ol\R$, $i=1,...,n$. Die \emph{Summe} $f_1+...+f_n$ ist in allen Punkten definiert, in denen alle $f_i$ definiert sind und nicht gleichzeitig $\infty$ und $-\infty$ als Werte auftreten, also auf
+\begin{equation*}
+\begin{split}
+A:= &\bigg( \bigcap_{i=1}^n A_i\bigg) \setminus \bigg( \bigg( \bigcup_{i=1}^n f^{-1}_i(\infty)\Bigg) \cap \bigg( \bigcup_{i=1}^n f_i^{-1}(-\infty) \bigg)\bigg)\\
+= &\bigg(\underset{\te{Summe endlich}}{\bigcap_{i=1}^n f^{-1}_i(\R)}\bigg) \sqcup \Bigg( \bigg( \bigcap_{i=1}^n A_i \bigg) \cap \bigg( \underset{\te{Summe }\pm \infty}{\bigg( \bigcup_{i=1}^n f_i^{-1}(-\infty)\bigg) \triangle \bigg(\bigcup_{i=1}^n f^{-1}_i(\infty)\bigg)\bigg)}\Bigg)
+\end{split}
+\end{equation*}
+Falls die Funktionen $f_i$ messbar sind, d.h. $A_i \in \AA$ und $f_i \in \MM_{\ol\R}(A_i,\AA|_{A_i})$, so auch ihre Summe, d.h. $A\in \AA$ und $f_1+...+f_n \in \MM_{\ol\R}(A,\AA|_A)$ auf dem Bereich endlicher Werte: $f_1+...+f_n$ ist die Komposition von messbaren Funktionen $(f_1,...,f_n)$ mit der Addition (stetig, also messbar) $\R^n \to \R, (x_1,...,x_n)\mapsto \sum\limits_{i=1}^n x_i$.
+
+\marginpar{\tiny 5.12.2019}
 %\input{A-integrale-stetiger-funktionen.tex}
 \end{document}
