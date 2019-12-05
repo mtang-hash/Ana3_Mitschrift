@@ -2080,10 +2080,17 @@ Jede Teilmenge in $\LL^d$ ist darstellbar als die Vereinigung einer Borel-Menge 
 \end{example}
 
 \section{Integrationstheorie}
-\subsection{Messbare Funktionen}
-\subsubsection{Numerische Funktionen}
-Eine \textbf{numerische Funktion} ist definiert als eine $\ol\R$-wertige Funktion. $\ol\R$ trägt die natürliche messbare Struktur, also die $\sigma$-Algebra $\ol\BB$, die Erweiterung von $\BB$, die von jeder der Familien: $[-\infty,a]$ bzw. $[-\infty,a)$ bzw. $(a,\infty]$ bzw. $[a,\infty]$ jeweils für $a\in \R$ erzeugt wird.\\\\
-Sei $(X,\AA)$ ein Messraum. Wir nennen eine numerische Funktion $f:X\longrightarrow\ol\R$ \textbf{(Borel-)messbar}, falls sie $\AA$-$\ol\BB$-messbar ist. Dies ist äquivalent dazu, dass die Sub bzw. Supniveaumengen $\{f\leq a\}= \{x\in X \mid f(x)\leq a \}$ bzw. $\{f<a\}$ bzw. $\{f>a\}$ bzw. $\{f\geq a\}$ für alle $a\in \R$ zu $\AA$ gehören.\\\\
+\subsection{Messbare nummerische Funktionen}
+Eine \textbf{numerische Funktion} ist definiert als eine $\ol\R$-wertige Funktion. $\ol\R$ trägt die natürliche messbare Struktur, also die $\sigma$-Algebra $\ol\BB$, die Erweiterung von $\BB$, die von jeder der Familien: $[-\infty,a]$ bzw. $[-\infty,a)$ bzw. $(a,\infty]$ bzw. $[a,\infty]$ jeweils für $a\in \R$ erzeugt wird.
+\begin{definition}
+\begin{mdframed}
+Sei $(X,\AA)$ ein Messraum. Eine Funktion $f:X\longrightarrow\ol\R$ heißt (Borel-) \newline \textbf{messbar}, falls sie $\AA$-$\ol\BB$-messbar ist.
+\end{mdframed}
+\end{definition}
+Die Messbarkeit von $f$ ist äquivalent dazu, dass die Sub bzw. Supniveaumengen $\{f\leq a\}= \{x\in X \mid f(x)\leq a \}$ bzw. $\{f<a\}$ bzw. $\{f>a\}$ bzw. $\{f\geq a\}$ für alle $a\in \R$ zu $\AA$ gehören.
+\begin{example}
+Sei $X$ ein topologischer Raum versehen mit der Topologie $\TT$. Dann induziert $T$ die Borelsche $\sigma$-Algebra $\BB(X)=\sigma(\TT)$ und $f:X \longrightarrow \ol\R$ genau dann messbar, wenn $f$ als eine Abbildung Borel-messbar ist. Insbesondere sind stetige nummerische Funktionen messbar.
+\end{example}
 $\MM_{\ol\R}:=\MM_{\ol\R}(X,\AA)$ ist definiert als \textbf{der Raum aller messbaren Funktionen} $X \to \ol\R$ und $\MM_{\geq 0} \subset \MM_{\ol\R}$ der Unterraum der nichtnegativwertigen Funktionen und $\MM_{\R}$ der Unterraum der endlichwertigen Funktionen. Operationen (Rechenoperationen, Bildung of Maximum, Supremum, etc.) auf Funktionen führen wir punktweise aus.\footnote{Für jede Folge $(a_n)_{n\in\N}$ in $\ol\R$ sind der \emph{Limes superior} und der \emph{Limes inferior} gegeben durch
 \begin{equation*}
 \begin{split}
@@ -2112,7 +2119,6 @@ $$
 folgt, dass $\limsup\limits_{n\to\infty} f_n$ messbar ist, analog auch $\liminf\limits_{n\to\infty} f_n$.
 \end{proof}
 \end{lemma}
-
 Insbesondere folgt:
 
 \begin{korollar}
@@ -2153,6 +2159,158 @@ A:= &\bigg( \bigcap_{i=1}^n A_i\bigg) \setminus \bigg( \bigg( \bigcup_{i=1}^n f^
 \end{equation*}
 Falls die Funktionen $f_i$ messbar sind, d.h. $A_i \in \AA$ und $f_i \in \MM_{\ol\R}(A_i,\AA|_{A_i})$, so auch ihre Summe, d.h. $A\in \AA$ und $f_1+...+f_n \in \MM_{\ol\R}(A,\AA|_A)$ auf dem Bereich endlicher Werte: $f_1+...+f_n$ ist die Komposition von messbaren Funktionen $(f_1,...,f_n)$ mit der Addition (stetig, also messbar) $\R^n \to \R, (x_1,...,x_n)\mapsto \sum\limits_{i=1}^n x_i$.
 
+\subsection{Konstruktion des Lebesgue-Integrals}
 \marginpar{\tiny 5.12.2019}
+
+Wir können die Integration als Volumenberechnung interpretieren und auch umgekehrt. Sei $(X,\AA,\mu)$ ein Maßraum und $f:X \longrightarrow \ol\R$ eine numerische Funktion. Wir interpretieren das Integral $\int_X f \D \mu$ als das \emph{orientiert Volumen} des Bereiches ``zwischen dem Graph von $f$ und $X$-Achse''. Ansatzweise definieren das Integral $\int_X f \D \mu$ als
+$$
+\vol \{ (x,y) \in X \times \R \mid 0<y<f(x)\}-\vol \{(x,y)\in X \times \R \mid f(x)<y<0\}
+$$
+wobei wir das Volumen mit dem Produktmaß $\mu \otimes \beta^1$ auf $X\times \R$ messen.\\
+\begin{equation*}
+\begin{array}{ccc}
+\te{Konstruktion des Lebesgue-Integrals} & \longleftrightarrow & \te{Konstruktion des Produktmaßes} \\
+f \longmapsto \int_X f \D \mu = \int_X f(x)\D \mu(x) &&\mu \otimes \beta^1 \te{ auf } (X \times \R, \AA \otimes \BB^1) 
+\end{array}
+\end{equation*}
+Das Produktmaß $\mu \otimes \beta^1$ ist die Einschränkung des äußeren Maßes $(\mu \otimes \beta^1)^*$ auf $\AA \otimes \BB^1$. Ist $\mu$ $\sigma$-endlich, so 
+ist $\mu \otimes \beta^1$ die eindeutige Fortsetzung von dem Prämaß $\mu \boxtimes \beta^1$ auf dem Ring $\AA \boxtimes \BB^1$.
+
+\subsubsection{Integral nichtnegativer Funktionen}
+Es sei $(X,\AA,\mu)$ ein Maßraum und $f: X \longrightarrow [0,\infty]$ messbar. Dann ist die Menge $\{(x,y)\in X \times \R \mid 0<y<f(x)\}$ ebenfalls messbar, d.h. $\in \AA \times \BB^1$. Wir definieren dann das \textbf{$\boldsymbol{\mu}$-Integral} von $f$ als 
+\begin{equation}
+\boxed{\int_X f \D \mu := \mu \otimes \beta (\{(x,y) \in X \times \R \mid 0<y<f(x)\})}.
+\end{equation}
+Wir können das $\mu$-Integral als das Funktional auffassen
+\begin{equation*}
+\begin{array}{ccc}
+\MM_{\geq 0}(X,\AA) & \longrightarrow & [0,\infty]\\
+f & \longmapsto & \int_X f \D \mu
+\end{array}
+\end{equation*}
+Für besonders einfache Funktionen ist der Bereich zwischen dem Graph und $X$-Achse eine Figur (d.h. endliche Vereinigung von Quadern bzw. hier Rechtecke) und in diesem Fall können wir das Integral direkt angeben:
+\begin{itemize}
+\item Für die \emph{charakteristische Funktion} $\chi_A$ mit $A \in \AA$ gilt
+$$
+\int_X \chi_A \D \mu = (\mu \otimes \beta^1) (A \times (0,1)) = \mu (A) \times \underbrace{\beta^1 ((0,1))}_{=1}=\mu(A)
+$$
+\item Seien $A_i \in \AA, i=1,...,n$ paarweise disjunkt. Für die \emph{Treppenfunktion} $\tau = \sum\limits_{i=1}^n a_i \chi_{A_i}$ mit $a_i \in [0,\infty]$ gilt
+\begin{equation}\label{II.2}
+\int_X \tau \D \mu = (\mu \otimes \beta^1) \bigg( \bigcup_{i=1}^n (A_i \times (0,a_i))\bigg)=\sum_{i=1}^n a_i \cdot \mu(A_i)
+\end{equation}
+\textit{Bemerkung.} Dies gilt auch, auch wenn $A_i$ nicht paarweise disjunkt sind.
+\end{itemize}
+Im Hinblick auf die Linearität des Integrals schreiben wir \eqref{II.2} um als
+$$
+\int_X \tau \D \mu = \sum_{i=1}^n a_i \int_X \chi_{A_i} \D \mu
+$$
+Daraus folgt direkt die \emph{Additivität} und die \emph{positive Homogenität} des Integrals auf nichtnegativen messbaren Treppenfunktionen, d.h, sind $\tau_1$ und $\tau_2 \in \MM_{\geq 0}$ zwei Treppenfunktionen und $c_1,c_2 \in [0,\infty]$, so gilt
+\begin{equation*}
+\begin{split}
+\int_X (c_1\tau_1+c_2\tau_2)\D \mu = c_1 \int_X \tau_1 \D \mu +c_2 \int_X \tau_2 \D \mu.
+\end{split}
+\end{equation*}
+Die \emph{Monotonie} des Integrals folgt ebenfalls direkt aus der Definition, also aus der Monotonie von Maßen hier für $\mu\otimes \beta^1$:
+\begin{equation*}
+\begin{rcases}
+f,g \in \MM_{\geq 0}\\
+f\leq g
+\end{rcases} \implies
+\int_X f \D \mu \leq \int_X g \D \mu.
+\end{equation*}
+Auch die grundlegende \emph{Konvergenzeigenschaften} des Integrals auf nichtnegativen messbaren Funktionen lassen sich unmittelbar aus Eigenschaften des Produktmaßes ableiten, nämlich aus seinen Stetigkeitseigenschaften als Maß. \\
+Betrachte hier eine Folge von Funktionen $(f_n)_{n \in \N}$ mit $f_n:X \longrightarrow [0,\infty]$. Ist $f_n$ (punktweise) schwach monoton steigend, so ist $f=\lim\limits_{n\to\infty} f_n :X \longrightarrow [0,\infty]$ überall definiert und es gilt
+$$
+\{(x,y) \mid 0<y<f_n(x)\} \nearrow \{(x,y) \mid 0<y<f(x)\}.
+$$
+Falls $f_n$ messbar sind, d.h. $f_n \in \MM_{\geq 0}$, so folgt mit der Stetigkeit von unten von $\mu \otimes \beta^1$, dass 
+$$ \int_X f_n \D \mu \nearrow \int_X f \D u.$$
+\textit{Bemerkung.} Wegen der Monotonie von Maßen ist es klar, dass $\lim\limits_{n\to\infty} \int\limits_X f_n \D \mu \leq \int\limits_X f \D \mu.$\\ Es folgt:
+
+\begin{satz}[\textbf{Satz von der monotonen Konvergenz} (B. Levi)]
+\begin{mdframed}
+Für eine schwach monoton wachsende Folge $(f_n)_{n \in \N}$ von Funktionen $f_n \in \MM_{\geq 0}(X,\AA)$ gilt
+$$
+\int_X (\lim_{n \to \infty} f_n) \D \mu =\lim_{n \to \infty} \int_X f_n \D \mu
+$$
+Wir können also das Integral und den Grenzwert vertauschen.
+\end{mdframed}
+\end{satz}
+
+\begin{remark}
+Eine solche Konvergenzaussage gilt ohne Monotonie-Voraussetzung nicht. Z.B. betrachten wir $(A_n)_{n \in \N}$ mit $A_n \in \AA$ paarweise disjunkt. Dann ist $\chi_{A_n}\longrightarrow 0$, aber $\int_X \chi_{A_n}\D\mu$ kann eine beliebige Folge sein.
+\end{remark}
+
+Wenn wir auf die Monotonie-Verhalten verzichten, gilt jedoch eine Ungleichung. Diese gilt allgemein auch ohne Konvergenzannahmen.
+\begin{satz}[\textbf{Lemma von Fatou}]
+\begin{mdframed}
+Für jede Folge $(f_n)$ von Funktionen $f_n \in \MM_{\geq 0}(X,\AA)$ gilt
+$$
+\int_X (\liminf\limits_{n\to\infty} f_n)\D \mu \leq \liminf\limits_{n\to \infty} \int_X f_n \D\mu
+$$
+\end{mdframed}
+\begin{proof}
+Zunächst gilt für jedes $l\geq n:$ $\inf\limits_{k \geq n}f_k \leq f_l$. Wegen der Monotonie des Integrals folgt
+$$
+\int_X \left(\inf_{k\geq n} f_k\right) \D \mu \leq  \int_X f_l \D \mu \quad \text{für jedes } l \geq n.
+$$
+Insbesondere gilt
+$$
+\int_X \underbrace{\left(\inf_{k\geq n} f_k\right)}_{\nearrow \liminf\limits_{n\to\infty} f_n} \D \mu \leq  \underbrace{\inf_{k\geq n}  \int_X f_k \D \mu}_{\nearrow \liminf\limits_{n\to \infty}\int_X f_n \D \mu}.
+$$
+Ziehe Limes $n\to \infty $ und der Satz von der monotonen Konvergenz liefert
+$$\lim_{n\to \infty }\int_X \left(\inf_{k\geq n} f_k\right) = \int_X (\liminf_{n\to\infty} f_n) \D \mu \leq \liminf_{n\to \infty}\int_X f_n \D \mu.$$
+\end{proof}
+\end{satz}
+
+Mithilfe der Konvergenzresultate können wir die Additivität und positive Homogenität des Integrals auf nichtnegativen messbaren Treppenfunktionen verallgemeinern auf beliebigen nichtnegativen messbaren Funktionen:
+
+\begin{lemma}
+\begin{mdframed}
+Sind $f_1,f_2\in \MM_{\geq 0}$ und $c_1,c_2\in [0,\infty]$, so gilt
+$$
+\int_X (c_1f_1+c_2f_2)\D \mu = c_1 \int_X f_1 \D \mu +c_2 \int_X f_2 \D \mu.
+$$
+\end{mdframed}
+\begin{proof}
+Wir können $f_i$ durch Treppenfunktionen $\tau_{in} \in \MM_{\geq 0}$ approximieren, d.h. $\tau_{in}\nearrow f_i (i=1,2)$. Wir wissen schon, dass
+$$
+\int_X (c_1 \tau_{1n}+c_2 \tau_{2n}) \D \mu =c_1 \int_X \tau_{1n}\D \mu+c_2 \int_X \tau_{2n} \D \mu
+$$
+Weil $c_1 \tau_{1n}+c_2 \tau_{2n} \nearrow c_1f_1+c_2f_2$, $\tau_{1n}\nearrow f_1$ und $\tau_{2n}\nearrow f_2$, liefert der Satz von der monotonen Konvergenz die Behauptung, wenn wir den Limes $n\to \infty$ ziehen.
+\end{proof}
+\end{lemma}
+
+\subsubsection{Integral allgemeiner nummerischer Funktionen}
+Jetzt wollen wir das integral für allgemeine Funktionen definieren. Wir müssen diese aber geeignet beschränken.
+
+\begin{definition}
+\begin{mdframed}
+Eine Funktion $f\in \MM_{\ol\R}$ heißt \textbf{$\boldsymbol\mu$-integrierbar}, falls
+$$
+\|f\|_1:=\int_X |f|\D\mu <\infty. \footnote{Wir bemerken, dass das Integral $\int_X |f|\D\mu$ schon definiert ist.}
+$$
+\end{mdframed}
+\end{definition}
+
+Ist $f$ integrierbar, so ist $f^\pm$ auch integrierbar wegen $f=f^+-f^-$ und $|f|+f^++f^-$. Wir definieren das \textbf{$\boldsymbol\mu$-Integral} von $f$ als
+\begin{equation}\label{II.3}
+\boxed{\int_X f \D \mu = \int_X f^+ \D \mu - \int_X f^- \D \mu= \|f^+\|_1-\|f^-\|_1.}
+\end{equation}
+Die Definition ist konsistent mit bisheriger Definition des Integrals auf $\MM_{\geq 0}$.
+
+\begin{remark}
+\eqref{II.3} bleibt sinnvoll, solange $f^+$ oder $f^-$ integrierbar ist. Solche Funktionen nennt man \emph{quasi-integrierbar}, z.B. alle Funktionen in $\MM_{\geq 0}$ sind quasi-integrierbar.
+\end{remark}
+
+\begin{example}
+Ist $f\in \MM_\R$ beschränkt, d.h. es existiert ein $C>0$, sodass $|f|<C$, und hat $\{f\neq 0\}$\footnote{``messbarer Träger''} endliches Maß, so ist $f$ integrierbar, denn
+$$
+\|f\|_1 \leq \underbrace{(\sup|f|)}_{\leq C < \infty} \cdot \underbrace{\mu(\{f\neq 0 \})}_{< \infty} <\infty.
+$$
+Insbesondere auf $\R^d$: Stetige Funktionen $f: \R^d \longrightarrow \R$ mit \emph{kompaktem Träger} $\ol{\{f\neq 0\}}$ sind integrierbar. Denn die Kompaktheit des Trägers impliziert die Beschränktheit von $f$, also $\lambda^d(\ol{\{ f\neq 0\}})< \infty$ und somit die Integrierbarkeit.
+Dies gilt allgemeiner für Borel-Maße $\mu$ (d.h. $\forall x \in X \  \exists$ offene Umgebung $U$ mit $\mu(U)<\infty$) auf topologischen Räumen $X$.
+\end{example}
+\marginpar{\tiny{9.12.2019}}
 %\input{A-integrale-stetiger-funktionen.tex}
 \end{document}
