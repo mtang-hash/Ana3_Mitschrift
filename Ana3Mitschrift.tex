@@ -1048,8 +1048,8 @@ Gegeben eine $\sigma$-Algebra $\BB$ auf $Y$, ist $f^*\BB$ die kleinste $\sigma$-
 
 \begin{definition}
 Eine Abbildung $f:(X,\AA)\longrightarrow (Y,\BB)$ ist genau dann messbar, wenn $f^*\BB\subset\AA$. Ist speziell $X\subset Y$ eine Teilmenge und $\iota:X\longrightarrow Y$ die Inklusion, so ist $\iota^{-1}(M)=X\cap M$ für $M\subset Y$. Für eine $\sigma$-Algebra $\BB$ auf $Y$ nennt man
-$$\BB|_X := \iota^*\BB=\{M\cap X \mid M \in \BB\} \subset \PP(X)$$
-die \textbf{Spur-$\sigma$-Algebra} von $\BB$ auf $X$. Die Inklusion ist dann $\BB|_X$-$\BB$-messbar.
+$$\boxed{\BB|_X := \iota^*\BB=\{M\cap X \mid M \in \BB\} \subset \PP(X)}$$
+die \textbf{Spur-$\boldsymbol\sigma$-Algebra} von $\BB$ auf $X$. Die Inklusion ist dann $\BB|_X$-$\BB$-messbar.
 \end{definition}
 Man kann Erzeugendensysteme von $\sigma$-Algebren zurückziehen:
 \begin{lemma}
@@ -1064,7 +1064,7 @@ $
 $ eine Algebra, die $\FF$ enthält und in $\sigma(\FF)$ enthalten ist, somit Gleichheit. D.h. $A\in \sigma(\FF)\implies f^{-1}(A) \in \sigma(f^*\FF)$, somit $f^*(\sigma(\FF))\subset \sigma(f^*\FF).$ %Dies zeigt: $f^{-1}(A)\in \sigma(f^*\FF)\implies A \in \sigma(\FF)$.
 \end{proof}
 \marginpar{\tiny{7.11.2019}}
-Das Lemma lässt sich reformulieren: Ist $f: X \to Y$ eine Abbildung, $\BB \subset \PP(Y)$ eine $\sigma$-Algebra und $\EE \subset \BB$ Erzeugendensystem, so wird $f^*\BB$ von $f^* \EE$ erzeugt. Wir können also Erzeuger zurückziehen.
+Das Lemma lässt sich reformulieren: Ist $f: X \to Y$ eine Abbildung, $\BB \subset \PP(Y)$ eine $\sigma$-Algebra und $\EE \subset \BB$ Erzeugendensystem, so wird $f^*\BB$ von $f^* \EE$ erzeugt. Wir können also Erzeuger zurückziehen.\footnote{Folgerung: $f:(X,\AA)\to (Y,\BB)$ ist genau dann messbar, wenn  $f^*{\EE}\subset \AA$ mit $\sigma(\EE)=\BB$.}
 \end{lemma}
 \begin{equation*}
 	\begin{array}{ccc}
@@ -1659,9 +1659,9 @@ Folgerung für das Lebesgue-Maß: für $M\in \LL^d$ gilt
 $$
 \boxed{\sup\{\lambda^d(K) \mid K \subset M, K \text{ kompakt}\} = \lambda^d(M)=\inf \{\lambda^d(O)\mid O \supset M, O \text{ offen}\}}.
 $$
-\marginpar{\tiny{21.11.2019}}
 
 \subsubsection{Vervollständigung von Maßen}
+\marginpar{\tiny{21.11.2019}}
 Im folgenden sei $\nu$ ein Maß auf einer $\sigma$-Algebra $\AA \subset \PP(X)$.
 
 \begin{definition}
@@ -2089,7 +2089,7 @@ Sei $(X,\AA)$ ein Messraum. Eine Funktion $f:X\longrightarrow\ol\R$ heißt (Bore
 \end{definition}
 Die Messbarkeit von $f$ ist äquivalent dazu, dass die Sub bzw. Supniveaumengen $\{f\leq a\}= \{x\in X \mid f(x)\leq a \}$ bzw. $\{f<a\}$ bzw. $\{f>a\}$ bzw. $\{f\geq a\}$ für alle $a\in \R$ zu $\AA$ gehören.
 \begin{example}
-Sei $X$ ein topologischer Raum versehen mit der Topologie $\TT$. Dann induziert $T$ die Borelsche $\sigma$-Algebra $\BB(X)=\sigma(\TT)$ und $f:X \longrightarrow \ol\R$ genau dann messbar, wenn $f$ als eine Abbildung Borel-messbar ist. Insbesondere sind stetige nummerische Funktionen messbar.
+Sei $X$ ein topologischer Raum versehen mit der Topologie $\TT$. Dann induziert $\TT$ die Borelsche $\sigma$-Algebra $\BB(X)=\sigma(\TT)$ und $f:X \longrightarrow \ol\R$ ist genau dann messbar, wenn $f$ als eine Abbildung Borel-messbar ist. Insbesondere sind stetige nummerische Funktionen messbar.
 \end{example}
 $\MM_{\ol\R}:=\MM_{\ol\R}(X,\AA)$ ist definiert als \textbf{der Raum aller messbaren Funktionen} $X \to \ol\R$ und $\MM_{\geq 0} \subset \MM_{\ol\R}$ der Unterraum der nichtnegativwertigen Funktionen und $\MM_{\R}$ der Unterraum der endlichwertigen Funktionen. Operationen (Rechenoperationen, Bildung of Maximum, Supremum, etc.) auf Funktionen führen wir punktweise aus.\footnote{Für jede Folge $(a_n)_{n\in\N}$ in $\ol\R$ sind der \emph{Limes superior} und der \emph{Limes inferior} gegeben durch
 \begin{equation*}
@@ -2116,7 +2116,7 @@ und die Messbarkeit von $\inf\limits_{n\in\N} f_n$ folgt aus $\inf\limits_{n\in\
 $$
 \limsup_{n\to\infty} f_n=\inf_{n \in \N} \Big(\sup_{k \geq n} f_k\Big),
 $$
-folgt, dass $\limsup\limits_{n\to\infty} f_n$ messbar ist, analog auch $\liminf\limits_{n\to\infty} f_n$.
+folgt, dass $\limsup\limits_{n\to\infty} f_n$ messbar ist, analog auch $\liminf\limits_{n\to\infty} f_n$.\footnote{Insbesondere ist $\lim\limits_{n\to\infty}f_n\in \MM_{\ol\R}$, falls dieser Limes (in $\ol\R$) existiert.}
 \end{proof}
 \end{lemma}
 Insbesondere folgt:
