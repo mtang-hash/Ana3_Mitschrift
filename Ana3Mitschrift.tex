@@ -17,7 +17,7 @@ Maßtheorie ist die Theorie des Volumens. Motivierende Beispiele sind:
 \end{enumerate}
 Wir konzentrieren uns im Rest des Abschnitts auf $\R^d$. Wir wollen einen leistungsfähigen Volumenbegriff haben, sodass die Volumina von möglich vielen Teilmengen flexibel gemessen werden können. Unser erster ``naiver'' Ansatz wäre, dass wir Volumenmessung für \emph{alle} Teilmengen verlangen, also eine Funktion
 \begin{equation*}
- \vol: \mathcal{P}(\R^d) \longrightarrow [0.\infty]
+ \vol: \mathcal{P}(\R^d) \longrightarrow [0,\infty]
 \end{equation*}
 Unsere grundlegende Forderung ist die Additivität von Volumina bei Zerlegungen, also
 \begin{enumerate}
@@ -1505,7 +1505,7 @@ Ein $\sigma$-endliches Prämaß auf einem Ring $\RR \subset \PP(X)$ besitzt eine
 
 \begin{definition}
 \begin{mdframed}
-Da das Lebesgue-Prämaß $\lambda^d_{\FF^d}$ auf $\FF^d\subset \PP(\R^d)$ $\sigma$-endlich ist, können wir es eindeutig fortsetzen zu einem Maß $\beta^d$ auf der Borelschen $\sigma$-Algebra $\BB^d = \sigma(\FF^d)$. Wir nennen $\beta^d$ \textbf{das Lebesgue-Borel-Maß}. Wir dehnen dieses Maß weiter aus auf alle (bzgl. des äußeren Maßes) messbaren Teilmengen $(\beta^d)^* \overset{\text{\Ueb}}= (\lambda^d_{\FF^d})^*$. Wir definieren $\BB^d \subset \boldsymbol{\LL^d} \subset \PP(\R^d)$ als \textbf{die $\boldsymbol\sigma$-Algebra der $\boldsymbol{(\beta^d)^*}$-messbaren Teilmengen.} Das Maß $(\beta^d)^*|_{\LL^d} =: \boldsymbol{\lambda^d}$ heißt \textbf{$\boldsymbol{d}$-dimensionale Lebesgue-Maß}.
+Da das Lebesgue-Prämaß $\lambda^d_{\FF^d}$ auf $\FF^d\subset \PP(\R^d)$ $\sigma$-endlich ist, können wir es eindeutig fortsetzen zu einem Maß $\beta^d$ auf der Borelschen $\sigma$-Algebra $\BB^d = \sigma(\FF^d)$. Wir nennen $\beta^d$ \textbf{das Lebesgue-Borel-Maß}. Wir dehnen dieses Maß weiter aus auf alle (bzgl. des äußeren Maßes) messbaren Teilmengen $(\beta^d)^* \overset{\text{\Ueb}}= (\lambda^d_{\FF^d})^*$. Wir definieren $\BB^d \subset \pmb{\LL^d} \subset \PP(\R^d)$ als \textbf{die $\boldsymbol\sigma$-Algebra der $\boldsymbol{(\beta^d)^*}$-messbaren Teilmengen.} Das Maß $(\beta^d)^*|_{\LL^d} =: \boldsymbol{\lambda^{\pmb{d}}}$ heißt \textbf{$\boldsymbol{d}$-dimensionale Lebesgue-Maß}.
 \end{mdframed}
 \end{definition}
 
@@ -2080,7 +2080,7 @@ Jede Teilmenge in $\LL^d$ ist darstellbar als die Vereinigung einer Borel-Menge 
 \end{example}
 
 \section{Integrationstheorie}
-\subsection{Messbare nummerische Funktionen}
+\subsection{Messbare numerische Funktionen}
 Eine \textbf{numerische Funktion} ist definiert als eine $\ol\R$-wertige Funktion. $\ol\R$ trägt die natürliche messbare Struktur, also die $\sigma$-Algebra $\ol\BB$, die Erweiterung von $\BB$, die von jeder der Familien: $[-\infty,a]$ bzw. $[-\infty,a)$ bzw. $(a,\infty]$ bzw. $[a,\infty]$ jeweils für $a\in \R$ erzeugt wird.
 \begin{definition}
 \begin{mdframed}
@@ -2089,7 +2089,7 @@ Sei $(X,\AA)$ ein Messraum. Eine Funktion $f:X\longrightarrow\ol\R$ heißt (Bore
 \end{definition}
 Die Messbarkeit von $f$ ist äquivalent dazu, dass die Sub bzw. Supniveaumengen $\{f\leq a\}= \{x\in X \mid f(x)\leq a \}$ bzw. $\{f<a\}$ bzw. $\{f>a\}$ bzw. $\{f\geq a\}$ für alle $a\in \R$ zu $\AA$ gehören.
 \begin{example}
-Sei $X$ ein topologischer Raum versehen mit der Topologie $\TT$. Dann induziert $\TT$ die Borelsche $\sigma$-Algebra $\BB(X)=\sigma(\TT)$ und $f:X \longrightarrow \ol\R$ ist genau dann messbar, wenn $f$ als eine Abbildung Borel-messbar ist. Insbesondere sind stetige nummerische Funktionen messbar.
+Sei $X$ ein topologischer Raum versehen mit der Topologie $\TT$. Dann induziert $\TT$ die Borelsche $\sigma$-Algebra $\BB(X)=\sigma(\TT)$ und $f:X \longrightarrow \ol\R$ ist genau dann messbar, wenn $f$ als eine Abbildung Borel-messbar ist. Insbesondere sind stetige numerische Funktionen messbar.
 \end{example}
 $\MM_{\ol\R}:=\MM_{\ol\R}(X,\AA)$ ist definiert als \textbf{der Raum aller messbaren Funktionen} $X \to \ol\R$ und $\MM_{\geq 0} \subset \MM_{\ol\R}$ der Unterraum der nichtnegativwertigen Funktionen und $\MM_{\R}$ der Unterraum der endlichwertigen Funktionen. Operationen (Rechenoperationen, Bildung of Maximum, Supremum, etc.) auf Funktionen führen wir punktweise aus.\footnote{Für jede Folge $(a_n)_{n\in\N}$ in $\ol\R$ sind der \emph{Limes superior} und der \emph{Limes inferior} gegeben durch
 \begin{equation*}
@@ -2179,7 +2179,7 @@ ist $\mu \otimes \beta^1$ die eindeutige Fortsetzung von dem Prämaß $\mu \boxt
 \subsubsection{Integral nichtnegativer Funktionen}
 Es sei $(X,\AA,\mu)$ ein Maßraum und $f: X \longrightarrow [0,\infty]$ messbar. Dann ist die Menge $\{(x,y)\in X \times \R \mid 0<y<f(x)\}$ ebenfalls messbar, d.h. $\in \AA \times \BB^1$. Wir definieren dann das \textbf{$\boldsymbol{\mu}$-Integral} von $f$ als 
 \begin{equation}
-\boxed{\int_X f \D \mu := \mu \otimes \beta (\{(x,y) \in X \times \R \mid 0<y<f(x)\})}.
+\boxed{\int_X f \D \mu := (\mu \otimes \beta) (\{(x,y) \in X \times \R \mid 0<y<f(x)\})}.
 \end{equation}
 Wir können das $\mu$-Integral als das Funktional auffassen
 \begin{equation*}
@@ -2210,15 +2210,16 @@ Daraus folgt direkt die \emph{Additivität} und die \emph{positive Homogenität}
 \int_X (c_1\tau_1+c_2\tau_2)\D \mu = c_1 \int_X \tau_1 \D \mu +c_2 \int_X \tau_2 \D \mu.
 \end{split}
 \end{equation*}
-Die \emph{Monotonie} des Integrals folgt ebenfalls direkt aus der Definition, also aus der Monotonie von Maßen hier für $\mu\otimes \beta^1$:
+Die \textbf{Monotonie} des Integrals auf nichtnegativen messbaren Funktionen folgt ebenfalls direkt aus der Definition, also aus der Monotonie von Maßen hier für $\mu\otimes \beta^1$:
 \begin{equation*}
-\begin{rcases}
+{\begin{rcases}
+\begin{array}{c}
 f,g \in \MM_{\geq 0}\\
-f\leq g
+f\leq g\end{array}
 \end{rcases} \implies
-\int_X f \D \mu \leq \int_X g \D \mu.
+\int_X f \D \mu \leq \int_X g \D \mu.}
 \end{equation*}
-Auch die grundlegende \emph{Konvergenzeigenschaften} des Integrals auf nichtnegativen messbaren Funktionen lassen sich unmittelbar aus Eigenschaften des Produktmaßes ableiten, nämlich aus seinen Stetigkeitseigenschaften als Maß. \\
+Auch die grundlegende \textbf{Konvergenzeigenschaften} des Integrals auf nichtnegativen messbaren Funktionen lassen sich unmittelbar aus Eigenschaften des Produktmaßes ableiten, nämlich aus seinen Stetigkeitseigenschaften als Maß. \\
 Betrachte hier eine Folge von Funktionen $(f_n)_{n \in \N}$ mit $f_n:X \longrightarrow [0,\infty]$. Ist $f_n$ (punktweise) schwach monoton steigend, so ist $f=\lim\limits_{n\to\infty} f_n :X \longrightarrow [0,\infty]$ überall definiert und es gilt
 $$
 \{(x,y) \mid 0<y<f_n(x)\} \nearrow \{(x,y) \mid 0<y<f(x)\}.
@@ -2227,9 +2228,9 @@ Falls $f_n$ messbar sind, d.h. $f_n \in \MM_{\geq 0}$, so folgt mit der Stetigke
 $$ \int_X f_n \D \mu \nearrow \int_X f \D u.$$
 \textit{Bemerkung.} Wegen der Monotonie von Maßen ist es klar, dass $\lim\limits_{n\to\infty} \int\limits_X f_n \D \mu \leq \int\limits_X f \D \mu.$\\ Es folgt:
 
-\begin{satz}[\textbf{Satz von der monotonen Konvergenz} (B. Levi)]
+\begin{satz}[\textbf{Satz von der monotonen Konvergenz} (\scshape{B. Levi})]
 \begin{mdframed}
-Für eine schwach monoton wachsende Folge $(f_n)_{n \in \N}$ von Funktionen $f_n \in \MM_{\geq 0}(X,\AA)$ gilt
+Für eine schwach \newline monoton wachsende Folge $(f_n)_{n \in \N}$ von Funktionen $f_n \in \MM_{\geq 0}(X,\AA)$ gilt
 $$
 \int_X (\lim_{n \to \infty} f_n) \D \mu =\lim_{n \to \infty} \int_X f_n \D \mu
 $$
@@ -2265,8 +2266,8 @@ $$\lim_{n\to \infty }\int_X \left(\inf_{k\geq n} f_k\right) \D \mu= \int_X (\lim
 
 Mithilfe der Konvergenzresultate können wir die Additivität und positive Homogenität des Integrals auf nichtnegativen messbaren Treppenfunktionen verallgemeinern auf beliebigen nichtnegativen messbaren Funktionen:
 
-\begin{lemma}
-\begin{mdframed}
+\begin{lemma} \label{homogen-nicht-neg}
+\begin{mdframed}(Additivität und positive Homogenität des Integrals auf nichtnegativen messbaren Funktionen).
 Sind $f_1,f_2\in \MM_{\geq 0}$ und $c_1,c_2\in [0,\infty]$, so gilt
 $$
 \int_X (c_1f_1+c_2f_2)\D \mu = c_1 \int_X f_1 \D \mu +c_2 \int_X f_2 \D \mu.
@@ -2281,8 +2282,8 @@ Weil $c_1 \tau_{1n}+c_2 \tau_{2n} \nearrow c_1f_1+c_2f_2$, $\tau_{1n}\nearrow f_
 \end{proof}
 \end{lemma}
 
-\subsubsection{Integral allgemeiner nummerischer Funktionen}
-Jetzt wollen wir das integral für allgemeine Funktionen definieren. Wir müssen diese aber geeignet beschränken.
+\subsubsection{Integral allgemeiner numerischer Funktionen}
+Jetzt wollen wir das Integral für allgemeine Funktionen definieren. Wir müssen diese aber geeignet beschränken.
 
 \begin{definition}
 \begin{mdframed}
@@ -2308,9 +2309,183 @@ Ist $f\in \MM_\R$ beschränkt, d.h. es existiert ein $C>0$, sodass $|f|<C$, und 
 $$
 \|f\|_1 \leq \underbrace{(\sup|f|)}_{\leq C < \infty} \cdot \underbrace{\mu(\{f\neq 0 \})}_{< \infty} <\infty.
 $$
-Insbesondere auf $\R^d$: Stetige Funktionen $f: \R^d \longrightarrow \R$ mit \emph{kompaktem Träger} $\ol{\{f\neq 0\}}$ sind integrierbar. Denn die Kompaktheit des Trägers impliziert die Beschränktheit von $f$, also $\lambda^d(\ol{\{ f\neq 0\}})< \infty$ und somit die Integrierbarkeit.
-Dies gilt allgemeiner für Borel-Maße $\mu$ (d.h. $\forall x \in X \  \exists$ offene Umgebung $U$ mit $\mu(U)<\infty$) auf topologischen Räumen $X$.
+Insbesondere auf $\R^d$: Stetige Funktionen $f: \R^d \longrightarrow \R$ mit \emph{kompaktem Träger} $\ol{\{f\neq 0\}}$ sind integrierbar. Denn die Kompaktheit des Trägers (zusammen mit der \emph{Stetigkeit} von $f$) impliziert die Beschränktheit von $f$.  Zusammen mit $\lambda^d(\ol{\{ f\neq 0\}})< \infty$ liefert die Integrierbarkeit.
+Dies gilt allgemeiner für Borel-Maße $\mu$ (d.h. $\forall x \in X \  \exists$ offene Umgebung $U$ von $x$ mit $\mu(U)<\infty$) auf topologischen Räumen $X$.
 \end{example}
-\marginpar{\tiny{9.12.2019}}
+
+\begin{beobachtung}\marginpar{\tiny{9.12.2019}}
+Es ist $|\int_X f\D \mu| = | \|f^+\|_1 - \|f^-\|_1|\leq \|f^+\|_1+\|f^-\|_1=\|f\|_1$. \footnote{d.h. das $\mu$-Integral erfüllt die Dreiecksungleichung $|\int_X f\D\mu|\leq \int_X |f|\D\mu$.}
+\end{beobachtung}
+Ist $f\in \MM_{\ol\R}$ integrierbar und $c>0$, so gilt
+\begin{equation*}
+\begin{split}
+\mu (\{|f|\geq c\}) \leq & (\mu \otimes \lambda^1) \left( \left\{ \left(x, y\right)\, \bigg\vert \  0<y<\frac{|f(x)|}{c} \text{ und } |f(x)|\geq c	\right\}\right)\\
+= & \int_X \chi_{\{|f|\geq c\}}\frac{|f|}{c}\D\mu  \\
+\leq & \frac{1}{c}\cdot \|f\|_1 \longrightarrow 0 \text{ für } c\to \infty
+\end{split}
+\end{equation*}
+Dies zeigt insbesondere, dass
+$$
+\underbrace{\mu( \{   |f|=\infty \} )}_{\leq \mu( \{ |f|\geq c \} ) \ \forall c\geq 0} = \mu(\{  f=\pm \infty  \}) =0.
+$$
+D.h. $\mu$-integrierbare Funktionen nehmen $\boldsymbol\mu$\textbf{-fast überall} (d.h. außerhalb $\mu$-Nullmengen) endliche Werte (d.h. $\in\R$) an. Deshalb verlieren wir keine Information bei Betrachtung des Integrals auf endlichwertigen Funktionen. Wir definieren
+$$\boldsymbol{\pmb\LL^1 (X,\pmb\AA,\mu)} \subset \MM_\R (X,\AA)$$
+als der Raum der \textbf{$\boldsymbol\mu$-integrierbaren $\pmb\R$-wertigen} Funktionen auf $X$. Dies ist die Vorform der $L^1$.
+
+\begin{lemma}
+\begin{mdframed}
+Für das Funktional $\|\cdot\|_1$
+\begin{equation*}
+\begin{array}{ccc}
+\MM_{\ol\R}(X,\AA) & \overset{\|\cdot\|_1}\longrightarrow & [0,\infty]\\
+f & \longmapsto &  \int_X|f|\D\mu
+\end{array}
+\end{equation*}
+gilt ($f,g \in \MM_{\ol\R}$ und $c\in\R$):
+\begin{enumerate}
+\item \emph{Positive Homogenität:} $\|cf\|_1 = c\cdot \|f\|_1$. (Verwende Konvention $0\cdot \infty=0$).
+\item \emph{Dreiecksungleichung:} $\|f+g\|_1\leq \|f\|_1 +\|g\|_1$. Hier bezeichnet $f+g$ eine Funktion die $\mu$-fast überall mit der $\mu$-fast überall definierten Summe $f+g$ übereinstimmt.
+\end{enumerate}
+\end{mdframed}
+\begin{proof}
+\begin{enumerate}
+\item folgt direkt aus der \hyperref[homogen-nicht-neg]{positiven Homogenität nichtnegativer Funktionen}.
+\item ergibt sich durch Integrieren der $\mu$-fast überall gültigen punktweisen Dreiecksungleichung $|f+g|\leq |f|+|g|$. D.h. es existiert eine $\mu$-Nullmenge $N\subset X$ sodass 
+$$|(f+g)(x)|\leq |f(x)|+|g(x)| \ \forall x \in X\setminus N$$
+Integration liefert
+\begin{equation}\label{II.4}
+\int_X |f+g|\cdot \chi_{X\setminus N} \D \mu \leq \int_X |f|\cdot \chi_{X\setminus N} \D \mu + \int_X |g|\cdot \chi_{X\setminus N}\D\mu.
+\end{equation}
+Die Behauptung folgt unter Verwendung der Additivität und Monotonie des $\mu$-Integrals auf nichtnegativen Funktionen, weil z.B.
+$$
+\int_X\underbrace{|f|}_{|f|\cdot\chi_{X\setminus N} +|f|\cdot \chi_N}\D\mu = \int_X |f|\chi_{X\setminus N}\D\mu+\underbrace{\int_X|f|\chi_N\D\mu}_{\leq (\mu\otimes \lambda^1)(N\times \R)=0}.
+$$
+Ersetze in \eqref{II.4} $|f|_{X\setminus N}$ durch $|f|$ und $|g|_{X\setminus N}$ durch $|g|$,  somit die Behauptung.
+\end{enumerate}
+\end{proof}
+\end{lemma}
+
+\begin{korollar}
+\begin{mdframed}
+\begin{enumerate}
+\item $\LL^1\subset \MM_\R$ ist ein \emph{Untervektorraum} (versehen mit der punktweisen Addition und Skalarmultiplikation) also selbst ein $\R$-Vektorraum.
+\item Das Funktional $\| \cdot \|_1:\LL^1\longrightarrow [0,\infty)$ ist eine Halbnorm.\tablefootnote{Eine Halbnorm erfüllt die Nichtnegativität, positive Homogenität und Dreiecksungleichung. Ein typisches Beispiel ist $\R^2\mapsto[0,\infty), (x_1,x_2)\mapsto |x_1|$.}
+\end{enumerate}
+\end{mdframed}
+\end{korollar}
+
+\begin{remark}
+\begin{equation*}
+\underset{\te{erlaubt Länge 0 für }v\neq 0, v\in V}{\te{Halbnorm } \|\cdot\| \te{ auf }\R\te{-VR } V}\leadsto \underset{\substack{d(v,v')=\|v-v'\|\\ \te{erlaubt Abstand 0 für versch. Punkte}}}{\te{Pseudometrik}} \leadsto \underset{\te{offene Mengen sind ``Schläuche''}}{\te{Topologie}}
+\end{equation*}\vspace{0.3pc}
+\end{remark}
+\paragraph{Integration über messbare Teilmengen.}
+Betrachte nun das durch $\mu$-Integral gegebene Funktional
+\begin{equation*}
+\begin{array}{ccc}
+\LL^1(X,\AA,\mu) & \longrightarrow & \R \\
+f & \longmapsto & \int_X f \D \mu
+\end{array}.
+\end{equation*}
+und den Maßraum $(X,\AA,\mu)$. Für $A\in \AA$ wird das eingeschränkte Maß $\mu|_A:=\mu|_{\AA|_A}$ auf der Spur-$\sigma$-Algebra $\AA|_A$ induziert, ebenso der Unterraum $(A,\AA|_A,\mu|_A)$, also
+$$(X,\AA,\mu) \leadsto \mu|_A:=\mu_{\AA|_A}\leadsto (A,\AA|_A,\mu_A).$$
+Das Integral kann auf Teilmengen \emph{lokalisiert} werden: Ist $f\in \MM_{\ol\R}(X,\AA)$ und $A\in\AA$, so ist $\chi_A f$ genau dann $\mu$-integrierbar, wenn $f|A$ $\mu|_A$-integrierbar ist. In diesem Fall definiere das $\mu$-Integral von $f$ \emph{über} $A$ als
+$$
+\boxed{
+\int_A f \D \mu := \int_X \chi_Af\D\mu = \int_Af|_A \D (\mu|_A)
+}.$$
+\begin{lemma} \label{integral-zerlegung}
+\begin{mdframed}
+Sind $A_1,...,A_n$ paarweise disjunkt, so ist $f\in \MM_{\ol\R}$ genau dann über $A_1\cup ... \cup A_n$ $\mu$-integrierbar, wenn sie es über jedes $A_i$ ist, und es gilt dann
+$$
+\int_{A_1\cup...\cup A_n} f \D\mu = \int_{A_1}f\D \mu + ... + \int_{A_n} f \D \mu
+$$
+\end{mdframed}
+\begin{proof}
+Wegen der paarweisen Disjunktheit ist $\chi_{A_1\cup...\cup A_n}=\chi_{A_1}+...+\chi_{A_n}$, somit auch $\chi_{A_1\cup...\cup A_n}f^\pm=\chi_{A_1}f^\pm+...+\chi_{A_n}f^\pm$. Die Additivität des Integrals auf $\MM_{\geq 0}$ liefert
+$$
+\int_{A_1\cup...\cup A_n} f^\pm \D\mu=\int_{A_1}f^\pm \D\mu + ... +\int_{A_n}f^\pm \D \mu.
+$$
+\end{proof}
+\end{lemma}
+Wir dehnen jetzt die Eigenschaften des Integrals von nichtnegativen auf allgemeinen Funktionen aus:
+
+\begin{satz}
+\begin{mdframed}
+Das $\mu$-Integral
+\begin{equation*}
+\begin{array}{ccc}
+\LL^1(X,\AA,\mu) & \longrightarrow & \R \\
+f & \longmapsto & \int_X f \D \mu
+\end{array}
+\end{equation*}
+ist
+\begin{enumerate}
+\item \emph{$\R$-linear}, d.h. für $f_1,f_2 \in \LL^1$ und $c_1,c_2\in\R$ gilt
+$$\int_X (c_1f_1+c_2f_2)\D\mu = c_1\cdot \int_X f_1\D\mu+c_2\cdot \int_X f_2 \D\mu,$$
+\item \emph{monoton}, d.h. für $f,g\in\LL^1$ gilt
+$$f\leq g \implies \int_X f \D\mu \leq \int_X g\D\mu,$$
+\item \emph{1-Lipschitz} bzgl. der Halbnorm $\|\cdot \|_1$, d.h. für $f,g\in\LL^1$ gilt:
+$$\left| \int_X f\D \mu-\int_X g\D \mu \right|\leq \|f-g\|_1.$$
+\end{enumerate}
+\end{mdframed}
+\begin{proof}
+\begin{enumerate}
+\item Für $f\in \LL^1$ und $c>0$ gilt $(cf)^\pm=c\cdot f^\pm$. Es folgt $\|(cf)^\pm\|_1=c\cdot \|f^\pm\|_1$ und somit
+$$\int_X cf\D\mu = \|cf^+\|_1-\|cf^-\|_1 = c\int_Xf\D\mu.$$
+Dies zeigt, dass das $\mu$-Integral homogen ist. Wir verifizieren nun die Additivität ($c_1=c_2=1$). Dazu nutzen wir \hyperref[integral-zerlegung]{das letzte Lemma} aus: Ist $X=A_1\cup...\cup A_n$ eine endliche messbare Zerlegung, so gilt
+\begin{equation}\label{II.5}
+\int_X(f_1+f_2)\D\mu =\int_X f_1\D\mu+\int_X f_2\D\mu
+\end{equation}
+genau dann, wenn $\int_{A_i}(f_1+f_2)\D\mu =\int_{A_i} f_1\D\mu+\int_{A_i} f_2\D\mu$ für alle $i=1,...,n$ gilt. Da $X$ sich zerlegen lässt als $X=\{f_1\geq 0 \te{ und } f_2\geq 0\} \sqcup \{f_1\geq 0 \te{ und } f_2 < 0\} \sqcup \{f_1< 0 \te{ und } f_2\geq 0\} \sqcup \{f_1 < 0 \te{ und } f_2 < 0\}$, dürfen wir annehmen, dass $f_1$ und $f_2$ Vorzeichen haben. Die Additivität \eqref{II.5} ist klar, falls die Vorzeichen gleich sind (d.h. $f_1,f_2\geq 0$ oder $f_1,f_2 <0$). Es bleibt der Fall verschiedenen Vorzeichens zu zeigen. Ohne Einschränkung nehmen wir an, dass $f_1 \geq 0 \geq f_2$. Durch weiteres Aufspalten von Integralen dürfen wir weiter annehmen, dass auch $f_1+f_2$ Vorzeichen hat. O.B.d.A sei $f_1+f_2\geq 0$. Jetzt folgt die Behauptung ebenfalls aus der Additivität des Integrals auf $\MM_{\geq 0}$. Weil $f_1+f_2\leq f_1$, ist $f_1+f_2$ integrierbar und es folgt
+\begin{equation*}
+\begin{split}
+\int_X f_1 \D \mu = \int_X ((f_1+f_2)+(-f_2))\D\mu = \int_X (f_1+f_2)\D\mu+ \underbrace{\int_X(-f_2)\D\mu}_{-\int_X f_2\D\mu}.
+\end{split}
+\end{equation*}
+Also \eqref{II.5} und somit (i).
+\item folgt aus der Additivität ($g=\underbrace{f}_{\geq 0}+\underbrace{(g-f)}_{\geq 0}$).
+\item $1$-Lipschitz Eigenschaft folgt aus der Linearität und Monotonie, also
+$$
+\pm\left(
+\int_Xf\D\mu-\int_Xg\D\mu
+\right) \overset{\te{Linearität}}= \int_X\underbrace{(\pm(f-g))}_{\leq |f-g|}\D\mu\overset{\te{Monotonie}}\leq \|f-g\|_1.
+$$
+\end{enumerate}
+\end{proof}
+\end{satz}
+\paragraph{Fast überall bestehende Eigenschaften.} Oft in der Maßtheorie ist es so, dass Aussagen gültig bleibt bei Änderungen von Funktionen auf Nullmengen. Deswegen ist folgende Sprechweise natürlich und sinnvoll: Eine Eigenschaft gilt für $\mu$-fast alle Punkte von $X$ bzw. $\boldsymbol\mu$\textbf{-fast überall} auf $X$, falls es eine $\mu$-Nullmenge $N\subset X$ existiert, sodass die Eigenschaft für alle $x\in X\setminus N$ gilt. Die Relation ``stimmen $\mu$-fast überall überein'' $=_\mu$ ist gegeben durch
+
+\begin{equation*}
+\begin{split}
+f =_\mu g : &\iff f(x)=g(x) \  \te{für }\mu \te{-fast alle} x \in X 
+\\ &\iff \{f\neq g\} \te{ enthalten in einer } \mu\te{-Nullmengen}
+\end{split}
+\end{equation*}
+Die Menge $\{f\neq g\}$ ist messbar, falls $f,g \in \MM_{\ol\R}$. Die Relation $=_\mu$ ist eine Äquivalenzrelation. Wir bezeichnen $\MM_{\ol\R}/_{=_\mu}$ \textbf{den Raum der Äquivalenzklassen $\mu$-fast überall übereinstimmender messbarer numerischer Funktionen}.
+
+\begin{lemma}
+\begin{mdframed}
+Seien $f,g \in \MM_{\ol\R}$ mit $f=_\mu g$. Dann gilt
+\begin{enumerate}
+\item $\|f\|_1=\|g\|_1$. Insbesondere ist $f$ genau dann $\mu$-integrierbar, wenn $g$ $-\mu$-integrierbar.
+\item In diesem Fall ist $\int_X f \D\mu =\int_X g \D \mu$.
+\end{enumerate}
+\end{mdframed}
+\begin{proof}
+\begin{enumerate}
+\item Das Integral messbarer Funktionen über $\mu$-Nullmengen $N\subset X$ verschwindet, denn $\mu(N)=0$ impliziert $(\mu\otimes \lambda^1)(N\times \R)=0$. Somit ist ${\int_Nf^\pm \D\mu}\leq (\mu \otimes \lambda^1)(N\times \R)=0$ und folglich $\int_N f\D\mu=0$. Aufspalten von Integralen liefert
+$$
+\|f\|_1=\|f\chi_{\{f=g\}}\|_1+\underbrace{\|f\chi_{\{f\neq g\}}\|_1}_{=0}= \|g\chi_{\{f=g\}}\|_1+\underbrace{\|g\chi_{\{f\neq g\}}\|_1}_{=0}=\|g\|_1.
+$$
+\item Da $f^\pm=_\mu g^\pm$, gilt im integrierbaren Fall
+$$
+\int_Xf\D\mu =\|f^+\|_1-\|f^-\|_1=\|g^+\|_1-\|g^-\|_1=\int_X g\D \mu.
+$$
+\end{enumerate}
+\end{proof}
+\end{lemma}
+$\leadsto$ Es ist deshalb natürlich, das $\mu$-Integral als Funktional auf Äquivalenzklassen messbarer Funktionen zu betrachten. Dort ist es allerdings nur partiell definiert.
+\marginpar{\tiny{12.12.2019}}
 %\input{A-integrale-stetiger-funktionen.tex}
 \end{document}
