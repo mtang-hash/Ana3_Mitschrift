@@ -2128,28 +2128,29 @@ Ist $f_1,...,f_n \in \MM_{\ol\R}$, so ist $\max(f_1,...,f_n),\min(f_1,...,f_n)\i
 \begin{korollar}
 Falls $f \in \MM_{\ol\R}$, so liegen auch der Positivanteil $f^+=\max(f,0)$, der Negativanteil  $f^-=\max(-f,0)$ und der Absolutbetrag $|f|+f^++f^-=\max (f,-f)$ wieder in $\MM_{\ol\R}$.
 \end{korollar}
-%\rule{\textwidth}{0.4pt}
-Sei $M\subset X$. Eine Funktion $f_M:M\longrightarrow\ol\R$ wird \textbf{durch Null fortsetzt} zu $\ol{f}_M:X\to\ol\R$ durch
+\rule{\textwidth}{0.4pt}
+Sei $M\subset X$. Eine Funktion $f_M:M\longrightarrow\ol\R$ wird \emph{durch Null fortsetzt} zu $\ol{f}_M:X\to\ol\R$ durch
 $$
 \ol{f}_M(x)=\begin{cases}
 f_M(x), &x\in M\\
 0, &\te{sonst}
 \end{cases}.
 $$
-Und eine Funktion $f:X\longrightarrow \R$ wird außerhalb der Teilmenge $M$ \textbf{abgeschnitten}, indem wir übergehen zu $\chi_M f:X \longrightarrow\ol{\R}$
+Und eine Funktion $f:X\longrightarrow \R$ wird außerhalb der Teilmenge $M$ \emph{abgeschnitten}, indem wir übergehen zu $\chi_M f:X \longrightarrow\ol{\R}$
 $$
 (\chi_M f)(x)=\begin{cases}
 f(x), & x\in M\\
 0, &\te{sonst}
 \end{cases},
 $$
-d.h. $\chi_M f$ setzt $f|_M$ durch Null fort.\\\\
+d.h. $\chi_M f$ setzt $f|_M$ durch Null fort.\vspace{0.2pc}\\
 %\rule{\textwidth}{0.4pt}\\
 Sei $f:X\longrightarrow \ol\R$ mit $X\supset A\in \AA$. Dann gilt:
 $$
 \chi_Af \in \MM_{\ol\R}(X,\AA) \iff f|_A \in \MM_{\ol\R}(A,\AA|_A)
 $$
-Dies tritt ein, wenn $f\in \MM_{\ol\R}(X,\AA)$.\\\\
+Dies tritt ein, wenn $f\in \MM_{\ol\R}(X,\AA)$.\\
+\rule{\textwidth}{0.4pt}
 Bei \emph{Rechenoperationen} auf numerischen Funktionen sind die resultierenden Funktionen i.A. nicht überall auf dem gemeinsamen Definitionsbereich definiert. Betrachte $X\supset A_i \overset{f_i}\longrightarrow \ol\R$, $i=1,...,n$. Die \emph{Summe} $f_1+...+f_n$ ist in allen Punkten definiert, in denen alle $f_i$ definiert sind und nicht gleichzeitig $\infty$ und $-\infty$ als Werte auftreten, also auf
 \begin{equation*}
 \begin{split}
@@ -2301,7 +2302,7 @@ Ist $f$ integrierbar, so ist $f^\pm$ auch integrierbar wegen $f=f^+-f^-$ und $|f
 Die Definition ist konsistent mit bisheriger Definition des Integrals auf $\MM_{\geq 0}$.
 
 \begin{remark}
-\eqref{II.3} bleibt sinnvoll, solange $f^+$ oder $f^-$ integrierbar ist. Solche Funktionen nennt man \emph{quasi-integrierbar}, z.B. alle Funktionen in $\MM_{\geq 0}$ sind quasi-integrierbar.
+\eqref{II.3} bleibt sinnvoll, solange $f^+$ oder $f^-$ integrierbar ist. Solche Funktionen nennt man \emph{quasi-integrierbar}, z.B. sind alle Funktionen in $\MM_{\geq 0}$ quasi-integrierbar.
 \end{remark}
 
 \begin{example}
@@ -2321,7 +2322,7 @@ Ist $f\in \MM_{\ol\R}$ integrierbar und $c>0$, so gilt
 \begin{split}
 \mu (\{|f|\geq c\}) \leq & (\mu \otimes \lambda^1) \left( \left\{ \left(x, y\right)\, \bigg\vert \  0<y<\frac{|f(x)|}{c} \text{ und } |f(x)|\geq c	\right\}\right)\\
 = & \int_X \chi_{\{|f|\geq c\}}\frac{|f|}{c}\D\mu  \\
-\leq & \frac{1}{c}\cdot \|f\|_1 \longrightarrow 0 \text{ für } c\to \infty
+\leq & \frac{1}{c}\cdot \underbrace{\|f\|_1}_{<\infty} \longrightarrow 0 \text{ für } c\to \infty
 \end{split}
 \end{equation*}
 Dies zeigt insbesondere, dass
@@ -2330,7 +2331,7 @@ $$
 $$
 D.h. $\mu$-integrierbare Funktionen nehmen $\boldsymbol\mu$\textbf{-fast überall} (d.h. außerhalb $\mu$-Nullmengen) endliche Werte (d.h. $\in\R$) an. Deshalb verlieren wir keine Information bei Betrachtung des Integrals auf endlichwertigen Funktionen. Wir definieren
 $$\boldsymbol{\pmb\LL^1 (X,\pmb\AA,\mu)} \subset \MM_\R (X,\AA)$$
-als der Raum der \textbf{$\boldsymbol\mu$-integrierbaren $\pmb\R$-wertigen} Funktionen auf $X$. Dies ist die Vorform der $L^1$.
+als den Raum der \textbf{$\boldsymbol\mu$-integrierbaren $\pmb\R$-wertigen} Funktionen auf $X$. Dies ist die Vorform der $L^1$.
 
 \begin{lemma}
 \begin{mdframed}
@@ -2468,7 +2469,7 @@ Die Menge $\{f\neq g\}$ ist messbar, falls $f,g \in \MM_{\ol\R}$. Die Relation $
 \begin{mdframed}
 Seien $f,g \in \MM_{\ol\R}$ mit $f=_\mu g$. Dann gilt
 \begin{enumerate}
-\item $\|f\|_1=\|g\|_1$. Insbesondere ist $f$ genau dann $\mu$-integrierbar, wenn $g$ $-\mu$-integrierbar.
+\item $\|f\|_1=\|g\|_1$. Insbesondere ist $f$ genau dann $\mu$-integrierbar, wenn $g$ $\mu$-integrierbar.
 \item In diesem Fall ist $\int_X f \D\mu =\int_X g \D \mu$.
 \end{enumerate}
 \end{mdframed}
