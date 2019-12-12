@@ -2177,7 +2177,7 @@ f \longmapsto \int_X f \D \mu = \int_X f(x)\D \mu(x) &&\mu \otimes \beta^1 \te{ 
 Das Produktmaß $\mu \otimes \beta^1$ ist die Einschränkung des äußeren Maßes $(\mu \otimes \beta^1)^*$ auf $\AA \otimes \BB^1$. Ist $\mu$ $\sigma$-endlich, so 
 ist $\mu \otimes \beta^1$ die eindeutige Fortsetzung von dem Prämaß $\mu \boxtimes \beta^1$ auf dem Ring $\AA \boxtimes \BB^1$.
 
-\subsubsection{Integral nichtnegativer Funktionen}
+\subsubsection{Das Integral nichtnegativer Funktionen}
 Es sei $(X,\AA,\mu)$ ein Maßraum und $f: X \longrightarrow [0,\infty]$ messbar. Dann ist die Menge $\{(x,y)\in X \times \R \mid 0<y<f(x)\}$ ebenfalls messbar, d.h. $\in \AA \times \BB^1$. Wir definieren dann das \textbf{$\boldsymbol{\mu}$-Integral} von $f$ als 
 \begin{equation}
 \boxed{\int_X f \D \mu := (\mu \otimes \beta) (\{(x,y) \in X \times \R \mid 0<y<f(x)\})}.
@@ -2212,14 +2212,14 @@ Daraus folgt direkt die \emph{Additivität} und die \emph{positive Homogenität}
 \end{split}
 \end{equation*}
 Die \textbf{Monotonie} des Integrals auf nichtnegativen messbaren Funktionen folgt ebenfalls direkt aus der Definition, also aus der Monotonie von Maßen hier für $\mu\otimes \beta^1$:
-\begin{equation*}
+\begin{equation}\label{monotonie-nichtneg}
 {\begin{rcases}
 \begin{array}{c}
 f,g \in \MM_{\geq 0}\\
 f\leq g\end{array}
 \end{rcases} \implies
 \int_X f \D \mu \leq \int_X g \D \mu.}
-\end{equation*}
+\end{equation}
 Auch die grundlegende \textbf{Konvergenzeigenschaften} des Integrals auf nichtnegativen messbaren Funktionen lassen sich unmittelbar aus Eigenschaften des Produktmaßes ableiten, nämlich aus seinen Stetigkeitseigenschaften als Maß. \\
 Betrachte hier eine Folge von Funktionen $(f_n)_{n \in \N}$ mit $f_n:X \longrightarrow [0,\infty]$. Ist $f_n$ (punktweise) schwach monoton steigend, so ist $f=\lim\limits_{n\to\infty} f_n :X \longrightarrow [0,\infty]$ überall definiert und es gilt
 $$
@@ -2270,9 +2270,9 @@ Mithilfe der Konvergenzresultate können wir die Additivität und positive Homog
 \begin{lemma} \label{homogen-nicht-neg}
 \begin{mdframed}(Additivität und positive Homogenität des Integrals auf nichtnegativen messbaren Funktionen).
 Sind $f_1,f_2\in \MM_{\geq 0}$ und $c_1,c_2\in [0,\infty]$, so gilt
-$$
+\begin{equation} \label{additivitaet-nichtneg}
 \int_X (c_1f_1+c_2f_2)\D \mu = c_1 \int_X f_1 \D \mu +c_2 \int_X f_2 \D \mu.
-$$
+\end{equation}
 \end{mdframed}
 \begin{proof}
 Wir können $f_i$ durch Treppenfunktionen $\tau_{in} \in \MM_{\geq 0}$ approximieren, d.h. $\tau_{in}\nearrow f_i (i=1,2)$. Wir wissen schon, dass
@@ -2283,7 +2283,7 @@ Weil $c_1 \tau_{1n}+c_2 \tau_{2n} \nearrow c_1f_1+c_2f_2$, $\tau_{1n}\nearrow f_
 \end{proof}
 \end{lemma}
 
-\subsubsection{Integral allgemeiner numerischer Funktionen}
+\subsubsection{Das Integral allgemeiner numerischer Funktionen}
 Jetzt wollen wir das Integral für allgemeine Funktionen definieren. Wir müssen diese aber geeignet beschränken.
 
 \begin{definition}
@@ -2332,54 +2332,6 @@ $$
 D.h. $\mu$-integrierbare Funktionen nehmen $\boldsymbol\mu$\textbf{-fast überall} (d.h. außerhalb $\mu$-Nullmengen) endliche Werte (d.h. $\in\R$) an. Deshalb verlieren wir keine Information bei Betrachtung des Integrals auf endlichwertigen Funktionen. Wir definieren
 $$\boldsymbol{\pmb\LL^1 (X,\pmb\AA,\mu)} \subset \MM_\R (X,\AA)$$
 als den Raum der \textbf{$\boldsymbol\mu$-integrierbaren $\pmb\R$-wertigen} Funktionen auf $X$. Dies ist die Vorform der $L^1$.
-
-\begin{lemma}
-\begin{mdframed}
-Für das Funktional $\|\cdot\|_1$
-\begin{equation*}
-\begin{array}{ccc}
-\MM_{\ol\R}(X,\AA) & \overset{\|\cdot\|_1}\longrightarrow & [0,\infty]\\
-f & \longmapsto &  \int_X|f|\D\mu
-\end{array}
-\end{equation*}
-gilt ($f,g \in \MM_{\ol\R}$ und $c\in\R$):
-\begin{enumerate}
-\item \emph{Positive Homogenität:} $\|cf\|_1 = c\cdot \|f\|_1$. (Verwende Konvention $0\cdot \infty=0$).
-\item \emph{Dreiecksungleichung:} $\|f+g\|_1\leq \|f\|_1 +\|g\|_1$. Hier bezeichnet $f+g$ eine Funktion die $\mu$-fast überall mit der $\mu$-fast überall definierten Summe $f+g$ übereinstimmt.
-\end{enumerate}
-\end{mdframed}
-\begin{proof}
-\begin{enumerate}
-\item folgt direkt aus der \hyperref[homogen-nicht-neg]{positiven Homogenität nichtnegativer Funktionen}.
-\item ergibt sich durch Integrieren der $\mu$-fast überall gültigen punktweisen Dreiecksungleichung $|f+g|\leq |f|+|g|$. D.h. es existiert eine $\mu$-Nullmenge $N\subset X$ sodass 
-$$|(f+g)(x)|\leq |f(x)|+|g(x)| \ \forall x \in X\setminus N$$
-Integration liefert
-\begin{equation}\label{II.4}
-\int_X |f+g|\cdot \chi_{X\setminus N} \D \mu \leq \int_X |f|\cdot \chi_{X\setminus N} \D \mu + \int_X |g|\cdot \chi_{X\setminus N}\D\mu.
-\end{equation}
-Die Behauptung folgt unter Verwendung der Additivität und Monotonie des $\mu$-Integrals auf nichtnegativen Funktionen, weil z.B.
-$$
-\int_X\underbrace{|f|}_{|f|\cdot\chi_{X\setminus N} +|f|\cdot \chi_N}\D\mu = \int_X |f|\chi_{X\setminus N}\D\mu+\underbrace{\int_X|f|\chi_N\D\mu}_{\leq (\mu\otimes \lambda^1)(N\times \R)=0}.
-$$
-Ersetze in \eqref{II.4} $|f|_{X\setminus N}$ durch $|f|$ und $|g|_{X\setminus N}$ durch $|g|$,  somit die Behauptung.
-\end{enumerate}
-\end{proof}
-\end{lemma}
-
-\begin{korollar}
-\begin{mdframed}
-\begin{enumerate}
-\item $\LL^1\subset \MM_\R$ ist ein \emph{Untervektorraum} (versehen mit der punktweisen Addition und Skalarmultiplikation) also selbst ein $\R$-Vektorraum.
-\item Das Funktional $\| \cdot \|_1:\LL^1\longrightarrow [0,\infty)$ ist eine Halbnorm.\tablefootnote{Eine Halbnorm erfüllt die Nichtnegativität, positive Homogenität und Dreiecksungleichung. Ein typisches Beispiel ist $\R^2\mapsto[0,\infty), (x_1,x_2)\mapsto |x_1|$.}
-\end{enumerate}
-\end{mdframed}
-\end{korollar}
-
-\begin{remark}
-\begin{equation*}
-\underset{\te{erlaubt Länge 0 für }v\neq 0, v\in V}{\te{Halbnorm } \|\cdot\| \te{ auf }\R\te{-VR } V}\leadsto \underset{\substack{d(v,v')=\|v-v'\|\\ \te{erlaubt Abstand 0 für versch. Punkte}}}{\te{Pseudometrik}} \leadsto \underset{\te{offene Mengen sind ``Schläuche''}}{\te{Topologie}}
-\end{equation*}\vspace{0.3pc}
-\end{remark}
 \paragraph{Integration über messbare Teilmengen.}
 Betrachte nun das durch $\mu$-Integral gegebene Funktional
 \begin{equation*}
@@ -2408,7 +2360,72 @@ $$
 \int_{A_1\cup...\cup A_n} f^\pm \D\mu=\int_{A_1}f^\pm \D\mu + ... +\int_{A_n}f^\pm \D \mu.
 $$
 \end{proof}
+%\vspace{-2pc}
 \end{lemma}
+%\rule{\textwidth}{0.4pt}
+Wir beschreiben nun grundlegende Eigenschaften des Funktionals $\|\cdot \|_1$ und des Integrals.
+\begin{lemma}
+\begin{mdframed}
+Für das Funktional $\|\cdot\|_1$
+\begin{equation*}
+\begin{array}{ccc}
+\MM_{\ol\R}(X,\AA) & \overset{\|\cdot\|_1}\longrightarrow & [0,\infty]\\
+f & \longmapsto &  \int_X|f|\D\mu
+\end{array}
+\end{equation*}
+gilt ($f,g \in \MM_{\ol\R}$ und $c\in\R$):
+\begin{enumerate}
+\item \emph{Positive Homogenität:} $\|cf\|_1 = c\cdot \|f\|_1$. (Verwende Konvention $0\cdot \infty=0$).
+%\item \emph{Dreiecksungleichung:} $\|f+g\|_1\leq \|f\|_1 +\|g\|_1$. Hier bezeichnet $f+g$ eine Funktion die $\mu$-fast überall mit der $\mu$-fast überall definierten Summe $f+g$ übereinstimmt.
+\item \emph{Dreiecksungleichung:} $\|f +g\|_1 \leq \|f\|_1 +\|g\|_1$, falls $f+g$ überall definiert ist.
+\end{enumerate}
+\end{mdframed}
+\begin{proof}
+\begin{enumerate}
+\item folgt direkt aus der \hyperref[homogen-nicht-neg]{positiven Homogenität nichtnegativer Funktionen}.
+\item 
+%\item ergibt sich durch Integrieren der $\mu$-fast überall gültigen punktweisen Dreiecksungleichung $|f+g|\leq |f|+|g|$. D.h. es existiert eine $\mu$-Nullmenge $N\subset X$ sodass 
+%$$|(f+g)(x)|\leq |f(x)|+|g(x)| \ \forall x \in X\setminus N$$
+%Integration liefert
+%\begin{equation}\label{II.4}
+%\int_X |f+g|\cdot \chi_{X\setminus N} \D \mu \leq \int_X |f|\cdot \chi_{X\setminus N} \D \mu + \int_X |g|\cdot \chi_{X\setminus N}\D\mu.
+%\end{equation}
+%Die Behauptung folgt unter Verwendung der Additivität und Monotonie des $\mu$-Integrals auf nichtnegativen Funktionen, weil z.B.
+%$$
+%\int_X\underbrace{|f|}_{|f|\cdot\chi_{X\setminus N} +|f|\cdot \chi_N}\D\mu = \int_X |f|\chi_{X\setminus N}\D\mu+\underbrace{\int_X|f|\chi_N\D\mu}_{\leq (\mu\otimes \lambda^1)(N\times \R)=0}.
+%$$
+%Ersetze in \eqref{II.4} $|f|_{X\setminus N}$ durch $|f|$ und $|g|_{X\setminus N}$ durch $|g|$,  somit die Behauptung.
+ergibt sich durch Integrieren der punktweisen Dreiecksungleichung $|f+g|\leq |f|+|g|$. Die Behauptung folgt unter Verwendung der Additivität \eqref{additivitaet-nichtneg} und Monotonie \eqref{monotonie-nichtneg} des $\mu$-Integrals auf nichtnegativen Funktionen.
+% D.h. es existiert eine $\mu$-Nullmenge $N\subset X$ sodass 
+%$$|(f+g)(x)|\leq |f(x)|+|g(x)| \ \forall x \in X\setminus N$$
+%Integration liefert
+%\begin{equation}\label{II.4}
+%\int_X |f+g|\cdot \chi_{X\setminus N} \D \mu \leq \int_X |f|\cdot \chi_{X\setminus N} \D \mu + \int_X |g|\cdot \chi_{X\setminus N}\D\mu.
+%\end{equation}
+%Die Behauptung folgt unter Verwendung der Additivität und Monotonie des $\mu$-Integrals auf nichtnegativen Funktionen, weil z.B.
+%$$
+%\int_X\underbrace{|f|}_{|f|\cdot\chi_{X\setminus N} +|f|\cdot \chi_N}\D\mu = \int_X |f|\chi_{X\setminus N}\D\mu+\underbrace{\int_X|f|\chi_N\D\mu}_{\leq (\mu\otimes \lambda^1)(N\times \R)=0}.
+%$$
+%Ersetze in \eqref{II.4} $|f|_{X\setminus N}$ durch $|f|$ und $|g|_{X\setminus N}$ durch $|g|$,  somit die Behauptung.
+\end{enumerate}
+\end{proof}
+\end{lemma}
+
+\begin{korollar}
+\begin{mdframed}
+\begin{enumerate}
+\item $\LL^1\subset \MM_\R$ ist ein \emph{Untervektorraum} (versehen mit der punktweisen Addition und Skalarmultiplikation) also selbst ein $\R$-Vektorraum.
+\item Das Funktional $\| \cdot \|_1:\LL^1\longrightarrow [0,\infty)$ ist eine Halbnorm.\tablefootnote{Eine Halbnorm erfüllt die Nichtnegativität, positive Homogenität und Dreiecksungleichung. Ein typisches Beispiel ist $\R^2\mapsto[0,\infty), (x_1,x_2)\mapsto |x_1|$.}
+\end{enumerate}
+\end{mdframed}
+\end{korollar}
+
+\begin{remark}
+\begin{equation*}
+\underset{\te{erlaubt Länge 0 für }v\neq 0, v\in V}{\te{Halbnorm } \|\cdot\| \te{ auf }\R\te{-VR } V}\leadsto \underset{\substack{d(v,v')=\|v-v'\|\\ \te{erlaubt Abstand 0 für versch. Punkte}}}{\te{Pseudometrik}} \leadsto \underset{\te{offene Mengen sind ``Schläuche''}}{\te{Topologie}}
+\end{equation*}\vspace{0.3pc}
+\end{remark}
+
 Wir dehnen jetzt die Eigenschaften des Integrals von nichtnegativen auf allgemeinen Funktionen aus:
 
 \begin{satz}
@@ -2435,16 +2452,16 @@ $$\left| \int_X f\D \mu-\int_X g\D \mu \right|\leq \|f-g\|_1.$$
 \item Für $f\in \LL^1$ und $c>0$ gilt $(cf)^\pm=c\cdot f^\pm$. Es folgt $\|(cf)^\pm\|_1=c\cdot \|f^\pm\|_1$ und somit
 $$\int_X cf\D\mu = \|cf^+\|_1-\|cf^-\|_1 = c\int_Xf\D\mu.$$
 Dies zeigt, dass das $\mu$-Integral homogen ist. Wir verifizieren nun die Additivität ($c_1=c_2=1$). Dazu nutzen wir \hyperref[integral-zerlegung]{das letzte Lemma} aus: Ist $X=A_1\cup...\cup A_n$ eine endliche messbare Zerlegung, so gilt
-\begin{equation}\label{II.5}
+\begin{equation}\label{Additivitaet-Int}
 \int_X(f_1+f_2)\D\mu =\int_X f_1\D\mu+\int_X f_2\D\mu
 \end{equation}
-genau dann, wenn $\int_{A_i}(f_1+f_2)\D\mu =\int_{A_i} f_1\D\mu+\int_{A_i} f_2\D\mu$ für alle $i=1,...,n$ gilt. Da $X$ sich zerlegen lässt als $X=\{f_1\geq 0 \te{ und } f_2\geq 0\} \sqcup \{f_1\geq 0 \te{ und } f_2 < 0\} \sqcup \{f_1< 0 \te{ und } f_2\geq 0\} \sqcup \{f_1 < 0 \te{ und } f_2 < 0\}$, dürfen wir annehmen, dass $f_1$ und $f_2$ Vorzeichen haben. Die Additivität \eqref{II.5} ist klar, falls die Vorzeichen gleich sind (d.h. $f_1,f_2\geq 0$ oder $f_1,f_2 <0$). Es bleibt der Fall verschiedenen Vorzeichens zu zeigen. Ohne Einschränkung nehmen wir an, dass $f_1 \geq 0 \geq f_2$. Durch weiteres Aufspalten von Integralen dürfen wir weiter annehmen, dass auch $f_1+f_2$ Vorzeichen hat. O.B.d.A sei $f_1+f_2\geq 0$. Jetzt folgt die Behauptung ebenfalls aus der Additivität des Integrals auf $\MM_{\geq 0}$. Weil $f_1+f_2\leq f_1$, ist $f_1+f_2$ integrierbar und es folgt
+genau dann, wenn $\int_{A_i}(f_1+f_2)\D\mu =\int_{A_i} f_1\D\mu+\int_{A_i} f_2\D\mu$ für alle $i=1,...,n$ gilt. Da $X$ sich zerlegen lässt als $X=\{f_1\geq 0 \te{ und } f_2\geq 0\} \sqcup \{f_1\geq 0 \te{ und } f_2 < 0\} \sqcup \{f_1< 0 \te{ und } f_2\geq 0\} \sqcup \{f_1 < 0 \te{ und } f_2 < 0\}$, dürfen wir annehmen, dass $f_1$ und $f_2$ Vorzeichen haben. Die Additivität \eqref{Additivitaet-Int} ist klar, falls die Vorzeichen gleich sind (d.h. $f_1,f_2\geq 0$ oder $f_1,f_2 <0$). Es bleibt der Fall verschiedenen Vorzeichens zu zeigen. Ohne Einschränkung nehmen wir an, dass $f_1 \geq 0 \geq f_2$. Durch weiteres Aufspalten von Integralen dürfen wir weiter annehmen, dass auch $f_1+f_2$ Vorzeichen hat. O.B.d.A sei $f_1+f_2\geq 0$. Jetzt folgt die Behauptung ebenfalls aus der Additivität des Integrals auf $\MM_{\geq 0}$. Weil $f_1+f_2\leq f_1$, ist $f_1+f_2$ integrierbar und es folgt
 \begin{equation*}
 \begin{split}
 \int_X f_1 \D \mu = \int_X ((f_1+f_2)+(-f_2))\D\mu = \int_X (f_1+f_2)\D\mu+ \underbrace{\int_X(-f_2)\D\mu}_{-\int_X f_2\D\mu}.
 \end{split}
 \end{equation*}
-Also \eqref{II.5} und somit (i).
+Also \eqref{Additivitaet-Int} und somit (i).
 \item folgt aus der Additivität ($g=\underbrace{f}_{\geq 0}+\underbrace{(g-f)}_{\geq 0}$).
 \item $1$-Lipschitz Eigenschaft folgt aus der Linearität und Monotonie, also
 $$
@@ -2459,11 +2476,11 @@ $$
 
 \begin{equation*}
 \begin{split}
-f =_\mu g : &\iff f(x)=g(x) \  \te{für }\mu \te{-fast alle} x \in X 
+f =_\mu g : &\iff f(x)=g(x) \  \te{für }\mu \te{-fast alle } x \in X 
 \\ &\iff \{f\neq g\} \te{ enthalten in einer } \mu\te{-Nullmengen}
 \end{split}
 \end{equation*}
-Die Menge $\{f\neq g\}$ ist messbar, falls $f,g \in \MM_{\ol\R}$. Die Relation $=_\mu$ ist eine Äquivalenzrelation. Wir bezeichnen $\MM_{\ol\R}/_{=_\mu}$ \textbf{den Raum der Äquivalenzklassen $\mu$-fast überall übereinstimmender messbarer numerischer Funktionen}.
+Die Menge $\{f\neq g\}$ ist messbar, falls $f,g \in \MM_{\ol\R}$. Die Relation $=_\mu$ ist eine Äquivalenzrelation. Wir bezeichnen $$\MM_{\ol\R}/_{=_\mu}$$ \textbf{den Raum der Äquivalenzklassen $\mu$-fast überall übereinstimmender messbarer numerischer Funktionen}.
 
 \begin{lemma}
 \begin{mdframed}
@@ -2486,7 +2503,179 @@ $$
 \end{enumerate}
 \end{proof}
 \end{lemma}
-$\leadsto$ Es ist deshalb natürlich, das $\mu$-Integral als Funktional auf Äquivalenzklassen messbarer Funktionen zu betrachten. Dort ist es allerdings nur partiell definiert.
+$\leadsto$ Es ist deshalb natürlich, das $\mu$-Integral als Funktional auf Äquivalenzklassen messbarer Funktionen zu betrachten, die sich nur auf $\mu$-Nullmengen unterscheiden. Dort ist es allerdings nur partiell definiert.\\\\
 \marginpar{\tiny{12.12.2019}}
+Das Funktional $\|\cdot \|: \MM_{\ol\R} \to [0,\infty]$ steigt also ab zu einem wohldefinierten Funktional
+$$\|\cdot\|:\MM_{\ol\R}/_{=_\mu}\longrightarrow [0.\infty],$$
+mit $[0]$ die Äquivalenzklasse der $\mu$-f.ü verschwindenden Funktionen.
+
+\begin{lemma}
+\begin{mdframed}
+Für $f\in \MM_{\ol\R}$ gilt:
+$$f=_\mu 0 \iff \|f\|_1 =0.$$
+\end{mdframed}
+\begin{proof}
+%Ist $f=_\mu 0$, so gibt es $N \subset X$ mit $\mu(N)=0$ und $f(x)=0\  \forall x \in X\setminus N$. Es folgt $\int_X |f| \D x = \int_N |f| \D x + \int_{X\setminus N} |f| \D x=0$. \\
+$\Longleftarrow$: Sei $\|f\|_1=0$. Wir können $f$ durch $|f|$ ersetzen. Also sei O.B.d.A. $f\geq 0$. Weil $\chi_{\{f\geq \frac{1}{n}\}} \leq nf$ für jedes $n\in \N$ gilt, liefert das Integrieren
+$$
+\mu \Big( \underbrace{\left\{f\geq \frac{1}{n}\right\}}_{\nearrow \{f>0\}}\Big) \leq n \underbrace{\|f\|_1}_{=0} =0.
+$$
+Die Stetigkeit (von unten) von $\mu$ liefert $\mu(\{f>0\})=0$, d.h. $f=_\mu 0$.
+\end{proof}
+\end{lemma}
+Weil $\mu$-integrierbare Funktionen $\mu$-fast überall endliche Werte annehmen, haben ihre Äquivalenzklassen $\R$-wertige Repräsentanten. Wir gelangen zur natürlichen Identifikation
+\begin{equation*}
+\begin{split}
+L^1(X,\AA,\mu)&:=\LL^1 (X,\AA,\mu)/_{=_\mu}\\&= \{[f]\in\MM_{\ol\R}(X,\AA)/_{=_\mu} \mid \|f\|_1<\infty\} \subset\MM_{\ol\R}(X,\AA)/_{=_\mu}.
+\end{split}
+\end{equation*}
+Da die $\mu$-fast überall verschwindende Funktion, also $[0]$, einen Untervektorraum von $\LL^1$ bilden, ist $L^1$ ein Quotientenraum von $\LL^1$ nach $[0]$, also
+$$L^1 \cong \LL^1/{\{f\mid f=_\mu 0\}}.$$
+Zusammenfassend:
+\begin{satz}\begin{mdframed}
+\begin{enumerate}
+\item $L^1(X,\AA,\mu)$ ist in natürlicher Weise ein $\R$-Vektorraum.
+\item Die Einschränkung von $\|\cdot \|_1$ von $\MM_{\ol\R}/_{=_\mu}$ auf $L^1$ ist eine \emph{Norm}, die sogenannte \emph{1-Norm}.
+\item Das $\mu$-Integral steigt ab zu einem wohldefinierten linearen Funktional
+\begin{equation*}
+\begin{array}{ccc}
+L^1(X,\AA,\mu) & \longrightarrow & \R \\
+{[}f] & \longmapsto	& \int_X f \D\mu.
+\end{array}
+\end{equation*}
+Es ist 1-Lipschitz bzgl. der 1-Norm $\|\cdot\|$.
+\end{enumerate}
+\end{mdframed}
+\end{satz}
+
+\begin{remark}
+\begin{enumerate}
+\item Der normierte Vektorraum $(L^1,\|\cdot\|_1)$ ist vollständig (Riesz-Fischer), also ein Banach-Raum.
+\item Die Monotonie des Integrals drückt sich darin aus, dass es auf dem konvexen Kegel der Äquivalenzklassen nichtnegativer Funktionen nichtnegative Werte annimmt.
+\end{enumerate}
+\end{remark}
+
+Das Integral kann allgemeiner definiert werden für Funktionen, die ``fast überall messbar'' sind. Ist $f: X \to \ol\R$ so, dass es ein $g\in \MM_{\ol\R}$ existiert mit $f=_\mu g$ und $g$ $\mu$-integrierbar, so definieren wir $\int_X f \D \mu := \int_X g \D \mu$. Dieses ist wohldefiniert, denn $[g]$ ist festgelegt und somit unabhängig von der Repräsentantenauswahl.\\
+
+Das Integral $\mathbb{C}$- und allgemeiner vektorwertiger Funktionen lässt sich zurückführen auf das Integral $\R$-wertiger Funktionen durch komponentenweise Integration bzw. Komposition mit Linearformen: \vspace{0.3pc}
+
+Sei $V$ ein endlich-dimensionaler $\R$-Vektorraum, $(e_i)$ eine Basis und $(e_i^*)$ die duale Basis von $V^*$. \footnote{Jeder Vektor $v\in V$ hat eine eindeutiger Darstellung als $v= \sum\limits_i \underbrace{e_i^*(v)}_{\in\R}e_i$.} 
+Ist $f:X \to V,\lambda\in V^*$ eine Linearform, so setze $\lambda(f):=\lambda \circ f :X \to \R$.  Insbesondere sind $f_i:=e_i^*(f)$ die Komponenten von $f$ bzgl. $(e_i)$, d.h. $f=\sum\limits_i e_i^*(f)e_i$. Für $\lambda=\sum\limits_i \lambda_ie_i^*$ ist $\lambda(f)=\sum\limits_i \lambda_i f_i$.
+
+\begin{definition}
+\begin{mdframed}
+$f:X\to V$ heißt \emph{messbar}, falls $\lambda(f)$ für alle Linearformen $\lambda\in V^*$ messbar sind. (Dies ist äquivalent dazu, dass alle $f_i$ messbar sind.)
+\end{mdframed}
+Wir bezeichnen $\MM_V(X,\AA)$ den Raum der messbaren $V$-wertigen Funktionen.\vspace{0.2pc}
+\end{definition}
+Wir fixieren nun eine Norm $\|\cdot\|_V$ auf $V$. 
+\begin{definition}
+\begin{mdframed}
+$f\in \MM_V$ heißt \emph{$\mu$-integrierbar}, falls\tablefootnote{$\|f\|_1$ hängt von der gewählten Norm $\|\cdot\|_V$ ab. Weil je zwei Normen auf einem endlich-dimensionalen Vektorraum zueinander äquivalent sind, ist unsere Definition wohldefiniert.}
+$$\|f\|_1 := \int_X \|f\|_V \D \mu <\infty.$$
+\end{mdframed}
+Wir bezeichnen $\LL^1_V:=\LL^1(X,\AA,\mu;V)$  den Raum der $\mu$-integrierbaren $V$-wertigen Funktionen.
+\end{definition}
+
+
+\begin{lemma}
+\begin{mdframed}
+Für $f\in \MM_V$ sind folgende Aussagen äquivalent:
+\begin{enumerate}
+\item $f\in \LL_V^1$,
+\item $\lambda(f)\in \LL^1 \ \forall \lambda \in V^*$,
+\item[(ii')] $f_i \in \LL^1 \ \forall i$.
+\end{enumerate}
+\end{mdframed}
+\begin{proof}
+O.B.d.A. wähle die $1$-Norm bzgl $(e_i)$ als $\|\cdot\|_V$, d.h. $\left\|\sum\limits_i v_ie_i\right\|_V = \sum\limits_i |v_i|$. Dann folgt $\|f\|_1=\int_X \|f\|_V \D\mu = \int_X \sum\limits_i |f_i| \D \mu=\sum\limits_i \|f_i\|_1$. Also ist die linke Seite genau dann endlich, wenn die rechte Seite es ist, also (i)$\iff$ (ii'). Weil $\LL^1$ ein Vektorraum ist, gilt außerdem (ii) $\iff$ (ii').
+\end{proof}
+\end{lemma}
+
+\begin{korollar}
+\begin{mdframed}
+$\LL^1_V$ ist ein Vektorraum.
+\end{mdframed}
+\end{korollar}
+Für $f\in \LL^1_V$ wollen wir jetzt das $\mu$-Integral $\LL^1  \to V, f\mapsto \int_X f \D \mu$ definieren. Weil
+\begin{equation*}
+\begin{array}{ccc}
+V^* & \longrightarrow& \R \\
+\lambda & \longmapsto &\int_X\lambda(f)\D\mu
+\end{array}
+\end{equation*}
+ein lineares Funktional auf $V^*$ ist,\footnote{Insbesondere eine Linearform, also $\in  \underset{(\lambda \mapsto \lambda(v)) \mapsfrom v}{(V^*)^* \cong V}$.} existiert ein eindeutiger Vektor $\int_X f \D\mu \in V$ sodass
+$$
+\int_X \lambda(f)\D\mu = \lambda \left(\int_X f\D\mu\right).
+$$
+Wir definieren $\int_X f \D\mu \in V$ als das $\mu$-Integral von $f$. Insbesondere ist
+$$
+\int_X f \D \mu = \sum_i \underbrace{e_i^* \left(\int_X f \D \mu\right)}_{\int_X f_i\D\mu} e_i
+$$
+Also
+$$
+\boxed{\int_Xf\D\mu =\sum\limits_i \left( \int_X f_i\D\mu\right) e_i}.
+$$
+Z.B. für $V=\mathbb{C}$ gilt $$\int_X f\D\mu = \int_X (\Re f)\D\mu +i \int_X (\operatorname{Im} f)\D\mu.$$
+\vspace{2pc}
+\subsubsection{Der Vergleich mit dem Integral auf Regelfunktionen}
+In der Analysis I haben wir das Integral $\int\limits_a^b f(x)\D x$ für Regelfunktionen $f:[a,b]\to \R$ definiert. Eine Funktion ist genau dann Regelfunktion, wenn sie gleichmäßig durch eine Folge von Treppenfunktionen approximiert werden kann, wenn die einseitigen Limiten $\lim\limits_{x\nearrow x_0}f(x)$ und $\lim\limits_{x\searrow x_0}f(x)$ für alle $x_0 \in [a,b]$ existieren. Diese Eigenschaften implizieren die Beschränktheit und die Messbarkeit der Funktion, somit auch die Lebesgue-Integrierbarkeit (d.h. $\beta^1$-integrierbar).
+
+\begin{proposition}
+\begin{mdframed}
+Regelfunktionen $f:[a,b]\to\R$ sind Lebesgue-integrierbar, und es gilt
+$$\int_a^b f(x)\D x = \int_{[a,b]}f\D\beta^1|_{[a,b]}=\int_{[a,b]}f\D\lambda^1.$$
+\end{mdframed}
+\begin{proof}
+Beide Integrale stimmen überein für charakteristische Funktionen von Intervallen. Die Linearität liefert ferner die Übereinstimmung für Treppenfunktionen, die Linearkombinationen von charakteristischen Funktionen sind. Sei $(\tau_n)$ eine Folge solcher spezieller Treppenfunktionen, die $f$ gleichmäßige approximiert, also $\tau_n \to f$. Per Definition des Integrals von Treppenfunktionen gilt
+$$\int_a^b \tau_n(x)\D x\longrightarrow \int_a^b f(x)\D x.$$
+Anderseits gilt für Lebesgue-Integrale
+\begin{equation*}
+\begin{split}
+\Bigg|		
+\underbrace{\int_{[a,b]} f \D \lambda^1 - \int_{[a,b]} \tau_n \D \lambda^1}_{
+\overset{\te{Linearität}}=\int_{[a,b]}(f-\tau_n)\D\lambda^1
+}\Bigg| &\leq  \int_{[a,b]} |f-\tau_n|\D\lambda^1\\
+&\leq |b-a|\cdot  \underbrace{\sup_{[a,b]}|f-\tau_n|}_{\longrightarrow0} \longrightarrow 0.
+\end{split}
+\end{equation*}
+Es folgt
+$$\underbrace{\int_{[a,b]}\tau_n \D \lambda^1}_{\substack{=\int_a^b \tau_n (x)\D x  \longrightarrow \int_a^b f(x)\D x}} \longrightarrow \int_{[a,b]}f \D \lambda^1.$$
+Die Behauptung folgt mit der Eindeutigkeit des Grenzwertes.
+\end{proof}
+\end{proposition}
+Wir wenden nun die Schreibweise $\int\limits_a^b f(x)\D x$ auch für Lebesgue-Integrale messbarer Funktionen an.\vspace{0.3pc}\\
+Uneigentliche Integrale (über \emph{nichtkompakte} Intervalle\footnote{Verallgemeinerte Regelfunktion, Approximation durch abzählbare viele Treppen.}) sind auch vom Lebesgue-Integralen erfasst, z.B. für $f:(a,b)\to \R$ mit $-\infty \leq a <b \leq \infty$ gilt
+$$
+\int_a^b f(x)\D x =\lim_{[a',b']\nearrow (a,b)} \int_{a'}^{b'} f(x)\D x = \int_{(a,b)}f \D \lambda^1,
+$$
+falls beide Integrale existieren. $f$ ist genau dann Lebesgue-integrierbar, wenn das uneigentliche Integral absolut konvergiert.
+\subsection{Konvergenzsätze}
+\begin{footnotesize}
+(Verallgemeinerte Konvergenzsätze für nichtnegative Funktionen, vgl. Monotone Konvergenz und Fatou-Ungleichung.)\vspace{0.5pc}\\
+\end{footnotesize}
+Wir wollen Situationen definieren, in denen wir die Integration und Limesbildung vertauschen können. Um von punktweiser Konvergenz auf Konvergenz der Integrale zu schließen, müssen wir die Funktionen ``gemeinsam lokalisieren''.
+\begin{satz}[\textbf{Satz von der Majorisierten Konvergenz} (\scshape Lebesgue)]
+\begin{mdframed}
+Sind $f_n,f\in \MM_{\ol\R}$ sodass
+$$f_n \longrightarrow f \ \ \mu\te{-fast überall}$$
+und existiert $g\in \MM_{[0,\infty]}$ $\mu$-integrierbar mit 
+$$|f_n|\leq g \ \ \mu\te{-fast überall},$$
+so ist $f$ $\mu$-integrierbar mit
+$$\int_X f_n \D\mu \longrightarrow \int_X f \D \mu.$$
+\end{mdframed}
+\begin{proof}
+Durch Abändern von $f_n,f,g$ auf einer $\mu$-Nullmengen dürfen wir ohne Einschränkung annehmen, dass die Bedingungen $f_n \to f$ und $|f_n|\leq g$ überall gelten und die Funktionswerte endlich sind. Also $f_n,f\in \LL^1$, da $|f_n|,|f|\leq g$. Ersetze $f_n$ durch $f_n -f$ mit der gemeinsamen integrierbaren Majorante $|g|+|f|$. O.B.d.A. sei weiter $f=0$, d.h. $f_n \to 0$. Zu zeigen: $\int_X f_n \D\mu\to 0$. Betrachte die Folge $(g-f_n)$. Es ist $0 \leq g-f_n \leq g$ für $n\in \N$ und $g-f_n \to g$. Das Lemma von Fatou liefert
+\begin{equation*}
+\begin{split}
+\int_X\Big(\underbrace{\liminf_{n\to \infty}(g-f_n)}_{=\lim\limits_{n\to\infty}(g-f_n)=g}\Big)\D \mu \leq \liminf_{n\to\infty}\int_X \underbrace{(g-f_n)}_{\leq g}\D\mu \leq \int_X g \D\mu.
+\end{split}
+\end{equation*}
+Also muss die Gleichheit gelten und
+$$\int_X(g-f_n)\D\mu \longrightarrow \int_X g \D\mu. $$
+Es folgt $\int_Xf_n\D\mu \to 0$.
+\end{proof}
+\end{satz}
+\marginpar{\tiny{16.12.2019}}
 %\input{A-integrale-stetiger-funktionen.tex}
 \end{document}
