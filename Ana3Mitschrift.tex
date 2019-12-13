@@ -2320,7 +2320,7 @@ Es ist $|\int_X f\D \mu| = | \|f^+\|_1 - \|f^-\|_1|\leq \|f^+\|_1+\|f^-\|_1=\|f\
 Ist $f\in \MM_{\ol\R}$ integrierbar und $c>0$, so gilt
 \begin{equation*}
 \begin{split}
-\mu (\{|f|\geq c\}) \leq & (\mu \otimes \lambda^1) \left( \left\{ \left(x, y\right)\, \bigg\vert \  0<y<\frac{|f(x)|}{c} \text{ und } |f(x)|\geq c	\right\}\right)\\
+\mu (\{|f|\geq c\}) %\leq & (\mu \otimes \lambda^1) \left( \left\{ \left(x, y\right)\, \bigg\vert \  0<y<\frac{|f(x)|}{c} \text{ und } |f(x)|\geq c	\right\}\right)\\
 = & \int_X \chi_{\{|f|\geq c\}}\frac{|f|}{c}\D\mu  \\
 \leq & \frac{1}{c}\cdot \underbrace{\|f\|_1}_{<\infty} \longrightarrow 0 \text{ für } c\to \infty
 \end{split}
@@ -2330,8 +2330,9 @@ $$
 \underbrace{\mu( \{   |f|=\infty \} )}_{\leq \mu( \{ |f|\geq c \} ) \ \forall c\geq 0} = \mu(\{  f=\pm \infty  \}) =0.
 $$
 D.h. $\mu$-integrierbare Funktionen nehmen $\boldsymbol\mu$\textbf{-fast überall} (d.h. außerhalb $\mu$-Nullmengen) endliche Werte (d.h. $\in\R$) an. Deshalb verlieren wir keine Information bei Betrachtung des Integrals auf endlichwertigen Funktionen. Wir definieren
-$$\boldsymbol{\pmb\LL^1 (X,\pmb\AA,\mu)} \subset \MM_\R (X,\AA)$$
-als den Raum der \textbf{$\boldsymbol\mu$-integrierbaren $\pmb\R$-wertigen} Funktionen auf $X$. Dies ist die Vorform der $L^1$.
+$${\LL^1 (X,\AA,\mu)} \subset \MM_\R (X,\AA)$$
+als den Raum der \textbf{$\boldsymbol\mu$-integrierbaren $\R$-wertigen} Funktionen auf $X$. Dies ist die Vorform der $L^1$.
+\vspace{0.5pc}
 \paragraph{Integration über messbare Teilmengen.}
 Betrachte nun das durch $\mu$-Integral gegebene Funktional
 \begin{equation*}
