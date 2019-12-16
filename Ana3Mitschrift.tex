@@ -1745,7 +1745,7 @@ Ein \textbf{Maßraum} ist ein Tripel $(X,\AA,\mu)$, besteht aus einer Menge $X$,
 \end{mdframed}
 \end{definition}
 
-Maße können mittel Abbildungen ``nach vorne'' (kovariant im Sinne der Kategorientheorie) transportiert werden:
+Maße können mittels Abbildungen ``nach vorne'' (kovariant im Sinne der Kategorientheorie) transportiert werden:
 
 \begin{definition}
 \begin{mdframed}
@@ -2192,16 +2192,16 @@ f & \longmapsto & \int_X f \D \mu
 Für besonders einfache Funktionen ist der Bereich zwischen dem Graph und $X$-Achse eine Figur (d.h. endliche Vereinigung von Quadern bzw. hier Rechtecke) und in diesem Fall können wir das Integral direkt angeben:
 \begin{itemize}
 \item Für die \emph{charakteristische Funktion} $\chi_A$ mit $A \in \AA$ gilt
-$$
+\begin{equation} \label{Integral-Char-Fkt}
 \int_X \chi_A \D \mu = (\mu \otimes \beta^1) (A \times (0,1)) = \mu (A) \times \underbrace{\beta^1 ((0,1))}_{=1}=\mu(A)
-$$
+\end{equation}
 \item Seien $A_i \in \AA, i=1,...,n$ paarweise disjunkt. Für die \emph{Treppenfunktion} $\tau = \sum\limits_{i=1}^n a_i \chi_{A_i}$ mit $a_i \in [0,\infty]$ gilt
-\begin{equation}\label{II.2}
+\begin{equation}\label{II.3}
 \int_X \tau \D \mu = (\mu \otimes \beta^1) \bigg( \bigcup_{i=1}^n (A_i \times (0,a_i))\bigg)=\sum_{i=1}^n a_i \cdot \mu(A_i)
 \end{equation}
 \textit{Bemerkung.} Dies gilt auch, auch wenn $A_i$ nicht paarweise disjunkt sind.
 \end{itemize}
-Im Hinblick auf die Linearität des Integrals schreiben wir \eqref{II.2} um als
+Im Hinblick auf die Linearität des Integrals schreiben wir \eqref{II.3} um als
 $$
 \int_X \tau \D \mu = \sum_{i=1}^n a_i \int_X \chi_{A_i} \D \mu
 $$
@@ -2296,13 +2296,13 @@ $$
 \end{definition}
 
 Ist $f$ integrierbar, so ist $f^\pm$ auch integrierbar wegen $f=f^+-f^-$ und $|f|+f^++f^-$. Wir definieren das \textbf{$\boldsymbol\mu$-Integral} von $f$ als
-\begin{equation}\label{II.3}
+\begin{equation}\label{II.6}
 \boxed{\int_X f \D \mu = \int_X f^+ \D \mu - \int_X f^- \D \mu= \|f^+\|_1-\|f^-\|_1.}
 \end{equation}
 Die Definition ist konsistent mit bisheriger Definition des Integrals auf $\MM_{\geq 0}$.
 
 \begin{remark}
-\eqref{II.3} bleibt sinnvoll, solange $f^+$ oder $f^-$ integrierbar ist. Solche Funktionen nennt man \emph{quasi-integrierbar}, z.B. sind alle Funktionen in $\MM_{\geq 0}$ quasi-integrierbar.
+\eqref{II.6} bleibt sinnvoll, solange $f^+$ oder $f^-$ integrierbar ist. Solche Funktionen nennt man \emph{quasi-integrierbar}, z.B. sind alle Funktionen in $\MM_{\geq 0}$ quasi-integrierbar.
 \end{remark}
 
 \begin{example}
@@ -2612,7 +2612,7 @@ $$
 $$
 Z.B. für $V=\mathbb{C}$ gilt $$\int_X f\D\mu = \int_X (\Re f)\D\mu +i \cdot \int_X (\operatorname{Im} f)\D\mu.$$
 \vspace{0.4pc}
-\subsubsection{Der Vergleich mit dem Integral auf Regelfunktionen}
+\subsubsection{Vergleich mit dem Integral für Regelfunktionen auf $\R$}
 In der Analysis I haben wir das Integral $\int\limits_a^b f(x)\D x$ für Regelfunktionen $f:[a,b]\to \R$ definiert. Eine Funktion ist genau dann Regelfunktion, wenn sie gleichmäßig durch eine Folge von Treppenfunktionen approximiert werden kann, wenn die einseitigen Limiten $\lim\limits_{x\nearrow x_0}f(x)$ und $\lim\limits_{x\searrow x_0}f(x)$ für alle $x_0 \in [a,b]$ existieren. Diese Eigenschaften implizieren die Beschränktheit und die Messbarkeit der Funktion, somit auch die Lebesgue-Integrierbarkeit (d.h. $\beta^1$-integrierbar).
 
 \begin{proposition}
@@ -2671,5 +2671,171 @@ Es folgt $\int_Xf_n\D\mu \to 0$.
 \end{proof}
 \end{satz}
 \marginpar{\tiny{16.12.2019}}
+Durch Anwenden des Satzes auf die Funktionenfolge $|f_n-f|$ mit der gemeinsamen integrierbaren Majorante $$|f_n-f|\leq |f_n| + |f| = 2g$$ erhalten wir außerdem
+\begin{korollar}
+\begin{mdframed}
+Unter den Voraussetzungen des Satzes und falls $f_n,f\in \MM_\R$ (und damit $\in \LL^1$), gilt
+$$\|f_n-f\|_1\longrightarrow 0.$$
+\end{mdframed}
+\end{korollar}
+Hier tritt als ein weiterer natürlicher Konvergenzbegriff für Funktionen auf, nämlich die Konvergenz im Vektorraum mit Halbnorm $(\LL^1,\|\cdot\|_1)$.
+
+\begin{definition}[\textbf{Konvergenz im Mittel}]
+\begin{mdframed}
+Man sagt, dass eine Folge von Funktionen $f_n \in \LL^1$ \emph{im mittel} gegen eine Funktion $f\in \LL^1$ konvergiert, falls $$\|f_n-f\|_1\longrightarrow 0.$$
+\end{mdframed}
+\end{definition}
+Der Limesfunktion $f$ ist natürlich nur eindeutig bis auf Modifikationen auf einer Nullmenge. \vspace{0.3pc}\\
+Der Satz von der Majorisierten Konvergenz besagt also, dass eine punktweise konvergierende Folge messbarer Funktionen mit gemeinsamer integrierbarer Majorante im Mittel gegen ihren punktweisen Limes konvergiert.\vspace{0.3pc}\\
+Umgekehrt impliziert die Konvergenz im Mittel zwar \emph{nicht} die punktweise Konvergenz, auch nicht fast überall\footnote{Betrachte Folgen charakteristischer Funktionen $A_n \in \AA$, so dass $\|\chi_{A_n}\|_1=\mu(A_n)\to 0$, jedoch so langsam, dass $\sum\mu(A_n)=\infty$. Dann $\chi_{A_n}\to 0$ im Mittel, aber es lässt sich einrichten, dass $A_n$ immer wieder dieselbe Teilmenge positiven Maßes überstreicht, also $\chi_{A_n}\to 0$ nicht $\mu$-fast überall punktweise.}, jedoch die punktweise Konvergenz einer \emph{Teilfolge}. Diese erhält man bereits für Funktionenfolgen, die im Mittel nur \emph{Cauchy-Folgen} sind, ohne a priori \emph{Konvergenz} im Mittel zu verlangen, zeigt also gleich auch die Vollständigkeit von $\LL^1$. Im Diagramm:
+$$\begin{tikzcd}
+	\te{Konvergenz im Mittel} \arrow[Rightarrow]{r} & \begin{split}\te{punktweise Konvergenz }\\\ \te{einer geeigneten \emph{Teilfolge}}\end{split}\\
+	\te{im Mittel Cauchy} \arrow[Rightarrow]{ur} \arrow[Leftrightarrow]{u}%{\te{Satz}}
+\end{tikzcd}$$
+\begin{satz}
+\begin{mdframed}
+Jede $\|\cdot\|_1$ Cauchy-Folge in $\LL^1$ konvergiert im Mittel gegen eine Funktion $f\in \LL^1$, und eine geeignete Teilfolge konvergiert $\mu$-fast überall punktweise gegen $f$.
+\end{mdframed}
+\begin{proof}
+Es genügt, die Aussage für eine Teilfolge $(f_n)$ mit der Cauchy-Eigenschaft
+$$\|f_n-f_m\|_1\leq \underbrace{\varepsilon(n)}_{\longrightarrow 0} \ \ \forall m\geq n$$ zu zeigen. (Denn hat eine Cauchy-Folge eine konvergente Teilfolge, so konvergiert sie.) Durch Übergang zu einer geeigneten Teilfolge lässt sich die Cauchy-Konvergenz beliebig ``beschleunigen''. Wir können z.B. annehmen, dass
+$$\|f_n-f_m\|\leq \frac{1}{2^n} \ \ \forall m\geq n.$$
+Unter dieser Annahme sehen wir zunächst die punktweise Konvergenz ein. Weil jetzt
+$$\sum_n \|f_n-f_{n+1}\|_1 < \infty$$
+liefert der Satz von der Monotonen Konvergenz durch Anwendung auf die Partialsummen
+$$h:= \sum_n |f_n-f_{n+1}| \in \LL^1.$$
+Insbesondere ist $h < \infty$ $\mu$-fast überall. Also konvergiert die Reihe $$\sum_n (f_n-f_{n+1})$$
+$\mu$-fast überall absolut. Es folgt, dass die Folge ihrer Partiellsummen $f_1-f_n$ konvergiert $\mu$-fast überall, also die $(f_n)$ selbst. Es existiert eine Funktion $f\in \MM_{\ol\R}$, sodass $f_n \to f$ $\mu$-fast überall.\vspace{0.3pc}\\
+Zum Konvergenz \emph{im Mittel}: Es gilt $|f_1-f_n|\leq h$, also $|f_n|\leq |f_1|+h \in \LL^1$, d.h. die Funktionen $|f_n|$ haben eine gemeinsame integrierbare Majorante. Der Satz von der Majorisierten Konvergenz bzw. sein Korollar ergibt nun, dass auch $f_n \to f$ im Mittel, d.h. $\| f_n-f \|_1\to 0$.
+\end{proof}
+\end{satz}
+
+\begin{korollar}[\textbf{Riesz-Fischer}]
+\begin{mdframed}
+Der normierte Vektorraum $(L^1,\|\cdot\|_1)$ ist vollständig.
+\end{mdframed}
+\end{korollar}
+
+\subsection{Maße mit Dichten}
+Wir betrachte nun Maße auf einem festen Messraum $(X,\AA)$. Sei $\rho\in \MM_{[0,\infty]}(X,\AA)$ eine nichtnegative und messbare Funktion. Ist $\mu$ ein Maß auf $\AA$, so heißt das Maß $\rho\mu$ auf $\AA$ \textbf{mit Dichte} $\rho$ \textbf{relativ zu} $\mu$, gegeben durch
+\begin{equation} \label{mas-dicht-def}
+\boxed{(\rho\mu)(A):= \int_A \rho \D\mu = \int_X \chi_A \rho \D\mu}.
+\end{equation}
+Die $\sigma$-Additivität von $\rho\mu$ ist leicht einzusehen: Ist $(A_n)_n$ eine Folge paarweise disjunkter Teilmengen, so ist $$\chi_{A_1\cup...\cup A_n} \nearrow \chi_{\bigcup_{i=1}^\infty A_i}.$$ Der Satz von der Monotonen Konvergenz liefert dann 
+$$\underbrace{\int_X \chi_{A_1\cup...\cup A_n}\D \mu}_{\overset{\te{Linearität}}{=}\sum\limits_{i=1}^n(\rho\mu)(A_i)} \nearrow \underbrace{\int_X \chi_{\bigcup\limits_{i=1}^\infty A_i}\D\mu}_{=(\rho\mu)\left( \bigcup\limits_{i\in\N} A_i \right)}.$$
+Die $\sigma$-Additivität von $(\rho\mu)$ folgt also aus dem Satz der Monotonen Konvergenz.
+
+\begin{beobachtung}
+Alle $\mu$-Nullmengen sind auch $\rho\mu$-Nullmengen.
+\end{beobachtung}
+
+\begin{lemma}
+\begin{mdframed}
+\begin{enumerate}
+\item Falls $f\in \MM_{[0,\infty]}$ so gilt
+\begin{equation} \label{lemma-dicht}
+\int_X f\D (\rho\mu)=\int_X f\rho \D \mu,
+\end{equation}
+\item $f\in\MM_{\ol\R}$ ist genau dann $\rho\mu$-integrierbar, wenn $f\rho$ $\mu$-integrierbar ist. In diesem Fall gilt auch \eqref{lemma-dicht}.
+\end{enumerate}
+\end{mdframed}
+\begin{proof}
+\eqref{lemma-dicht} gilt zunächst für charakteristische Funktionen $\chi_A$, $A\in\AA$:
+$$
+\int_X \chi_A \D(\rho \mu) \overset{\eqref{Integral-Char-Fkt}}= (\rho\mu)(A) \overset{\eqref{mas-dicht-def}}= \int_X \chi_A \rho \D\mu.
+$$
+Aufgrund der Linearität des Integrals gilt \eqref{lemma-dicht} auch für nichtnegative Linearkombinationen charakteristischer Funktionen, also nichtnegative Treppenfunktionen. Wegen des Satzes von der Monotonen Konvergenz sowie der Approximierbarkeit durch Treppenfunktionen folgt die Behauptung auf ganz $\MM_{[0,\infty]}$.\vspace{0.3pc}\\
+(ii) folgt durch Anwendung von (i) auf $f^\pm$. 
+\end{proof}
+\end{lemma}
+Aus \eqref{lemma-dicht} folgt die Assoziativität für Dichten $\rho,\rho' \in \MM_{[0,\infty]}$:
+$$\rho'(\rho\mu)=(\rho'\rho)\mu,$$
+denn für $A\in\AA$ gilt:
+$$
+(\rho'(\rho\mu))(A)=\int_A\rho'\D(\rho\mu) \overset{\eqref{lemma-dicht}}= \int_A\rho'\rho\D\mu = ((\rho'\rho)\mu)(A).
+$$
+%\begin{beobachtung}
+Aus der Definition \eqref{mas-dicht-def} folgt: $\rho$ ist genau dann $\mu$-integrierbar, wenn $\rho\mu$ ein endliches Maß ist. \vspace{0.5pc}\\
+%\end{beobachtung}
+Zur \emph{Eindeutigkeit} von Dichten im Fall \emph{endlicher} Maße:
+\begin{lemma}
+\begin{mdframed}
+Sind $\rho_1,\rho_2 \in \MM_{[0,\infty]}$ und ist $\rho_1\mu=\rho_2\mu$ ein endliches Maß, so $\rho_1=_\mu \rho_2$.
+\end{mdframed}
+\begin{proof}
+Für $\varepsilon>0$ und $A_\varepsilon:=\{\rho_1 \geq \rho_2 + \varepsilon\} \in \AA$ gilt:
+$$0= \underbrace{(\rho_1 \mu)(A_\varepsilon)}_{<\infty}- \underbrace{(\rho_2\mu)(A_\varepsilon)}_{<\infty} = \int_{A_\varepsilon} \underbrace{(\rho_1-\rho_2)}_{\geq \varepsilon}\D \mu \geq \varepsilon\cdot \mu(A_\varepsilon).$$
+Also sind die $A_\varepsilon$ $\mu$-Nullmengen und somit auch $$\{\rho_1>\rho_2\}=\bigcup_{n\in\N}A_{\frac{1}{n}},$$
+ebenso $\{\rho_1 \leq \rho_2\}$.
+\end{proof}
+\end{lemma}
+Es gibt eine elegante Charakterisierung dafür, wann ein Maß relativ zu einem anderen Maß eine Dichte besitzt. Die folgende Eigenschaft ist notwendig:
+\begin{definition}[\textbf{Absolut stetige Maße}]
+\begin{mdframed}
+Sind $\mu,\nu$ Maße auf $\AA$, so heißt $\nu$ \emph{absolut stetig} bzgl. $\mu$ oder \emph{$\mu$-stetig}, notiert $\nu \ll \mu$, falls $\mu$-Nullmengen auch $\nu$-Nullmengen sind.
+\end{mdframed}
+\end{definition}
+Diese Bedingung ist auch hinreichend im $\sigma$-endlichen Fall. Wir erwähnen dazu ohne Beweis.
+\begin{satz}[\textbf{Radon-Nikodým}]
+\begin{mdframed}
+Ist $\mu$ $\sigma$-endlich und $\nu$ absolut stetig bzgl. $\mu$, so besitzt $\nu$ eine Dichte zu $\mu$, d.h. $\nu=\rho\mu$ mit $\rho \in \mu_{[0,\infty]}$.
+\end{mdframed}
+\end{satz}
+
+\begin{example}
+Ist $F:\R\to \R$ eine (schwach) monoton wachsende Funktion, so ist der Stieltjes-Inhalt $\mu_F|_{\FF^1}:\FF^1\to [0,\infty)$ auf dem Ring der Figuren gegeben durch
+$$\mu_F|_{\FF^1}([a,b))=F(b)-F(a).$$
+Aus der Übung wissen wir, dass $\mu_F$ genau dann ein $\sigma$-endliches Prämaß ist, wenn $F$ rechtsseitig stetig ist. In diesem Fall setzt sich $\mu_F|_{\FF^1}$ daher eindeutig fort zu einem Maß $\mu_F$ auf $\BB^1=\BB(\R)$. \vspace{0.3pc}\\
+ist $F$ von der Klasse $\mathcal{C}^1$, so impliziert der Hauptsatz der Differential- und Integralrechnung, dass
+$$
+\mu_F([a,b)) = F(b)-F(a)=\int_a^bF'(x)\D x = \int_{[a,b]}F'\D \lambda^1 = \underset{\te{Maß mit Dichte}}{\int_{[a,b)}F'\D \lambda^1}
+$$
+Folglich gilt
+$$\mu_F=F'\beta^1$$
+zunächst auf $\II=\QQ^1$ und weiter auf $\FF^1$ und wegen der Eindeutigkeit der Fortsetzung eines $\sigma$-endlichen Prämaßes auf ganz $\BB^1$. \vspace{0.3pc}\\
+Ist $F$ sogar ein $\mathcal{C}^1$-Diffeomorphismus, so gilt $\mu_F=\beta^1 \circ F=F^{-1}_*\beta^1$, ebenfalls zunächst auf $\II$, dann auf $\FF^1$ und schließlich auf $\BB^1$. Daher gilt
+$$F_*^{-1}\beta^1 = F'\beta^1.$$
+Dies ist der eindimensionale Spezialfall der später zu beweisenden Transformationsformel für das $d$-dimensionale Lebesgue-Maß unter $\mathcal{C}^1$-Diffeomorphismen.
+\end{example}
+
+\begin{example}
+Für $d\geq 1$ betrachten wir die Radius bzw. die Abstandsfunktion $r^d:\R^d\to[0,\infty)$ und das Bildmaß $r_*\lambda^d$ auf $[0,\infty)$. Für $R\geq 0$ gilt
+\begin{equation*}
+\begin{split}
+(r_*\lambda^d)([0,R]) = \int_{\R^d}\chi_{\ol{B}_R(0)}\D\lambda^d = \vol (\ol{B}_R(0)) \underset{ \te{ unter Streckungen}}{\overset{\te{Verhalten des }\lambda^d}=} R^d \cdot \underbrace{\vol (\ol{B}_1(0))}_{=:v_d},
+\end{split}
+\end{equation*}
+gemäß dem Verhalten des Lebesgue-Maßes unter Streckungen. Für $R_2>R_1\geq 0$ folgt
+\begin{equation*}
+\begin{split}
+(r_*\lambda^d)([R_1,R_2))&=v_d \cdot (R_2^d-R_1^d) \\ &= \underbrace{d\cdot v_d}_{=:s_{d-1}} \cdot \int_{R^1}^{R^2}r^{d-1}\D r \\ &= s_{d-1}\cdot (r^{d-1} \lambda^1|_{[0,\infty)})([R_1,R_2))
+\end{split}
+\end{equation*}
+Folglich besitzt das Bildmaß $r_*\lambda^d$ eine Dichte relativ zu $\lambda^1$, nämlich
+$$
+r_* \lambda^d = s_{d-1} \cdot r^{d-1}\lambda^1|_{[0,\infty)},
+$$
+zunächst auf $\FF^1$, dann auch auf $\BB^1$ und $\LL^1$, weil beide Maße auf Borel-Nullmengen verschwinden. \vspace{0.3pc}\\
+Wir interpretieren $s_{d-1}$ als das ($d$%
+$-$1)-dimensionale Volumen der Einheitssphäre $S^{d-1}\subset\R^d$, das mit unserem bisher entwickelten Begriffsapparat allerdings noch nicht definiert werden kann.
+\end{example}
+
+\subsection{Produktmaße und Mehrfachintegrale}
+\subsubsection{Integraldarstellung von Produktmaßen und Cavalieri-Prinzip}
+Seien $(X_i,\AA_i,\mu_i)$ $\sigma$-endliche Maßräume, $i=1,2$. Wir wissen, dass es ein eindeutiges Produktmaß $\mu_1\otimes \mu_2$ auf $\AA_1 \otimes \AA_2$ gibt sodass
+$$(\mu_1\otimes\mu_2)(A_1\times A_2) =\mu_1(A_1)=\mu_2(A_2), \ \ A_i \in \AA_i.$$
+Wir geben jetzt eine Integraldarstellung von $\mu_1\otimes \mu_2$ im Sinne von Cavalieri: Sei $M\subset X_1 \times X_2$. Die Querschnitte $M_{x_1}\subset X_2$ für $x_1\in X_1$ sind definiert durch
+$$M\cap (\{x_1\}\times X_2) =: \{x_1\} \times M_{x_1}.$$
+%Ist $M\in \AA_1 \otimes \AA_2$, so ist $M_{x_1} \in \AA_2$ für jedes $x_1\in X_1$.
+
+\begin{satz}
+\begin{mdframed}
+Ist $M\in \AA_1\otimes \AA_2$, so ist $M_{x_1}\in \AA_2$ für jedes $x_1\in X_1$. Weiter ist die Funktion $x_1 \mapsto \mu_2(M_{x_1}) \in [0,\infty]$ messbar, d.h. $\in\MM_{\geq 0}(X_1,\AA_1)$ und es gilt
+\begin{equation}
+(\mu_1\otimes \mu_2)(M)=\int_{X_1}\mu_2(M_{x_1})\D\mu_1(x_1).
+\end{equation}
+\end{mdframed}
+\marginpar{\tiny{18.12.2019}}
+\end{satz}
 %\input{A-integrale-stetiger-funktionen.tex}
 \end{document}
