@@ -981,7 +981,7 @@ Ist $M \in \DD|_D$, so ist $M \in \DD$ und wegen des Lemmas $\complement M = D\s
 \end{proof}
 \end{folgerung}
 Da beliebige Durchschnitte von Dynkin-Systemen wieder solche sind, gibt es für jede Familie $\EE\subset\PP(X)$ ein eindeutiges kleinstes sie enthaltendes Dynkin-System $\DD(\EE)\subset\PP(X)$, genannt \textbf{das von $\EE$ erzeugte Dynkin-System}. Klar gilt $\DD(\EE)\subset\sigma(\EE)$.
-\begin{satz}
+\begin{satz} \label{durchschnittstabil-familie-erz}
 \begin{mdframed}
 Von $\cap$-stabilen Familien erzeugte Dynkin-Systeme sind $\cap$-stabil, also $\sigma$-Algebren.
 \end{mdframed}
@@ -2220,7 +2220,7 @@ f\leq g\end{array}
 \end{rcases} \implies
 \int_X f \D \mu \leq \int_X g \D \mu.}
 \end{equation}
-Auch die grundlegende \textbf{Konvergenzeigenschaften} des Integrals auf nichtnegativen messbaren Funktionen lassen sich unmittelbar aus Eigenschaften des Produktmaßes ableiten, nämlich aus seinen Stetigkeitseigenschaften als Maß. \\
+Auch die grundlegenden \textbf{Konvergenzeigenschaften} des Integrals auf nichtnegativen messbaren Funktionen lassen sich unmittelbar aus Eigenschaften des Produktmaßes ableiten, nämlich aus seinen Stetigkeitseigenschaften als Maß. \\
 Betrachte hier eine Folge von Funktionen $(f_n)_{n \in \N}$ mit $f_n:X \longrightarrow [0,\infty]$. Ist $f_n$ (punktweise) schwach monoton steigend, so ist $f=\lim\limits_{n\to\infty} f_n :X \longrightarrow [0,\infty]$ überall definiert und es gilt
 $$
 \{(x,y) \mid 0<y<f_n(x)\} \nearrow \{(x,y) \mid 0<y<f(x)\}.
@@ -2786,9 +2786,9 @@ Ist $\mu$ $\sigma$-endlich und $\nu$ absolut stetig bzgl. $\mu$, so besitzt $\nu
 Ist $F:\R\to \R$ eine (schwach) monoton wachsende Funktion, so ist der Stieltjes-Inhalt $\mu_F|_{\FF^1}:\FF^1\to [0,\infty)$ auf dem Ring der Figuren gegeben durch
 $$\mu_F|_{\FF^1}([a,b))=F(b)-F(a).$$
 Aus der Übung wissen wir, dass $\mu_F$ genau dann ein $\sigma$-endliches Prämaß ist, wenn $F$ rechtsseitig stetig ist. In diesem Fall setzt sich $\mu_F|_{\FF^1}$ daher eindeutig fort zu einem Maß $\mu_F$ auf $\BB^1=\BB(\R)$. \vspace{0.3pc}\\
-ist $F$ von der Klasse $\mathcal{C}^1$, so impliziert der Hauptsatz der Differential- und Integralrechnung, dass
+Ist $F$ von der Klasse $\mathcal{C}^1$, so impliziert der Hauptsatz der Differential- und Integralrechnung, dass
 $$
-\mu_F([a,b)) = F(b)-F(a)=\int_a^bF'(x)\D x = \int_{[a,b]}F'\D \lambda^1 = \underset{\te{Maß mit Dichte}}{\int_{[a,b)}F'\D \lambda^1}
+\mu_F([a,b)) = F(b)-F(a)=\int_a^bF'(x)\D x = \int_{[a,b]}F'\D \lambda^1 = \underset{\te{Maß mit Dichte}}{\int_{[a,b)}F'\D \lambda^1}.
 $$
 Folglich gilt
 $$\mu_F=F'\beta^1$$
@@ -2822,7 +2822,7 @@ $-$1)-dimensionale Volumen der Einheitssphäre $S^{d-1}\subset\R^d$, das mit uns
 
 \subsection{Produktmaße und Mehrfachintegrale}
 \subsubsection{Integraldarstellung von Produktmaßen und Cavalieri-Prinzip}
-Seien $(X_i,\AA_i,\mu_i)$ $\sigma$-endliche Maßräume, $i=1,2$. Wir wissen, dass es ein eindeutiges Produktmaß $\mu_1\otimes \mu_2$ auf $\AA_1 \otimes \AA_2$ gibt sodass
+Seien $(X_i,\AA_i,\mu_i)$ Maßräume und $\mu_i$ $\sigma$-endlich, $i=1,2$. Wir wissen aus den früheren Diskussionen, dass es ein eindeutiges Produktmaß $\mu_1\otimes \mu_2$ auf $\AA_1 \otimes \AA_2$ gibt sodass
 $$(\mu_1\otimes\mu_2)(A_1\times A_2) =\mu_1(A_1)=\mu_2(A_2), \ \ A_i \in \AA_i.$$
 Wir geben jetzt eine Integraldarstellung von $\mu_1\otimes \mu_2$ im Sinne von Cavalieri: Sei $M\subset X_1 \times X_2$. Die Querschnitte $M_{x_1}\subset X_2$ für $x_1\in X_1$ sind definiert durch
 $$M\cap (\{x_1\}\times X_2) =: \{x_1\} \times M_{x_1}.$$
@@ -2835,7 +2835,159 @@ Ist $M\in \AA_1\otimes \AA_2$, so ist $M_{x_1}\in \AA_2$ für jedes $x_1\in X_1$
 (\mu_1\otimes \mu_2)(M)=\int_{X_1}\mu_2(M_{x_1})\D\mu_1(x_1).
 \end{equation}
 \end{mdframed}
+\begin{proof}
 \marginpar{\tiny{18.12.2019}}
+Sei $\FF \subset \AA_1 \otimes \AA_2$ die Familie messbarer Teilmengen, für die die Aussage gilt. Weil für $A_1\times A_2\in \AA_1 \ast \AA_2$, also Quader,
+$$(\mu_1 \otimes \mu_2)(A_1\times A_2)=\mu_1(A_1)\cdot \mu_2(A_2) = \int_{X_1}\chi_{A_1}\mu_2(A_2)\D \mu_1$$
+offensichtlich gilt, gehört $\AA_1 \ast \AA_2$ zu $\FF$, d.h. $\AA_1 \ast \AA_2 \subset \FF$. \vspace{0.3pc}\\
+Außerdem ist $\FF$ abgeschlossen unter \emph{disjunkten} abzählbaren Vereinigungen. Sind $M_n \in \FF$ für $n\in \N$ paarweise disjunkt, so ist der $X_2$-Querschnitt ihrer Vereinigung für jedes $x_1 \in X_1$ messbar, also 
+$$\bigg( \bigcup_{n\in \N} M_n \bigg)_{x_1} = \bigcup_{n\in \N} \underbrace{M_{n,x_1}}_{\in \AA_2 \te{ n.V.}} \in \AA_2$$
+Die ($\sigma$-)Additivität von $\mu_2$ liefert ferner
+$$\mu_2 \bigg(\bigg( \bigcup_{n\in\N} M_n\bigg)_{x_1}\bigg)=\sum_{n\in\N} \mu_2(M_{n,x_1}), \ \  \te{insb.} \ \mu_2 \bigg(\bigg( \bigcup_{ i \leq n} M_i\bigg)_{x_1}\bigg)=\sum_{i \leq n} \mu_2(M_{i,x_1})$$
+Die Stetigkeit von unten von $\mu_2$ und die Anwendung des Satzes von der Monotonen Konvergenz auf die Funktionenfolge $\mu_2\left(\left(\bigcup\limits_{i\leq n} M_i\right)_{x_1}\right)$ implizieren weiter:
+\begin{equation*}
+\begin{split}
+\int_{X_1}  \mu_2\bigg( \bigg( \bigcup_{n\in\N} M_n \bigg)_{x_1}\bigg)\D\mu_1(x_1)
+& \underset{\te{von unten}}{\overset{\te{Stetigkeit}}=} 
+\int_{X_1} \lim_{n\to \infty} \underbrace{\mu_2\bigg(\bigg(\bigcup\limits_{i \leq n} M_i\bigg)_{x_1}\bigg)}_{\sum_{i \leq n} \mu_2(M_{i,x_1})} \D \mu_1(x_1)  \\
+& \overset{\te{MCT}}=  \lim_{n\to\infty}  \int_{X_1} \sum_{i\leq n} \mu_2(M_{i,x_1})\D\mu_1(x_1) \\
+& \underset{\te{des Integrals}}{\overset{\te{Linearität}}=} \sum_{n \in \N} \underbrace{\int_{X_1}\mu_2 (M_{n,x_1})\D\mu_1(x_1)}_{=(\mu_1\otimes \mu_2)(M_{n}) \te{ n.V.}} \\
+&\underset{\te{von }\mu_1\otimes\mu_2}{\overset{\sigma\te{-Addtivität}}=} (\mu_1 \otimes \mu_2) \bigg( \bigcup_{n\in\N} M_n \bigg).
+\end{split}
+\end{equation*}
+Also ist $\FF$ abgeschlossen unter disjunkten abzählbaren Vereinigungen. \vspace{0.5pc}\\
+Wir wenden nun frühere Überlegungen zu Dynkin-System an. Zunächst zeigen wir unter der Annahme, dass $\mu(X_i)<\infty$ für $i=1,2$. Dann ist $\FF$ wegen
+$$\mu_2(\complement M_{x_1})=\underbrace{\mu_2(X_2)}_{<\infty, \te{ const}}-\mu_2(M_{x_1})$$
+ebenfalls $\complement$-stabil. Außerdem ist klar, dass $\emptyset \in \FF$. Wir haben also gezeigt, dass $\FF$ ein Dynkin-System ist. Weil der Halbring $\AA_1 \ast \AA_2$ durchschnittsstabil ist, folgt mit \hyperref[durchschnittstabil-familie-erz]{der früheren Proposition}, dass das von ihm erzeugte Dynkin-System $\DD(\AA_1 \ast \AA_2)$ eine $\sigma$-Algebra ist. Weil
+$$\underbrace{\AA_1 \ast \AA_2}_{\cap\te{-stabil}} \subset \underbrace{\DD(A_1\ast \AA_2)}_{\te{eine }\sigma\te{-Algebra}}\subset \FF \subset \underbrace{\AA_1 \otimes \AA_2}_{\sigma(\AA_1 \ast \AA_2)}$$
+muss $\FF=\AA_1 \otimes \AA_2$ gelten. D.h. Die Behauptung des Satzes gilt in diesem Fall, nämlich für $\mu(X_i)<\infty$ für $i=1,2$. \vspace{0.5pc}\\
+Für den allgemeinen $\sigma$-endlichen Fall existieren Folgen $(E_{i,n})_{n\in\N}$ ($i=1,2$, $E_{i,n}\in\AA_i$) mit endlichen Volumina, die $X_i$ approximieren, d.h. $\mu_i(E_{i,n})<\infty$ und $E_{i,n}\nearrow X_i$. Dann gilt für $M\in \AA_1 \otimes \AA_2$ 
+$$\underbrace{M \cap (E_{1,n} \times E_{2,n})}_{\in \FF} \nearrow M$$
+und somit $M\in\FF$. Somit sind wir fertig mit dem Beweis.
+\end{proof}
 \end{satz}
+
+\begin{korollar}[\textbf{Cavalieri-Prinzip}]
+\begin{mdframed}
+Sind $M,M'\in \AA_1\otimes \AA_2$ mit $\mu_2(M_{x_1})=\mu_2(M'_{x_1})$ für $\mu_1$-fast alle $x_1 \in X_1$, so ist $(\mu_1\otimes\mu_2)(M)=(\mu_1\otimes\mu_2)(M').$
+\end{mdframed}
+\end{korollar}
+
+\begin{example}[\textbf{Kegelvolumen}]
+ Sei $K$ ein Kegel mit Grundfläche $B$ und Höhe $h$. Wir zerlegen hier $\R^d = \R^{d-1} \times \R$. Die Querschnitte 
+$$Q_t = K\cap (\R^{d-1} \times \{t\})$$
+für $0\leq t \leq h$ sind isometrisch zu $\left(1-\dfrac{t}{h}\right)\cdot B$. Für das Kegelvolumen gilt
+\begin{equation*}
+\begin{split}
+	\lambda^d(K) \overset{\te{Satz}}= \int_0^h \lambda^{d-1} (Q_t)\D t 
+	=\lambda^{d-1}(B) \cdot \int_0^h \left( 1- \frac{t}{h}\right)^{d-1} \D t = \frac{1}{d}\cdot h \cdot \lambda^{d-1}(B).
+\end{split}
+\end{equation*}
+Z.B. gilt für das Volumen des $d$-dimensionalen Standard-Simplexes $\triangle_d \subset \R^d$
+$$\lambda^d(\triangle_d)=\frac{1}{d}\cdot \lambda^d (\triangle_{d-1}).$$
+Induktion liefert
+$$\lambda^d(\triangle_d)=\frac{1}{d!}.$$
+\end{example}
+
+\begin{example}[\textbf{Kegelvolumen und $\Gamma$-Funktion}]
+Wir wollen das Volumen des $d$-dim euklidischen Einheitsballs 
+$$v_d := \lambda^d \left( \ol{B}_1^{\R^d}(0) \right)$$
+bestimmen. Dazu zerlegen wir ebenfalls $\R^d=\R^{d-1}\times \R$. Der Raidus des Querschnitts auf der Höhe $h \in [-1,1]$ ist gegeben durch $\sqrt{1-h^2}$. Es gilt nach dem letzten Satz
+\begin{equation*}
+\begin{split}
+v_d = \underbrace{(\lambda^{1} \otimes \lambda^{d-1})}_{\lambda^d} \left( \ol{B}_1^{\R^d}(0) \right) = \int_{-1}^1 \underbrace{\lambda^{d-1} \left( \ol{B}^{\R^{d-1}}_{\sqrt{1-h^2}}(0) \right)}_{(1-h^2)^{\frac{d-1}{2}} \cdot v_{d-1}} \D h = v_{d-1} \cdot \underbrace{\int_{-1}^1 (1-h^2)^{\frac{d-1}{2}} \D h}_{I_d}.
+\end{split}
+\end{equation*}
+Also erhalten wir die Rekursionsformel
+\begin{equation}\label{rek1-kugel}
+v_d =v_{d-1}\cdot I_d.
+\end{equation}
+Die Diskussion vom Wallis-Produkt zusammen mit der Substitution $h=\sin u$ liefert
+$$I_d = \int_{-\pi/2}^{\pi/2} \cos^d u \D u.$$
+Z.B. für $d=2$, also Kreisscheiben, gilt
+$$I_2 = 2\int_0^{\pi/2} \cos^2 \D u = \int_0^{\pi/2} \underbrace{\cos^2 u+\sin^2 u}_{1\D u }= \frac{\pi}{2}$$
+und somit $v_2 = \underbrace{v_1}_{2} \cdot I_2 =\pi$. Für $d=3$, also Kugeln, gilt $v_3=\frac{4}{3}\pi$. \vspace{0.5pc}\\
+Durch partielle Integration erhalten wir außerdem die Rekursionsformel
+$$d \cdot I_d = (d-1)\cdot I_{d-2}.$$
+Es folgt
+\begin{equation}\label{IdId-1}
+I_dI_{d-1} = \frac{d-1}{d}I_{d-1}I_{d-2}=...=\frac{1}{d}\underbrace{I_1I_0}_{2\pi}.
+\end{equation}
+Daher gilt für $d\geq 2$:
+\begin{equation} \label{vd,vd-2}
+\frac{v_d}{v_{d-2}}\overset{\eqref{rek1-kugel}}=I_dI_{d-1}\overset{\eqref{IdId-1}}=\frac{2\pi}{d}.
+\end{equation}
+Z.B. gilt $v_4=v_2 \cdot \frac{\pi}{2}=\frac{\pi^2}{2}$. Wir erinnern uns an die Definition der $\Gamma$-Funktion:
+$$\Gamma (z):= \int_0^\infty x^{z-1}e^{-x}\D x,\quad z\in \mathbb{C}, \operatorname{Re}z> 0.$$
+Sie interpoliert die Fakultäten, $\Gamma(n)=(n-1)!$ für $n\in\N$ und erfüllt die Funktionalgleichung $\Gamma(z+1)=z\Gamma(z)$. Für $d\geq 2$, $d\in \N$ gilt
+$$\frac{\Gamma(\frac{d}{2}+1)}{\Gamma(\frac{d}{2})}=\frac{d}{2}.$$
+Zusammen mit \eqref{vd,vd-2} impliziert, dass
+$$\frac{1}{\pi^{d/2}}\cdot v_d \cdot \Gamma \bigg(\frac{d}{2}+1\bigg) = 
+\frac{\frac{1}{\pi^{d/2}} \cdot v_d \cdot \Gamma(\frac{d}{2}+1)}
+{ 
+\frac{1}{\pi^{d/2-1}} \cdot v_{d-2} \cdot \Gamma(\frac{d}{2})} = \frac{1}{\pi} \cdot \frac{2\pi}{d}\cdot \frac{d}{2}=1$$
+unabhängig von $d$ ist. Es folgt
+$$\frac{1}{\pi^{d/2}}\cdot v_d \cdot \Gamma\bigg(\frac{d}{2}+1\bigg) = \begin{rcases}\begin{cases}
+\ \ v_2 \cdot \Gamma(2)\\
+\ \ v_1 \cdot \Gamma(\frac{3}{2})
+\end{cases} \end{rcases}=1$$
+und somit
+\begin{equation}
+v_d = \frac{\pi^{d/2}}{\Gamma(\frac{d}{2}+1)}.
+\end{equation}
+\end{example}
+
+\subsubsection{Mehrfachintegrale: der Satz von Fubini}
+Seien $(X_i,\AA_i,\mu_i)$ Maßräume, $i=1,2$ und $\mu_i$ $\sigma$-endlich. \vspace{0.5pc}\\Ist $f \in \MM_{\ol\R}(X_1\times X_2, \AA_1 \otimes \AA_2)$, so ist $f(x_1, \cdot) \in \MM_{\ol\R}(X_2,\AA_2)$ für jedes $x_1 \in X_1$.
+
+\begin{satz}[\textbf{Fubini, nichtnegative Funktionen}]
+\begin{mdframed}
+Für $f\in \MM_{[0,\infty]}(X_1 \times X_2, \AA_1 \otimes \AA_2)$ ist $$x_1 \mapsto \int_{X_2} f(x_1,\cdot )\D\mu_2$$
+messbar, d.h. $\in \MM_{[0,\infty]}(X_1,\AA_1)$, und es gilt
+\begin{equation*}
+\int_{X_1\times X_2}f \D(\mu_1\otimes\mu_2) = \int_{X_1}\left(\int_{X_2}f(x_1,x_2)\D\mu_2(x_2)\right)\D\mu_1(x_1)
+\end{equation*}
+\end{mdframed}
+\begin{proof}
+Für charakteristische Funktionen $\chi_{A_1\times A_2}$ mit $A_1 \times A_2 \in \AA_1 \otimes \AA_2$ folgt die Behauptung aus dem vorherigen Satz: 
+$$\int_{X_1 \times X_2} \chi_{A_1\times A_2} \D (\mu_1 \otimes \mu_2) \overset{\eqref{Integral-Char-Fkt}}= (\mu_1 \otimes \mu_2) (A_1\times A_2) \overset{\te{Satz}}= \int_{X_1} \chi_{A_1} \underbrace{\mu_2(A_2)}_{\int_{X_2} \chi_{A_2} \D\mu_2} \D \mu_1.
+$$
+Wegen der Linearität des Integrals gilt die Behauptung für Treppenfunktionen aus $\MM_{[0,\infty]}(X_1\times X_2,\AA_1\otimes \AA_2)$. Da sich jede nichtnegative numerische Funktion monoton durch eine Folge von Treppenfunktionen approximieren lässt, folgt mit dem Satz von der Monotonen Konvergenz, dass die Behauptung für alle Funktionen aus $\MM_{[0,\infty]}(X_1\times X_2,\AA_1\otimes \AA_1)$ gilt.
+\end{proof}
+\end{satz}
+
+\begin{satz}[\textbf{Fubini, integrierbare Funktionen}]
+\begin{mdframed}
+Ist $f\in \MM_{\ol\R}(X_1\times X_2, \AA_1\otimes \AA_2)$ eine $\mu_1\otimes \mu_2$ integrierbare Funktion, so sind die Funktionen $$f(x_1,\cdot) \in \MM_{\ol\R}(X_2,\AA_2)$$ für $\mu_1$-fast alle $x_1 \in X_1$ $\mu_2$-integrierbar. Die $\mu_1$-fast überall definierte Funktion
+$$x_1 \mapsto \int_{X_2}f(x_1,\cdot)\D\mu_2$$
+ist $\mu_1$-integrierbar und es gilt
+\begin{equation}
+\int_{X_1\times X_2}f \D(\mu_1\otimes\mu_2) = \int_{X_1}\left(\int_{X_2}f(x_1,x_2)\D\mu_2(x_2)\right)\D\mu_1(x_1)
+\end{equation}
+\end{mdframed}
+\begin{proof}
+Wende Fubini für nichtnegative Funktionen an auf $f^\pm$:
+\begin{equation*}
+\begin{split}
+\int_{X_1\times X_2} f \D(\mu_1\otimes \mu_2) &= \int_{X_1\times X_2} f^+\D(\mu_1\otimes \mu_2) - \int_{X_1\times X_2} f^-\D(\mu_1\otimes\mu_2) \\
+&= \overbrace{\int_{X_1} \underbrace{\left(\int_{X_2} f^+(x_1,\cdot)\D\mu_2\right)}_{<\infty \ \ \mu_1\te{-}\forall x_1\in X_1}\D\mu_1(x_1)}^{<\infty, \te{ da }f^+ \te{integrierbar}}-\int_{X_1} \left(\int_{X_2} f^-(x_1,\cdot)\D\mu_2\right)\D\mu_1(x_1) \\
+& \overset{\te{Linearität}}= \int_{X_1} \underbrace{\left(\int_{X_2} \big(f^+(x_1,\cdot)-f^-(x_1,\cdot)\big)\D\mu_2\right)}_{= \int_{X_2}f(x_1,\cdot)\D\mu_2 \te{\ \ für }\mu_1\te{-fast alle }x_1\in X_1} \D\mu_1(x_1)
+\end{split}
+\end{equation*}
+Das Argument zeigt also insbesondere, dass $$x_1\mapsto \int_{X_2}f^+(x_1,\cdot)\D\mu_2$$
+$\mu_1$-fast überall definiert und endlich ist, daher $\mu_1$-integrierbar.
+\end{proof}
+\end{satz}
+
+\begin{korollar}
+\begin{mdframed}
+Für eine $(\mu_1\otimes \mu_2)$-integrierbare Funktionen $f\in\MM_{\ol\R}(X_1\times X_2,\AA_1\otimes \AA_2)$ gilt
+\begin{equation}
+\int_{X_1}\left(\int_{X_2}f(x_1,\cdot)\D\mu_2\right)\D\mu_1(x_1) =\int_{X_2}\int_{X_1}f(\cdot, x_2)\D\mu_1 \D\mu_2(x_2).
+\end{equation}
+\end{mdframed}
+\end{korollar}
+
+\marginpar{\tiny{19.12.2019}}
 %\input{A-integrale-stetiger-funktionen.tex}
 \end{document}
