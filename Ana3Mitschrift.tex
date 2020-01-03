@@ -2081,7 +2081,7 @@ Jede Teilmenge in $\LL^d$ ist darstellbar als die Vereinigung einer Borel-Menge 
 
 \section{Integrationstheorie}
 \subsection{Messbare numerische Funktionen}
-Eine \textbf{numerische Funktion} ist definiert als eine $\ol\R$-wertige Funktion. $\ol\R$ trägt die natürliche messbare Struktur, also die $\sigma$-Algebra $\ol\BB$, die Erweiterung von $\BB$, die von jeder der Familien: $[-\infty,a]$ bzw. $[-\infty,a)$ bzw. $(a,\infty]$ bzw. $[a,\infty]$ jeweils für $a\in \R$ erzeugt wird.
+Eine \textbf{numerische Funktion} ist  eine $\ol\R$-wertige Funktion. $\ol\R$ trägt die natürliche messbare Struktur, also die $\sigma$-Algebra $\ol\BB$, die Erweiterung von $\BB$, die von jeder der Familien: $[-\infty,a]$ bzw. $[-\infty,a)$ bzw. $(a,\infty]$ bzw. $[a,\infty]$ jeweils für $a\in \R$ erzeugt wird.
 \begin{definition}
 \begin{mdframed}
 Sei $(X,\AA)$ ein Messraum. Eine Funktion $f:X\longrightarrow\ol\R$ heißt (Borel-) \newline \textbf{messbar}, falls sie $\AA$-$\ol\BB$-messbar ist.
@@ -2108,7 +2108,7 @@ Für eine Folge von Funktionen $f_n \in \MM_{\ol\R}$ sind auch die Funktionen
 $
 \sup\limits_{n\in\N}f_n, \inf\limits_{n\in\N}f_n, \limsup\limits_{n\to\infty}f_n, \liminf\limits_{n\to\infty}f_n
 $
-messbar, d.h. liegen in $\MM_{\ol\R}$.
+messbar\footnote{Insbesondere ist $\lim\limits_{n\to\infty}f_n\in \MM_{\ol\R}$, falls dieser Limes (in $\ol\R$) existiert.}, d.h. liegen in $\MM_{\ol\R}$.
 \end{mdframed}
 \begin{proof} Die Funktion $\sup\limits_{n\in\N} f_n$ ist messbar wegen
 $$\Big\{ \sup\limits_{n\in\N}  f_n \leq a \Big\} = \bigcap\limits_{n\in\N} \underbrace{\{f_n \leq a\}}_{\in \AA} \in \AA,$$
@@ -2116,7 +2116,7 @@ und die Messbarkeit von $\inf\limits_{n\in\N} f_n$ folgt aus $\inf\limits_{n\in\
 $$
 \limsup_{n\to\infty} f_n=\inf_{n \in \N} \Big(\sup_{k \geq n} f_k\Big),
 $$
-folgt, dass $\limsup\limits_{n\to\infty} f_n$ messbar ist, analog auch $\liminf\limits_{n\to\infty} f_n$.\footnote{Insbesondere ist $\lim\limits_{n\to\infty}f_n\in \MM_{\ol\R}$, falls dieser Limes (in $\ol\R$) existiert.}
+folgt, dass $\limsup\limits_{n\to\infty} f_n$ messbar ist, analog auch $\liminf\limits_{n\to\infty} f_n$.
 \end{proof}
 \end{lemma}
 Insbesondere folgt:
@@ -2126,10 +2126,10 @@ Ist $f_1,...,f_n \in \MM_{\ol\R}$, so ist $\max(f_1,...,f_n),\min(f_1,...,f_n)\i
 \end{korollar}
 
 \begin{korollar}
-Falls $f \in \MM_{\ol\R}$, so liegen auch der Positivanteil $f^+=\max(f,0)$, der Negativanteil  $f^-=\max(-f,0)$ und der Absolutbetrag $|f|+f^++f^-=\max (f,-f)$ wieder in $\MM_{\ol\R}$.
+Falls $f \in \MM_{\ol\R}$, so liegen auch der Positivanteil $f^+=\max(f,0)$, der Negativanteil  $f^-=\max(-f,0)$ und der Absolutbetrag $|f|=f^++f^-=\max (f,-f)$ wieder in $\MM_{\ol\R}$.
 \end{korollar}
 \rule{\textwidth}{0.4pt}
-Sei $M\subset X$. Eine Funktion $f_M:M\longrightarrow\ol\R$ wird \emph{durch Null fortsetzt} zu $\ol{f}_M:X\to\ol\R$ durch
+Sei $M\subset X$. Eine Funktion $f_M:M\longrightarrow\ol\R$ wird \emph{durch Null fortgesetzt} zu $\ol{f}_M:X\to\ol\R$ durch
 $$
 \ol{f}_M(x)=\begin{cases}
 f_M(x), &x\in M\\
@@ -2163,7 +2163,7 @@ Falls die Funktionen $f_i$ messbar sind, d.h. $A_i \in \AA$ und $f_i \in \MM_{\o
 \subsection{Konstruktion des Lebesgue-Integrals}
 \marginpar{\tiny 5.12.2019}
 
-Wir können die Integration als Volumenberechnung interpretieren und auch umgekehrt. Sei $(X,\AA,\mu)$ ein Maßraum und $f:X \longrightarrow \ol\R$ eine numerische Funktion. Wir interpretieren das Integral $\int_X f \D \mu$ als das \emph{orientiert Volumen} des Bereiches ``zwischen dem Graph von $f$ und $X$-Achse''. Ansatzweise definieren das Integral $\int_X f \D \mu$ als
+Wir können die Integration als Volumenberechnung interpretieren und auch umgekehrt. Sei $(X,\AA,\mu)$ ein Maßraum und $f:X \longrightarrow \ol\R$ eine numerische Funktion. Wir interpretieren das Integral $\int_X f \D \mu$ als das \emph{orientierte Volumen} des Bereiches ``zwischen dem Graph von $f$ und $X$-Achse''. Ansatzweise definieren das Integral $\int_X f \D \mu$ als
 $$
 \vol \{ (x,y) \in X \times \R \mid 0<y<f(x)\}-\vol \{(x,y)\in X \times \R \mid f(x)<y<0\}
 $$
@@ -2180,14 +2180,14 @@ ist $\mu \otimes \beta^1$ die eindeutige Fortsetzung von dem Prämaß $\mu \boxt
 \subsubsection{Das Integral nichtnegativer Funktionen}
 Es sei $(X,\AA,\mu)$ ein Maßraum und $f: X \longrightarrow [0,\infty]$ messbar. Dann ist die Menge $\{(x,y)\in X \times \R \mid 0<y<f(x)\}$ ebenfalls messbar, d.h. $\in \AA \times \BB^1$. Wir definieren dann das \textbf{$\boldsymbol{\mu}$-Integral} von $f$ als 
 \begin{equation}
-\boxed{\int_X f \D \mu := (\mu \otimes \beta) (\{(x,y) \in X \times \R \mid 0<y<f(x)\})}.
+\boxed{\int_X f \D \mu := (\mu \otimes \beta^1) (\{(x,y) \in X \times \R \mid 0<y<f(x)\})}.
 \end{equation}
 Wir können das $\mu$-Integral als das Funktional auffassen
 \begin{equation*}
 \begin{array}{ccc}
 \MM_{\geq 0}(X,\AA) & \longrightarrow & [0,\infty]\\
 f & \longmapsto & \int_X f \D \mu
-\end{array}
+\end{array}.
 \end{equation*}
 Für besonders einfache Funktionen ist der Bereich zwischen dem Graph und $X$-Achse eine Figur (d.h. endliche Vereinigung von Quadern bzw. hier Rechtecke) und in diesem Fall können wir das Integral direkt angeben:
 \begin{itemize}
@@ -2203,9 +2203,9 @@ Für besonders einfache Funktionen ist der Bereich zwischen dem Graph und $X$-Ac
 \end{itemize}
 Im Hinblick auf die Linearität des Integrals schreiben wir \eqref{II.3} um als
 $$
-\int_X \tau \D \mu = \sum_{i=1}^n a_i \int_X \chi_{A_i} \D \mu
+\int_X \tau \D \mu = \sum_{i=1}^n a_i \int_X \chi_{A_i} \D \mu.
 $$
-Daraus folgt direkt die \emph{Additivität} und die \emph{positive Homogenität} des Integrals auf nichtnegativen messbaren Treppenfunktionen, d.h, sind $\tau_1$ und $\tau_2 \in \MM_{\geq 0}$ zwei Treppenfunktionen und $c_1,c_2 \in [0,\infty]$, so gilt
+Daraus folgt direkt die \emph{Additivität} und die \emph{positive Homogenität} des Integrals auf nichtnegativen messbaren Treppenfunktionen, d.h. sind $\tau_1$ und $\tau_2 \in \MM_{\geq 0}$ zwei Treppenfunktionen und $c_1,c_2 \in [0,\infty]$, so gilt
 \begin{equation*}
 \begin{split}
 \int_X (c_1\tau_1+c_2\tau_2)\D \mu = c_1 \int_X \tau_1 \D \mu +c_2 \int_X \tau_2 \D \mu.
@@ -2226,7 +2226,7 @@ $$
 \{(x,y) \mid 0<y<f_n(x)\} \nearrow \{(x,y) \mid 0<y<f(x)\}.
 $$
 Falls $f_n$ messbar sind, d.h. $f_n \in \MM_{\geq 0}$, so folgt mit der Stetigkeit von unten von $\mu \otimes \beta^1$, dass 
-$$ \int_X f_n \D \mu \nearrow \int_X f \D u.$$
+$$ \int_X f_n \D \mu \nearrow \int_X f \D \mu.$$
 \textit{Bemerkung.} Wegen der Monotonie von Maßen ist es klar, dass $\lim\limits_{n\to\infty} \int\limits_X f_n \D \mu \leq \int\limits_X f \D \mu.$\\ Es folgt:
 
 \begin{satz}[\textbf{Satz von der monotonen Konvergenz} (\scshape{B. Levi})]
@@ -2252,7 +2252,7 @@ $$
 $$
 \end{mdframed}
 \begin{proof}
-Zunächst gilt für jedes $l\geq n:$ $\inf\limits_{k \geq n}f_k \leq f_l$. Wegen der Monotonie des Integrals folgt
+Zunächst gilt für jedes $l\geq n:$ $\inf\limits_{k \geq n}f_k \leq f_l$. Die Monotonie des Integrals für nichtnegative Funktionen \eqref{monotonie-nichtneg} liefert
 $$
 \int_X \left(\inf_{k\geq n} f_k\right) \D \mu \leq  \int_X f_l \D \mu \quad \text{für jedes } l \geq n.
 $$
@@ -2261,7 +2261,7 @@ $$
 \int_X \underbrace{\left(\inf_{k\geq n} f_k\right)}_{\nearrow \liminf\limits_{n\to\infty} f_n} \D \mu \leq  \underbrace{\inf_{k\geq n}  \int_X f_k \D \mu}_{\nearrow \liminf\limits_{n\to \infty}\int_X f_n \D \mu}.
 $$
 Ziehe Limes $n\to \infty $ und der Satz von der monotonen Konvergenz liefert
-$$\lim_{n\to \infty }\int_X \left(\inf_{k\geq n} f_k\right) \D \mu= \int_X (\liminf_{n\to\infty} f_n) \D \mu \leq \liminf_{n\to \infty}\int_X f_n \D \mu.$$
+$$\lim_{n\to \infty }\int_X \left(\inf_{k\geq n} f_k\right) \D \mu= \int_X (\liminf_{n\to\infty} f_n) \D \mu \leq \liminf_{n\to \infty}\int_X f_n \D \mu.  \qedhere$$
 \end{proof}
 \end{satz}
 
@@ -2295,7 +2295,7 @@ $$
 \end{mdframed}
 \end{definition}
 
-Ist $f$ integrierbar, so ist $f^\pm$ auch integrierbar wegen $f=f^+-f^-$ und $|f|+f^++f^-$. Wir definieren das \textbf{$\boldsymbol\mu$-Integral} von $f$ als
+Ist $f$ integrierbar, so ist $f^\pm$ auch integrierbar wegen $0\leq f^\pm \leq |f|$ (\textit{Erinnerung:} $|f|=f^++f^-$). Wir definieren das \textbf{$\boldsymbol\mu$-Integral} von $f$ als
 \begin{equation}\label{II.6}
 \boxed{\int_X f \D \mu = \int_X f^+ \D \mu - \int_X f^- \D \mu= \|f^+\|_1-\|f^-\|_1.}
 \end{equation}
@@ -2645,7 +2645,7 @@ $$
 $$
 falls beide Integrale existieren. $f$ ist genau dann Lebesgue-integrierbar, wenn das uneigentliche Integral absolut konvergiert.
 \subsection{Konvergenzsätze}
-Wir verallgemeinern nun unser Konvergenzresultat für Integrale nichtnegativer Funktionen, den Satz von der monotonen Konvergenz. Wir betrachten Integrale allgemeiner numerischer Funktionen und wollen Situationen definieren, in denen wir die Integration und Limesbildung vertauschen können. \vspace{0.5pc}\\
+Wir verallgemeinern nun unser Konvergenzresultat für Integrale nichtnegativer Funktionen, nämlich den Satz von der monotonen Konvergenz. Wir betrachten Integrale allgemeiner numerischer Funktionen und wollen Situationen definieren, in denen wir die Integration und Limesbildung vertauschen können. \vspace{0.5pc}\\
 Um von punktweiser Konvergenz auf Konvergenz der Integrale zu schließen, müssen wir die Funktionen ``gemeinsam lokalisieren''.
 \begin{satz}[\textbf{Satz von der Majorisierten Konvergenz} (\scshape Lebesgue)]
 \begin{mdframed}
@@ -2717,12 +2717,12 @@ Der normierte Vektorraum $(L^1,\|\cdot\|_1)$ ist vollständig.
 \end{korollar}
 
 \subsection{Maße mit Dichten}
-Wir betrachte nun Maße auf einem festen Messraum $(X,\AA)$. Sei $\rho\in \MM_{[0,\infty]}(X,\AA)$ eine nichtnegative und messbare Funktion. Ist $\mu$ ein Maß auf $\AA$, so heißt das Maß $\rho\mu$ auf $\AA$ \textbf{mit Dichte} $\rho$ \textbf{relativ zu} $\mu$, gegeben durch
+Wir betrachten nun Maße auf einem festen Messraum $(X,\AA)$. Sei $\rho\in \MM_{[0,\infty]}(X,\AA)$ eine nichtnegative messbare Funktion. Ist $\mu$ ein Maß auf $\AA$, so heißt das Maß $\rho\mu$ auf $\AA$ \textbf{mit Dichte} $\rho$ \textbf{relativ zu} $\mu$. Es ist gegeben durch
 \begin{equation} \label{mas-dicht-def}
 \boxed{(\rho\mu)(A):= \int_A \rho \D\mu = \int_X \chi_A \rho \D\mu}.
 \end{equation}
-Die $\sigma$-Additivität von $\rho\mu$ ist leicht einzusehen: Ist $(A_n)_n$ eine Folge paarweise disjunkter Teilmengen, so ist $$\chi_{A_1\cup...\cup A_n} \nearrow \chi_{\bigcup_{i=1}^\infty A_i}.$$ Der Satz von der Monotonen Konvergenz liefert dann 
-$$\underbrace{\int_X \chi_{A_1\cup...\cup A_n}\D \mu}_{\overset{\te{Linearität}}{=}\sum\limits_{i=1}^n(\rho\mu)(A_i)} \nearrow \underbrace{\int_X \chi_{\bigcup\limits_{i=1}^\infty A_i}\D\mu}_{=(\rho\mu)\left( \bigcup\limits_{i\in\N} A_i \right)}.$$
+Die $\sigma$-Additivität von $\rho\mu$ ist leicht einzusehen: Ist $(A_n)_n$ eine Folge paarweise disjunkter Teilmengen in $X$, $A_n\in \AA$, so ist $$\chi_{A_1\cup...\cup A_n} \rho \nearrow \chi_{\bigcup_{i=1}^\infty A_i} \rho.$$ Der Satz von der Monotonen Konvergenz liefert dann 
+$$\underbrace{\int_X \chi_{A_1\cup...\cup A_n} \rho \D \mu}_{\overset{\te{}}{=}\sum\limits_{i=1}^n(\rho\mu)(A_i)} \nearrow \underbrace{\int_X \chi_{\bigcup\limits_{i=1}^\infty A_i} \rho  \D\mu}_{=(\rho\mu)\left( \bigcup\limits_{i\in\N} A_i \right)}.$$
 Die $\sigma$-Additivität von $(\rho\mu)$ folgt also aus dem Satz der Monotonen Konvergenz.
 
 \begin{beobachtung}
@@ -2736,7 +2736,7 @@ Alle $\mu$-Nullmengen sind auch $\rho\mu$-Nullmengen.
 \begin{equation} \label{lemma-dicht}
 \int_X f\D (\rho\mu)=\int_X f\rho \D \mu,
 \end{equation}
-\item $f\in\MM_{\ol\R}$ ist genau dann $\rho\mu$-integrierbar, wenn $f\rho$ $\mu$-integrierbar ist. In diesem Fall gilt auch \eqref{lemma-dicht}.
+\item Eine Funktion $f\in\MM_{\ol\R}$ ist genau dann $\rho\mu$-integrierbar, wenn $f\rho$ $\mu$-integrierbar ist. In diesem Fall gilt auch \eqref{lemma-dicht}.
 \end{enumerate}
 \end{mdframed}
 \begin{proof}
@@ -3099,13 +3099,24 @@ Für einen $\mathcal{C}^1$-Diffeomorphismus  $\Phi:U\to V$ offener Teilmengen $U
 \begin{equation}\label{transform-diffeo}
 \Phi_*(\beta^d|_U) = |\det \D \Phi^{-1}|\cdot \beta^d|_V
 \end{equation}
-wobei $\beta^d|_U$ eine Abkürzung für $\beta^d|_{\BB(U)}$ ist sowie $\beta^d|_V$ für $\beta^d|_{\BB(V)}$. Insbesondere ist $|\det \D \Phi^{-1}|$ stetig auf $V$ und somit eine Dichte.\tablefootnote{Ist $f : V \to \ol\R$ messbar, so folgt zusammen mit dem letzten Satz
-$$ \int_V  |\det \Phi^{-1}| f \D (\beta^d|_V) \overset{\eqref{transform-diffeo}}= \int_V f \D (\Phi_*\beta^d|_U) \overset{\eqref{transformation,a}}= \int_U (f\circ \Phi)  \D (\beta^d|_U), $$
-also
-\begin{equation}\label{transoform,int}
-\boxed{\int_V f \D (\beta^d|_V)  = \int_U |\det \Phi^{-1}| (f\circ \Phi) \D (\beta^d|_U)}.
+wobei $\beta^d|_U$ eine Abkürzung für $\beta^d|_{\BB(U)}$ ist sowie $\beta^d|_V$ für $\beta^d|_{\BB(V)}$. Insbesondere ist $|\det \D \Phi^{-1}|$ stetig auf $V$ und somit eine Dichte.
+\tablefootnote{
+%Ist $f : V \to \ol\R$ messbar, so folgt zusammen mit dem letzten Satz
+%$$ \int_V  |\det \Phi^{-1}| f \D (\beta^d|_V) \overset{\eqref{transform-diffeo}}= \int_V f \D (\Phi_*\beta^d|_U) \overset{\eqref{transformation,a}}= \int_U (f\circ \Phi)  \D (\beta^d|_U), $$
+%also
+Die Formel \eqref{transform-diffeo} besagt also, dass $\Phi$ sowohl $\beta^d|_U$-$\beta^d|_V$-messbar als auch $\lambda^d|_U$-$\lambda^d|_V$-messbar und es gilt
+\begin{equation}\label{skalierung-diffeo}
+\lambda^d(\Phi^{-1}(B))=\int_B |\det \D \Phi^{-1}|\D\lambda^d	\quad \te{für } B\in \LL^d|_V.
 \end{equation}
-$f$ ist genau dann $\beta^d$-integrierbar über $V$, wenn $|\det \D \Phi^{-1}|(f\circ \Phi)$ über $U$ ist.
+Dies ist äquivalent zu
+\begin{equation} \label{skalierung-diffeo-2}
+\lambda^d(\Phi(A))=\int_A |\det \D \Phi|\D\lambda^d \quad \te{für } A\in \LL^d|_U,
+\end{equation}
+wenn wir $\Phi^{-1}$ durch $\Phi$ ersetzen. Insbesondere folgt die Transformationsformel
+\begin{equation}\label{transoform,int}
+\boxed{\int_V f \D \beta^d  = \int_U |\det\D \Phi| (f\circ \Phi) \D \beta^d}.
+\end{equation}
+$f$ ist genau dann $\beta^d$-integrierbar über $V$, wenn $|\det \D \Phi|(f\circ \Phi)$ über $U$ ist. In diesem Fall gilt \eqref{transoform,int}.
 }
 \end{mdframed}
 
@@ -3130,7 +3141,7 @@ also
 $$
 \underbrace{\Phi^{-1}_*(\beta^d|_V)}_{\te{Maß auf }\BB(U)}|_{\FF^d(U)} \leq (1+2\varepsilon\sqrt{d})^d \cdot |\det A| \cdot \beta^d|_{\FF^d(U)}.
 $$
-Dieselbe Ungleichung folgt für die assoziierten äußeren Maße auf $\PP(U)$, also für ihre Einschränkungen auf die von $\FF^d(U)$ erzeuge Borel-$\sigma$-Algebra $\BB(U)$, d.h. die eindeutigen, die beiden Prämäßen fortsetzenden Maße $\Phi^{-1}_*(\beta^d|_V)$ und $\beta^d|_U$. Es folgt
+Dieselbe Ungleichung folgt für die assoziierten äußeren Maße auf $\PP(U)$, also für ihre Einschränkungen auf die von $\FF^d(U)$ erzeugte Borel-$\sigma$-Algebra $\BB(U)$, d.h. die eindeutigen, die beiden Prämäßen fortsetzenden Maße $\Phi^{-1}_*(\beta^d|_V)$ und $\beta^d|_U$. Es folgt
 $$\Phi^{-1}_*(\beta^d|_V)\leq (1+2\varepsilon\sqrt{d})^d\cdot |\det A| \cdot \beta^d|_U.$$
 Weil $|\det (A^{-1} \D \Phi_X)-1|<\varepsilon$, gilt $1-\varepsilon < \frac{\det \D\Phi_x}{\det A}<1+\varepsilon$ und somit
 \begin{equation}\label{transf,leq}
@@ -3162,5 +3173,18 @@ $\mathcal{C}^1$-Diffeomorphismen offener Teilmengen der $\R^d$ erhalten Borel-Nu
 \end{korollar}
 
 \marginpar{\tiny{23.12.2019}}
+
+
+\comment{
+\newpage
+\appendix
+
+\section{Multilineare Algebra und Tensorprodukt}
+\paragraph{Multilineare Abbildungen.} Seien $V_1,...,V_k,W$ $K$-Vektoräume. Eine Abbildung
+$$\mu: V_1 \times ... \times V_k \longrightarrow W$$
+heißt $K$-\emph{multilinear}, falls sie linear in jeder Komponente ist. Der Raum
+$$\operatorname{Multi}(V_1,...,V_k;W)$$
+aller multilinearen Abbildungen von $V_1\times ... \times V_k$ nach $W$ ist wieder ein $K$-Vektorraum. Eine multilinare Abbildung ist bereits festgelegt, wenn die Bilder der Basisvektoren schon festgelegt sind.
+\paragraph{Multilinearform.} Eine Multilinearform ist eine multilineare Abbildung in den zugrundeliegenden Körper $K$. Die Determinantenabbildung ist eine normierte alternierende Multilinearform. }
 %\input{A-integrale-stetiger-funktionen.tex}
 \end{document}
