@@ -2886,10 +2886,10 @@ für $0\leq t \leq h$ sind isometrisch zu $\left(1-\dfrac{t}{h}\right)\cdot B$. 
 	=\lambda^{d-1}(B) \cdot \int_0^h \left( 1- \frac{t}{h}\right)^{d-1} \D t = \frac{1}{d}\cdot h \cdot \lambda^{d-1}(B).
 \end{split}
 \end{equation*}
-Z.B. gilt für das Volumen des $d$-dimensionalen Standard-Simplexes $\triangle_d \subset \R^d$
-$$\lambda^d(\triangle_d)=\frac{1}{d}\cdot \lambda^d (\triangle_{d-1}).$$
+Z.B. gilt für das Volumen des $d$-dimensionalen Standard-Simplexes $\Delta_d \subset \R^d$
+$$\lambda^d(\Delta_d)=\frac{1}{d}\cdot \lambda^d (\Delta_{d-1}).$$
 Induktion liefert
-$$\lambda^d(\triangle_d)=\frac{1}{d!}.$$
+$$\lambda^d(\Delta_d)=\frac{1}{d!}.$$
 \end{example}
 
 \begin{example}[\textbf{Volumen euklidischer Bälle}]
@@ -3099,12 +3099,12 @@ Für einen $\mathcal{C}^1$-Diffeomorphismus  $\Phi:U\to V$ offener Teilmengen $U
 \begin{equation}\label{transform-diffeo}
 \Phi_*(\beta^d|_U) = |\det \D \Phi^{-1}|\cdot \beta^d|_V
 \end{equation}
-wobei $\beta^d|_U$ eine Abkürzung für $\beta^d|_{\BB(U)}$ ist sowie $\beta^d|_V$ für $\beta^d|_{\BB(V)}$. Insbesondere ist $|\det \D \Phi^{-1}|$ stetig auf $V$ und somit eine Dichte.
+wobei $\beta^d|_U$ eine Abkürzung für $\beta^d|_{\BB(U)}$ ist sowie $\beta^d|_V$ für $\beta^d|_{\BB(V)}$. Insbesondere ist $|\det \D \Phi^{-1}|$ stetig auf $V$ und eine Dichte.
 \tablefootnote{
 %Ist $f : V \to \ol\R$ messbar, so folgt zusammen mit dem letzten Satz
 %$$ \int_V  |\det \Phi^{-1}| f \D (\beta^d|_V) \overset{\eqref{transform-diffeo}}= \int_V f \D (\Phi_*\beta^d|_U) \overset{\eqref{transformation,a}}= \int_U (f\circ \Phi)  \D (\beta^d|_U), $$
 %also
-Die Formel \eqref{transform-diffeo} besagt also, dass $\Phi$ sowohl $\beta^d|_U$-$\beta^d|_V$-messbar als auch $\lambda^d|_U$-$\lambda^d|_V$-messbar und es gilt
+Der $\mathcal{C}^1$-Diffeomorphismus $\Phi$ ist sowohl $\beta^d|_U$-$\beta^d|_V$-messbar als auch $\lambda^d|_U$-$\lambda^d|_V$-messbar und es gilt
 \begin{equation}\label{skalierung-diffeo}
 \lambda^d(\Phi^{-1}(B))=\int_B |\det \D \Phi^{-1}|\D\lambda^d	\quad \te{für } B\in \LL^d|_V.
 \end{equation}
@@ -3172,10 +3172,72 @@ $\mathcal{C}^1$-Diffeomorphismen offener Teilmengen der $\R^d$ erhalten Borel-Nu
 \end{mdframed}
 \end{korollar}
 
-\marginpar{\tiny{9.1.2020}}
 
-%\section{}
+\section{Differentialformen auf Mannigfaltigkeiten}
+\subsection{Differenzierbare Mannigfaltigkeiten}\marginpar{\tiny{9.1.2020}}
+Wir erinnern uns an den Begriff der Untermannigfaltigkeit des euklidischen Raums ($\leadsto$ Ana II):
 
+\begin{definition}[\textbf{Differenzierbare Untermannigfaltigkeit}]%\begin{mdframed}
+Für $0 \leq m \leq n $ und \newline $1 \leq k \leq \infty$ heißt eine Teilmenge $M\subset \R^n$ eine $m$-dimemsionale $\mathcal{C}^k$-Untermannig-faltigkeit, falls für jeden Punkt $p\in M$ ein $\mathcal{C}^k$-Diffeomorphismus $\Phi:U\to V$ einer offenen Umgebung von $p$ auf eine offene Menge $V\subset \R^n$ existiert, sodass %\Bild
+\begin{equation}
+\Phi(M\cap U) =\underbrace{ \{x\in \R^n \mid x_{m+1}=...=x_n=0\}}_{\R^m\times\{0_{\R^{n-m}}\}}\cap V.
+\end{equation}
+\begin{center}\ \ \ \ \ \ \ \ \ \ \ 
+\input{Bild1.tex}
+\end{center}
+Wir werden im Folgenden $\R^m\times \{0_{\R^{n-m}}\}$ mit $\R^m$ identifizieren.
+%\end{mdframed}
+\end{definition}
+Der $\mathcal{C}^k$ Diffeomorphimus induziert durch Einschränkung einen Homöomorphismus
+
+\begin{equation} \label{karte}
+\kappa:= \Phi|_{M\cap U}:M\cap U\longrightarrow \R^m \cap V
+\end{equation}
+der offenen Menge $U\cap M$  auf eine offene Teilmenge des ``Modells'' $\R^m$. Er belegt $M$ nahe $p$ mit \emph{lokalen Koordinaten} und man spricht von einer \emph{lokalen Karte} nahe $p$. Je zwei solche Karten $\kappa_i:M\cap U_i \longrightarrow \R^m\cap V_i$, $i=1,2$, sind miteinander $\mathcal{C}^k$-kompatibel im Sinne, dass Koordinatentransformationen bzw. Kartenwechsel
+$$\kappa_1(M\cap U_1\cap U_2) \xrightarrow[]{\kappa_2 \circ \kappa_1^{-1}}  \kappa_2 (M\cap U_1\cap U_2)$$
+$\mathcal{C}^k$ Diffeomorphismus offener Teilmengen des $\R^m$ sind, denn sie sind Einschränkungen des $\mathcal{C}^k$-Diffeomorphismus $\Phi_1(U_1\cap U_2)\to \Phi_2(U_1\cap U_2)$. Die $\mathcal{C}^k$-Kompatibilität der Karten ermöglicht Differentialrechnung auf $M$ zu betreiben, ohne den umgebenden euklidischen Raum $\R^n$ zu benötigen. Z.B. können wir von der bis zu $k$-fachen Differenzierbarkeit der nur auf $M$ definierten Funktion $f:M\to \R$ sprechen: $f$ heißt in $p$ \emph{$l$-fach differenzierbar} für $1\leq l \leq k$, wenn für eine Karte $\kappa$ in $p$ ihre auf einer offenen Menge in $\R^m$ definierte lokale Koordinatendarstellung $f\circ \kappa^{-1}$  im Punkt $\kappa(p)$ $l$-fach differenzierbar ist. Dies ist unabhängig von der Karte. Denn ist $\widetilde{\kappa}$ eine weitere Karte in $p$, so gilt
+$$ f \circ \widetilde{\kappa}^{-1} = f \circ \kappa^{-1} \circ \underbrace{(\kappa \circ \widetilde{\kappa}^{-1})}_{\mathcal{C}^k\te{-Diffeo}}$$
+nahe $\widetilde{\kappa}(p)$, und $f\circ \widetilde{\kappa}^{-1}$ ist genau dann $l$-fach differenzierbar in $\widetilde{\kappa}(p)$, wenn $f\circ \kappa^{-1}$ $l$-fach differenzierbar ist in $\kappa(p)$. Höhere als $k$-fache Differenzierbarkeit kann nicht sinnvoll definiert werden.\\\\
+Wir definieren nun ``abstrakte'' d.h. nicht von vornherein in einen euklidischen Raum eingebettete \emph{differenzierbare Mannigfaltigkeit} als gewisse topologische Räume mit Zusatzstruktur, die uns es erlaubt auf ihnen Differentialrechnung zu betreiben.
+
+\begin{definition}[\textbf{Lokal euklidischer Raum}]
+Ein topologischer Raum $X$ heißt $m$-dim lokal euklidisch, falls jeder Punkt eine Umgebung besitzt, die homöomorph zu einer offenen Teilmenge in $\R^m$ ist.
+\end{definition}
+Ein Homöomorphismus $\kappa:U\to V$ einer offenen Teilmenge $U\subset X$ auf eine offene Teilmenge $V\subset \R^m$ heißt \emph{Karte} oder \emph{Koordinatensystem} und $U$ heißt \emph{Kartengebiet}. Wir werden oft solche Karten mit $(U,\kappa)$ bezeichnen. Sind $(U_i,\kappa_i)$ Karten, so ist der \emph{Kartenwechsel}
+$$\kappa_1(U_1\cap U_2) \xrightarrow{\kappa_2\circ \kappa_1^{-1}} \kappa_2(U_1\cap U_2)$$
+ein Homöomorphismus offener Teilmengen des Modells $\R^m$. \\\\
+Ein \textbf{Atlas} ist eine Familie $\AA$ von Karten $(U_i,\kappa_i)_{i\in I}$ die $X$ überdecken, $X= \bigcup\limits_{i \in I}U_i$. Um Differentialrechnung betreiben zu können, verlangen wir dieselbe Verträglichkeit der Karten im Atlas wie sie im Fall der Karten \eqref{karte} differenzierbarer Untermannigfaltigkeit vorliegt. Zwei Karten heißen $\mathcal{C}^k$-kompatibel, falls der Kartenwechsel ein $\mathcal{C}^k$-Diffeomorphismus ist. Ein Atlas $\AA$ heißt \emph{$\mathcal{C}^k$-differenzierbar}, falls seine Karten paarweise $\mathcal{C}^k$-kompatibel sind. Jeder Atlas ist in einem eindeutigen \emph{maximalen} $\mathcal{C}^k$-Atlas enthalten, der durch Hinzunahme aller $\mathcal{C}^k$-kompatiblen Karten entsteht.
+
+\begin{definition}[\textbf{Differenzierbare Struktur}]
+Eine $\mathcal{C}^k$-differenzierbare Struktur auf einem lokal euklidischen Raum ist ein maximaler $\mathcal{C}^k$-Atlas.
+\end{definition}
+Eine differenzierbare Struktur erlaubt, differenzierbare Konzepte vom euklidischen Raum zu übertragen. So zB die \emph{Differenzierbarkeit} von Abbildungen: Seien $X^m$ und $Y^n$ lokal euklidische Räume versehen mit $\mathcal{C}^k$-differenzierbaren Strukturen und sei $F:X\to Y$ eine stetige Abbildung. Ist $p \in X$ ein Punkt und sind $(U,\kappa)$ und $(U',\kappa')$ Karten in $X$ bzw $Y$ um $p$ bzw $F(p)$, so nennen wir die auf einer offenen Menge in $\R^m$ definierte $\R^n$-wertige Abbildung
+$$\kappa' \circ F \circ \kappa^{-1}$$
+eine \emph{lokale Koordinatendarstellung} von $F$ nahe $p$. Für den Übergang zwischen lokalen Koordinatendarstellungen gilt:
+$$\widetilde{\kappa}' \circ F \circ \widetilde{\kappa}^{-1} = \underbrace{(\widetilde{\kappa}' \circ (\kappa')^{-1})}_{\mathcal{C}^k\te{-Diffeo}} \circ (\kappa' \circ F \circ \kappa^{-1}) \circ \underbrace{(\kappa \circ \widetilde{\kappa}^{-1})}_{\mathcal{C}^k\te{-Diffeo}}.$$
+
+\begin{definition}[\textbf{Differenzierbare Abbildung}]
+Eine stetige Abbildung $F:X \to Y$ zwei $\mathcal{C}^k$-Mannigfaltigkeiten (s.u.) heißt im Punkt $p\in X$ \emph{$l$-fach differenzierbar}, $1\leq l \leq k$, falls eine und damit alle ihre lokalen Koordinatendarstellungen in $p$ im Punkt $\kappa(p)$ $l$-fach differenzierbar sind.
+\end{definition}
+Analog definiert man $\mathcal{C}^l$-Differenzierbarkeit. Den Raum der $\mathcal{C}^l$-Abbildungen bezeichnen wir mit $\mathcal{C}^l(X,Y)$ und spezieller den Raum der $\mathcal{C}^l$-Funktionen mit $\mathcal{C}^l(X)$. Ein Diffeomorphismus ist wieder eine bijektive differenzierbare Abbildung, deren Umkehrabbildung auch differenzierbar ist. Karten einer $\mathcal{C}^k$-differenzierbaren Struktur sind Diffeomorphismen.
+
+\begin{definition}[\textbf{Mannigfaltigkeit}]\
+\begin{enumerate}
+	\item Eine $m$-dim topologische Mannigfaltigkeit ist ein $m$-dim lokal euklidischer Haus-dorff-Raum mit abzählbarer Basis.
+	\item Eine $m$-dim $\mathcal{C}^k$-Mannigfaltigkeit ist eine topologische Mannigfaltigkeit mit $\mathcal{C}^k$-differenzierbarer Struktur.
+\end{enumerate}
+\end{definition}
+Die Hausdorff Eigenschaft stellt sicher, dass wir Punkte durch stetige Funktionen trennen können. Die abzählbare Basis der Topologie sichert die Existenz einer Partition der Eins.
+
+\begin{example}
+\begin{enumerate}
+\item[(o)] Die natürliche $\mathcal{C}^\infty$-differenzierbare Struktur auf $\R^n$ besteht aus $\id_{\R^n}$ zusammen mit allen $\mathcal{C}^\infty$-kompatiblen Karten. So wird $\R^n$ eine $\mathcal{C}^\infty$-Mannigfaltigkeit.
+\item Eine $m$-dim $\mathcal{C}^k$-Untermannigfaltigkeit $M\subset\R^n$ ist, versehen mit der relativen Topologie, ein lokal euklidischer Raum. Sie trägt eine $\mathcal{C}^k$-differenzierbare Struktur induziert durch die Karten $\Phi|_{M\cap U}$.
+\item[(i')] Sei $N^n$ eine $n$-dim $\mathcal{C}^k$-Mannigfaltigkeit. Dann heißt für $0\leq m \leq n$ eine Teilmenge $M\subset N$ eine $m$-dim (bzw. $(n-m)$-kodim) $\mathcal{C}^k$-Untermannigfaltigkeit von $N$, falls in jedem Punkt  $p\in M$ eine Karte $\Phi:U\to \R^n$ im Atlas von $N$ existiert, s.d. $U$ eine Umgebung von $p$ ist und $\Phi(U\cap M)\subset \R^m$ gilt. D.h. $\Phi(U\cap M)$ ist eine $m$-dim Untermannigfaltigkeit von $\R^n$. In diesem Fall ist $M$ eine $\mathcal{C}^k$-Mannigfaltigkeit.
+\item Euklidische Produkte von $\mathcal{C}^k$-Mannigfaltigkeiten sind auf natürliche Art $\mathcal{C}^k$-Mannigfaltigkeit.
+\item Jede $\mathcal{C}^k$-differenzierbare Struktur kann zu einer $\mathcal{C}^l$-differenzierbare Struktur für $l\leq k$ abgeschwächt werden. D.h. jede $\mathcal{C}^l$-Mannigfaltigkeit ist auch $\mathcal{C}^k$-Mannig-faltigkeit, $l\leq k$.
+\end{enumerate}
+\end{example}
 \comment{
 \newpage
 \appendix
