@@ -3194,7 +3194,7 @@ Der $\mathcal{C}^k$ Diffeomorphimus induziert durch Einschränkung einen Homöom
 \kappa:= \Phi|_{M\cap U}:M\cap U\longrightarrow \R^m \cap V
 \end{equation}
 der offenen Menge $U\cap M$  auf eine offene Teilmenge des ``Modells'' $\R^m$. Er belegt $M$ nahe $p$ mit \emph{lokalen Koordinaten} und man spricht von einer \emph{lokalen Karte} nahe $p$. \linebreak Je zwei solche Karten $\kappa_i:M\cap U_i \longrightarrow \R^m\cap V_i$, $i=1,2$, sind miteinander $\mathcal{C}^k$-kompatibel in dem Sinne, dass Koordinatentransformationen bzw. Kartenwechsel
-$$\kappa_1(M\cap U_1\cap U_2) \xrightarrow[]{\kappa_2 \circ \kappa_1^{-1}}  \kappa_2 (M\cap U_1\cap U_2)$$
+$$\kappa_2 \circ \kappa_1^{-1}:\kappa_1(M\cap U_1\cap U_2) \longrightarrow \kappa_2 (M\cap U_1\cap U_2)$$
 $\mathcal{C}^k$ Diffeomorphismus offener Teilmengen des $\R^m$ sind, denn sie sind Einschränkungen des $\mathcal{C}^k$-Diffeomorphismus $$\Phi_1(U_1\cap U_2)\to \Phi_2(U_1\cap U_2).$$ Die $\mathcal{C}^k$-Kompatibilität der Karten ermöglicht Differentialrechnung auf $M$ zu betreiben, ohne den umgebenden euklidischen Raum $\R^n$ zu benötigen. Z.B. können wir von der bis zu $k$-fachen Differenzierbarkeit der nur auf $M$ definierten Funktion $f:M\to \R$ sprechen: $f$ heißt in $p$ \emph{$l$-fach differenzierbar} für $1\leq l \leq k$, wenn für eine Karte $\kappa$ in $p$ ihre auf einer offenen Menge in $\R^m$ definierte lokale Koordinatendarstellung $f\circ \kappa^{-1}$  im Punkt $\kappa(p)$ $l$-fach differenzierbar ist. Dies ist unabhängig von der Karte. Denn ist $\widetilde{\kappa}$ eine weitere Karte in $p$, so gilt
 $$ f \circ \widetilde{\kappa}^{-1} = f \circ \kappa^{-1} \circ \underbrace{(\kappa \circ \widetilde{\kappa}^{-1})}_{\mathcal{C}^k\te{-Diffeo}}$$
 nahe $\widetilde{\kappa}(p)$, und $f\circ \widetilde{\kappa}^{-1}$ ist genau dann $l$-fach differenzierbar in $\widetilde{\kappa}(p)$, wenn $f\circ \kappa^{-1}$ $l$-fach differenzierbar ist in $\kappa(p)$. Höhere als $k$-fache Differenzierbarkeit kann nicht sinnvoll definiert werden.\\
@@ -3207,7 +3207,7 @@ Ein topologischer Raum $X$ heißt $m$-dim lokal euklidisch, falls jeder Punkt ei
 \end{mdframed}
 \end{definition}
 Ein Homöomorphismus $\kappa:U\to V$ einer offenen Teilmenge $U\subset X$ auf eine offene Teilmenge $V\subset \R^m$ heißt \emph{Karte} oder \emph{Koordinatensystem} und $U$ heißt \emph{Kartengebiet}. Wir werden oft solche Karten mit $(U,\kappa)$ bezeichnen. Sind $(U_i,\kappa_i)$ Karten, so ist der \emph{Kartenwechsel}
-$$\kappa_1(U_1\cap U_2) \xrightarrow{\kappa_2\circ \kappa_1^{-1}} \kappa_2(U_1\cap U_2)$$
+$$\kappa_2\circ \kappa_1^{-1}:\kappa_1(U_1\cap U_2) \longrightarrow \kappa_2(U_1\cap U_2)$$
 ein Homöomorphismus offener Teilmengen des Modells $\R^m$. \\\\
 Ein \textbf{Atlas} ist eine Familie $\AA$ von Karten $(U_i,\kappa_i)_{i\in I}$ die $X$ überdecken, $X= \bigcup\limits_{i \in I}U_i$. Um Differentialrechnung betreiben zu können, verlangen wir dieselbe Verträglichkeit der Karten im Atlas wie sie im Fall der Karten \eqref{karte} differenzierbarer Untermannigfaltigkeit vorliegt. Zwei Karten heißen $\mathcal{C}^k$-\emph{kompatibel}, falls der Kartenwechsel ein $\mathcal{C}^k$-Diffeomorphismus ist. Ein Atlas $\AA$ heißt \emph{$\mathcal{C}^k$-differenzierbar}, falls seine Karten paarweise $\mathcal{C}^k$-kompatibel sind. Jeder Atlas ist in einem eindeutigen \emph{maximalen} $\mathcal{C}^k$-Atlas enthalten, der durch Hinzunahme aller $\mathcal{C}^k$-kompatiblen Karten entsteht.
 
