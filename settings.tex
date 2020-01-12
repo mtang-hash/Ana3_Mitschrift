@@ -10,16 +10,14 @@
 \usepackage{relsize}
 \usepackage{etoolbox}
 \usepackage[ngerman]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
 \usepackage{marvosym}
 \usepackage[shortlabels]{enumitem}
 \usepackage{mathtools}
 \usepackage{amssymb}
+\usepackage{stmaryrd}
 \usepackage{cancel}
 \usepackage{mdframed}
-\usepackage{framed}
-\usepackage{mathtools}
+\usepackage{framed}{}
 \usepackage{tablefootnote} 
 \usepackage{listings}
 \usepackage{amsthm}
@@ -34,6 +32,17 @@
    pdfauthor={MT},
  ]{hyperref}
 \usepackage{bookmark}
+
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{epsfig}
+\usepackage{pst-grad} % For gradients
+\usepackage{pst-plot} % For axes
+\usepackage[space]{grffile} % For spaces in paths
+\usepackage{etoolbox} % For spaces in paths
+\makeatletter % For spaces in paths
+\patchcmd\Gread@eps{\@inputcheck#1 }{\@inputcheck"#1"\relax}{}{}
+\makeatother
+
 \usetikzlibrary{cd}
 \usetikzlibrary{calc}
 \theoremstyle{definition}
@@ -45,6 +54,7 @@
 \newtheorem*{folgerung}{Folgerung}
 \newtheorem*{example}{Beispiel}
 \newtheorem*{hauptbsp}{Hauptbeispiel}
+\newtheorem*{aufgabe}{Aufgabe}
 \theoremstyle{remark}
 \newtheorem*{remark}{Bemerkung}
 \newtheorem*{remark'}{Nebenbemerkung}
@@ -66,7 +76,7 @@
 \newcommand{\vphi}{\phi}
 \newcommand{\ol}{\overline}
 %Differentiation
-\newcommand{\D}{\, \mathrm{d}}
+\newcommand{\D}{\, \mathrm{d} }
 %Bold Symbols
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
@@ -105,6 +115,7 @@
 \newcommand{\Bild}{\begin{tiny}(Bild hier)\end{tiny}}
 \newcommand{\Ueb}{\begin{tiny}\textbf{(Ü)}\end{tiny}}
 \newcommand{\te}{\text}
+\newcommand{\comment}[1]{}
 \renewcommand{\ker}{\operatorname{ker}}
 \renewcommand*{\forall}{\foralltemp\mkern2mu}
 \renewcommand{\emptyset}{\varnothing}
@@ -113,7 +124,7 @@
 \renewcommand{\Im}{\operatorname{im}}
 \renewcommand{\qedsymbol}{$\blacksquare$}
 \renewcommand{\phi}{\varphi}
-\renewcommand{\thesection}{\Roman{section}}
+%\renewcommand{\thesection}{\Roman{section}}
 \makeatletter 
 \AfterEndEnvironment{mdframed}{%
  \tfn@tablefootnoteprintout% 
