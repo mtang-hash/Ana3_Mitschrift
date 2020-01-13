@@ -1799,9 +1799,9 @@ Wir wollen zeigen, dass das Lebesgue-Maß \emph{eine natürliche Lösung} des ei
 
 \paragraph{Geometrische Transformationen des $\R^d$}
 \begin{itemize}
-\item \textbf{Affine Transformationen}  des $\R^d$ sind Abbildung $\Phi_{A,v}$ der Form
+\item \textbf{Affine Transformationen}  des $\R^d$ sind Abbildungen $\Phi_{A,v}$ der Form
 $$
-\Phi_{A,v}(x)=Ax + v	\quad \text{ mit }	\underset{\text{linearer Anteil}}{A\in \GL (d,\R)}, v\in\R^d
+\Phi_{A,v}(x)=Ax + v	\quad \text{ mit }	\underset{\text{linearer Anteil}}{A\in \GL (d,\R)}, v\in\R^d.
 $$
 Sie sind geometrisch charakterisierbar als injektive Selbstabbildungen, welche 
 	\begin{itemize}
@@ -1833,7 +1833,7 @@ Die lineare Abbildung $\operatorname{lin}:\Aff(\R^d) \overset{\operatorname{}}\l
 $$
 \Trans (\R^d) \xrightarrow[\te{inj.}]{\te{Inklusion}} \Aff(\R^d) \xrightarrow[\te{surj.}]{\te{linear}} \GL(d,\R)
 $$
- eine exakte Sequenz.\footnote{Eine Sequenz $A' \to A \to A''$ von Objekten und Morphismen in einer geeigneten Kategorie heißt exakt an der Stelle $A$, wenn $\Im(A'\to A) = \ker(A \to A'')$.} Bezüglich der Einschränkung auf den Isometrien $$\Isom(\R^d)\xrightarrow[\te{Epimorphismus}]{\operatorname{lin}|_{\Isom(\R^d)}=:\operatorname{rot}} \O(d)$$ ist
+ eine exakte Sequenz.\footnote{Eine Sequenz $A' \to A \to A''$ von Objekten und Morphismen in einer geeigneten Kategorie heißt \emph{exakt} an der Stelle $A$, wenn $\Im(A'\to A) = \ker(A \to A'')$.} Bezüglich der Einschränkung auf den Isometrien $$\Isom(\R^d)\xrightarrow[\te{Epimorphismus}]{\operatorname{lin}|_{\Isom(\R^d)}=:\operatorname{rot}} \O(d)$$ ist
 $$
 \Trans(\R^d) \longrightarrow \Isom(\R^d) \longrightarrow \O(d)
 $$
@@ -3172,6 +3172,7 @@ $\mathcal{C}^1$-Diffeomorphismen offener Teilmengen der $\R^d$ erhalten Borel-Nu
 \end{mdframed}
 \end{korollar}
 
+\numberwithin{equation}{subsection}
 
 \section{Differentialformen auf Mannigfaltigkeiten}
 \subsection{Differenzierbare Mannigfaltigkeiten}\marginpar{\tiny{9.1.2020}}
@@ -3184,6 +3185,9 @@ Für $0 \leq m \leq n $ und \newline $1 \leq k \leq \infty$ heißt eine Teilmeng
 \end{equation}
 \begin{center}\ \ \ \ \ \ \ \ \ \ \ 
 \input{Bild1.tex}
+\begin{small}
+Abbildung: Untermannigfaltigkeit 
+\end{small}
 \end{center}
 \end{mdframed}
 Wir werden im Folgenden $\R^m\times \{0_{\R^{n-m}}\}$ mit $\R^m$ identifizieren.
@@ -3223,7 +3227,7 @@ $$\widetilde{\kappa}' \circ F \circ \widetilde{\kappa}^{-1} = \underbrace{(\wide
 
 \begin{definition}[\textbf{Differenzierbare Abbildung}]
 \begin{mdframed}
-Eine stetige Abbildung $F:X \to Y$ zwei $\mathcal{C}^k$-Mannigfaltigkeiten (s.u.) heißt im Punkt $p\in X$ \emph{$l$-fach differenzierbar}, $1\leq l \leq k$, falls eine und damit alle ihre lokalen Koordinatendarstellungen in $p$ im Punkt $\kappa(p)$ $l$-fach differenzierbar sind.
+Eine stetige Abbildung $F:X \to Y$ zwei lokal euklidischer Räume versehen mit $\mathcal{C}^k$-differenzierbaren Strukturen heißt im Punkt $p\in X$ \emph{$l$-fach differenzierbar}, $1\leq l \leq k$, falls eine und damit alle ihre lokalen Koordinatendarstellungen in $p$ im Punkt $\kappa(p)$ $l$-fach differenzierbar sind.
 \end{mdframed}
 \end{definition}
 Analog definiert man $\mathcal{C}^l$-Differenzierbarkeit. Den Raum der $\mathcal{C}^l$-Abbildungen bezeichnen wir mit $\mathcal{C}^l(X,Y)$ und spezieller den Raum der $\mathcal{C}^l$-Funktionen mit $\mathcal{C}^l(X)$. Ein Diffeomorphismus ist wieder eine bijektive differenzierbare Abbildung, deren Umkehrabbildung auch differenzierbar ist. Karten einer $\mathcal{C}^k$-differenzierbaren Struktur sind Diffeomorphismen.
@@ -3231,22 +3235,141 @@ Analog definiert man $\mathcal{C}^l$-Differenzierbarkeit. Den Raum der $\mathcal
 \begin{definition}[\textbf{Mannigfaltigkeit}]
 \begin{mdframed}\
 \begin{enumerate}[topsep=0.2pc]
-	\item Eine $m$-dim \emph{topologische Mannigfaltigkeit} ist ein $m$-dim lokal euklidischer Haus-dorff-Raum mit abzählbarer Basis.
+	\item Eine $m$-dim \emph{topologische Mannigfaltigkeit} ist ein $m$-dim lokal euklidischer Hausdorff-Raum mit abzählbarer Basis.
 	\item Eine $m$-dim $\mathcal{C}^k$-\emph{Mannigfaltigkeit} ist eine topologische Mannigfaltigkeit mit $\mathcal{C}^k$-differenzierbarer Struktur.
 \end{enumerate}
 \end{mdframed}
 \end{definition}
 Die Hausdorff Eigenschaft stellt sicher, dass wir Punkte durch stetige Funktionen trennen können. Die abzählbare Basis der Topologie sichert die Existenz einer Partition der Eins.
 
-\begin{example}
+\begin{example}\
 \begin{enumerate}
 \item[(o)] Die natürliche $\mathcal{C}^\infty$-differenzierbare Struktur auf $\R^n$ besteht aus $\id_{\R^n}$ zusammen mit allen $\mathcal{C}^\infty$-kompatiblen Karten. So wird $\R^n$ eine $\mathcal{C}^\infty$-Mannigfaltigkeit.
 \item Eine $m$-dim $\mathcal{C}^k$-Untermannigfaltigkeit $M\subset\R^n$ ist, versehen mit der relativen Topologie, ein lokal euklidischer Raum. Sie trägt eine $\mathcal{C}^k$-differenzierbare Struktur induziert durch die Karten $\Phi|_{M\cap U}$.
-\item[(i')] Sei $N^n$ eine $n$-dim $\mathcal{C}^k$-Mannigfaltigkeit. Dann heißt für $0\leq m \leq n$ eine Teilmenge $M\subset N$ eine $m$-dim (bzw. $(n-m)$-kodim) $\mathcal{C}^k$-Untermannigfaltigkeit von $N$, falls in jedem Punkt  $p\in M$ eine Karte $\Phi:U\to \R^n$ im Atlas von $N$ existiert, s.d. $U$ eine Umgebung von $p$ ist und $\Phi(U\cap M)\subset \R^m$ gilt. D.h. $\Phi(U\cap M)$ ist eine $m$-dim Untermannigfaltigkeit von $\R^n$. In diesem Fall ist $M$ eine $\mathcal{C}^k$-Mannigfaltigkeit.
+\item[(i')] Sei $N^n$ eine $n$-dim $\mathcal{C}^k$-Mannigfaltigkeit. Dann heißt für $0\leq m \leq n$ eine Teilmenge $M\subset N$ eine $m$-dim (bzw. $(n-m)$-kodim) $\mathcal{C}^k$-Untermannigfaltigkeit von $N$, falls in jedem Punkt  $p\in M$ eine Karte $\Phi:U\to \R^n$ im Atlas von $N$ existiert, s.d. $U$ eine Umgebung von $p$ ist und $\Phi(U\cap M)\subset \R^m$ gilt. D.h. $\Phi(U\cap M)$ ist eine $m$-dim Untermannigfaltigkeit von $\R^n$. In diesem Fall erbt $M$ die Struktur als $\mathcal{C}^k$-Mannigfaltigkeit von $N$.
 \item Euklidische Produkte von $\mathcal{C}^k$-Mannigfaltigkeiten sind auf natürliche Art $\mathcal{C}^k$-Mannigfaltigkeit.
 \item Jede $\mathcal{C}^k$-differenzierbare Struktur kann zu einer $\mathcal{C}^l$-differenzierbare Struktur für $l\leq k$ abgeschwächt werden. D.h. jede $\mathcal{C}^l$-Mannigfaltigkeit ist auch $\mathcal{C}^k$-Mannig-faltigkeit, $l\leq k$.
 \end{enumerate}
 \end{example}
+%\rule{\textwidth}{0.4pt}\vspace{0.2pc}
+\marginpar{\tiny{13.1.2020}} Man kann ausgehend von einer \emph{Menge}, mit Hilfe eines geeigneten ``Atlas'' direkt sowohl die topologische als auch die differenzierbare Struktur einer Mannigfaltigkeit induzieren. Dies ist oft nützlich für die Konstruktion von Mannigfaltigkeiten.
+
+\begin{satz}
+\begin{mdframed}
+Sei $M$ eine Menge, und seien $m\geq 0$ und $k\geq 1$. Wir nehmen an:
+\begin{enumerate}
+	\item $\AA$ ist eine Familie bijektiver Abbildungen
+	$$\kappa_l:U_l\longrightarrow V_l,\quad l \in L$$
+	von Teilmengen $U_l \subset M$ und $V_l\subset \R^m$ offen, so dass $M\subset \bigcup\limits_{l \in L} U_l$.
+	\item Die Definitionsbereiche der Abbildungen $(\kappa_j \circ \kappa_l^{-1})$ sind offene Teilmengen und die $(\kappa_j\circ \kappa_l^{-1})$ sind $\mathcal{C}^k$.
+\end{enumerate}
+Dann existiert auf $M$ eine eindeutige $m$-dim lokal euklidische Topologie $\TT$ sowie auf $(M,\TT)$ eine eindeutige $\mathcal{C}^k$-differenzierbare Struktur, sodass $\AA$ für sie ein $\mathcal{C}^k$-Atlas ist.
+\end{mdframed}
+\textit{Beweisskizze.} Wir betrachten die Familie $\TT$ aller Teilmengen $O\subset M$ sodass $\kappa_\iota(O\cap U_\iota)$ offen ist für alle $\iota \in L$. Sie ist eine Topologie auf $M$ \Ueb . Sie wird von den Teilmengen der Form $\kappa_\iota^{-1}(O_\iota')$ für offene Teilmengen $O_\iota' \subset V_\iota$ erzeugt. Genauer gesagt sind die $U_\iota$ offen bzgl $\TT$ und die $\kappa_\iota$ sind Homöomorphismen. Weiter folgt, dass $\AA$ einen $\mathcal{C}^k$-differenzierbaren Atlas liefert. \qed
+\end{satz}
+%\rule{\textwidth}{0.4pt}\vspace{0.2pc}
+Man kann auch Kriterien angeben wann eine Mannigfaltigkeit vorliegt:
+\begin{mdframed}
+\textbf{Zusatz.}
+\begin{enumerate}
+\item Die Topologie $\TT$ ist Hausdorff, wenn je zwei Punkte in einer gemeinsamen Teilmenge $U_\iota$ enthalten sind oder in disjunkten.
+\item $\TT$ hat eine abzählbare Basis, wenn $M$ durch abzählbar viele $U_\iota$'s überdeckt wird.
+\end{enumerate}
+\end{mdframed}
+\begin{proof}
+\Ueb .
+\end{proof}
+Das folgende ist eine wichtiges Beispiel für eine ``abstrakte'' Mannigfaltigkeit in dem Sinne, dass sie keine bevorzugte  Einbettung in den euklidischen Raum besitzt.
+
+\begin{example}[Reell projektiver Raum]
+%\begin{enumerate}
+%\item 
+Der \emph{$d$-dim reell projektiver Raum $\R P^d$} ist die Menge der Geraden in $\R^{d+1}$ durch den Ursprung, d.h. die Menge der 1-dim Unterräume. Dem Punkt $\R x$ repräsentiert durch den Punkt $x\in \R^{d+1}\setminus \{0\}$ ordnen wir die homogenen Koordinaten zu
+$$[x]= [x_0:x_1:...:x_d].$$
+Sie sind eindeutig bis auf Skalierung:
+$$[x]=[x'] \iff \exists \lambda \in \R\setminus \{0\}:\lambda x = x'.$$
+Wir setzen
+\begin{equation*}
+\begin{array}{cccc}
+U_i =  & \{ [x] \in \R P^d \mid x_i \neq 0\} & \overset{\kappa_i}\longrightarrow & \{x_i = 1\} \cong \R^d\\
+& [x_0:...:x_d] & \longmapsto & \left( \dfrac{x_0}{x_i}, ...\  \widehat{x_i},...,\dfrac{x_d}{x_i} \right)
+\end{array}
+\end{equation*}
+wobei $\widehat{x_i}$ bedeutet, dass der Term $x_i$ weglassen wird. Die $\kappa_i$ heißen \emph{affine Koordinaten}, mit der Umkehrabbildung
+$$[y_1,...,\underset{i\te{-te}}{1},...,y_d] \longmapsfrom (y_1,...,y_d). $$
+Wir prüfen, dass die Familie der $\kappa_i$ die Voraussetzungen vom letzten Satz erfüllt. Dazu stellen wir fest, dass $\kappa_i(U_i)=V_i\cong \R^d$, also sicher offen. $\R P^d$ wird von den $U_i$ überdeckt. Weiter sind für $i \neq j$ die Definitionsbereiche
+$$\{x_i=1 \wedge x_j \neq 0 \}\subset \{x_i \neq 0\}$$
+der Kartenwechsel $\kappa_j\circ \kappa_i^{-1}$, sind Komplemente von Hyperebene, insbesondere offen, und die $\kappa_j \circ \kappa_i^{-1}$ sind als rationale Funktionen glatt. Also induzieren sie den Atlas einer glatten Struktur. Man prüft auch die Voraussetzungen von dem letzten Zusatz, also ist $\R P^d$ eine glatte Mannigfaltigkeit.
+%\end{enumerate}
+\end{example}
+\rule{\textwidth}{0.4pt}\vspace{0.2pc}
+Für Verklebekonstruktion ist folgende Verallgemeinerung nützlich: Die Aussagen von dem Satz und Zusatz gelten auch, wenn die $V_\iota$ $\mathcal{C}^k$-Mannigfaltigkeiten und die $\kappa_\iota$ $\mathcal{C}^k$-Diffeomorphismen sind.
+
+\subsection{Tangentialbündel und Differential}
+Wir approximieren nun differenzierbare Mannigfaltigkeiten lokal durch Vektorräume, indem wir den Begriff des Tangentialraums an eine Untermannigfaltigkeit adaptieren.
+\begin{center}
+\includegraphics[scale=0.105]{tanraum.eps}\\
+\begin{small}
+Abbildung: Tangentialraum\footnote{Quelle: Wikipedia.}
+\end{small}
+\end{center}
+Sei $M^m$ eine $\mathcal{C}^k$-Mannigfaltigkeit. Wir betrachten $\mathcal{C}^1$-Kurven $c:(-\varepsilon,\varepsilon)\to M$ durch einen Punkt $p\in M$. Wir sagen, dass zwei solche Kurven $c_i:(-\varepsilon_i,\varepsilon_i) \to M$ durch $p$ in $t=0$ \emph{erste Ordnung übereinstimmen}, falls für eine Karte $(U,x)$ in $p$ gilt
+$$(x\circ c_1)'(0)=(x\circ c_2)'(0).$$
+Dies ist unabhängig von der Karte $x$, denn ist $(\widetilde{U},\widetilde{x})$ eine zweite Karte in $p$, so gilt
+\begin{equation}\label{unabh-karte}
+(\widetilde{x}\circ c_i)'(0) = \D(\widetilde{x}\circ x^{-1})_{(x\circ c_i)(0)}(x\circ c_i)'(0).
+\end{equation}
+Die Äquivalenzklasse in $t=0$ erste Ordnung übereinstimmender Kurven nennt man \emph{1-Jet} von Kurven durch $p$. Wir bezeichnen den 1-Jet der Kurve $c$ mit $[c]$.
+\begin{definition}[\textbf{Tangentialvektor, -räume, -bündel}] 
+\begin{mdframed}Sei $M$ eine $m$-dimensionale $\mathcal{C}^k$-Mannigfaltigkeit, $p\in M$.
+\begin{enumerate}
+\item Ein \emph{Tangentialvektor} im Punkt $p$ ist ein 1-Jet durch $p$, also eine Äquivalenzklasse in $t=0$ erste Ordnung übereinstimmender Kurven.
+\item Der \emph{Tangentialraum} $T_pM$ an $M$ im Punkt $p$ ist die Vereinigung aller Tangentialvektoren in $p$.
+\item Das \emph{Tangentialbündel} $TM$ ist die \emph{disjunkte} Vereinigung der Tangentialräume $TM=\bigsqcup\limits_{p\in M}T_p M$ zusätzlich mit der Fußpunktprojektion $\pi:TM\to M$.
+\end{enumerate}
+\end{mdframed}
+\end{definition}
+Die Tangentialräume an verschiedenen Punkten sind also disjunkt. Sie tragen natürliche Strukturen als \emph{lineare Räume}. Weil die Differentiale $\D(\underbrace{\widetilde{x}\circ x^{-1}}_{\mathcal{C}^k})$ der Kartenwechsel lineare Automorphismen sind, existiert angesichts \eqref{unabh-karte} sowie der Kettenregel auf $T_pM$ eine eindeutige lineare Struktur als $m$-dim Vektorraum, sodass die Bijektionen
+\begin{equation}\label{tangenraum}
+T_pM\overset{1:1}\longrightarrow \R^m, c\longmapsto (x\circ c)'(0)
+\end{equation}
+für alle Karten $x$ in $p$ lineare Automorphismen sind. Jede Karte $x$ zeichnet eine Basis des Tangentialraums aus, die aus den Koordinatenrichtungen
+$$\frac{\del}{\del x_i}\bigg|_p := [ t\longmapsto x^{-1}(x(p)+te_i)] \in T_pM$$
+\begin{center}
+\input{Bild2.tex}
+\begin{small}
+Abbildung: Koordinatenrichtung bzgl. einer Karte $x$
+\end{small}
+\end{center}
+bzgl. $x$ besteht, unter der Identifizierung \eqref{tangenraum} in die Standardbasis überträgt. Die Notation reflektiert, dass Tangentialvektoren \emph{Richtungsableitungen} entsprechen, hier den partiellen Ableitungen. Wir nennen $\left(\dfrac{\del}{\del x_i}\bigg|_p\right)$ die Standardbasis von $T_pM$ bzgl. $x$. Ein allgemeiner Tangentialvektor $[c]\in T_pM$ hat dann wegen
+$(x\circ c)'(0)=\sum_{i=1}^m(x_i\circ c)'(0)e_i$
+die Darstellung
+\begin{equation}\label{darstellung-tanvek}
+(x\circ c)'(0)=\sum_{i=1}^m(x_i\circ c)'(0)\frac{\del}{\del x_i}\bigg|_p.
+\end{equation}
+Eine Karte $(U,x)$ für $M$ induziert, indem man die Identifikationen \eqref{tangenraum} zusammennimmt, insgesamt eine \emph{Karte} 
+\begin{equation}\label{karte-von-tanb}
+\begin{array}{cccc}
+Tx:&TU=\bigsqcup\limits_{p\in U}T_pM &\overset{1:1}\longrightarrow &x(U)\times \R^m\\
+& [c]&\longmapsto& ((x\circ c)(0),(x\circ c)'(0))
+\end{array}
+\end{equation}
+für den entsprechenden Teil von dem Tangentialbündel $TM$. Ist $(\widetilde{U},\widetilde{x})$ eine weitere Karte, so ist der Kartenwechsel
+\begin{equation}\label{kartenwechsel-tanb}
+T\widetilde{x}\circ(Tx)^{-1}:x(U\cap \widetilde{U})\times \R^m \longrightarrow \widetilde{x} (U\cap \widetilde{U}) \times \R^m
+\end{equation}
+auf dem Tangentialbündel $TM$ gegeben durch
+\begin{equation*}
+\begin{array}{crl}
+(x\circ c)(0),(x\circ c)'(0)) & \longmapsto& ((\widetilde{x} \circ c)(0),(\widetilde{x}\circ c)'(0))
+\\&=&((\widetilde{x}\circ x^{-1})(x\circ c)(0), \D(\widetilde{x}\circ x^{-1})_{(x\circ c)(0)}(x\circ c)'(0)).
+\end{array}
+\end{equation*}
+Bezeichnen wir suggestiver die Koordinaten in $M$ bzgl. der Karten mit $x$ bzw $\widetilde{x}$ und den Kartenwechsel mit $\widetilde{x}(x)$, so nimmt der Kartenwechsel auf $TM$ die Form
+$$(x,v)\longmapsto (\widetilde{x}(x),\D\widetilde{x}_x(v))$$
+an. Das Differential einer Abbildung $\widetilde{x}(x)$ zwischen offenen Teilmengen euklidischer Räume, ist explizit gegeben durch
+$$\D\widetilde{x}_x(v)=\sum_i\sum_j\bigg(\underbrace{\frac{\del\widetilde{x}_i}{\del x_j}}_{\frac{\del(\tilde{x}\circ x^{-1})_i}{\del x_j}}v_i\bigg)e_i.$$
+\marginpar{\tiny{16.1.2020}}
 \comment{
 \newpage
 \appendix
