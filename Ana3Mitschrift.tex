@@ -1772,7 +1772,7 @@ Eine messbare Abbildung $f:(X,\AA,\mu)\longrightarrow (Y,\BB,\nu)$ heißt \textb
 \begin{remark}\
 \begin{itemize}
 \item
-Eine bijektive Abbildung von Mengen $f:X \longrightarrow Y$ induziert eine ebenfalls bijektive Abbildung $f_*:\PP(Y) \longrightarrow \PP(X), M \longmapsto f^{-1}(M)$ mit der Umkehrabbildung $M\mapsto f(M)$. 
+Eine bijektive Abbildung von Mengen $f:X \longrightarrow Y$ induziert eine ebenfalls bijektive Abbildung $f_*:\PP(Y) \longrightarrow \PP(X), M \longmapsto f^{-1}(M)$ mit den Umkehrabbildungen $M\mapsto f(M)$. 
 \item Ist  $f:(X,\TT_X) \longrightarrow (Y,\TT_Y)$ eine Bijektion topologischer Räume, so ist $f$ genau dann Homöomorphismus, wenn $f^*\TT_Y=\TT_X$.  In diesem Fall gilt auch $f^*(\underbrace{\BB(Y)}_{\sigma(\TT_Y)}) = \sigma (\underbrace{f^*\TT_Y}_{\TT_X}) = \BB(X)$. D.h. $f$ und $f^{-1}$ messbar, also ist $f:(X,\BB(X))\longrightarrow (Y,\BB(Y))$ ein Isomorphismus von Messräumen.
 \end{itemize}
 \end{remark}
@@ -2319,8 +2319,8 @@ Es ist $|\int_X f\D \mu| = | \|f^+\|_1 - \|f^-\|_1|\leq \|f^+\|_1+\|f^-\|_1=\|f\
 Ist $f\in \MM_{\ol\R}$ integrierbar und $c>0$, so gilt
 \begin{equation*}
 \begin{split}
-\mu (\{|f|\geq c\}) \leq & (\mu \otimes \lambda^1) \left( \left\{ \left(x, y\right)\, \bigg\vert \  0<y<\frac{|f(x)|}{c} \text{ und } |f(x)|\geq c	\right\}\right)\\
-= & \int_X \chi_{\{|f|\geq c\}}\frac{|f|}{c}\D\mu  \\
+\mu (\{|f|\geq c\}) = & \int_X \chi_{\{|f|\geq c\}}\D\mu\\
+\leq & \int_X \chi_{\{|f|\geq c\}} \underbrace{\frac{|f|}{c}}_{\geq 1}\D\mu  \\
 \leq & \frac{1}{c}\cdot \underbrace{\|f\|_1}_{<\infty} \longrightarrow 0 \text{ für } c\to \infty
 \end{split}
 \end{equation*}
@@ -3183,13 +3183,13 @@ Für $0 \leq m \leq n $ und \newline $1 \leq k \leq \infty$ heißt eine Teilmeng
 \begin{equation}
 \Phi(M\cap U) =\underbrace{ \{x\in \R^n \mid x_{m+1}=...=x_n=0\}}_{\R^m\times\{0_{\R^{n-m}}\}}\cap V.
 \end{equation}
+\end{mdframed}
 \begin{center}\ \ \ \ \ \ \ \ \ \ \ 
 \input{Figures/Bild1.tex}
 \begin{small}
 Abbildung: Untermannigfaltigkeit 
 \end{small}
 \end{center}
-\end{mdframed}
 Wir werden im Folgenden $\R^m\times \{0_{\R^{n-m}}\}$ mit $\R^m$ identifizieren.
 \end{definition}
 Der $\mathcal{C}^k$ Diffeomorphimus induziert durch Einschränkung einen Homöomorphismus
@@ -3203,7 +3203,7 @@ $\mathcal{C}^k$ Diffeomorphismus offener Teilmengen des $\R^m$ sind, denn sie si
 $$ f \circ \widetilde{\kappa}^{-1} = f \circ \kappa^{-1} \circ \underbrace{(\kappa \circ \widetilde{\kappa}^{-1})}_{\mathcal{C}^k\te{-Diffeo}}$$
 nahe $\widetilde{\kappa}(p)$, und $f\circ \widetilde{\kappa}^{-1}$ ist genau dann $l$-fach differenzierbar in $\widetilde{\kappa}(p)$, wenn $f\circ \kappa^{-1}$ $l$-fach differenzierbar ist in $\kappa(p)$. Höhere als $k$-fache Differenzierbarkeit kann nicht sinnvoll definiert werden.\\
 \rule{\textwidth}{0.4pt}\vspace{0.2pc}
-Wir definieren nun ``abstrakte'' d.h. nicht von vornherein in einen euklidischen Raum eingebettete \emph{differenzierbare Mannigfaltigkeit} als gewisse topologische Räume mit Zusatzstruktur, die uns es erlaubt auf ihnen Differentialrechnung zu betreiben.
+Wir definieren nun ``abstrakte'', d.h. nicht von vornherein in einen euklidischen Raum eingebettete, \emph{differenzierbare Mannigfaltigkeit} als gewisse topologische Räume mit Zusatzstruktur, die uns es erlaubt, auf ihnen Differentialrechnung zu betreiben.
 
 \begin{definition}[\textbf{Lokal euklidischer Raum}]
 \begin{mdframed}
@@ -3213,7 +3213,7 @@ Ein topologischer Raum $X$ heißt $m$-dim lokal euklidisch, falls jeder Punkt ei
 Ein Homöomorphismus $\kappa:U\to V$ einer offenen Teilmenge $U\subset X$ auf eine offene Teilmenge $V\subset \R^m$ heißt \emph{Karte} oder \emph{Koordinatensystem} und $U$ heißt \emph{Kartengebiet}. Wir werden oft solche Karten mit $(U,\kappa)$ bezeichnen. Sind $(U_i,\kappa_i)$ Karten, so ist der \emph{Kartenwechsel}
 $$\kappa_2\circ \kappa_1^{-1}:\kappa_1(U_1\cap U_2) \longrightarrow \kappa_2(U_1\cap U_2)$$
 ein Homöomorphismus offener Teilmengen des Modells $\R^m$. \\\\
-Ein \textbf{Atlas} ist eine Familie $\AA$ von Karten $(U_i,\kappa_i)_{i\in I}$ die $X$ überdecken, $X= \bigcup\limits_{i \in I}U_i$. Um Differentialrechnung betreiben zu können, verlangen wir dieselbe Verträglichkeit der Karten im Atlas wie sie im Fall der Karten \eqref{karte} differenzierbarer Untermannigfaltigkeit vorliegt. Zwei Karten heißen $\mathcal{C}^k$-\emph{kompatibel}, falls der Kartenwechsel ein $\mathcal{C}^k$-Diffeomorphismus ist. Ein Atlas $\AA$ heißt \emph{$\mathcal{C}^k$-differenzierbar}, falls seine Karten paarweise $\mathcal{C}^k$-kompatibel sind. Jeder Atlas ist in einem eindeutigen \emph{maximalen} $\mathcal{C}^k$-Atlas enthalten, der durch Hinzunahme aller $\mathcal{C}^k$-kompatiblen Karten entsteht.
+Ein \textbf{Atlas} ist eine Familie $\AA$ von Karten $(U_i,\kappa_i)_{i\in I}$ die $X$ überdecken, $X= \bigcup\limits_{i \in I}U_i$. Um Differentialrechnung betreiben zu können, verlangen wir dieselbe Verträglichkeit der Karten im Atlas wie sie im Fall der Karten \eqref{karte} differenzierbarer Untermannigfaltigkeiten vorliegt. Zwei Karten heißen $\mathcal{C}^k$-\emph{kompatibel}, falls der Kartenwechsel ein $\mathcal{C}^k$-Diffeomorphismus ist. Ein Atlas $\AA$ heißt \emph{$\mathcal{C}^k$-differenzierbar}, falls seine Karten paarweise $\mathcal{C}^k$-kompatibel sind. Jeder Atlas ist in einem eindeutigen \emph{maximalen} $\mathcal{C}^k$-Atlas enthalten, der durch Hinzunahme aller $\mathcal{C}^k$-kompatiblen Karten entsteht.
 
 \begin{definition}[\textbf{Differenzierbare Struktur}]
 \begin{mdframed}
@@ -3325,7 +3325,7 @@ Die Äquivalenzklasse in $t=0$ erste Ordnung übereinstimmender Kurven nennt man
 \begin{enumerate}
 \item Ein \emph{Tangentialvektor} im Punkt $p$ ist ein 1-Jet durch $p$, also eine Äquivalenzklasse in $t=0$ erste Ordnung übereinstimmender Kurven.
 \item Der \emph{Tangentialraum} $T_pM$ an $M$ im Punkt $p$ ist die Vereinigung aller Tangentialvektoren in $p$.
-\item Das \emph{Tangentialbündel} $TM$ ist die \emph{disjunkte} Vereinigung der Tangentialräume $TM=\bigsqcup\limits_{p\in M}T_p M$ zusätzlich mit der Fußpunktprojektion $\pi:TM\to M$.
+\item Das \emph{Tangentialbündel} $TM$ ist die \emph{disjunkte} Vereinigung der Tangentialräume $TM=\bigsqcup\limits_{p\in M}T_p M$ zusammen mit der Fußpunktprojektion $\pi:TM\to M$.
 \end{enumerate}
 \end{mdframed}
 \end{definition}
@@ -3338,7 +3338,7 @@ $$\frac{\del}{\del x_i}\bigg|_p := [ t\longmapsto x^{-1}(x(p)+te_i)] \in T_pM$$
 \begin{center}
 \input{Figures/Bild2.tex}
 \begin{small}
-Abbildung: Koordinatenrichtung bzgl. einer Karte $x$
+Abbildung: Richtungsableitung bzgl. einer Karte $x$
 \end{small}
 \end{center}
 bzgl. $x$ besteht, unter der Identifizierung \eqref{tangenraum} in die Standardbasis überträgt. Die Notation reflektiert, dass Tangentialvektoren \emph{Richtungsableitungen} entsprechen, hier den partiellen Ableitungen. Wir nennen $\left(\dfrac{\del}{\del x_i}\bigg|_p\right)$ die Standardbasis von $T_pM$ bzgl. $x$. Ein allgemeiner Tangentialvektor $[c]\in T_pM$ hat dann wegen
@@ -3347,39 +3347,141 @@ die Darstellung
 \begin{equation}\label{darstellung-tanvek}
 (x\circ c)'(0)=\sum_{i=1}^m(x_i\circ c)'(0)\frac{\del}{\del x_i}\bigg|_p.
 \end{equation}
-Eine Karte $(U,x)$ für $M$ induziert, indem man die Identifikationen \eqref{tangenraum} zusammennimmt, insgesamt eine \emph{Karte} 
+Eine Karte $(U,x)$ für $M$ induziert, indem man die Identifikationen \eqref{tangenraum} zusammennimmt, insgesamt eine \emph{Karte} $(TU,Tx)$
 \begin{equation}\label{karte-von-tanb}
 \begin{array}{cccc}
 Tx:&TU=\bigsqcup\limits_{p\in U}T_pM &\overset{1:1}\longrightarrow &x(U)\times \R^m\\
 & [c]&\longmapsto& ((x\circ c)(0),(x\circ c)'(0))
 \end{array}
 \end{equation}
-für den entsprechenden Teil von dem Tangentialbündel $TM$. Ist $(\widetilde{U},\widetilde{x})$ eine weitere Karte, so ist der Kartenwechsel
+für den entsprechenden Teil von dem Tangentialbündel $TM$. 
+\begin{center}
+\input{Figures/Bild3.tex}\\
+\begin{small}
+Abbildung: von $(U,x)$ induzierte Karte $(TU,Tx)$
+\end{small}
+\end{center}
+Ist $(\widetilde{U},\widetilde{x})$ eine weitere Karte, so ist der Kartenwechsel
 \begin{equation}\label{kartenwechsel-tanb}
 T\widetilde{x}\circ(Tx)^{-1}:x(U\cap \widetilde{U})\times \R^m \longrightarrow \widetilde{x} (U\cap \widetilde{U}) \times \R^m
 \end{equation}
 auf dem Tangentialbündel $TM$ gegeben durch
 \begin{equation*}
 \begin{array}{crl}
-(x\circ c)(0),(x\circ c)'(0)) & \longmapsto& ((\widetilde{x} \circ c)(0),(\widetilde{x}\circ c)'(0))
+((x\circ c)(0),(x\circ c)'(0)) & \longmapsto& ((\widetilde{x} \circ c)(0),(\widetilde{x}\circ c)'(0))
 \\&=&((\widetilde{x}\circ x^{-1})(x\circ c)(0), \D(\widetilde{x}\circ x^{-1})_{(x\circ c)(0)}(x\circ c)'(0)).
 \end{array}
 \end{equation*}
 Bezeichnen wir suggestiver die Koordinaten in $M$ bzgl. der Karten mit $x$ bzw $\widetilde{x}$ und den Kartenwechsel mit $\widetilde{x}(x)$, so nimmt der Kartenwechsel auf $TM$ die Form
 $$(x,v)\longmapsto (\widetilde{x}(x),\D\widetilde{x}_x(v))$$
-an. Das Differential einer Abbildung $\widetilde{x}(x)$ zwischen offenen Teilmengen euklidischer Räume, ist explizit gegeben durch
-$$\D\widetilde{x}_x(v)=\sum_i\sum_j\bigg(\underbrace{\frac{\del\widetilde{x}_i}{\del x_j}}_{\frac{\del(\tilde{x}\circ x^{-1})_i}{\del x_j}}v_i\bigg)e_i.$$
-\marginpar{\tiny{16.1.2020}}
-\comment{
+an. Das Differential einer Abbildung $\widetilde{x}(x)$ zwischen offenen Teilmengen euklidischer Räume, ist explizit für $v=\sum\limits_{j=1}^m x_j e_j$ gegeben durch
+\begin{equation}\label{basis-darst-kartenwechsel}
+\D\widetilde{x}_x(v)=\sum_{i=1}^{m}\bigg(\sum_{j=1}^m v_j \frac{\del\widetilde{x}_i}{\del x_j}(x)\bigg)e_i.
+\end{equation}\marginpar{\tiny{16.1.2020}}
+Aus der letzten Formel \eqref{basis-darst-kartenwechsel} lesen wir die Basis in den Tangentialräumen ab. Für $v=e_j$ entspricht  die letzte Formel \eqref{basis-darst-kartenwechsel} der Richtungsableitung $\dfrac{\del}{\del x_j}\bigg|_p$:
+$$\frac{\del}{\del x_j} \bigg|_p = \sum_{i=1}^m \frac{\del \widetilde{x}_i
+}{\del x_j}(x(p))\frac{\del}{\del \widetilde{x}_i}\bigg|_p$$
+bzw.
+$$\frac{\del}{\del x_j} = \sum_{i=1}^m \left( \frac{\del \widetilde{x}_i}{\del x_j}\circ x \right) \frac{\del}{\del \widetilde{x}_i}.$$
+Weil die Einträge $\dfrac{\del\widetilde{x}_i}{\del x_j}$ der Jacobi-Matrix $\mathcal{C}^{k-1}$ sind,  zeigt dies insbesondere, dass die Kartenwechsel $T\widetilde{x}\circ(Tx)^{-1}$ für $TM$ $\mathcal{C}^{k-1}$ sind. Der Tangentialbündel erhält also die Struktur als $2m$-dim lokal euklidischer Raum zusammen mit der $\mathcal{C}^{k-1}$-differenzierbaren Struktur. Außerdem ist es klar, dass die Topologie von $TM$ eine abzählbare Basis hat, weil dies für $M$ erfüllt ist und dass die Topologie auf $TM$ wieder Hausdorffsch ist. Also ist $TM$ eine $2m$-dim $\mathcal{C}^{k-1}$-Mannigfaltigkeit.\\
+\rule{\textwidth}{0.4pt}\\
+Ist nun $W\subset \R^m$ offen, so ist die Identität $\id_W$ eine globale Karte auf $W$ und $W$ hat die Struktur als eine $\mathcal{C}^\infty$-Mannigfaltigkeit. Wie erhalten die natürliche Identifikation von Tangentialräumen $T_pW$
+\begin{equation}\label{ident-traum}
+T_pW \overset{\cong}\longrightarrow \R^m, [c]\longmapsto c'(0)
+\end{equation}
+und vom Tangentialbündel $TW$
+\begin{equation}\label{ident-buendel}
+TW=\bigsqcup_{p\in W}T_pW \overset{\cong}\longrightarrow W\times \R^m, [c]\longmapsto (c(0,c'(0)).
+\end{equation}
+Das Standardbasenfeld ist gegeben durch
+$$\frac{\del}{\del x_i}\bigg|_x = [t\mapsto x+te_i].$$
+\rule{\textwidth}{0.4pt}\\
+Die \emph{Ableitung} oder \emph{Geschwindigkeit} einer differenzierbaren Kurve $c:I\to M$ ist definiert durch
+$$\frac{\D c}{\D t}(\tau):= c'(\tau):=[t\mapsto c(t+\tau)]=[c(\cdot +\tau)].$$
+\rule{\textwidth}{0.4pt}\\
+Wir approximieren jetzt differenzierbare Abbildungen lokal durch lineare Abbildung der Tangentialräume, indem wir den Begriff des Differentials für Abbildungen von Untermannigfaltigkeiten verallgemeinern.
+\begin{definition}[\textbf{Differential}]
+\begin{mdframed}
+Sei $F:M^m\to N^n$ eine differenzierbare Abbildung von $\mathcal{C}^k$-Mannigfaltigkeiten, $k\geq 1$. Dann induziert $F$ eine Abbildung von Tangentialbündeln
+$$dF:TM\to TN, [c]\mapsto [F\circ c].$$
+Die Abbildung $dF$ heißt \emph{das Differential} von $F$.
+\end{mdframed}
+\end{definition}
+Die Abbildung $dF$ ist wohldefiniert, denn die Kettenregel liefert uns
+$$(\underbrace{y\circ (F\circ c)}_{y\circ F\circ x^{-1}\circ x \circ c})'(0)=\D (y \circ F \circ x^{-1})_{(x\circ c)(0)}((x\circ c)'(0)),$$
+also hängt $[F\circ c]$ nur von $[c]$ ab.\vspace{0.4pc}\\
+Das Differential bildet Tangentialräume auf Tangentialräume ab:
+\begin{center}\vspace{0.2pc}
+\input{Figures/Bild4.tex}\\
+\begin{small}
+Abbildung: Illustration des Differentials
+\end{small}
 \newpage
-\appendix
+\begin{tikzcd}
+	T_pM \arrow{rrr}{dF_p:=dF|_{T_pM}} [below, sep = 120 ex]{\te{linear als Komposition lin Abb}}\arrow{dd}[left]{Tx|_{T_pM}}[right]{\cong\  \te{lin}} 	&&& T_{F(p)}N \arrow{dd}[left]{\cong \te{  lin}}[right]{Ty|_{T_{F(p)}N}}	\\
+%		& X	\arrow[mapsto]{r} &AX		\\
+&\quad \quad \quad \quad &&\\
+	\R^m \arrow{rrr}[above]{d(y\circ F^{-1} \circ x)_{x(p)}}[below, sep=120 ex]{\te{linear}} &&& \R^n
+\end{tikzcd}
+\end{center}
+Insbesondere ist $dF_p=dF|_{T_pM}$ als Komposition linearer Abbildung wieder linear. Im Fall von Abbildungen offener Teilmengen euklidischer Räume ist das Differential konsistent mit dem früher eingeführten, denn letztes bildet 
+$$c'(0)\mapsto (F\circ c)'(0)$$
+ab. Für das Differential gilt
+\begin{itemize}
+\item \textit{Kettenregel.} Sind $F:X \to Y$ und $G:Y\to Z$ differenzierbare Abbildungen von $\mathcal{C}^k$-Mannigfaltigkeiten, so gilt die Kettenregel
+$$\boxed{d(G\circ F)=dG \circ dF},$$
+denn $d(G\circ F)([c])=[G\circ (F\circ c)]=dG([F\circ c])=dG(dF[c])$.
+\item $\D \id_M=\id_{TM}$.
+\item Für die Umkehrabbildung $F^{-1}$ eines Diffeomorphismus $F:M\to N$ gilt
+$$\D(F^{-1})=(\mathrm{d} F)^{-1}.$$
+\end{itemize}\vspace{-1.5pc}
+\rule{\textwidth}{0.4pt}
+Wie \eqref{karte-von-tanb} beschreibt, induziert eine Karte $(U,x)$ eine Bündelkarte $(TU,Tx)$.
+\begin{center}
+\begin{tikzcd}
+TU \arrow{r}[above]{Tx}	\arrow{dr}[left]{\D x}& x(U)\times \R^m \arrow{d} \\
+&	T(\underbrace{x(U)}_{\subset \R^m}) \arrow{u}[left]{\cong}[right]{\eqref{ident-buendel}}
+\end{tikzcd}
+\end{center}
+Die induzierten Bündelkarten $T x$ sind Differentiale der Karten $\D x$ auf Mannigfaltigkeiten und die Bündelkartenwechsel $T\widetilde{x}\circ (Tx)^{-1}$ stimmen bis auf derselben Identifikationen überein mit den Differentialen der Kartenwechsel $\widetilde{x}\circ x^{-1}$ auf $M$.\\\\
+\emph{In lokalen Koordinaten:} Das Differential $dF_p$ ist relativ zu den Koordinatenbasen $\dfrac{\del}{\del x_j}$ bzw. $\dfrac{\del}{\del y_i}$ ist gegeben durch die Jacobische durch die Jacobische der lokalen Koordinatendarstellung:
+$$dF_p\left(\frac{\del}{\del x_j}\bigg|_p\right)=\sum_{i=1}^n\frac{\del (y_i\circ F\circ x^{-1})}{\del x_j}(x(p)) \frac{\del}{\del y_i}\bigg|_{F(p)}.$$
+Dies verallgemeinert die frühere Formel für den Wechsel zwischen von Karten induzierten Basen der Tangentialräume. Daraus folgt, dass die lokale Koordinatendarstellung $T_y \circ \D F \circ (Tx)^{-1}$ des Differentials bzgl. induzierter Bündelkarten bis auf der Identifikationen 
+\begin{equation*}
+\begin{array}{ccc}
+T(x(U)) & \cong & x(U)\times \R^m	\\
+T(y(U')) & \cong & y(U')\times \R^n
+\end{array}
+\end{equation*}
+mit dem Differential $\D y$ von $y(x)$ übereinstimmt. Das letztere hat die Form
+$$(x,v)\mapsto(y(x),\D y_x(v)).$$
+Weiter liefert \eqref{basis-darst-kartenwechsel}: $F$ von der Klasse $\mathcal{C}^k$ $\implies$ $\D F$ von der Klasse $\mathcal{C}^{k-1}$.
 
-\section{Multilineare Algebra und Tensorprodukt}
-\paragraph{Multilineare Abbildungen.} Seien $V_1,...,V_k,W$ $K$-Vektoräume. Eine Abbildung
-$$\mu: V_1 \times ... \times V_k \longrightarrow W$$
-heißt $K$-\emph{multilinear}, falls sie linear in jeder Komponente ist. Der Raum
-$$\operatorname{Multi}(V_1,...,V_k;W)$$
-aller multilinearen Abbildungen von $V_1\times ... \times V_k$ nach $W$ ist wieder ein $K$-Vektorraum. Eine multilinare Abbildung ist bereits festgelegt, wenn die Bilder der Basisvektoren schon festgelegt sind.
-\paragraph{Multilinearform.} Eine Multilinearform ist eine multilineare Abbildung in den zugrundeliegenden Körper $K$. Die Determinantenabbildung ist eine normierte alternierende Multilinearform. }
+\subsection{Totales Differential, 1-Formen und Kotangentialbündel}
+Sei $M$ eine $\mathcal{C}^k$-Mannigfaltigkeit, $k\geq 1$. Ist $f: M\to \R$ differenzierbar, so heißt die Abbildung $$\D f:TM\to T\R$$ das \emph{totale Differential} von $f$. Das totale Differential ist also die Familie der linearen Abbildungen $$\D f_p:T_pM\to T_{f(p)}\R\cong \R.$$
+Sie sind Linearformen auf Tangentialräumen, d.h. $\D f_p \in (T_p M)^*$.
+\begin{definition}[\textbf{Kotangentialraum, Kotangentialbündel}]
+\begin{mdframed}\
+\begin{enumerate}
+\item Der Dualraum $(T_p M)^*$ zu dem Tangentialraum $T_p M$ heißt \emph{Kotangentialraum} an $M$ in $p$, geschrieben $T^*_pM$.
+\item Das \emph{Kotangentialbündel} an $M$ ist die disjunkte Verneigung von Kotangentialräumen 
+$$T^*M:=\bigsqcup_{p \in M} T^*_pM$$
+mit der Fußpunktprojektion $\pi_{T^*M}: T^*M\longrightarrow M.$
+\end{enumerate}
+\end{mdframed}
+\end{definition}
+Die Definition erlaubt uns, das totale Differential $\D f$ aufzufassen als die Abbildung
+$$M \longrightarrow T^*M, p\longmapsto \D f_p \in T^*_p M$$ mit $$\pi_{T^*M}\circ \D f=\id_M.$$
+%\comment{
+%\newpage
+%\appendix
+%
+%\section{Multilineare Algebra und Tensorprodukt}
+%\paragraph{Multilineare Abbildungen.} Seien $V_1,...,V_k,W$ $K$-Vektoräume. Eine Abbildung
+%$$\mu: V_1 \times ... \times V_k \longrightarrow W$$
+%heißt $K$-\emph{multilinear}, falls sie linear in jeder Komponente ist. Der Raum
+%$$\operatorname{Multi}(V_1,...,V_k;W)$$
+%aller multilinearen Abbildungen von $V_1\times ... \times V_k$ nach $W$ ist wieder ein $K$-Vektorraum. Eine multilinare Abbildung ist bereits festgelegt, wenn die Bilder der Basisvektoren schon festgelegt sind.
+%\paragraph{Multilinearform.} Eine Multilinearform ist eine multilineare Abbildung in den zugrundeliegenden Körper $K$. Die Determinantenabbildung ist eine normierte alternierende Multilinearform. }
 %\input{A-integrale-stetiger-funktionen.tex}
 \end{document}

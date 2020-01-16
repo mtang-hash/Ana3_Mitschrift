@@ -1,0 +1,60 @@
+% \usepackage[usenames,dvipsnames]{pstricks}
+% \usepackage{epsfig}
+% \usepackage{pst-grad} % For gradients
+% \usepackage{pst-plot} % For axes
+% \usepackage[space]{grffile} % For spaces in paths
+% \usepackage{etoolbox} % For spaces in paths
+% \makeatletter % For spaces in paths
+% \patchcmd\Gread@eps{\@inputcheck#1 }{\@inputcheck"#1"\relax}{}{}
+% \makeatother
+% % User Packages:
+% 
+% 
+
+\psscalebox{0.9 0.9} % Change this value to rescale the drawing.
+{
+\begin{pspicture}(0,-2.31)(8.085828,2.31)
+\definecolor{colour0}{rgb}{0.0,0.6,0.6}
+\psline[linecolor=black, linewidth=0.022](1.1658279,1.61)(1.1658279,-1.19)(1.1658279,-1.19)
+\psline[linecolor=black, linewidth=0.022](1.5658278,2.01)(1.5658278,-0.79)
+\psline[linecolor=black, linewidth=0.022](1.9658278,1.61)(1.9658278,-1.59)
+\psline[linecolor=black, linewidth=0.022](0.76582783,2.01)(0.76582783,-0.39)
+\psline[linecolor=black, linewidth=0.022](0.36582783,1.61)(0.36582783,-0.79)
+\psline[linecolor=black, linewidth=0.022](2.765828,2.01)(2.765828,-0.79)
+\psline[linecolor=black, linewidth=0.022](5.565828,1.61)(5.565828,-0.79)(5.565828,-0.79)
+\psline[linecolor=black, linewidth=0.022](6.365828,2.01)(6.365828,-1.59)
+\psline[linecolor=black, linewidth=0.022](6.7658277,1.61)(6.7658277,-0.79)(6.7658277,-0.79)
+\psline[linecolor=black, linewidth=0.022](7.1658278,2.01)(7.1658278,-0.79)
+\psline[linecolor=colour0, linewidth=0.022](2.3658278,2.01)(2.3658278,-1.19)
+\psline[linecolor=colour0, linewidth=0.022](5.965828,1.61)(5.965828,-1.19)
+\pscustom[linecolor=black, linewidth=0.022]
+{
+\newpath
+\moveto(0.0058278274,-1.59)
+\lineto(0.16582783,-1.69)
+\curveto(0.24582782,-1.74)(0.44582784,-1.84)(0.56582785,-1.89)
+\curveto(0.68582785,-1.94)(1.1258278,-1.94)(1.4458278,-1.89)
+\curveto(1.7658278,-1.84)(2.3558278,-1.82)(2.6258278,-1.85)
+\curveto(2.8958278,-1.88)(3.1858277,-1.89)(3.245828,-1.83)
+}
+\pscustom[linecolor=black, linewidth=0.022]
+{
+\newpath
+\moveto(4.605828,-1.91)
+\lineto(5.2858276,-1.83)
+\curveto(5.625828,-1.79)(6.095828,-1.8)(6.2258277,-1.85)
+\curveto(6.355828,-1.9)(6.7858276,-1.92)(7.085828,-1.89)
+\curveto(7.385828,-1.86)(7.7858276,-1.83)(8.085828,-1.83)
+}
+\psline[linecolor=black, linewidth=0.022, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.4058278,0.49)(4.885828,0.49)
+\psline[linecolor=black, linewidth=0.022, arrowsize=0.05291667cm 2.0,arrowlength=1.4,arrowinset=0.0]{->}(3.3258278,-1.55)(4.885828,-1.55)
+\rput[bl](3.8858278,0.61){$dF$}
+\rput[bl](4.005828,-1.43){$F$}
+\psdots[linecolor=black, dotsize=0.1](5.965828,-1.79)
+\psdots[linecolor=black, dotsize=0.1](2.3658278,-1.83)
+\rput[bl](2.2858279,-2.23){$p$}
+\rput[bl](5.645828,-2.31){$F(p)$}
+\rput[bl](2.005828,1.97){$T_pM$}
+\rput[bl](5.365828,1.85){$T_{F(p)}N$}
+\end{pspicture}
+}
