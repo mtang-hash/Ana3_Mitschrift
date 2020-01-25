@@ -13,32 +13,32 @@
 Maßtheorie ist die Theorie des Volumens. Motivierende Beispiele sind:
 \begin{enumerate}[label=\roman*),topsep=3pt, itemsep=0pt]
 \item Volumina von Teilmengen des euklidischen Raums
-\item Wahrscheinlichkeiten (= ``Volumina von Ereignissen'')
+\item Wahrscheinlichkeiten (= ``Volumina von Ereignissen'').
 \end{enumerate}
 Wir konzentrieren uns im Rest des Abschnitts auf $\R^d$. Wir wollen einen leistungsfähigen Volumenbegriff haben, sodass die Volumina von möglich vielen Teilmengen flexibel gemessen werden können. Unser erster ``naiver'' Ansatz wäre, dass wir Volumenmessung für \emph{alle} Teilmengen verlangen, also eine Funktion
 \begin{equation*}
- \vol: \mathcal{P}(\R^d) \longrightarrow [0,\infty]
+ \vol: \mathcal{P}(\R^d) \longrightarrow [0,\infty].
 \end{equation*}
 Unsere grundlegende Forderung ist die Additivität von Volumina bei Zerlegungen, also
 \begin{enumerate}
-\item[(i)] \textbf{(endliche) Additivität}: Sind $M_1,...,M_n\subset \R^d$ paarweise disjunkt, so gilt
+\item[(i)] \emph{(endliche) Additivität}: Sind $M_1,...,M_n\subset \R^d$ paarweise disjunkt, so gilt
 \begin{equation*}
-\vol (M_1\cup ... \cup M_n) = \vol(M_1)+...+\vol (M_n)
+\vol (M_1\cup ... \cup M_n) = \vol(M_1)+...+\vol (M_n).
 \end{equation*}
 \end{enumerate}
 Volumina als geometrische Größen sollten durch die metrische Struktur (Längenmessung) bestimmt sein, also invariant unter Symmetrien der metrischen Struktur:
 \begin{enumerate}
-\item[(ii)] \textbf{Bewegungsinvarianz}: Für jede Bewegung $\phi: \R^d \longrightarrow \R^d$ und jede Teilmenge $A\subset \R^d$ gilt
+\item[(ii)] \emph{Bewegungsinvarianz}: Für jede Bewegung $\phi: \R^d \longrightarrow \R^d$ und jede Teilmenge $A\subset \R^d$ gilt
 \begin{equation*}
-\vol(\Phi(A)) = \vol (A)
+\vol(\Phi(A)) = \vol (A).
 \end{equation*}
-\item[(iii)] \textbf{Normierung}: $\vol([0,1]^d)=1$.
+\item[(iii)] \emph{Normierung}: $\vol([0,1]^d)=1$.
 \end{enumerate}
-Verstärke Forderung (i): (Borel, Lebesgue)
+Wir verstärken noch die Forderung (i): (\begin{scshape}Borel, Lebesgue\end{scshape})
 \begin{enumerate}
-\item[(i')]\textbf{$\sigma$-Additivität\footnote{$\sigma$: abzählbar, unendlich oft.}}: Für Folgen $(M_n)_{n\in \N}$ paarweise disjunkter Teilmengen $M_n \subset \R^d$ gilt:
+\item[(i')]\emph{$\sigma$-Additivität\footnote{$\sigma$ steht für abzählbar unendlich oft.}}: Für Folgen $(M_n)_{n\in \N}$ paarweise disjunkter Teilmengen $M_n \subset \R^d$ gilt:
 \begin{equation*}
-\vol\bigg( \bigcup_{n\in \N} M_n \bigg) = \sum_{n\in \N} \underbrace{\vol (M_n)}_{\in [0,\infty]} 
+\vol\bigg( \bigcup_{n\in \N} M_n \bigg) = \sum_{n\in \N} \underbrace{\vol (M_n)}_{\in [0,\infty]}.
 \end{equation*}
 \begin{remark}
 Wegen des Umordnungssatzes spielt die Reihenfolge der Summanden keine Rolle, da sie alle positiv sind.
@@ -266,7 +266,7 @@ Da für $H \cap \complement \widetilde{H}_l = H \setminus \widetilde{H}_l$ (Axio
 \begin{mdframed}
 Jede Teilmenge im von einem Halbring $\HH$ erzeugten Ring $\RR$ ist eine endliche disjunkte Vereinigung von Teilmengen in $\HH$, d.h. \begin{scriptsize}(ein einfacher Erzeugungsprozess!)\end{scriptsize} 
 \begin{equation}
-\RR = \left\{ \bigsqcup_{k=1}^n H_k \  \Big\rvert \ n\in \N, H_1,...,H_n \in \HH \right\}
+\RR = \left\{ \bigsqcup_{k=1}^n H_k \  \Big\rvert \ n\in \N, H_1,...,H_n \in \HH \right\}.
 \label{eqI14}
 \end{equation}
 \end{mdframed}
@@ -355,23 +355,23 @@ Wir nennen den Halbring $\HH_1 \ast ... \ast \HH_n$ das Produkt der Halbringe $\
 \end{mdframed}
 \end{definition}
 
-\begin{hauptbsp}[Quader und Figuren in $\R^d$]
+\begin{hauptbsp}[\textbf{Quader und Figuren in $\R^d$}]
 \begin{mdframed}
 Ist $a,b \in \R^d$ mit $a_i < b_i \forall i$, so entsteht ein achsenparalleler halboffener Quader
 \begin{equation*}
-[a,b) := [a_1, b_1) \times ... \times [a_d,b_d)
+[a,b) := [a_1, b_1) \times ... \times [a_d,b_d).
 \end{equation*}
 Wir bezeichnen mit
 \begin{equation*}
-\QQ^d := \text{die Familie solcher Quader}
+\QQ^d
 \end{equation*}
-und
+die Familie solcher Quader, und
 \begin{equation*}
-\mathcal{I} := \QQ^1, \text{die Familie der halboffenen Intervalle}
+\mathcal{I} := \QQ^1,
 \end{equation*}
-Also gilt
+die Familie der halboffenen Intervalle. Also ist
 \begin{equation*}
-\QQ^d = \underbrace{\mathcal{I} \ast ... \ast \mathcal{I}}_{d\text{-Mal}}
+\QQ^d = \underbrace{\mathcal{I} \ast ... \ast \mathcal{I}}_{d\text{-Mal}}.
 \end{equation*}
 Aus der \hyperref[propC]{letzten Proposition} folgt, dass $\QQ^d$ ein Halbring auf $\R^d$ ist. Es folgt ebenfalls, dass
 \begin{equation*}
@@ -432,7 +432,7 @@ Ein Inhalt auf einer Halbring $\HH$ ist eine Funktion $\mu: \HH \to [0,\infty]$ 
 \begin{mdframed}
 Auf dem Halbring $\II = \mathcal{Q}^1 \subset \mathcal{P}(\R)$ wird ein Inhalt gegeben durch die euklidische Länge
 \begin{align*} %\label{I23}
-\lambda^1_\II : \II \to [0, \infty), \quad \lambda^1_\II \big([a,b)\big) := b-a \ (a<b)
+\lambda^1_\II : \II \to [0, \infty), \quad \lambda^1_\II \big([a,b)\big) := b-a \ (a<b).
 \end{align*}
 \end{mdframed}
 Wir überprüfen die Additivität: Sei $a = x_0 < x_1 < ... < x_{n} = b$ eine Unterteilung von $[a,b)$. So entsteht die disjunkte Zerlegung $[a,b) = [a,x_1) \sqcup ... \sqcup [x_{n-1},b)$. Es folgt 
@@ -1521,7 +1521,7 @@ Zusammengefasst:
 \end{equation*}
 
 \subsubsection{Approximation messbarer Teilmengen}
-Sei $\mu$ ein Prämaß auf dem Ring $\RR \subset \PP(X)$, $\sigma(\RR)$ die von $\RR$ erzeugte $\sigma$-Algebra und $\AA^*$ die Familie der $\mu^*$-messbaren Teilmengen. Wir wollen nun $\sigma(\RR)$ mit $\AA^*$ vergleichen. Erster Erinnerung: $\mu^*$-Nullmengen sind $\mu^*$-messbar, liegen also in $\AA^*$.\\\\
+Sei $\mu$ ein Prämaß auf dem Ring $\RR \subset \PP(X)$, $\sigma(\RR)$ die von $\RR$ erzeugte $\sigma$-Algebra und $\AA^*$ die Familie der $\mu^*$-messbaren Teilmengen. Wir wollen nun $\sigma(\RR)$ mit $\AA^*$ vergleichen. Erste Erinnerung: Alle $\mu^*$-Nullmengen sind $\mu^*$-messbar, liegen also in $\AA^*$.\\\\
 \textit{Sprechweise:} Es seien $M,M'\subset X$ mit $\mu^*(M \triangle M') = 0$. Wir nennen dann $M, M'$ \textbf{Modifikationen} voneinander durch $\mu^*$-Nullmengen. Wir sagen, dass sie ``bis auf $\mu^*$-Nullmengen übereinstimmen''.
 
 \begin{lemma} \label{uebereinstimmen}
@@ -2351,7 +2351,7 @@ $$
 \begin{mdframed}
 Sind $A_1,...,A_n$ paarweise disjunkt, so ist $f\in \MM_{\ol\R}$ genau dann über $A_1\cup ... \cup A_n$ $\mu$-integrierbar, wenn sie es über jedes $A_i$ ist, und es gilt dann
 $$
-\int_{A_1\cup...\cup A_n} f \D\mu = \int_{A_1}f\D \mu + ... + \int_{A_n} f \D \mu
+\int_{A_1\cup...\cup A_n} f \D\mu = \int_{A_1}f\D \mu + ... + \int_{A_n} f \D \mu.
 $$
 \end{mdframed}
 \begin{proof}
@@ -2481,12 +2481,12 @@ f =_\mu g : &\iff f(x)=g(x) \  \te{für }\mu \te{-fast alle } x \in X
 \end{split}
 \end{equation*}
 Die Menge $\{f\neq g\}$ ist messbar, falls $f,g \in \MM_{\ol\R}$. Die Relation $=_\mu$ ist eine Äquivalenzrelation. Wir bezeichnen mit $$\MM_{\ol\R}/_{=_\mu}$$ \textbf{den Raum der Äquivalenzklassen $\mu$-fast überall übereinstimmender messbarer numerischer Funktionen}.
-
+\newpage
 \begin{lemma}
 \begin{mdframed}
 Seien $f,g \in \MM_{\ol\R}$ mit $f=_\mu g$. Dann gilt
 \begin{enumerate}
-\item $\|f\|_1=\|g\|_1$. Insbesondere ist $f$ genau dann $\mu$-integrierbar, wenn $g$ $\mu$-integrierbar.
+\item $\|f\|_1=\|g\|_1$. Insbesondere ist $f$ genau dann $\mu$-integrierbar, wenn $g$ es ist.
 \item In diesem Fall ist $\int_X f \D\mu =\int_X g \D \mu$.
 \end{enumerate}
 \end{mdframed}
@@ -2649,7 +2649,7 @@ Wir verallgemeinern nun unser Konvergenzresultat für Integrale nichtnegativer F
 Um von punktweiser Konvergenz auf Konvergenz der Integrale zu schließen, müssen wir die Funktionen ``gemeinsam lokalisieren''.
 \begin{satz}[\textbf{Satz von der Majorisierten Konvergenz} (\scshape Lebesgue)]
 \begin{mdframed}
-Sind $f_n,f\in \MM_{\ol\R}$ für $n\in\N$ sodass
+Sind $f_n,$ $f\in \MM_{\ol\R}$ für $n\in\N$ sodass
 $$f_n \longrightarrow f \ \ \mu\te{-fast überall}$$
 und existiert eine $\mu$-integrierbare $g\in \MM_{[0,\infty]}$ mit 
 $$|f_n|\leq g \ \ \mu\te{-fast überall} \ \forall n,$$
@@ -2841,9 +2841,9 @@ Sei $\FF \subset \AA_1 \otimes \AA_2$ die Familie messbarer Teilmengen, für die
 $$(\mu_1 \otimes \mu_2)(A_1\times A_2)=\mu_1(A_1)\cdot \mu_2(A_2) = \int_{X_1}\chi_{A_1}\mu_2(A_2)\D \mu_1$$
 offensichtlich gilt, gehört $\AA_1 \ast \AA_2$ zu $\FF$, d.h. $\AA_1 \ast \AA_2 \subset \FF$. \vspace{0.3pc}\\
 Außerdem ist $\FF$ abgeschlossen unter \emph{disjunkten} abzählbaren Vereinigungen. Sind nämlich $M_n \in \FF$ für $n\in \N$ paarweise disjunkt, so ist der $X_2$-Querschnitt ihrer Vereinigung für jedes $x_1 \in X_1$ messbar, also 
-$$\bigg( \bigcup_{n\in \N} M_n \bigg)_{x_1} = \bigcup_{n\in \N} \underbrace{M_{n,x_1}}_{\in \AA_2 \te{ n.V.}} \in \AA_2$$
+$$\bigg( \bigcup_{n\in \N} M_n \bigg)_{x_1} = \bigcup_{n\in \N} \underbrace{M_{n,x_1}}_{\in \AA_2 \te{ n.V.}} \in \AA_2.$$
 Die ($\sigma$-)Additivität von $\mu_2$ liefert ferner
-$$\mu_2 \bigg(\bigg( \bigcup_{n\in\N} M_n\bigg)_{x_1}\bigg)=\sum_{n\in\N} \mu_2(M_{n,x_1}), \ \  \te{insb.} \ \mu_2 \bigg(\bigg( \bigcup_{ i \leq n} M_i\bigg)_{x_1}\bigg)=\sum_{i \leq n} \mu_2(M_{i,x_1})$$
+$$\mu_2 \bigg(\bigg( \bigcup_{n\in\N} M_n\bigg)_{x_1}\bigg)=\sum_{n\in\N} \mu_2(M_{n,x_1}), \ \  \te{insb.} \ \mu_2 \bigg(\bigg( \bigcup_{ i \leq n} M_i\bigg)_{x_1}\bigg)=\sum_{i \leq n} \mu_2(M_{i,x_1}).$$
 Die Stetigkeit von unten von $\mu_2$ und die Anwendung des Satzes von der Monotonen Konvergenz auf die Funktionenfolge $\mu_2\left(\left(\bigcup\limits_{i\leq n} M_i\right)_{x_1}\right)$ implizieren weiter:
 \begin{equation*}
 \begin{split}
@@ -3071,7 +3071,7 @@ Wir nutzen dies, um mit Fubini das unbestimmte Integral
 $\int_{-\infty}^\infty e^{-u^2}\D u$
 zu bestimmen. Weil
 $$
-\bigg( \int_{-\infty}^\infty e^{-u^2}\D u\bigg)^2 \overset{\te{Fubini}}= \iint_{-\infty}^{ \ \ +\infty} \underbrace{e^{-x_1^2}e^{-x_2^2}}_{e^{-\|x\|^2}}\underbrace{\D x_1\D x_2}_{=: \D\lambda^2(x_1,x_2)} \overset{\eqref{rotations2}}= \pi
+\bigg( \int_{-\infty}^\infty e^{-u^2}\D u\bigg)^2 \overset{\te{Fubini}}= \iint_{-\infty}^{+\infty} \underbrace{e^{-x_1^2}e^{-x_2^2}}_{e^{-\|x\|^2}}\underbrace{\D x_1\D x_2}_{=: \D\lambda^2(x_1,x_2)} \overset{\eqref{rotations2}}= \pi
 $$
 gilt
 $$\boxed{\int_{-\infty}^\infty e^{-u^2}\D u = \sqrt{\pi}}.$$
@@ -3269,13 +3269,13 @@ Dann existiert auf $M$ eine eindeutige $m$-dim lokal euklidische Topologie $\TT$
 \end{satz}
 %\rule{\textwidth}{0.4pt}\vspace{0.2pc}
 Man kann auch Kriterien angeben wann eine Mannigfaltigkeit vorliegt:
-\begin{mdframed}
+%\begin{mdframed}
 \textbf{Zusatz.}
 \begin{enumerate}
 \item Die Topologie $\TT$ ist Hausdorff, wenn je zwei Punkte in einer gemeinsamen Teilmenge $U_\iota$ enthalten sind oder in disjunkten.
 \item $\TT$ hat eine abzählbare Basis, wenn $M$ durch abzählbar viele $U_\iota$'s überdeckt wird.
 \end{enumerate}
-\end{mdframed}
+%\end{mdframed}
 \begin{proof}
 \Ueb .
 \end{proof}
@@ -3401,9 +3401,6 @@ TW=\bigsqcup_{p\in W}T_pW \overset{}\longrightarrow W\times \R^m, [c]\longmapsto
 einen $\mathcal{C}^\infty$-Diffeomorphismus. Das Standardbasenfeld ist gegeben durch
 $$\frac{\del}{\del x_i}\bigg|_x = [t\mapsto x+te_i].$$
 \rule{\textwidth}{0.2pt}\\
-Die \emph{Ableitung} oder \emph{Geschwindigkeit} einer differenzierbaren Kurve $c:I\to M$ ist definiert durch
-$$\frac{d c}{d t}(\tau):= c'(\tau):=[t\mapsto c(t+\tau)]=[c(\cdot +\tau)].$$
-\rule{\textwidth}{0.2pt}\\
 Wir \emph{approximieren} jetzt \emph{differenzierbare Abbildungen }lokal durch lineare Abbildung der Tangentialräume, indem wir den Begriff des Differentials für Abbildungen von Untermannigfaltigkeiten verallgemeinern.
 \begin{definition}[\textbf{Differential}]
 \begin{mdframed}
@@ -3454,26 +3451,40 @@ Im Einklang hiermit stimmen die Bündelkartenwechsel \eqref{kartenwechsel-tanb} 
 \emph{In lokalen Koordinaten:} Das Differential $dF_p$ ist relativ zu den Koordinatenbasen $\frac{\del}{\del x_j}$ bzw. $\frac{\del}{\del y_i}$ ist gegeben durch die Jacobische durch die Jacobische der lokalen Koordinatendarstellung:
 $$dF_p\left(\frac{\del}{\del x_j}\bigg|_p\right)=\sum_{i=1}^n\frac{\del (y_i\circ F\circ x^{-1})}{\del x_j}(x(p)) \frac{\del}{\del y_i}\bigg|_{F(p)}.$$
 Dies verallgemeinert die frühere Formel für den Wechsel zwischen von Karten induzierten Basen der Tangentialräume. Daraus folgt, dass die lokale Koordinatendarstellung $T_y \circ d F \circ (Tx)^{-1}$ des Differentials bzgl. induzierter Bündelkarten bis auf der Identifikationen 
-\begin{equation*}
-\begin{array}{ccc}
-T(x(U)) & \cong & x(U)\times \R^m	\\
-T(y(U')) & \cong & y(U')\times \R^n
-\end{array}
-\end{equation*}
+$$
+T(x(U))  \cong  x(U)\times \R^m	 \quad \text{und} \quad
+T(y(U'))  \cong  y(U')\times \R^n
+$$
+%\begin{equation*}
+%\begin{array}{ccc}
+%T(x(U)) & \cong & x(U)\times \R^m	\\
+%T(y(U')) & \cong & y(U')\times \R^n
+%\end{array}
+%\end{equation*}
 mit dem Differential $d y$ von $y(x)$ übereinstimmt. Das letztere hat die Form
 $$(x,v)\mapsto(y(x),d y_x(v)).$$
-Wir sehen insbesondere: $F$ von der Klasse $\mathcal{C}^k$ $\implies$ $d F$ von der Klasse $\mathcal{C}^{k-1}$.
-
+Wir sehen insbesondere: $F$ von der Klasse $\mathcal{C}^k$ $\implies$ $d F$ von der Klasse $\mathcal{C}^{k-1}$.\\
+\rule{\textwidth}{0.2pt}\\
+Die \emph{Ableitung} oder \emph{Geschwindigkeit} einer differenzierbaren Kurve $c:I\to M$ ist definiert durch
+\begin{equation} \label{ableit-kurve}
+\frac{d c}{d t}(\tau):= c'(\tau):=[t\mapsto c(t+\tau)]=[c(\cdot +\tau)] \in T_{c(\tau)}M.
+\end{equation}
+wobei $c(\cdot +\tau)$ die durch Zeitverschiebung reparametrisierte Kurve meint. Sie ist das Bild des Standardvektorfelds
+$\tau \mapsto \frac{\del}{\del t}|_\tau =[t \mapsto \tau+t]\in T_rI\cong T_\tau \R$
+auf $I$ unter dem Differential der Kurve
+\begin{equation} \label{kurveableitung}
+c'(\tau)=dc_\tau\bigg( \frac{\del}{\del t}\bigg|_\tau \bigg).
+\end{equation}
 \subsection{Totales Differential, 1-Formen und Kotangentialbündel}
 Sei $M$ eine $\mathcal{C}^k$-Mannigfaltigkeit, $k\geq 1$ und sei $f: M\to \R$ differenzierbar. Die Abbildung $$d f:TM\to T\R$$ heißt das \emph{totale Differential} von $f$. Das totale Differential ist die Familie der linearen Abbildungen, bzw. Linearformen
  $$d f_p:T_pM\to T_{f(p)}\R\cong \R.$$
 auf Tangentialräumen, d.h. $d f_p \in (T_p M)^*$.
 \begin{definition}[\textbf{Kotangentialraum, -bündel}] 
-\begin{mdframed}%Sei $M$ eine $m$-dim $\mathcal{C}^k$-Mannigfaltigkeit, $p\in M$.
+\begin{mdframed}\ %Sei $M$ eine $m$-dim $\mathcal{C}^k$-Mannigfaltigkeit, $p\in M$.
 \begin{enumerate}
 \item Der Dualraum $(T_p M)^*$ zu dem Tangentialraum $T_p M$ heißt \emph{Kotangentialraum} an $M$ in $p$, geschrieben $T^*_pM$.
 \item Das \emph{Kotangentialbündel} an $M$ ist die disjunkte Verneigung von Kotangentialräumen 
-$$T^*M:=\bigsqcup_{p \in M} T^*_pM$$
+$T^*M:=\bigsqcup_{p \in M} T^*_pM$
 mit der Fußpunktprojektion $\pi_{T^*M}: T^*M\longrightarrow M.$
 \end{enumerate}
 \end{mdframed}
@@ -3483,9 +3494,9 @@ $$M \longrightarrow T^*M, p\longmapsto d f_p \in T^*_p M$$ mit $\pi_{T^*M}\circ 
 Wir können also das totale Differential auffassen als einen Schnitt des Kotangentialbündels $T^*M$. Auf natürliche Weise gelangen wir zur der folgenden Definition:
 \marginpar{\tiny{20.1.2020}}
 
-\begin{definition}[\textbf{Differentialform, 1-Form}]
+\begin{definition}[\textbf{Differentialform vom Grad $1$, $1$-Form}]
 \begin{mdframed}
-Eine \emph{Differentialform} vom Grad 1, kurz \emph{1-Form}, auf $M$ ist ein \emph{Schnitt} des Kotangentialbündels $T^*M$, d.h. eine Abbildung $\alpha:M\to T^*M$ mit $\pi_{T^*M}\circ \alpha =\id_M$.
+Eine \emph{Differentialform} \linebreak vom Grad 1, kurz \emph{1-Form}, auf $M$ ist ein \emph{Schnitt} des Kotangentialbündels $\pi_{T^*M}$, d.h. eine Abbildung $\alpha:M\to T^*M$ mit $\pi_{T^*M}\circ \alpha =\id_M$.
 \end{mdframed}
 \end{definition}
 
@@ -3587,7 +3598,7 @@ Wie im Fall des Tangentialbündels folgt, dass der Atlas auf $T^*M$ bestehend au
 Ist $W\subset \R^m$ offen, so lassen sich 1-Formen $\alpha$ auf $W$ für $a_i:W\to \R$ schreiben als Linearkombinationen
 $$\alpha = \sum_{i=1}^m a_i dx_i$$
 der totalen Differentiale $dx_i$ der Koordinatenfunktionen. Die totalen Differentiale lassen sich dann schreiben als 
-$$df=\sum_{i=1}^{m}\frac{\del f}{\del x_i} dx_i.$$
+$$df=\sum_{i=1}^{m}\frac{\del f}{\del x_i} dx_i.$$\vspace{-0.5pc}
 \rule{\textwidth}{0.2pt}\\
 \emph{Zurückziehen/ Pull-back.}  Mit differenzierbaren Abbildungen kann man 1-Formen zurückziehen. Sei $F:M^m\to N^n$ eine differenzierbare Abbildung von $\mathcal{C}^k$-Mannigfaltigkeiten. Dann induzieren die Differentiale
 $$dF_p:T_pM\longrightarrow T_{F(p)}N$$
@@ -3595,7 +3606,7 @@ duale lineare Rückzugsabbildungen
 \begin{equation}
 dF^*_p:T^*_{F(p)}N\longrightarrow T^*_pM.
 \end{equation}
-Wir können 1-Formen $\alpha$ auf $N$ \emph{punktweise} zurückziehen zu 1-Formen $F^*\alpha$ auf $M$:
+damit wir 1-Formen $\alpha$ auf $N$ \emph{punktweise} zu 1-Formen $F^*\alpha$ auf $M$ zurückziehen können:
 \begin{equation}
 (F^*\alpha)_p:=dF_p^*(\alpha_{F(p)})=\alpha_{F(p)}\circ dF_p.
 \end{equation}
@@ -3606,7 +3617,7 @@ T_pM \arrow{r}[above]{dF_p}	\arrow[dashed]{dr}[left]{(F^*\alpha)_p} &  T_{F(p)}N
 \end{tikzcd}
 \end{center}
 In lokalen Koordinaten, Notation wie oben, hat $F^*dy_i=dy_i\circ dF$ die Darstellung
-\begin{equation}
+\begin{equation}\label{lokal-koo}
 F^*dy_i=\sum_{j=1}^m \bigg(\frac{\del y_i}{\del x_j} \circ x \bigg) dx_j,
 \end{equation}
 denn mit der lokalen Koordinatendarstellung von $dF$ gilt
@@ -3614,7 +3625,7 @@ $$
 (F^*dy_i)\bigg(\frac{\del}{\del x_j}\bigg) = dy_i \bigg(dF\bigg( \frac{\del}{\del x_j}\bigg)\bigg) =\frac{\del y_i}{\del x_j}\circ x.
 $$
 
-\subsubsection{Integration von 1-Formen längs Kurven}
+\subsubsection{Integration von 1-Formen längs Kurven} %\mathx
 Die Operation des totalen Differentials wird nun umgekehrt durch das Wegintegral. Sei $M$ eine $\mathcal{C}^k$-Mannigfaltigkeit und $f:M\to \R$ eine $\mathcal{C}^1$-Funktion. Man kann $f$ auf jeder Zusammenhangskomponente von $M$ modulo additiver Konstante auf ihrem totalen Differential $df:TM\to T\R$ zurückgewinnen, und zwar durch geeignetes Aufintegrieren. Sind $p,q\in M$ Punkte in derselben Zusammenhangskomponente, so können wir sie zusammen durch eine $\mathcal{C}^1$-Kurve $$c:[a,b]\to M, c(a)=p, c(b)=q$$ verbinden. Der Hauptsatz der Differential- und Integralrechnung liefert
 \begin{equation}
 f\big|_p^q = f\circ c\big|^b_a \overset{\te{HDI}}= \int_a^b (f\circ c)'(t) dt = \int_a^b df_{c(t)}(c'(t)) dt,
@@ -3622,7 +3633,7 @@ f\big|_p^q = f\circ c\big|^b_a \overset{\te{HDI}}= \int_a^b (f\circ c)'(t) dt = 
 also eine Integraldarstellung für die Differenz der Werte in diesen Punkten. Dies ist das Integral des totalen Differentials im folgenden Sinne.
 \begin{definition}[\textbf{Kurven-, Wegintegral}]
 \begin{mdframed}
-Für eine beliebige stetige 1-Form $\alpha$, d.h. die Koeffizientenfunktionen der 1-Form bzgl lokaler Koordinaten sind stetig, definieren wir ihr \emph{Integral längs} einer $\mathcal{C}^1$-Kurve $c:I=[a,b]\to M$ als
+Für eine beliebige stetige 1-Form $\alpha$, d.h. die Koeffizientenfunktionen der 1-Form sind bzgl lokaler Koordinaten stetig, definieren wir ihr \emph{Integral längs} einer $\mathcal{C}^1$-Kurve $c:I=[a,b]\to M$ als
 $$\int_c \alpha := \int_I \alpha (c') dt = \int_I\alpha_{c(t)}(c'(t))dt.$$
 Das letzte Integrand ist stetig. Wir nennen ein solches Integral $\int_c \alpha$ ein \emph{Kurven-} oder \emph{Wegintegral}. 
 \end{mdframed}
@@ -3636,4 +3647,149 @@ eine $\mathcal{C}^1$ Reparametrisierung, zB ein $\mathcal{C}^1$-Diffeomorphismus
 \end{split}
 \end{equation*}
 \marginpar{\tiny{23.1.2023}}
+Die Invarianz des Wegintegrals einer unter Reparametrisierung ermöglicht uns, \emph{1-Formen} über orientierten 1-dim \emph{Untermannigfaltigkeiten} zu definieren.\vspace{0.3pc}\\
+Wegen 
+$$\alpha(c')= \underbrace{(\alpha\circ dc)}_{c^*\alpha} \left(\frac{\del}{\del t}\right),$$
+und $c'=dc\left(\frac{\del}{\del t}\right)$ können wir das Wegintegral schreiben als 
+\begin{equation}
+\int_c \alpha = \int_{\id_I} c^* \alpha.
+\end{equation}
+Im Spezialfall $c=\id_I$ und einer 1-Form $\alpha =g dt$ auf $I\subset \R$ wird die Definition des Wegintegrals zu
+$$\int_{\id_I}\underbrace{gdt}_{1\te{-Form}}=\int_I \underbrace{g}_{\te{Fkt}}dt.$$
+Also stimmt das Wegintegral $\int_{\id_I} gdt$ mit dem ``gewöhnlichen'' Integral $\int_Ig(t)dt$ der Funktion $g$ überein.\\
+\rule{\textwidth}{0.2pt}\\
+Das Wegintegral verhält sich gut unter \emph{differenzierbaren Abbildungen}: Ist $F: M \to N$ $\mathcal{C}^1$ und $\beta$ eine stetige 1-Form auf $N$, so gilt für die punktweise zurückgezogene 1-Form $F^*\beta=\beta \circ dF$
+$$\int_{F\circ c} \beta = \int_c F^* \beta,$$
+denn es gilt
+$$
+\beta\underbrace{((F\circ c)')}_{dF(c')}=\underbrace{(\beta \circ dF)}_{F^*\beta}(c').
+$$
+bzw. $(F\circ c)^* \beta =c^*(F^*\beta)$.
+\subsection{Höhere Differentialformen}
+Sei $M$ eine $m$-dim Mannigfaltigkeit. \vspace{0.5pc} \\
+1-Formen sind Familien von Linearformen auf Tangentialräumen, und sie treten natürlich auf als totale Differentiale von Funktionen. \vspace{0.5pc} \\
+Auch Familien anderer Typen von ``Lineare Algebra-Objekte'', dh \emph{Tensoren}, auf den Tangentialräumen treten in der Geometrie natürlich auf. Für uns relevant sind Familien \emph{alternierender Multilinearformen}, die sogenannte \emph{Differentialformen}.\footnote{Ein anderes Wichtiges Beispiel aus der Differentialgeometrie sind Familien von \emph{Skalarprodukten}  auf den Tangentialräumen, die sog \emph{Riemannschen Metriken}. Diese Familien von Tensoren bzw Formen nehmen ihre Werte in den entsprechenden \emph{Vektorbündeln} über $M$ an, die aus dem Tangentialbündel $TM$ hervorgehen, indem faserweise auf die Tangentialräume $T_pM$ ein bestimmter Funktor, also eine Konstruktion der (Multi)Linearen Algebra angewandt wird. So entsteht das Kotangentialbündel durch die faserweise Bildung des Dualraums.}\vspace{0.5pc} \\
+Ein wichtiger Grund, die Familien \emph{alternierender} Multilinearformen zu betrachten, ist, dass diese eine \emph{Volumenmessung} (in der ihrem Grad entsprechenden intermediären Dimension) induzieren und in natürlicher Weise über Mannigfaltigkeiten \emph{integriert} werden können.\vspace{0.5pc} \\
+Für $0\leq r \leq m$ betrachten wir das Vektorbündel
+$$\bigwedge^r TM:=\bigsqcup_{p \in M}{\bigwedge^r T_pM}\overset{\pi}\longrightarrow M,$$
+die sogenannte $r$-te \emph{äußere Potenz} von $T^*M$. Seine Fasern
+$$
+\bigwedge^r T_pM \cong \bigwedge_r T^*_p M \cong \operatorname{Alt}_r(T_pM)
+$$
+sind die Vektorräume der alternierenden $r$-Linearformen auf den Tangentialräumen $T_pM$. Kombiniert man diese Bündel für alle $r$, so erhalten wir das äußere Algebrenbündel
+$$\bigwedge^*TM:=\bigsqcup_{p \in M} \bigwedge^* T_pM \overset{\pi}\longrightarrow M,$$
+dessen Fasern
+$$
+\bigwedge^*T_pM=\bigoplus_{r=0}^m \bigwedge^r T_pM
+$$
+die äußeren Algebren der Kotangentialräume $T^*_pM$ sind. $\bigwedge^0TM=\underline{\R}$ ist das \emph{triviale} Linienbündel, in dem Sinne, dass jeder Punkt eine Kopie von $\R$ ist, und $\bigwedge^1TM=T^*M$ ist das Kotangentialbündel. Das i.a. nichttriviale Linienbündel $\bigwedge^mTM$ nennt man das \emph{Determinantenlinienbündel}.
+\begin{definition}[\textbf{Höhere Differentialform}]
+\begin{mdframed}
+Eine \emph{Differentialform} vom Grad $r$, $r\leq m$, kurz \emph{$r$-Form} ist ein Schnitt des Bündels $\bigwedge^rTM \to M$. Eine \emph{gemischte} Differentialform ist ein Schnitt des Bündels $\bigwedge^* TM \to M$.
+\end{mdframed}
+\ \ 
+\end{definition}
+Eine $r$-Form ist also eine Familie alternierender $r$-Linearformen $\alpha_p:=\alpha(p)$ auf den Tangentialräumen $T_pM$.\vspace{0.5pc}\\
+Wie vorher induziert die Struktur von $M$ als eine $\mathcal{C}^k$-Mannigfaltigkeit wiederum eine Struktur auf $\bigwedge^rTM$ eine Struktur als $\mathcal{C}^{k-1}$-Mannigfaltigkeit. Ist $(U,x)$ eine Karte für $M$, so sind die punktweisen Dachprodukte
+$$dx_{i_1}\wedge ... \wedge dx_{i_r}$$
+für $i_1<...<i_r$ $r$-Formen auf $U$ und bilden ein \emph{lokales Basenfeld} für das eingeschränkte Bündel 
+$$\bigwedge^rTM|_U=\bigsqcup_{p\in U}\bigwedge^rT_pM\longrightarrow U,$$
+das durch die Karte ausgezeichnete \emph{Standardbasenfeld}. Eine allgemeine $r$-Form $\alpha$ auf $M$ kann bezüglich dieser Karte dargestellt werden als
+$$\alpha|_U=\sum_{i_1<...<i_r} \alpha_{i_1...i_r}dx_{i_1}\wedge ... \wedge dx_{i_r},$$
+mit Koeffizientenfunktionen $\alpha_{i_1...i_r}$.\\
+\rule{\textwidth}{0.2pt}\\
+Ist $W\subset \R^m$ offen, so lassen sich $r$-Formen $\alpha$ auf $W$ mithilfe der totalen Differentiale der Koordinatenfunktionen schreiben als
+$$\alpha=\sum_{i_1<...<i_r} \alpha_{i_1...i_r}dx_{i_1}\wedge ... \wedge dx_{i_r}.$$
+\rule{\textwidth}{0.2pt}\\
+\emph{Pull-back.} Mit differenzierbaren Abbildungen kann man Differentialformen beliebiger Grade zurückziehen. Ist $F:M^m \to N^n$ eine differenzierbare Abbildung von Mannigfaltigkeiten, so setzen sich die linearen Rückzugsabbildungen 
+$$dF_p^*:T^*_{F(p)}N \to T^*_pM$$ 
+der Kotangentialräume fort zu Homomorphismen
+\begin{equation}
+dF^*_p: \bigwedge^* T_{F(p)}N \longrightarrow \bigwedge^*T_pM
+\end{equation}
+der von ihnen induzierten äußeren Algebren. Diese ziehen alternierende Multilinearformen $\alpha_{F(p)}\in \bigwedge^r T_{F(p)}N$ auf $T_{F(p)}N$ zurück zu alternierenden Multilinearformen $dF_p^*\alpha_{F(p)}$ auf $T_pM$,
+$$
+(dF_p^*\alpha_{F(p)})(v_1,...,v_r)=\alpha_{F(p)}(dF_p(v_1),...,dF_p(v_r))
+$$
+für $v_i \in T_pM$. Wieder können wir durch punktweise Anwendung Differentialformen $\alpha$ auf $N$ zu Differentialformen $F^*\alpha$ zurückziehen,
+$$(F^*\alpha)_p = dF^*_p\alpha_{F(p)}.$$
+Das Dachprodukt wird dabei respektiert, d.h. es vertauscht mit dem Rückzug
+$$F^*(\alpha \wedge \beta)=(F^*\alpha)\wedge (F^*\beta)$$
+für Differentialformen $\alpha,\beta$ auf $N$.\vspace{0.5pc}\\
+In lokalen Koordinaten verallgemeinert sich \eqref{lokal-koo} 
+$$F^*\underbrace{dy_i}_{1\te{-Form auf }V}=\sum_{j=1}^m \underbrace{\bigg(\underbrace{\frac{\del y_i}{\del x_j}}_{\te{def auf }x(U)} \circ x \bigg)}_{\te{def auf }U} \underbrace{dx_j}_{1\te{-Form auf }U}$$
+zu
+\begin{equation*}
+\begin{array}{ccl}
+F^*(dy_{i_1}\wedge ... \wedge dy_{i_r}) & =  & \displaystyle\sum_{1\leq j_1,...,j_r\leq m} \left(\left( \prod_{l=1}^r \frac{\del y_{i_l}}{\del x_{j_l}} \right) \circ x\right) dx_{j_1}\wedge ...\wedge dx_{j_r}\\
+&=&
+\displaystyle\sum_{1\leq j_1 <...<j_r\leq m} \left(\det \left(\frac{\del y_{i_s}}{\del x_{j_t}}\right)_{s,t=1,...,r}\circ x \right) dx_{j_1}\wedge ...\wedge dx_{j_r}.
+\end{array}
+\end{equation*}
+Im Fall $r=m=n$ vereinfacht sich die Formel zu
+\begin{equation}
+F^*(dy_1\wedge ...\wedge dy_m)=\left(\det \left(\frac{\del y_i}{\del x_j}\right)_{i,j=1,...,k}\circ x\right)dx_1\wedge...\wedge dx_m.
+\end{equation}
+\subsection{Partition der Eins}
+Wir führen nun einige topologische Hilfesmittel ein (Stichwort \emph{Verklebung}), sodass wir \emph{globale} Objekte über Mannigfaltigkeiten einführen können, z.B. Volumenformen, Riemannsche Metriken und Integral von Differentialformen.\vspace{0.5pc}\\
+Sei $M$ eine $\mathcal{C}^k$-Mannigfaltigkeit.
+%$$\oiint$$
+\begin{definition}[\textbf{Partition der Eins}]
+\begin{mdframed}
+Eine $\mathcal{C}^k$-Partition der Eins auf $M$ ist eine Familie $(\phi_\iota)_{\iota \in I}$ von $\mathcal{C}^k$-Funktionen
+$\phi_\iota:M\to[0,1]$
+sodass
+\begin{enumerate}[topsep=3pt, itemsep=0pt]
+\item die Familie der Träger $({\operatorname{supp} \phi_\iota})_{\iota \in I}=({\overline{\{\phi_\iota \neq 0\}}})_{\iota \in I}$ lokal endlich ist, d.h. jedes Kompaktum in $M$ schneidet nur endlich viele der Träger.
+\item $\sum\limits_{\iota \in I}\phi_\iota \equiv 1$ punktweise gilt.
+\end{enumerate}
+Die Partition der Eins ist \emph{einer Überdeckung} $(U_\alpha)_{\alpha \in A}$ von $M$ \emph{untergeordnet}, falls eine Abbildung $\alpha:I\to A$ existiert, sodass für jedes $\iota \in I$ gilt $\operatorname{supp}(\phi_\iota)\subset U_{\alpha(\iota)}$.
+\end{mdframed}
+\end{definition}
+\begin{satz}
+\begin{mdframed}
+Für jede \emph{offene} Überdeckung $(U_\alpha)_{\alpha \in A}$ von $M$ existiert eine ihr untergeordnete $\mathcal{C}^k$-Partition der Eins $(\phi_\iota)_{\iota \in I}$ mit kompaktem Trägern $\operatorname{supp}_\iota$ und abzählbarer Indexmenge $I$.
+\end{mdframed}
+\end{satz}
+\subsection{Orientierung von Mannigfaltigkeiten}
+Der Begriff der Orientierung von Mannigfaltigkeiten beruht auf dem Begriff der Orientierung von Vektorräumen. Eine Orientierung einer Mannigfaltigkeit ist, grob gesprochen, eine ``stetige'' Familie von Orientierungen der Tangentialräume.\vspace{0.5pc}\\
+Sei $M$ eine $m$-dim $\mathcal{C}^k$-Mannigfaltigkeit.
+\begin{definition}[\textbf{Orientierung}]
+\begin{mdframed}
+Eine \emph{Orientierung} von $M$ ist eine Familie $o=(o_p)_{p\in M}$ von Orientierungen $o_p$ der Tangentialräume $T_pM$, sodass für jede lokale Karte das Vorzeichen der Orientierung der Standardbasis $\left( \frac{\del}{\del x_i}|_p\right)$ als Funktion von $p\in U$ lokal konstant ist. \vspace{0.5pc}\\
+Eine Mannigfaltigkeit heißt \emph{orientierbar}, falls sie eine Orientierung zulässt.
+\end{mdframed}
+\end{definition}
+Im 0-dim Fall besteht eine Orientierung aus der Wahl eines Vorzeichens $\pm$ in jedem Punkt. \vspace{0.5pc}\\
+Im Dim $m=1,2$ ist eine Orientierung die Wahl einer \emph{Richtung} bzw. eines \emph{Drehsinns}. \vspace{0.5pc}\\
+Die \emph{Standard-Orientierung} von $\R^m$ als $\mathcal{C}^\infty$-Mannigfaltigkeit ist diejenige, für die das Standardbasenfeld $\left(\frac{\del}{\del x_i}\right)$ überall positiv orientiert ist.\vspace{0.5pc}\\
+Wir nennen einen \emph{lokalen Diffeomorphismus} orientierter Mannigfaltigkeiten \emph{orientierungserhaltend}, wenn sein Differential punktweise orientierungserhaltend ist, dh positiv orientierte Basen von Tangentialräume wieder in solche abbildet.\vspace{0.5pc}\\
+Insbesondere nennen wir eine \emph{Karte} einer orientierten Mannigfaltigkeit orientierungserhaltend, wenn sie es bzgl der Standard-Orientierung des euklidischen Modellraums ist. Die orientierungserhaltenden $\mathcal{C}^k$-Karten einer orientierten $\mathcal{C}^k$-Mannigfaltigkeit bilden einen Unteratlas ihrer differenzierbaren Struktur, nämlich einen maximalen $\mathcal{C}^k$-Atlas mit orientierungserhaltenden Kartenwechsel. Einen solchen Atlas nennt man eine \emph{orientierte} $\mathcal{C}^k$-Struktur.\vspace{0.5pc}\\
+Orientierungen können mithilfe der Volumenformen beschrieben werden. 
+
+\begin{definition}[\textbf{Volumenform}]
+\begin{mdframed}
+Eine \emph{Volumenform} auf $M^m$ ist eine nirgends verschwindende $m$-Form $\omega$ auf $M$, d.h. für alle $p\in M$ ist $0\neq \omega_p\in \bigwedge^m T_pM$ eine Volumenform auf $T_pM$.
+\end{mdframed}
+\end{definition}
+Eine stetige Volumenform $\omega$ induziert eine Orientierung. Eine Basis $(v_i)$ eines Tangentialraums $T_pM$ ist relativ zu ihr positiv orientiert, wenn
+$$\omega_p(v_1,...,v_m)>0.$$
+Wir nennen die Volumenform \emph{positiv} bzgl der von ihr induzierten Orientierung. \vspace{0.5pc}\\
+Zwei stetige Volumenformen $\omega,\omega'$ induzieren dieselbe Orientierung genau dann, wenn $\omega' = f\omega$ für eine (notwendigerweise) stetigen Funktion $f>0$. \vspace{0.5pc}\\
+Die Standard-Volumenform $dx_1\wedge ...\wedge dx_m$ auf $\R^m$ induziert die Standardorientierung.
+
+\begin{proposition}
+\begin{mdframed}
+Orientierungen von $\mathcal{C}^k$-Mannigfaltigkeit werden immer von $\mathcal{C}^k$-\linebreak Volumenformen induziert.
+\end{mdframed}
+\begin{proof}
+Sei $M^m$ eine orientierte $\mathcal{C}^k$-Mannigfaltigkeit. Auf jeder Karte existiert eine Volumenform, welche die gegebene Orientierung induziert. Wir verkleben diese lokalen positiven Volumenformen mithilfe einer Partition der Eins zu einer globalen. Genauer betrachten wir eine Überdeckung $(U_\alpha)_{\alpha \in A}$ von $M$ durch Karten. Dann haben wir positive Volumenformen $\omega_\alpha$ auf $U_\alpha$. Wähle $(\phi_\iota)_{\iota \in I}$ eine abzählbare $\mathcal{C}^k$ Partition der Eins, $\sum\limits_{\iota\in I}\phi_\iota=1$, welche der Überdeckung $(U_\alpha)$ untergeordnet ist, d.h. es existiert $\alpha:I \to A$ sodass $\operatorname{supp}\phi_\iota \subset U_{\alpha(\iota)}$ für jedes $\iota \in I$. Setze $\omega:=\sum\limits_{\iota\in I}\phi_\iota \omega_{\alpha(\iota)}$ und dies ist eine wohldefinierte globale positive $\mathcal{C}^k$-Volumenform. 
+\end{proof}
+\end{proposition}
+
+\begin{korollar}
+\begin{mdframed}
+Auf einer $\mathcal{C}^k$-Mannigfaltigkeit existieren genau dann Volumenformen, wenn sie orientierbar ist.
+\end{mdframed}
+\end{korollar}
 \end{document}
